@@ -1,0 +1,168 @@
+body {
+	padding: 0;
+	background-color: #191d20;
+	color: white;
+	font-family: "Montserrat Alternates", serif;
+}
+
+
+.mobile-container {
+	position: fixed;
+	background: #191d20;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 111;
+	transform: translateX(100%);
+    transition: 0.4s ease;
+}
+.unfolded {
+	transform: translateX(0);
+	pointer-events: all;
+}
+.folded_icon {
+	cursor: pointer;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 8px;
+}
+.headerContact {
+	cursor: pointer;
+	position: fixed;
+	z-index: 100;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.headerContact a {
+	color: #191d20;
+}
+.headerContact img{
+	margin-left: 3px;
+	margin-right: 3px;
+	transition-duration: 0.5s;
+}
+
+.headerContact img:hover {
+	transform: scale(1.2);
+}
+.homeLink {
+	text-decoration: none;
+}
+.textlogo {
+	color:#ffffff;
+	font-size: 12px;
+}
+
+.lou {
+	color: #8FC4D2;
+	font-weight: 600;
+}
+
+.rollingtext {
+	font-size: 20px;
+	font-weight: 600;
+	text-align: start;
+	text-transform: uppercase;
+}
+
+.rollingtext p {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	background-color: #224055;
+}
+
+.headerCover {
+	background-image: url("images/Dot Grid.png");
+	background-size: auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	width: 90%;
+	margin-left: 5%;
+	height: 300px;
+    display: flex;
+    justify-content: center;
+	position: relative;
+}
+.mobilePages {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.mobilePages a {
+	text-decoration: none;
+	color: #ffffff;
+	border: 1px solid #ffffff;
+	font-size: 20px;
+    text-align: center;
+	margin: 1rem;
+	padding: 0.4rem;
+	border-radius: 2rem;
+	transition-duration: 0.5s;
+}
+.mobilePages a:hover{
+    transform: scale(1.2);
+	background-color: #224055;
+    font-weight: 600;
+}
+.Pages a:hover{
+    transform: scale(1.2);
+    font-weight: 600;
+}
+
+.emailBottom a {
+	display:flex;
+	justify-content: center;
+	font-size: 12px;
+    margin-top: 30px;
+	color: #ffffff;
+	transition-duration: 0.5s;
+}
+
+/*
+.dotsArray {
+	background-image: url("images/Dot Grid L5.png");
+	background-size: auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	width: 90%;
+	height: 40px;
+	margin-top: 3rem;
+	margin-left: 5%;
+}
+	*/
+
+.copyright {
+	display:flex;
+	justify-content: center;
+	font-size: 12px;
+	margin: 10px;
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 0;
+	display: flex;
+}
+	
+nav ul {
+	list-style-type: none;
+	padding-left: 0;
+	display: flex;
+	
+}
+
+nav li {
+	margin: 1rem;
+}
+
+nav li:first-child {
+	margin-left: 0;
+}
