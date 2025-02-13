@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         
         // initial animation
         let currentDirection = 'right-to-left';
-        rollingText.style.animation = `roll-${currentDirection} 30s linear infinite`;
+        rollingText.style.animation = `roll-${currentDirection} 70s linear infinite`;
 
         const checkPosition = () => {
             // position relative to viewpoint
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         
             if (newDirection !== currentDirection) {
-                rollingText.style.animation = `roll-${newDirection} 30s linear infinite`;
+                rollingText.style.animation = `roll-${newDirection} 60s linear infinite`;
                 currentDirection = newDirection;
             }
             
