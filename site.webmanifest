@@ -3,12 +3,12 @@
     "short_name": "Yihan's Site",
     "icons": [
       {
-        "src": "./images/character_Yihan.png",
+        "src": "/images/character_Yihan.png",
         "sizes": "192x192",
         "type": "image/png"
       },
       {
-        "src": "./images/character_Yihan.png",
+        "src": "/images/character_Yihan.png",
         "sizes": "512x512",
         "type": "image/png"
       }

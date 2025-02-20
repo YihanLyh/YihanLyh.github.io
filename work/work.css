@@ -262,6 +262,10 @@ body {
 .cardPic {
 	display: flex;
 	justify-content: center;
+	transition: 0.3s;
+}
+.cardPic:hover {
+	scale: 1.03;
 }
 
 .cardImg {
@@ -427,5 +431,16 @@ nav li:first-child {
 	.textbox2 {
 		top: 20%;
 		left: 95%;
+	}
+}
+
+@media (min-width:1340px) {
+	.myCharacterRight {
+		scale: 1.2;
+		right: 25%;
+	}
+	.myCharacterLeft {
+		scale: 1.2;
+		left: 25%;
 	}
 }
