@@ -69,7 +69,9 @@ body {
 .heading1 {
 	margin: 10px;
 }
-
+.blueTexts {
+	color:#8FC4D2;
+}
 .rollingtext {
 	font-size: 20px;
 	font-weight: 600;
@@ -121,6 +123,10 @@ body {
 	max-width: 1000px;
 	aspect-ratio: 16/9;
 }
+.figmaPre {
+	max-width: 1000px;
+	aspect-ratio: 16/9;
+}
 
 .contentPic {
 	display: flex;
@@ -135,20 +141,23 @@ body {
 	margin-bottom: 20px;
 }
 .heading1 {
-	font-size: 32px;
+	font-size: 36px;
 	font-weight: 600;
 	text-align: center;
 	text-transform: uppercase;
 	margin-top: 1rem;
 }
 .heading2 {
-	font-size: 20px;
+	font-size: 30px;
 	font-weight: 600;
 	text-align: start;
 	margin-top: 1rem;
 }
+.h3 {
+	font-size: 30px;
+}
 .mainText p {
-	font-size: 16px;
+	font-size: 22px;
 	text-align: start;
 	margin-bottom: 3rem;
 	max-width: 700px;
