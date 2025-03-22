@@ -5,6 +5,9 @@ body {
 	font-family: "Montserrat Alternates", serif;
 	margin: 0;
 }
+.custom-font {
+	font-family: "Montserrat", sans-serif;
+}
 
 .header {
 	display: flex;
@@ -124,9 +127,29 @@ body {
 h3{
 	margin-top: 50px;
 	margin-bottom: 15px;
+	font-size: 32px;
+}
+.placeInfo {
+	margin-top: 0px;
+	margin-bottom: 5px;
+	font-size: 20px;
+}
+.durationInfo {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-size: 15px;
+}
+.whiteTexts {
+	color:#ffffff;
 }
 .blueTexts {
 	color:#8FC4D2;
+}
+.greyTexts {
+	color:#73808D;
+}
+.boldTexts {
+	font-weight: 600;
 }
 #cvButton {
 	text-decoration: none;
