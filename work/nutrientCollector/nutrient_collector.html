@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <link rel="icon" href="/images/character_Yihan.png" type="image/x-icon">
@@ -40,6 +40,8 @@
                     <a href="mailto:yihan.lou3232@gmail.com" target="_blank">
                         <img src="../../images/icon_email.svg" alt="email_icon" />
                     </a>
+                    <!-- language switch -->
+                    <button class="lang-btn" aria-label="切换语言">中文</button>
                 </div>
                 <div class="folded_icon" id="folded-icon">
                     <img src="../../images/icon_foldedCross.svg" alt="folded_icon" />
@@ -117,6 +119,8 @@
                 <a href="mailto:yihan.lou3232@gmail.com" target="_blank">
                     <img src="../../images/icon_email.svg" alt="email_icon" />
                 </a>
+                <!-- language switch -->
+                <button class="lang-btn" aria-label="切换语言">中文</button>
             </div>
             <div class="folded_icon" id="unfolded-icon">
                 <img src="../../images/icon_folded.svg" alt="unfolded_icon" />
@@ -163,11 +167,19 @@
 
                 </p>
             </div>
+            <!-- 替换：原来的 iframe 
             <iframe class="youtubeVideo" width="100%" height="100%" src="https://www.youtube.com/embed/77cAYHUdbgc"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen>
             </iframe>
+             -->
+            <video class="youtubeVideo" width="100%" height="100%" controls playsinline preload="metadata"
+                poster="./NutrientCollector_Poster.png" controlsList="nodownload" aria-label="Nutrient Collector trailer">
+                <source src="./NutrientCollectorTrailor_Yihan241006.mp4" type="video/mp4">
+                Your browser does not support embedded videos. Please <a href="./NutrientCollectorTrailor_Yihan241006.mp4" target="_blank">Click here to download or watch</a>。
+            </video>
+
             <div class="contentPic">
                 <img src="./NutrientCollector_Poster.png" alt="NutrientCollector" />
             </div>
@@ -205,14 +217,15 @@
         </div>
 
         <div class="linkContainer">
+            
             <div class="linkPrev">
-                <a href="../ugames/ugames.html">
+                <a href="../yihanwebsite/yihanwebsite.html">
                     <div class="prevIcon">
                         <img src="../../images/iconPrev.svg" alt="iconPrev" />
                     </div>
                     <div class="prevTextContainer">
                         <div class="textPrevNext">PREV.</div>
-                        <div class="titlePrevNext">UGames 🕹️</div>
+                        <div class="titlePrevNext">Yihan's Website💻</div>
                     </div>
                 </a>
             </div>
@@ -291,6 +304,7 @@
 
     </div>
     <script defer src="../../foldedTags.js"></script>
+    <script defer src="../../lang.js"></script>
     <script defer src="../../rollingtext.js"></script>
     <script defer src="../../scrollTopButton.js"></script>
 </body>

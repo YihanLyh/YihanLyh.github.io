@@ -6,6 +6,23 @@ body {
 	margin: 0;
 }
 
+/* language toggle button */
+.lang-btn {
+	margin-left: 8px;
+	padding: 0.25rem 0.6rem;
+	border-radius: 1rem;
+	border: 1px solid #ffffff;
+	background: transparent;
+	color: #ffffff;
+	font-size: 13px;
+	cursor: pointer;
+	transition: 0.2s ease;
+}
+.lang-btn:hover {
+	background: #224055;
+	transform: scale(1.05);
+}
+
 .header {
 	display: flex;
 	justify-content: space-between;
