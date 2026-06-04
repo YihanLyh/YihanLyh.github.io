@@ -1,0 +1,51 @@
+.allProjectsContainer {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Adjust the width as needed */
+    height: 100%; /* Adjust the height as needed */
+  }
+  
+  #backgroundVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 50%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    opacity: 0.75;
+  }
+
+.allProjectsCards {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #8fc4d2 transparent;
+    -ms-overflow-style: none; /* Hide default scrollbar */
+}
+
+.allProjectsCards::-webkit-scrollbar {
+    height: 10px;
+}
+
+.allProjectsCards::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.allProjectsCards::-webkit-scrollbar-thumb {
+    background: #8fc4d2;
+    border-radius: 10px;
+    cursor: grab;
+}
+
+.allProjectsCards::-webkit-scrollbar-thumb:hover {
+    background: #1a3040;
+}
+.allProjectsCards::-webkit-scrollbar-thumb:active {
+    cursor: grabbing;
+}

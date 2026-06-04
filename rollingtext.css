@@ -1,0 +1,45 @@
+.rolling-text-container {
+    width: 100%;
+    overflow: hidden;
+    background-color: #224055;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.rolling-text {
+    display: flex;
+    white-space: nowrap;
+    animation: roll 30s linear infinite;
+    width: 300%;
+    margin: 3px;
+}
+
+.rolling-text span {
+    display: inline-block;
+    width: 100%; /* Each span occupies half the total width (i.e., 100% of the screen) */
+}
+
+@keyframes roll-left-to-right {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes roll-right-to-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}

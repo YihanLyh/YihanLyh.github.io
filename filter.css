@@ -1,0 +1,10 @@
+.filter-button.active {
+    border: 1px solid #8FC4D2;
+    background-color: #224055;
+}
+
+.filterContainer li:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
