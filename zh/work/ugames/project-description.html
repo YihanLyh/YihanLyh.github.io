@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/images/character_Yihan.png" type="image/x-icon">
+    <title>UGames 🕹️ — Project Description | Yihan Lou</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="UGames — a board game social network. Bilingual (EN/中文) case study: the problem gap, two-axis user segmentation, three design pillars, task-driven IA, and the neon visual system behind the platform." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000&family=Montserrat+Alternates:wght@300;400;600;700&display=swap">
+
+    <style>
+        /* ============================================================
+           UGames — Project Description
+           Palette follows the project's own design system:
+           #070203 (60% ink)  #39C8D3 (30% cyan)  #E07DEF (10% pink)
+           Typeface: DM Sans (same as the product)
+           ============================================================ */
+
+        :root {
+            --ink: #070203;
+            --ink-2: #0e0a0f;
+            --surf: rgba(255, 255, 255, 0.045);
+            --surf-2: rgba(255, 255, 255, 0.08);
+            --line: rgba(255, 255, 255, 0.14);
+            --cyan: #39C8D3;
+            --pink: #E07DEF;
+            --indigo: #3A69BF;
+            --white: #FFFFFF;
+            --t1: #FFFFFF;
+            --t2: rgba(255, 255, 255, 0.74);
+            --t3: rgba(255, 255, 255, 0.52);
+            --maxw: 1120px;
+            --r: 16px;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--ink);
+            /* subtle neon grid, echoing the product's board aesthetic */
+            background-image:
+                radial-gradient(900px 520px at 12% -6%, rgba(224, 125, 239, 0.13), transparent 60%),
+                radial-gradient(820px 480px at 92% 4%, rgba(57, 200, 211, 0.12), transparent 62%);
+            background-repeat: no-repeat;
+            color: var(--t1);
+            font-family: "DM Sans", "Montserrat Alternates", system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+            font-size: 17px;
+            line-height: 1.72;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ---------- language switching ---------- */
+        body.lang-zh .en { display: none !important; }
+        body:not(.lang-zh) .zh { display: none !important; }
+
+        /* ---------- layout ---------- */
+        .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+        section { padding: 56px 0 8px; }
+
+        /* ---------- top bar ---------- */
+        .topbar {
+            position: sticky; top: 0; z-index: 60;
+            backdrop-filter: blur(14px);
+            background: rgba(7, 2, 3, 0.82);
+            border-bottom: 1px solid var(--line);
+        }
+        .topbar .wrap {
+            display: flex; align-items: center; justify-content: space-between;
+            gap: 16px; min-height: 60px;
+        }
+        .brand {
+            display: flex; align-items: baseline; gap: 7px;
+            text-decoration: none; color: var(--white);
+            font-weight: 800; letter-spacing: .14em; font-size: 13px;
+        }
+        .brand em { font-style: normal; color: var(--cyan); }
+        .topbar-right { display: flex; align-items: center; gap: 10px; }
+
+        .ghost {
+            text-decoration: none;
+            color: var(--t2);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 6px 14px;
+            font-size: 12.5px;
+            font-weight: 600;
+            letter-spacing: .04em;
+            transition: .22s ease;
+            white-space: nowrap;
+        }
+        .ghost:hover { color: var(--white); border-color: var(--cyan); background: rgba(57, 200, 211, 0.1); }
+
+        button.ghost { cursor: pointer; background: transparent; font-family: inherit; }
+        button.ghost:hover { background: rgba(224, 125, 239, 0.12); border-color: var(--pink); }
+
+        /* ---------- hero ---------- */
+        .hero { padding: 74px 0 10px; }
+        .eyebrow {
+            display: inline-flex; align-items: center; gap: 10px;
+            font-size: 12px; font-weight: 700; letter-spacing: .2em;
+            text-transform: uppercase; color: var(--cyan);
+            border: 1px solid rgba(57, 200, 211, 0.4);
+            border-radius: 999px; padding: 6px 16px;
+        }
+        .hero h1 {
+            font-size: clamp(40px, 7.4vw, 82px);
+            line-height: 1.02;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin: 26px 0 6px;
+        }
+        .hero h1 .accent {
+            background: linear-gradient(96deg, var(--pink), var(--cyan));
+            -webkit-background-clip: text; background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero .sub {
+            font-size: clamp(18px, 2.4vw, 25px);
+            font-weight: 600; color: var(--t2);
+            margin: 0 0 18px;
+        }
+        .lede {
+            font-size: clamp(17px, 1.7vw, 20px);
+            color: var(--t2); max-width: 780px; margin: 0;
+        }
+
+        /* ---------- meta chips ---------- */
+        .meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+            gap: 1px;
+            background: var(--line);
+            border: 1px solid var(--line);
+            border-radius: var(--r);
+            overflow: hidden;
+            margin: 40px 0 0;
+        }
+        .meta div { background: var(--ink); padding: 18px 20px; }
+        .meta dt {
+            font-size: 11px; font-weight: 700; letter-spacing: .16em;
+            text-transform: uppercase; color: var(--pink); margin-bottom: 6px;
+        }
+        .meta dd { margin: 0; font-size: 15px; color: var(--t2); line-height: 1.55; }
+
+        /* ---------- cover / figures ---------- */
+        figure { margin: 34px 0; }
+        figure img { width: 100%; display: block; border-radius: var(--r); border: 1px solid var(--line); }
+        figcaption {
+            font-size: 13.5px; color: var(--t3); margin-top: 12px;
+            padding-left: 14px; border-left: 2px solid var(--indigo);
+        }
+        .fig-2 { display: grid; grid-template-columns: 1fr; gap: 26px; }
+
+        /* ---------- section headers ---------- */
+        .sechead { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 8px; }
+        .num {
+            font-size: 13px; font-weight: 800; letter-spacing: .1em;
+            color: var(--ink); background: var(--cyan);
+            border-radius: 8px; padding: 4px 9px; margin-top: 9px;
+            flex: 0 0 auto;
+        }
+        .sechead h2 {
+            font-size: clamp(25px, 3.5vw, 36px);
+            font-weight: 800; letter-spacing: -0.015em;
+            line-height: 1.2; margin: 0;
+        }
+        .sechead .kicker {
+            display: block; font-size: 12px; font-weight: 700;
+            letter-spacing: .18em; text-transform: uppercase;
+            color: var(--t3); margin-bottom: 4px;
+        }
+
+        h3 { font-size: 20px; font-weight: 700; margin: 34px 0 10px; }
+        h4 { font-size: 16px; font-weight: 700; margin: 22px 0 8px; color: var(--cyan); }
+
+        p { margin: 0 0 16px; color: var(--t2); }
+        strong { color: var(--white); font-weight: 700; }
+
+        ul, ol { margin: 0 0 16px; padding-left: 22px; color: var(--t2); }
+        li { margin-bottom: 8px; }
+
+        /* ---------- callouts ---------- */
+        .callout {
+            border-left: 3px solid var(--cyan);
+            background: linear-gradient(90deg, rgba(57, 200, 211, 0.10), rgba(57, 200, 211, 0));
+            border-radius: 0 var(--r) var(--r) 0;
+            padding: 18px 22px;
+            margin: 26px 0;
+        }
+        .callout.pink {
+            border-left-color: var(--pink);
+            background: linear-gradient(90deg, rgba(224, 125, 239, 0.10), rgba(224, 125, 239, 0));
+        }
+        .callout .label {
+            display: inline-block;
+            font-size: 11px; font-weight: 800; letter-spacing: .16em;
+            text-transform: uppercase; color: var(--cyan); margin-bottom: 6px;
+        }
+        .callout.pink .label { color: var(--pink); }
+        .callout p:last-child { margin-bottom: 0; }
+
+        /* ---------- highlight list ---------- */
+        .highlights { counter-reset: hl; list-style: none; padding: 0; margin: 8px 0 0; }
+        .highlights li {
+            counter-increment: hl;
+            position: relative;
+            padding: 18px 22px 18px 66px;
+            background: var(--surf);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            margin-bottom: 12px;
+            color: var(--t2);
+        }
+        .highlights li::before {
+            content: counter(hl, decimal-leading-zero);
+            position: absolute; left: 20px; top: 18px;
+            font-size: 15px; font-weight: 800; letter-spacing: .04em;
+            color: var(--pink);
+        }
+        .highlights b { color: var(--white); }
+
+        /* ---------- cards ---------- */
+        .grid { display: grid; gap: 16px; margin: 22px 0; }
+        .g2 { grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); }
+        .g3 { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+        .g4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+
+        .card {
+            background: var(--surf);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 20px;
+            transition: .25s ease;
+        }
+        .card:hover { border-color: rgba(57, 200, 211, 0.55); transform: translateY(-3px); }
+        .card h4 { margin: 0 0 4px; color: var(--white); font-size: 16.5px; }
+        .card .role {
+            font-size: 12px; font-weight: 700; letter-spacing: .12em;
+            text-transform: uppercase; color: var(--cyan); margin-bottom: 10px; display: block;
+        }
+        .card p { font-size: 15px; margin-bottom: 10px; }
+        .card ul { font-size: 15px; padding-left: 18px; margin-bottom: 0; }
+        .card li { margin-bottom: 5px; }
+        .card .mini {
+            font-size: 12.5px; color: var(--t3);
+            display: block; margin-bottom: 2px;
+        }
+        .card.pink { border-color: rgba(224, 125, 239, 0.42); }
+        .card.pink .role { color: var(--pink); }
+
+        /* ---------- tables ---------- */
+        .tablewrap { overflow-x: auto; margin: 22px 0; border: 1px solid var(--line); border-radius: var(--r); }
+        table { width: 100%; border-collapse: collapse; min-width: 620px; font-size: 15px; }
+        th, td { text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--line); vertical-align: top; }
+        th {
+            font-size: 11.5px; font-weight: 800; letter-spacing: .14em;
+            text-transform: uppercase; color: var(--cyan);
+            background: rgba(57, 200, 211, 0.07); white-space: nowrap;
+        }
+        tbody tr:last-child td { border-bottom: none; }
+        td { color: var(--t2); }
+        td:first-child { color: var(--white); font-weight: 700; white-space: nowrap; }
+        tr:hover td { background: rgba(255, 255, 255, 0.028); }
+
+        /* ---------- swatches / type specimens ---------- */
+        .swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 22px 0; }
+        .sw { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+        .sw .chip { height: 86px; }
+        .sw .info { padding: 12px 14px; background: var(--surf); }
+        .sw code { font-size: 13px; color: var(--white); font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; }
+        .sw span { display: block; font-size: 12.5px; color: var(--t3); margin-top: 3px; }
+
+        .ratio { display: flex; height: 84px; border-radius: 12px; overflow: hidden; margin: 22px 0 10px; border: 1px solid var(--line); }
+        .ratio div { display: flex; align-items: center; justify-content: center; font-size: 12.5px; font-weight: 800; letter-spacing: .06em; }
+        .ratio .r60 { flex: 60; background: var(--ink-2); border-right: 1px solid var(--line); }
+        .ratio .r30 { flex: 30; background: var(--cyan); color: var(--ink); }
+        .ratio .r10 { flex: 10; background: var(--pink); color: var(--ink); }
+
+        /* ---------- IA tree ---------- */
+        .ia { margin: 26px 0; font-size: 15px; }
+        .ia .lvl0 {
+            display: inline-block; background: var(--ink-2); border: 1px solid var(--pink);
+            border-radius: 10px; padding: 12px 20px; font-weight: 800; letter-spacing: .04em;
+            margin-bottom: 4px;
+        }
+        .ia .branch { border-left: 2px solid rgba(57, 200, 211, 0.5); margin-left: 22px; padding-left: 22px; }
+        .ia .node {
+            border: 1px solid var(--line); background: var(--surf);
+            border-radius: 10px; padding: 13px 18px; margin: 12px 0;
+        }
+        .ia .node > strong { display: block; font-size: 15.5px; }
+        .ia .node > span.d { font-size: 14px; color: var(--t3); }
+        .ia .subs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+        .ia .sub {
+            font-size: 13px; color: var(--t2);
+            border: 1px dashed rgba(224, 125, 239, 0.5);
+            border-radius: 999px; padding: 5px 13px;
+        }
+        .ia .cross {
+            margin-top: 18px; border: 1px dashed var(--line); border-radius: 10px;
+            padding: 13px 18px; font-size: 14px; color: var(--t3);
+        }
+
+        /* ---------- pillars ---------- */
+        .pillar {
+            border: 1px solid var(--line); border-radius: 14px; padding: 22px;
+            background: linear-gradient(160deg, rgba(57, 200, 211, 0.09), rgba(255, 255, 255, 0.02));
+        }
+        .pillar .tag { font-size: 11.5px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: var(--cyan); }
+        .pillar h4 { margin: 8px 0 8px; color: var(--white); font-size: 19px; }
+        .pillar p { font-size: 15px; margin-bottom: 0; }
+
+        /* ---------- figma embed ---------- */
+        .proto {
+            width: 100%; aspect-ratio: 16 / 9; border: 1px solid var(--line);
+            border-radius: var(--r); background: var(--ink-2); display: block;
+        }
+
+        /* ---------- team ---------- */
+        .team { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 16px; margin: 24px 0; }
+        .person { border: 1px solid var(--line); border-radius: 14px; padding: 20px; background: var(--surf); }
+        .person .who { font-size: 17px; font-weight: 800; }
+        .person .what { font-size: 13.5px; color: var(--cyan); margin-top: 4px; display: block; }
+        .person .what-pink { color: var(--pink); }
+
+        /* ---------- footer ---------- */
+        footer {
+            margin-top: 80px; padding: 46px 0 40px;
+            border-top: 1px solid var(--line);
+        }
+        .foot-inner { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; justify-content: space-between; }
+        footer a { color: var(--t2); text-decoration: none; border-bottom: 1px solid transparent; transition: .2s; }
+        footer a:hover { color: var(--white); border-bottom-color: var(--cyan); }
+        .copyright { font-size: 12.5px; color: var(--t3); }
+
+        /* ---------- mobile ---------- */
+        @media (max-width: 640px) {
+            body { font-size: 16px; }
+            section { padding: 42px 0 6px; }
+            .hero { padding: 46px 0 6px; }
+            .highlights li { padding: 16px 18px 16px 58px; }
+            .highlights li::before { left: 16px; }
+            .sechead { gap: 12px; }
+            .ia .branch { margin-left: 10px; padding-left: 14px; }
+        }
+
+        @media print {
+            body { background: #fff; color: #111; }
+            .topbar { display: none; }
+            .card, .callout, .pillar, .person { border-color: #ccc; background: #fafafa; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===================== TOP BAR ===================== -->
+    <div class="topbar">
+        <div class="wrap">
+            <a class="brand" href="/zh/index.html">YIHAN.<em>LOU</em></a>
+            <div class="topbar-right">
+                <a class="ghost" href="/zh/work/ugames/ugames.html">
+                    <span class="en">← Back to project</span>
+                    <span class="zh">← 返回项目页</span>
+                </a>
+                <button class="ghost" id="langToggle" type="button" aria-label="Switch language">
+                    <span class="en">中文</span>
+                    <span class="zh">EN</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== HERO ===================== -->
+    <header class="hero">
+        <div class="wrap">
+            <span class="eyebrow">
+                <span class="en">2025 · Web Platform · UI/UX Design</span>
+                <span class="zh">2025 · 网页平台 · UI/UX 设计</span>
+            </span>
+
+            <h1>
+                UGames 🕹️
+                <span class="accent">
+                    <span class="en">A Board Game Social Network</span>
+                    <span class="zh">桌游社交网络</span>
+                </span>
+            </h1>
+
+            <p class="sub">
+                <span class="en">Find a table. Host a table. Remember every game you ever played.</span>
+                <span class="zh">找到一张桌子，组起一张桌子，记住每一局。</span>
+            </p>
+
+            <p class="lede">
+                <span class="en">
+                    One platform that folds event organisation, social networking and play tracking into a single
+                    loop — designed to work equally well for someone who has never rolled a die and for the president
+                    of a weekly board game club.
+                </span>
+                <span class="zh">
+                    一个把「活动组织 + 社交网络 + 游玩记录」折叠进同一条闭环的平台 —— 让第一次掷骰子的人和每周办局的俱乐部主席，都能在同一套系统里顺畅地完成自己想做的事。
+                </span>
+            </p>
+
+            <figure style="margin-bottom:0">
+                <img src="./wwwCover.jpg" alt="UGames cover — Welcome to Your BoardGame Events" />
+                <figcaption>
+                    <span class="en">Cover screen — event spotlight, primary call-to-action and the neon board-game
+                        visual language.</span>
+                    <span class="zh">封面页 —— 活动推荐位、主行动点，以及贯穿全站的霓虹桌游视觉语言。</span>
+                </figcaption>
+            </figure>
+
+            <dl class="meta">
+                <div>
+                    <dt><span class="en">Role</span><span class="zh">我的角色</span></dt>
+                    <dd>
+                        <span class="en">UI/UX Designer — sole designer on the team; owned research, IA, visual
+                            system and prototype.</span>
+                        <span class="zh">UI/UX 设计师 —— 团队唯一设计师，负责用户研究、信息架构、视觉系统与高保真原型。</span>
+                    </dd>
+                </div>
+                <div>
+                    <dt><span class="en">Team</span><span class="zh">团队构成</span></dt>
+                    <dd>
+                        <span class="en">3 people — 1 Design · 1 Front-end · 1 Back-end &amp; DBA</span>
+                        <span class="zh">3 人 —— 1 设计 · 1 前端 · 1 后端与数据库</span>
+                    </dd>
+                </div>
+                <div>
+                    <dt><span class="en">Deliverables</span><span class="zh">交付物</span></dt>
+                    <dd>
+                        <span class="en">Competitive audit · User segmentation · Personas · IA · Visual
+                            system · Element library · Hi-fi prototype</span>
+                        <span class="zh">竞品审计 · 用户分层 · Persona · 信息架构 · 视觉系统 · 元素图形库 · 高保真原型</span>
+                    </dd>
+                </div>
+                <div>
+                    <dt><span class="en">Platform</span><span class="zh">平台范围</span></dt>
+                    <dd>
+                        <span class="en">Responsive web, with mobile accessibility &amp; push notifications scoped
+                            into the architecture.</span>
+                        <span class="zh">响应式网页，并在架构层预留移动端可访问性与通知推送能力。</span>
+                    </dd>
+                </div>
+            </dl>
+        </div>
+    </header>
+
+    <!-- ===================== 00 — GLOBAL OVERVIEW ===================== -->
+    <section id="overview">
+        <div class="wrap">
+            <div class="sechead">
+                <span class="num">01</span>
+                <div>
+                    <span class="kicker"><span class="en">In one minute</span><span class="zh">一分钟读懂</span></span>
+                    <h2>
+                        <span class="en">Project Overview</span>
+                        <span class="zh">全局项目简介</span>
+                    </h2>
+                </div>
+            </div>
+
+            <p>
+                <span class="en">
+                    UGames is a digital home for the tabletop community. Board gamers are already online — but they
+                    are spread across a database site for rules, a generic event site for meetups, and a map app for
+                    finding tables. <strong>Nobody owns the full journey.</strong> UGames takes the four things a
+                    board gamer actually does — <em>find a game, host a session, track plays, keep the crew
+                        together</em> — and builds them as one continuous experience, from first curiosity to a
+                    ten-year club archive.
+                </span>
+                <span class="zh">
+                    UGames 是为桌游社群打造的数字主场。桌游玩家其实早就在网上了 —— 但人被打散在三个地方：查规则用数据库站、约局用通用活动平台、找附近的人用地图应用。<strong>没有一个产品承接完整旅程。</strong>
+                    UGames 把桌游玩家真正在做的事 —— <em>找局、组局、记战绩、留住牌友</em> —— 做成了同一条连续体验：从第一次好奇，到一个十年的俱乐部档案。
+                </span>
+            </p>
+
+            <h3><span class="en">Five things worth knowing</span><span class="zh">五个最值得记住的点</span></h3>
+            <ol class="highlights">
+                <li>
+                    <span class="en"><b>A closed loop nobody else closes.</b> Event management, friend graph and play
+                        history live in one account, so a single action in one area feeds value into the other two.
+                        Competitors each cover one slice — and none of them connect the slices.</span>
+                    <span class="zh"><b>补上了没人补的那一环。</b>活动管理、好友关系、游玩记录共用同一个账号体系，任一处的动作都会给另外两处带来价值。竞品各自只覆盖其中一段，没有一家把三段接通。</span>
+                </li>
+                <li>
+                    <span class="en"><b>Designed for a spectrum, not an average.</b> Two-axis segmentation
+                        (experience level × play frequency) produced 4 user groups and 4 personas — from a 20-year-old
+                        who has never played, to a 40-year-old club president running quarterly tournaments. One IA
+                        serves all four.</span>
+                    <span class="zh"><b>为光谱设计，而不是为平均值设计。</b>用「经验水平 × 游玩频率」双轴切分出 4 类用户群与 4 个 Persona —— 从没玩过的 20 岁学生，到每季度办锦标赛的 40 岁俱乐部主席。同一套信息架构同时服务这四类人。</span>
+                </li>
+                <li>
+                    <span class="en"><b>IA cut by task, not by feature.</b> 11 screens organised as a hub-and-spoke:
+                        five entry hubs off the home page, a four-tab personal hub, and two cross-cutting concerns
+                        (mobile accessibility, notifications) promoted to architecture-level citizens.</span>
+                    <span class="zh"><b>按任务切 IA，而不是按功能切。</b>11 个页面组织成 hub-and-spoke 结构：首页分流出 5 个入口 hub，个人中心下设 4 个二级页，而「移动端可访问性」与「通知」被提升为贯穿全站的架构级议题，而不是事后补的浮层。</span>
+                </li>
+                <li>
+                    <span class="en"><b>A visual system built to scale.</b> A single typeface (DM Sans) at five
+                        weights and six sizes, a deliberate 60/30/10 colour split of ink black, neon cyan and orchid
+                        pink, and a six-piece illustration grammar that translates physical board-game objects into
+                        interface language.</span>
+                    <span class="zh"><b>可规模化复用的视觉系统。</b>单一字族 DM Sans × 5 个字重 × 6 级字阶；墨黑、霓虹青、兰紫粉刻意按 60/30/10 配比分工；6 件套插画语法把桌游的实体物件翻译成界面语言。</span>
+                </li>
+                <li>
+                    <span class="en"><b>Prototyped, not just specified.</b> The full journey — sign up → discover →
+                        register → connect → track — is clickable in Figma, and the design system shipped to
+                        front-end as a component-ready spec.</span>
+                    <span class="zh"><b>不止于文档，而是可点击的原型。</b>完整旅程 —— 注册 → 发现 → 报名 → 社交 → 记录 —— 在 Figma 中可交互走通；视觉系统以「可直接实现」的组件规格交付给前端。</span>
+                </li>
+            </ol>
+
+            <div class="callout pink">
+                <span class="label"><span class="en">Why it matters</span><span class="zh">为什么这件事值得做</span></span>
+                <p>
+                    <span class="en">
+                        Board gaming is a social hobby with an anti-social digital footprint. The hardest part of
+                        playing more is never the game — it is coordinating people. UGames is therefore designed as a
+                        <strong>coordination product first and a catalogue second</strong>: every screen is judged by
+                        whether it shortens the distance between "I'd like to play" and "we're playing on Thursday."
+                    </span>
+                    <span class="zh">
+                        桌游是社交爱好，却有着一个反社交的数字足迹。妨碍人多玩几局从来不是游戏本身，而是「凑人」。所以 UGames 的设计定位是<strong>先做协调工具，再做游戏目录</strong> ——
+                        每个页面的评判标准只有一个：它是否缩短了「我想玩」到「周四我们开局」之间的距离。
+                    </span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== 02 — PROBLEM & OPPORTUNITY ===================== -->
+    <section id="problem">
+        <div class="wrap">
+            <div class="sechead">
+                <span class="num">02</span>
+                <div>
+                    <span class="kicker"><span class="en">The starting point</span><span class="zh">设计思路起点</span></span>
+                    <h2>
+                        <span class="en">Problem &amp; Opportunity</span>
+                        <span class="zh">问题与机会</span>
+                    </h2>
+                </div>
+            </div>
+
+            <p>
+                <span class="en">
+                    The category is not empty — it is <strong>fragmented</strong>. Four established services each
+                    solved one dimension of the problem well, and each left a different dimension untouched. The
+                    audit below is deliberately written to credit what each competitor does better than us, because
+                    the opportunity only becomes visible once the strengths are honest.
+                </span>
+                <span class="zh">
+                    这个赛道并不空白，而是<strong>破碎</strong>。四个成熟服务各自把某一个维度解决得很好，同时各自留下了另一个没被碰过的维度。下表的审计刻意先写清每个竞品「比我们强在哪」—— 只有把强项写诚实了，机会点才看得见。
+                </span>
+            </p>
+
+            <div class="tablewrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><span class="en">Service</span><span class="zh">平台</span></th>
+                            <th><span class="en">Positioning</span><span class="zh">定位</span></th>
+                            <th><span class="en">What it does best</span><span class="zh">它最强的地方</span></th>
+                            <th><span class="en">The gap it leaves</span><span class="zh">它留下的空缺</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>BoardGameGeek</td>
+                            <td><span class="en">A monumental predecessor</span><span class="zh">丰碑级的行业前辈</span></td>
+                            <td><span class="en">An unrivalled game database, deep forums, and the community's shared
+                                    vocabulary for rating games.</span>
+                                <span class="zh">无人能及的桌游数据库、深度论坛，以及整个社群共用的评分语言。</span></td>
+                            <td><span class="en">Built as an information hub, not a social network — organising an
+                                    actual session is outside its model.</span>
+                                <span class="zh">本质是信息枢纽而非社交网络 —— 「真的把人约起来开一局」不在它的能力模型里。</span></td>
+                        </tr>
+                        <tr>
+                            <td>Meetup.com</td>
+                            <td><span class="en">Generic event platform</span><span class="zh">通用活动平台</span></td>
+                            <td><span class="en">Mature, trusted infrastructure for organising recurring local
+                                    events.</span>
+                                <span class="zh">成熟可信的本地活动组织基础设施，尤其擅长周期性活动。</span></td>
+                            <td><span class="en">Not vertical: no board-game metadata (game type, player count, rules
+                                    weight, teaching availability).</span>
+                                <span class="zh">不是垂直产品：没有桌游专属字段（游戏类型、人数、上手难度、是否愿意教学）。</span></td>
+                        </tr>
+                        <tr>
+                            <td>GameFor</td>
+                            <td><span class="en">Board game app</span><span class="zh">桌游工具型 App</span></td>
+                            <td><span class="en">Location-based discovery — genuinely good at surfacing games
+                                    happening near you.</span>
+                                <span class="zh">基于定位的发现能力 —— 在「找附近的局」这件事上确实做得好。</span></td>
+                            <td><span class="en">Limited social layer; relationships reset after each event instead of
+                                    compounding.</span>
+                                <span class="zh">社交层薄弱；每场活动结束后关系就归零，无法沉淀成长期牌友。</span></td>
+                        </tr>
+                        <tr>
+                            <td>The Board Game Atlas</td>
+                            <td><span class="en">Community</span><span class="zh">桌游社区</span></td>
+                            <td><span class="en">Combines a game database with active discussion and community
+                                    knowledge.</span>
+                                <span class="zh">把游戏库和活跃讨论结合起来，社群知识沉淀得好。</span></td>
+                            <td><span class="en">Optimised for discussion rather than doing — no event loop and no
+                                    personal play record.</span>
+                                <span class="zh">为「讨论」优化而非为「做事」优化 —— 没有组局闭环，也没有个人游玩记录。</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="callout">
+                <span class="label"><span class="en">Methodology</span><span class="zh">方法论</span></span>
+                <p>
+                    <span class="en">
+                        <strong>Competitive audit → gap positioning.</strong> Instead of asking "which features are
+                        missing?", the audit asked "which <em>scenario</em> is broken?". That reframing is what
+                        produced the positioning statement — the problem was never a missing button, it was a broken
+                        hand-off between deciding to play and actually playing.
+                    </span>
+                    <span class="zh">
+                        <strong>竞品审计 → 空白定位。</strong>审计没有问「谁少了哪个功能」，而是问「哪个<em>场景</em>是断的」。这个提问方式的转换直接产出了定位结论 ——
+                        用户遇到的从来不是少一个按钮，而是「决定要玩」和「真的玩上」之间那一次断裂的交接。
+                    </span>
+                </p>
+            </div>
+
+            <div class="callout pink">
+                <span class="label"><span class="en">Positioning statement</span><span class="zh">定位结论</span></span>
+                <p>
+                    <span class="en">
+                        A more complete, tailored experience that integrates <strong>event management, social
+                            networking and game tracking</strong> in a single, user-friendly platform — purpose-built
+                        for the board gaming community and for players at every level, from first-timers to veteran
+                        organisers.
+                    </span>
+                    <span class="zh">
+                        一个更完整、更贴合的体验：把<strong>活动管理、社交网络与游玩记录</strong>整合进同一个顺手的平台 ——
+                        专为桌游社群而建，并同时服务从第一次上手到资深组织者的所有段位。
+                    </span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== 03 — USERS ===================== -->
+    <section id="users">
+        <div class="wrap">
+            <div class="sechead">
+                <span class="num">03</span>
+                <div>
+                    <span class="kicker"><span class="en">Who we are designing for</span><span class="zh">为谁而设计</span></span>
+                    <h2>
+                        <span class="en">User Research</span>
+                        <span class="zh">用户研究</span>
+                    </h2>
+                </div>
+            </div>
+
+            <p>
+                <span class="en">
+                    "Board gamers" is too blunt a unit to design for — an 18-year-old's first session and a club
+                    president's quarterly tournament have almost nothing in common. So users were cut along
+                    <strong>two axes: experience level and play frequency</strong>, which produced four groups. One
+                    representative persona was then developed for each group, so that every later decision could
+                    answer a concrete question: <em>whose problem does this solve, and whose does it not?</em>
+                </span>
+                <span class="zh">
+                    「桌游玩家」这个单位太粗，无法用来做设计 —— 18 岁新手的第一次开局和俱乐部主席的季度锦标赛，几乎没有共同点。因此用户按<strong>两条轴切分：经验水平 × 游玩频率</strong>，得到四类用户群；再为每一类发展一个代表性
+                    Persona。这样后续每一个设计决策都能回答一个具体问题：<em>这解决了谁的什么问题，又没有解决谁的？</em>
+                </span>
+            </p>
+
+            <h3><span class="en">Four user groups</span><span class="zh">四类用户群</span></h3>
+            <div class="grid g4">
+                <div class="card">
+                    <span class="role"><span class="en">Newcomers</span><span class="zh">新手</span></span>
+                    <p><span class="en">People who are new to board gaming and looking for a way in.</span>
+                        <span class="zh">对桌游完全陌生，正在寻找切入方式的人。</span></p>
+                </div>
+                <div class="card pink">
+                    <span class="role"><span class="en">Casual players</span><span class="zh">休闲玩家</span></span>
+                    <p><span class="en">People who enjoy board games but play occasionally, or with a consistent
+                            group of friends.</span>
+                        <span class="zh">喜欢桌游，但只偶尔玩，或只跟固定的一小圈朋友玩。</span></p>
+                </div>
+                <div class="card">
+                    <span class="role"><span class="en">Veteran players</span><span class="zh">资深玩家</span></span>
+                    <p><span class="en">Experienced gamers who play frequently and often organise their own regular
+                            sessions.</span>
+                        <span class="zh">高频游玩的资深玩家，通常自己就在组织固定局。</span></p>
+                </div>
+                <div class="card pink">
+                    <span class="role"><span class="en">Associations / Clubs</span><span class="zh">协会 / 俱乐部</span></span>
+                    <p><span class="en">Organised groups dedicated to board gaming, frequently hosting large-scale or
+                            recurring events.</span>
+                        <span class="zh">有建制的桌游组织，经常承办大型或周期性活动。</span></p>
+                </div>
+            </div>
+
+            <figure>
+                <img src="./UserGroup.jpg" alt="User groups — newcomers, casual players, veteran players, associations and clubs" />
+                <figcaption>
+                    <span class="en">User groups — segmentation by experience level and play frequency.</span>
+                    <span class="zh">用户群 —— 按经验水平与游玩频率切分。</span>
+                </figcaption>
+            </figure>
+
+            <h3><span class="en">Four personas, four different pressures</span><span class="zh">四个 Persona，四种压力</span></h3>
+            <p>
+                <span class="en">
+                    Each persona was written with background, goals and challenges — the third field is the one that
+                    drove design, because a goal tells you what to build and a challenge tells you what to remove.
+                </span>
+                <span class="zh">
+                    每个 Persona 都包含背景、目标与挑战 —— 其中「挑战」才是真正驱动设计的字段：目标告诉你该做什么，挑战告诉你该拿掉什么。
+                </span>
+            </p>
+
+            <div class="grid g2">
+                <div class="card">
+                    <span class="role">Sarah · 20 · Student</span>
+                    <h4><span class="en">The Newcomer</span><span class="zh">新手代表</span></h4>
+                    <span class="mini"><span class="en">Background</span><span class="zh">背景</span></span>
+                    <p><span class="en">Always curious about board games, but has never had the opportunity to play
+                            much.</span>
+                        <span class="zh">一直对桌游很好奇，但一直没有真正上手的机会。</span></p>
+                    <span class="mini"><span class="en">Goals</span><span class="zh">目标</span></span>
+                    <ul>
+                        <li><span class="en">Learn about different types of board games.</span><span class="zh">了解不同类型的桌游。</span></li>
+                        <li><span class="en">Find beginner-friendly events to attend.</span><span class="zh">找到对新手友好的活动并参加。</span></li>
+                        <li><span class="en">Meet other new players to learn and play with.</span><span class="zh">认识其他新玩家，一起学、一起玩。</span></li>
+                    </ul>
+                    <span class="mini" style="margin-top:10px"><span class="en">Challenges</span><span class="zh">挑战</span></span>
+                    <ul>
+                        <li><span class="en">Feels intimidated by complex games.</span><span class="zh">面对复杂游戏容易有压力。</span></li>
+                        <li><span class="en">Doesn't know where to start.</span><span class="zh">不知道该从哪里开始。</span></li>
+                        <li><span class="en">Needs patient players willing to teach.</span><span class="zh">需要找得到有耐心教她的人。</span></li>
+                    </ul>
+                </div>
+
+                <div class="card pink">
+                    <span class="role">Mike · 30 · Teacher</span>
+                    <h4><span class="en">The Casual Player</span><span class="zh">休闲玩家代表</span></h4>
+                    <span class="mini"><span class="en">Background</span><span class="zh">背景</span></span>
+                    <p><span class="en">Plays with family and a small group of friends once or twice a
+                            month.</span>
+                        <span class="zh">每月和家人、一小圈朋友玩一两次。</span></p>
+                    <span class="mini"><span class="en">Goals</span><span class="zh">目标</span></span>
+                    <ul>
+                        <li><span class="en">Discover new games worth trying.</span><span class="zh">发现值得一试的新游戏。</span></li>
+                        <li><span class="en">Organise game nights with friends.</span><span class="zh">组织朋友间的游戏之夜。</span></li>
+                        <li><span class="en">Find local events when the regular group is unavailable.</span>
+                            <span class="zh">固定局凑不齐时，能找到本地散场。</span></li>
+                    </ul>
+                    <span class="mini" style="margin-top:10px"><span class="en">Challenges</span><span class="zh">挑战</span></span>
+                    <ul>
+                        <li><span class="en">Coordinating schedules across busy friends.</span><span class="zh">朋友们都很忙，排期极难协调。</span></li>
+                        <li><span class="en">Balancing gaming against other responsibilities.</span>
+                            <span class="zh">要在桌游和其他责任之间做取舍。</span></li>
+                        <li><span class="en">Finding events that fit his skill level and interests.</span>
+                            <span class="zh">找到匹配自己水平和兴趣的活动。</span></li>
+                    </ul>
+                </div>
+
+                <div class="card pink">
+                    <span class="role">Elena · 35 · Software Engineer</span>
+                    <h4><span class="en">The Veteran Player</span><span class="zh">资深玩家代表</span></h4>
+                    <span class="mini"><span class="en">Background</span><span class="zh">背景</span></span>
+                    <p><span class="en">An avid gamer for over a decade, with an extensive personal
+                            collection.</span>
+                        <span class="zh">玩了十几年桌游，家里收藏规模可观。</span></p>
+                    <span class="mini"><span class="en">Goals</span><span class="zh">目标</span></span>
+                    <ul>
+                        <li><span class="en">Organise regular gaming events.</span><span class="zh">组织固定周期的活动。</span></li>
+                        <li><span class="en">Connect with other experienced players.</span><span class="zh">认识同水平的资深玩家。</span></li>
+                        <li><span class="en">Keep track of games played and win rates.</span><span class="zh">记录玩过的游戏与胜率。</span></li>
+                    </ul>
+                    <span class="mini" style="margin-top:10px"><span class="en">Challenges</span><span class="zh">挑战</span></span>
+                    <ul>
+                        <li><span class="en">Managing multiple events and attendees.</span><span class="zh">多场活动与参与者的管理负担。</span></li>
+                        <li><span class="en">Finding players for more complex or niche games.</span>
+                            <span class="zh">复杂或小众游戏找不到对口的玩家。</span></li>
+                        <li><span class="en">Balancing competition with a welcoming atmosphere.</span>
+                            <span class="zh">要兼顾竞技感和友好的欢迎氛围。</span></li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <span class="role">Tom · 40 · Club President</span>
+                    <h4><span class="en">The Association Representative</span><span class="zh">协会代表</span></h4>
+                    <span class="mini"><span class="en">Background</span><span class="zh">背景</span></span>
+                    <p><span class="en">Leads a local board game association that hosts weekly meetups and quarterly
+                            tournaments.</span>
+                        <span class="zh">带领本地桌游协会，每周办固定局、每季度办锦标赛。</span></p>
+                    <span class="mini"><span class="en">Goals</span><span class="zh">目标</span></span>
+                    <ul>
+                        <li><span class="en">Attract new members to the association.</span><span class="zh">为协会拉新成员。</span></li>
+                        <li><span class="en">Organise and promote large-scale events.</span><span class="zh">组织并推广大型活动。</span></li>
+                        <li><span class="en">Maintain records of club activity and member participation.</span>
+                            <span class="zh">留存俱乐部活动与参与度记录。</span></li>
+                    </ul>
+                    <span class="mini" style="margin-top:10px"><span class="en">Challenges</span><span class="zh">挑战</span></span>
+                    <ul>
+                        <li><span class="en">Catering to wildly different skill levels and interests.</span>
+                            <span class="zh">要同时照顾差异极大的水平和兴趣。</span></li>
+                        <li><span class="en">Managing logistics for large events.</span><span class="zh">大型活动的后勤与协调。</span></li>
+                        <li><span class="en">Keeping long-term members engaged while welcoming newcomers.</span>
+                            <span class="zh">既要留住老成员，又要接住新人。</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <figure>
+                <img src="./Persona.jpg" alt="Personas — Sarah, Mike, Elena and Tom with background, goals and challenges" />
+                <figcaption>
+                    <span class="en">Persona board — background, goals and challenges for all four representative
+                        users.</span>
+                    <span class="zh">Persona 板 —— 四个代表性用户的背景、目标与挑战。</span>
+                </figcaption>
+            </figure>
+
+            <div class="callout">
+                <span class="label"><span class="en">Synthesis</span><span class="zh">研究综合</span></span>
+                <p>
+                    <span class="en">
+                        Reading the four challenge lists side by side, three recurring tensions emerged — and these,
+                        not the feature requests, became the actual design brief:
+                    </span>
+                    <span class="zh">
+                        把四份「挑战」并排放在一起看，浮现出三条反复出现的张力 —— 它们（而不是功能清单）才是真正的设计任务书：
+                    </span>
+                </p>
+            </div>
+
+            <div class="grid g3">
+                <div class="pillar">
+                    <span class="tag"><span class="en">Tension 01</span><span class="zh">张力 01</span></span>
+                    <h4><span class="en">Threshold</span><span class="zh">门槛</span></h4>
+                    <p><span class="en">Newcomers are afraid of complexity and don't know where to start; veterans
+                            need harder, more niche tables.</span>
+                        <span class="zh">新手怕复杂、不知从何下手；资深玩家却需要更硬核、更小众的局。同一套入口要同时降低和抬高门槛。</span></p>
+                    <p style="margin-top:8px"><span class="en"><strong>→ Drives:</strong> skill-level tagging and
+                            filtering in discovery.</span>
+                        <span class="zh"><strong>→ 推导出：</strong>发现环节的「段位标签 + 筛选」。</span></p>
+                </div>
+                <div class="pillar">
+                    <span class="tag"><span class="en">Tension 02</span><span class="zh">张力 02</span></span>
+                    <h4><span class="en">Coordination</span><span class="zh">协调</span></h4>
+                    <p><span class="en">Casual players are blocked by friends' calendars; organisers must manage large
+                            groups with mixed abilities.</span>
+                        <span class="zh">休闲玩家卡在朋友的时间表上；组织者则要管一大群水平参差的人。</span></p>
+                    <p style="margin-top:8px"><span class="en"><strong>→ Drives:</strong> structured event creation,
+                            shared calendar, notifications.</span>
+                        <span class="zh"><strong>→ 推导出：</strong>结构化的事件创建、统一日历、通知提醒。</span></p>
+                </div>
+                <div class="pillar">
+                    <span class="tag"><span class="en">Tension 03</span><span class="zh">张力 03</span></span>
+                    <h4><span class="en">Retention</span><span class="zh">留存</span></h4>
+                    <p><span class="en">One-off events leak people; there is nothing that turns a good evening into a
+                            lasting group.</span>
+                        <span class="zh">一次性活动留不住人；没有任何东西能把「一个愉快的晚上」变成「一个长期的小圈子」。</span></p>
+                    <p style="margin-top:8px"><span class="en"><strong>→ Drives:</strong> tagging-based friend
+                            graph, play history, saved games.</span>
+                        <span class="zh"><strong>→ 推导出：</strong>标签化好友体系、游玩历史、收藏记录。</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== 04 — STRATEGY ===================== -->
+    <section id="strategy">
+        <div class="wrap">
+            <div class="sechead">
+                <span class="num">04</span>
+                <div>
+                    <span class="kicker"><span class="en">How the solution was shaped</span><span class="zh">解法如何成形</span></span>
+                    <h2>
+                        <span class="en">Design Strategy &amp; Principles</span>
+                        <span class="zh">设计策略与原则</span>
+                    </h2>
+                </div>
+            </div>
+
+            <p>
+                <span class="en">
+                    The three tensions map one-to-one onto three design pillars. This is the spine of the project:
+                    research produced tensions, tensions produced pillars, pillars produced screens. Nothing in the
+                    final UI exists without a line back to a persona's challenge.
+                </span>
+                <span class="zh">
+                    三条张力一一对应三大设计支柱。这是整个项目的脊柱：研究产出张力，张力产出支柱，支柱产出页面。最终 UI 里没有任何一个元素，是找不到一条线回溯到某个 Persona 的挑战的。
+                </span>
+            </p>
+
+            <div class="grid g3">
+                <div class="pillar">
+                    <span class="tag"><span class="en">Pillar 01</span><span class="zh">支柱 01</span></span>
+                    <h4><span class="en">Discover</span><span class="zh">发现</span></h4>
+                    <p><span class="en">Push the <em>right</em> table in front of the user instead of asking them to
+                            browse. Public event listings, search and filter by game type, player count, time and
+                            skill level.</span>
+                        <span class="zh">把「<em>合适的</em>那张桌子」推到用户面前，而不是让他自己去翻列表。公开活动列表 + 按游戏类型、人数、时间、段位筛选。</span></p>
+                </div>
+                <div class="pillar">
+                    <span class="tag"><span class="en">Pillar 02</span><span class="zh">支柱 02</span></span>
+                    <h4><span class="en">Organise</span><span class="zh">组织</span></h4>
+                    <p><span class="en">Drive the cost of coordination toward zero: a structured creation flow, a
+                            public/private toggle, friend invitations, and one calendar that shows everything coming
+                            up.</span>
+                        <span class="zh">把协调成本压到接近零：结构化创建流程、公开/私密切换、好友邀请，以及一个把「所有即将发生」装进去的日历。</span></p>
+                </div>
+                <div class="pillar">
+                    <span class="tag"><span class="en">Pillar 03</span><span class="zh">支柱 03</span></span>
+                    <h4><span class="en">Connect &amp; Track</span><span class="zh">连接与记录</span></h4>
+                    <p><span class="en">Turn one-off events into compounding relationships. Friends are taggable by
+                            preference and availability; play history and saved games make progress visible.</span>
+                        <span class="zh">把一次性活动变成会复利的关系。好友可按偏好和可约时间打标签；游玩历史与收藏记录让「积累」看得见。</span></p>
+                </div>
+            </div>
+
+            <h3><span class="en">Five design principles</span><span class="zh">五条设计原则</span></h3>
+            <ol>
+                <li><span class="en"><strong>Level-agnostic entry.</strong> Every entry point works for someone at
+                        their first game and someone at their five-hundredth — achieved through the same UI, differing
+                        only in filter defaults.</span>
+                    <span class="zh"><strong>全段位可进入。</strong>每个入口对第一次玩的人和玩了五百次的人都成立 —— 用同一套 UI 实现，只通过筛选默认值区分。</span></li>
+                <li><span class="en"><strong>Three clicks to the core action.</strong> Join an event, create an event
+                        and edit a profile are each reachable within three interactions from the home
+                        page.</span>
+                    <span class="zh"><strong>核心动作三次点击可达。</strong>报名活动、创建活动、编辑资料，都能在首页起三次交互内完成。</span></li>
+                <li><span class="en"><strong>Create once, reuse everywhere.</strong> One event object serves the
+                        listing, the calendar, the notification and the history — no duplicate data entry for the
+                        organiser.</span>
+                    <span class="zh"><strong>一次创建，多处复用。</strong>同一个活动对象同时供列表、日历、通知和历史使用 —— 组织者不需要重复录入。</span></li>
+                <li><span class="en"><strong>Public and private are equals.</strong> Private sessions are not an
+                        edge case bolted on; they are a first-class toggle in the creation flow, because most casual
+                        play happens among friends.</span>
+                    <span class="zh"><strong>公开与私密同等重要。</strong>私密局不是事后补的边缘情况，而是创建流程里的一等选项 —— 因为大多数休闲局本来就发生在朋友之间。</span></li>
+                <li><span class="en"><strong>Mobile is not a shrunken desktop.</strong> Accessibility and push
+                        notifications are designed into the architecture upfront rather than retrofitted.</span>
+                    <span class="zh"><strong>移动端不是缩小版桌面。</strong>可访问性与通知推送在架构阶段就被设计进去，而不是后期打补丁。</span></li>
+            </ol>
+
+            <h3><span class="en">Non-goals — what UGames deliberately does not do</span><span class="zh">非目标 —— UGames 刻意不做的事</span></h3>
+            <div class="tablewrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><span class="en">Out of scope</span><span class="zh">不在范围内</span></th>
+                            <th><span class="en">Why</span><span class="zh">原因</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="en">Rules teaching &amp; strategy content library</span><span class="zh">规则教学与攻略内容库</span></td>
+                            <td><span class="en">BoardGameGeek already owns this and does it far better. Duplicating it
+                                    would add cost and dilute focus.</span>
+                                <span class="zh">这是 BGG 的地盘，且它做得远比我们好。重复建设只会增加成本、稀释重点。</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="en">Real-time chat / voice</span><span class="zh">实时聊天 / 语音</span></td>
+                            <td><span class="en">High moderation and infrastructure cost; asynchronous invitations
+                                    and reminders cover the coordination need for this version.</span>
+                                <span class="zh">审核与基建成本极高；在这一版里，异步邀请与提醒已经足够覆盖协调需求。</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="en">In-game scoring, ranking or tournaments engine</span><span class="zh">对战计分、排行榜、赛事引擎</span></td>
+                            <td><span class="en">UGames is a coordination platform, not a competitive one. "Win rate"
+                                    is a personal record, not a leaderboard.</span>
+                                <span class="zh">UGames 是协调平台，不是竞技平台。「胜率」是个人记录，不是排行榜。</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="en">Marketplace / second-hand trading</span><span class="zh">商城 / 二手交易</span></td>
+                            <td><span class="en">Introduces payment, dispute and logistics complexity with no direct
+                                    benefit to the core loop.</span>
+                                <span class="zh">会引入支付、纠纷与物流复杂度，而核心闭环并不因此受益。</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== 05 — IA ===================== -->
+    <section id="ia">
+        <div class="wrap">
+            <div class="sechead">
+                <span class="num">05</span>
+                <div>
+                    <span class="kicker"><span class="en">Structure</span><span class="zh">结构设计</span></span>
+                    <h2>
+                        <span class="en">Information Architecture</span>
+                        <span class="zh">信息架构</span>
+                    </h2>
+                </div>
+            </div>
+
+            <p>
+                <span class="en">
+                    Eleven screens are organised as a <strong>hub-and-spoke</strong>: the home page only routes, the
+                    two dense hubs (events, personal) do the work, and every leaf is two levels deep at
+                    most. Naming was kept to the user's verbs — <em>search, create, save, notify</em> — rather than
+                    internal module names, so the structure is learnable from the labels alone.
+                </span>
+                <span class="zh">
+                    11 个页面组织为 <strong>hub-and-spoke</strong> 结构：首页只负责分流，两个高密度 hub（活动、个人）承担主要工作，所有叶子页面最深不超过两级。命名统一用用户的动词 ——
+                    <em>搜索、创建、收藏、通知</em> —— 而不是内部模块名，让结构单靠标签就能学会。
+                </span>
+            </p>
+
+            <div class="ia">
+                <span class="lvl0">Home Page</span>
+                <div class="branch">
+
+                    <div class="node">
+                        <strong><span class="en">Event Search Page</span><span class="zh">活动搜索页</span></strong>
+                        <span class="d"><span class="en">A list of public events users can join · search and filter
+                                options</span><span class="zh">可加入的公开活动列表 · 搜索与筛选</span></span>
+                    </div>
+
+                    <div class="node">
+                        <strong><span class="en">Event Creation Page</span><span class="zh">活动创建页</span></strong>
+                        <span class="d"><span class="en">Event creation form · public/private toggle · invite friends
+                                option</span><span class="zh">活动创建表单 · 公开/私密切换 · 邀请好友</span></span>
+                    </div>
+
+                    <div class="node">
+                        <strong><span class="en">Profile Page</span><span class="zh">个人中心</span></strong>
+                        <span class="d"><span class="en">Edit profile · personal event calendar · friend list</span><span class="zh">编辑资料 · 个人活动日历 · 好友列表</span></span>
+                        <div class="subs">
+                            <span class="sub"><span class="en">My Event (Calendar)</span><span class="zh">我的活动（日历）</span></span>
+                            <span class="sub">Saved &amp; History</span>
+                            <span class="sub"><span class="en">Notification Page</span><span class="zh">通知页</span></span>
+                            <span class="sub"><span class="en">Friends Page</span><span class="zh">好友页</span></span>
+                        </div>
+                    </div>
+
+                    <div class="node">
+                        <strong><span class="en">Sign-up / Login Page</span><span class="zh">注册 / 登录页</span></strong>
+                        <span class="d"><span class="en">Sign-up and login forms · social login · password
+                                recovery</span><span class="zh">注册与登录表单 · 社交账号登录 · 密码找回</span></span>
+                    </div>
+
+                    <div class="node">
+                        <strong><span class="en">About / Info Page</span><span class="zh">关于 / 信息页</span></strong>
+                        <span class="d"><span class="en">Introduction to UGames · service explanation</span><span class="zh">UGames 介绍 · 服务说明</span></span>
+                    </div>
+
+                    <div class="cross">
+                        <strong><span class="en">Cross-cutting: </span><span class="zh">贯穿全站：</span></strong>
+                        <span class="en">Mobile accessibility &amp; notification push</span>
+                        <span class="zh">移动端可访问性 与 通知推送</span>
+                    </div>
+                </div>
+            </div>
+
+            <figure>
+                <img src="./UGames-MainStructure&amp;KeyFeatures.jpg" alt="UGames main structure and key features sitemap" />
+                <figcaption>
+                    <span class="en">Main structure &amp; key features — the shipped sitemap behind the layout
+                        above.</span>
+                    <span class="zh">主结构与核心功能 —— 上方结构的原始站点地图。</span>
+                </figcaption>
+            </figure>
+
+            <div class="callout">
+                <span class="label"><span class="en">Methodology</span><span class="zh">方法论</span></span>
+                <p>
+                    <span class="en">
+                        <strong>Task-driven IA.</strong> Two decisions are worth calling out. First, the home page was
+                        stripped of content until it only routes — the featured-event block is the single exception,
+                        because it doubles as the proof that the platform is alive. Second, <strong>notifications were
+                            made a page, not a popover</strong>: because they carry two different kinds of information
+                        (event reminders and friend activity), users need to be able to come back and read them, which
+                        a transient toast cannot support.
+                    </span>
+                    <span class="zh">
+                        <strong>任务驱动的信息架构。</strong>有两个决策值得单独说明。其一，首页被删减到只做分流 —— 唯一的例外是活动推荐位，因为它同时证明了「这个平台是活的」。其二，<strong>通知被做成页面，而不是浮层</strong>：因为它同时承载两类不同信息（活动提醒与好友动态），用户需要有「回头再看一遍」的入口，而瞬时消失的 toast 做不到这件事。
+                    </span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== 06 — VISUAL SYSTEM ===================== -->
+    <section id="visual">
+        <div class="wrap">
+            <div class="sechead">
+                <span class="num">06</span>
+                <div>
+                    <span class="kicker"><span class="en">System design</span><span class="zh">系统设计</span></span>
+                    <h2>
+                        <span class="en">Visual System</span>
+                        <span class="zh">视觉系统</span>
+                    </h2>
+                </div>
+            </div>
+
+            <p>
+                <span class="en">
+                    The visual system had one job: make a digital product feel like it belongs on a table. That meant
+                    neon, high-contrast, slightly retro graphics — and then a set of rules strict enough that the
+                    playfulness never becomes noise.
+                </span>
+                <span class="zh">
+                    这套视觉系统只有一个任务：让一个数字产品，感觉像是属于一张桌子的。这需要霓虹、高对比、略带复古的图形 —— 但随后必须配上一套足够严格的规则，让这种趣味性永远不会变成噪音。
+                </span>
+            </p>
+
+            <h3><span class="en">Typography — one family, six sizes</span><span class="zh">字体 —— 一个字族，六级字阶</span></h3>
+            <div class="tablewrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><span class="en">Role</span><span class="zh">层级</span></th>
+                            <th><span class="en">Spec</span><span class="zh">规格</span></th>
+                            <th><span class="en">Used for</span><span class="zh">用途</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Display</td>
+                            <td>DM Sans · ExtraBold · 64</td>
+                            <td><span class="en">Hero titles, event spotlights</span><span class="zh">主视觉标题、活动推荐位</span></td>
+                        </tr>
+                        <tr>
+                            <td>H1</td>
+                            <td>DM Sans · Bold / Medium · 40</td>
+                            <td><span class="en">Page titles</span><span class="zh">页面标题</span></td>
+                        </tr>
+                        <tr>
+                            <td>H2</td>
+                            <td>DM Sans · SemiBold / Medium · 32</td>
+                            <td><span class="en">Section headers, card titles</span><span class="zh">区块标题、卡片标题</span></td>
+                        </tr>
+                        <tr>
+                            <td>H3</td>
+                            <td>DM Sans · Bold / Medium / Regular · 24</td>
+                            <td><span class="en">Sub-sections, list headings</span><span class="zh">子区块、列表标题</span></td>
+                        </tr>
+                        <tr>
+                            <td>Body</td>
+                            <td>DM Sans · Medium / Regular · 16</td>
+                            <td><span class="en">All running text and metadata</span><span class="zh">所有正文与元信息</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="callout">
+                <span class="label"><span class="en">Methodology</span><span class="zh">方法论</span></span>
+                <p>
+                    <span class="en">
+                        <strong>One family, many weights.</strong> Committing to a single typeface reduces font
+                        payload and keeps the interface visually coherent; hierarchy is then carried by weight and
+                        size rather than by mixing families. DM Sans was chosen for its geometric roundness — it stays
+                        legible against a near-black background and holds up at display size, where a more neutral
+                        grotesque would feel flat against the neon.
+                    </span>
+                    <span class="zh">
+                        <strong>单一字族，多字重。</strong>只用一个字族能显著减少字体加载量，同时保持界面视觉一致；层级改由字重和字号承担，而不是靠混搭字族。选 DM Sans 是因为它的几何圆润感 ——
+                        在近黑背景上依然清晰，放大到展示级字号时也不塌；换成更中性的 grotesque 字族，在霓虹语境下会显得平板。
+                    </span>
+                </p>
+            </div>
+
+            <h3><span class="en">Colour — a 60/30/10 split with assigned duties</span><span class="zh">颜色 —— 60/30/10 配比，且各有分工</span></h3>
+            <div class="ratio">
+                <div class="r60">INK 60%</div>
+                <div class="r30">CYAN 30%</div>
+                <div class="r10">PINK 10%</div>
+            </div>
+            <div class="swatches">
+                <div class="sw">
+                    <div class="chip" style="background:#070203;border-bottom:1px solid rgba(255,255,255,.14)"></div>
+                    <div class="info"><code>#070203</code><span><span class="en">Ink — 60% base</span><span class="zh">墨黑 —— 60% 底色</span></span></div>
+                </div>
+                <div class="sw">
+                    <div class="chip" style="background:#39C8D3"></div>
+                    <div class="info"><code>#39C8D3</code><span><span class="en">Neon cyan — 30% primary / interactive</span><span class="zh">霓虹青 —— 30% 主色 / 交互态</span></span></div>
+                </div>
+                <div class="sw">
+                    <div class="chip" style="background:#E07DEF"></div>
+                    <div class="info"><code>#E07DEF</code><span><span class="en">Orchid pink — 10% accent / headings</span><span class="zh">兰紫粉 —— 10% 次强调 / 标题</span></span></div>
+                </div>
+                <div class="sw">
+                    <div class="chip" style="background:#3A69BF"></div>
+                    <div class="info"><code>#3A69BF</code><span><span class="en">Signal indigo — supporting layer</span><span class="zh">信号靛蓝 —— 辅助信息层</span></span></div>
+                </div>
+                <div class="sw">
+                    <div class="chip" style="background:#FFFFFF"></div>
+                    <div class="info"><code>#FFFFFF</code><span><span class="en">Pure white — text &amp; strokes</span><span class="zh">纯白 —— 文字与描边</span></span></div>
+                </div>
+            </div>
+            <div class="callout pink">
+                <span class="label"><span class="en">Methodology</span><span class="zh">方法论</span></span>
+                <p>
+                    <span class="en">
+                        <strong>Colour carries meaning, not decoration.</strong> Cyan always means "actionable" —
+                        links, selected states, primary buttons. Pink always means "identity" — brand marks, headings,
+                        emphasis. Because the two never swap roles, a user learns the system within a few screens.
+                        The 60% ink base exists purely to let the two neon accents stay loud without becoming
+                        fatiguing.
+                    </span>
+                    <span class="zh">
+                        <strong>颜色承载语义，而不是装饰。</strong>青色永远表示「可操作」—— 链接、选中态、主按钮；粉色永远表示「身份」—— 品牌标记、标题、强调。因为两者从不互换角色，用户看几屏就能学会这套系统。60%
+                        的墨黑底色存在，唯一目的就是让两种霓虹强调色可以一直响亮，却不会让人疲劳。
+                    </span>
+                </p>
+            </div>
+
+            <h3><span class="en">Element library — six objects, one grammar</span><span class="zh">元素库 —— 六个物件，一套语法</span></h3>
+            <p>
+                <span class="en">
+                    Six board-game objects were redrawn as interface illustrations: the board, the meeple, the hand of
+                    cards, the die, the token set, and the fanned deck. Each is built from the same three ingredients —
+                    heavy outline, diagonal hatch fill, duotone accent — so they read as one family at any size.
+                </span>
+                <span class="zh">
+                    六个桌游物件被重新绘制为界面插画：棋盘、棋子、手牌、骰子、筹码、展开的牌组。每一个都由同样的三种成分构成 —— 粗描边、斜线网纹填充、双色点缀 ——
+                    因此在任何尺寸下都被识别为同一个家族。
+                </span>
+            </p>
+            <figure>
+                <img src="./ElementDesign.jpg" alt="Element design — board, meeple, cards, die, tokens and fanned deck" />
+                <figcaption>
+                    <span class="en">Element library — six board-game objects sharing one illustration
+                        grammar.</span>
+                    <span class="zh">元素库 —— 六个桌游物件，共用同一套插画语法。</span>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="./FontsColors.jpg" alt="Font and colour specification" />
+                <figcaption>
+                    <span class="en">Type scale, colour tokens and the 60/30/10 distribution rule.</span>
+                    <span class="zh">字阶、颜色 token 与 60/30/10 配比规则。</span>
+                </figcaption>
+            </figure>
+            <div class="callout">
+                <span class="label"><span class="en">Methodology</span><span class="zh">方法论</span></span>
+                <p>
+                    <span class="en">
+                        <strong>A graphic grammar beats a pile of illustrations.</strong> Drawing six one-off
+                        pictures would have produced six inconsistent assets that break the moment they need to be
+                        resized or recoloured. Defining three shared rules instead means new objects can be added
+                        later by anyone, and every asset survives both a hero banner and a 24px icon.
+                    </span>
+                    <span class="zh">
+                        <strong>一套图形语法胜过一堆插画。</strong>画六张一次性的图，只会得到六个互不一致的素材，且一旦需要改尺寸或换色就会崩掉。改为定义三条共享规则，意味着后续任何人都能继续扩充新物件，且每个素材在 hero 大图和 24px
+                        图标两种场景下都成立。
+                    </span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== 07 — FEATURES ===================== -->
+    <section id="features">
+        <div class="wrap">
+            <div class="sechead">
+                <span class="num">07</span>
+                <div>
+                    <span class="kicker"><span class="en">What shipped</span><span class="zh">落地内容</span></span>
+                    <h2>
+                        <span class="en">Core Features</span>
+                        <span class="zh">核心功能</span>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="grid g2">
+                <div class="card">
+                    <h4><span class="en">Event management</span><span class="zh">活动管理</span></h4>
+                    <p><span class="en">Create public or private sessions with the fields board gamers actually need:
+                            game type, player count, location and time — so a listing answers "is this for me?"
+                            without a follow-up message.</span>
+                        <span class="zh">创建公开或私密局，字段就是桌游玩家真正要的那几个：游戏类型、人数、地点、时间 —— 让一条活动信息自己就能回答「这局适合我吗」，不需要再私聊追问。</span></p>
+                </div>
+                <div class="card">
+                    <h4><span class="en">Calendar view</span><span class="zh">日历视图</span></h4>
+                    <p><span class="en">Every upcoming event in one place, so members can plan a gaming schedule
+                            instead of discovering a clash after committing.</span>
+                        <span class="zh">把「所有即将发生」放在同一个地方，让成员能提前排期，而不是先答应下来才发现撞了。</span></p>
+                </div>
+                <div class="card">
+                    <h4><span class="en">Friends with tagging</span><span class="zh">好友与标签</span></h4>
+                    <p><span class="en">Connect with like-minded players and organise contacts by gaming preference
+                            or availability — turning a contact list into something you can actually query when
+                            forming a table.</span>
+                        <span class="zh">认识口味相投的玩家，并按游戏偏好或可约时间整理联系人 —— 把「通讯录」变成「组局时真的能查得动」的东西。</span></p>
+                </div>
+                <div class="card">
+                    <h4><span class="en">Saved games &amp; play history</span><span class="zh">收藏与游玩历史</span></h4>
+                    <p><span class="en">A personal record of games saved, games played and participation — the
+                            mechanic that gives veterans a reason to return after the event is over.</span>
+                        <span class="zh">记录收藏的游戏、玩过什么、参与过哪些活动 —— 这是让资深玩家在活动结束后仍有理由回来的机制。</span></p>
+                </div>
+                <div class="card">
+                    <h4><span class="en">Notification page</span><span class="zh">通知页</span></h4>
+                    <p><span class="en">Both event reminders and friend activity in one readable, revisitable
+                            destination — not a disappearing toast.</span>
+                        <span class="zh">活动提醒与好友动态汇总在一个可阅读、可回看的页面里 —— 而不是一闪而过的浮层。</span></p>
+                </div>
+                <div class="card">
+                    <h4><span class="en">Mobile accessibility &amp; push</span><span class="zh">移动可访问性与推送</span></h4>
+                    <p><span class="en">Scoped at architecture level rather than as an afterthought: a board game
+                            event almost always happens away from a desk, so social events are inherently a mobile
+                            use case.</span>
+                        <span class="zh">在架构层就被纳入，而非后期补丁：桌游活动几乎都发生在书桌之外，社交类事件天生就是移动场景。</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== 08 — PROTOTYPE ===================== -->
+    <section id="prototype">
+        <div class="wrap">
+            <div class="sechead">
+                <span class="num">08</span>
+                <div>
+                    <span class="kicker"><span class="en">Click through it</span><span class="zh">可交互走通</span></span>
+                    <h2>
+                        <span class="en">Interaction Prototype</span>
+                        <span class="zh">交互原型</span>
+                    </h2>
+                </div>
+            </div>
+            <p>
+                <span class="en">
+                    The full journey is prototyped end-to-end, because a coordination product cannot be evaluated
+                    from static screens — the value only appears when you follow one persona from "I'm curious" all
+                    the way to "see you Thursday."
+                </span>
+                <span class="zh">
+                    完整旅程做了端到端原型 —— 因为一个协调类产品无法用静态稿评估：它的价值只有当你跟着一个 Persona 从「我有点好奇」一路走到「周四见」的时候才会显现出来。
+                </span>
+            </p>
+            <iframe class="proto"
+                src="https://embed.figma.com/proto/iYuGIB05yItAks2UDD3ZBF/UGames---BoardGame-Social-Network?page-id=2441%3A1908&node-id=2441-2522&viewport=40%2C112%2C0.09&scaling=min-zoom&content-scaling=fixed&embed-host=share"
+                allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- ===================== 09 — TEAM ===================== -->
+    <section id="team">
+        <div class="wrap">
+            <div class="sechead">
+                <span class="num">09</span>
+                <div>
+                    <span class="kicker"><span class="en">Who built it</span><span class="zh">谁做的</span></span>
+                    <h2>
+                        <span class="en">Team &amp; Contributions</span>
+                        <span class="zh">团队与分工</span>
+                    </h2>
+                </div>
+            </div>
+            <div class="team">
+                <div class="person">
+                    <div class="who">Yihan Lou</div>
+                    <span class="what"><span class="en">UI/UX Designer</span><span class="zh">UI/UX 设计师</span></span>
+                    <p style="font-size:14.5px;margin:10px 0 0">
+                        <span class="en">Competitive audit, user segmentation, personas, IA, visual system, element
+                            library, hi-fi prototype.</span>
+                        <span class="zh">竞品审计、用户分层、Persona、信息架构、视觉系统、元素图形库、高保真原型。</span>
+                    </p>
+                </div>
+                <div class="person">
+                    <div class="who">Edgar Brunaud</div>
+                    <span class="what what-pink"><span class="en">Front-end Developer</span><span class="zh">前端开发</span></span>
+                    <p style="font-size:14.5px;margin:10px 0 0">
+                        <span class="en">Implemented the interface from the design system and prototype.</span>
+                        <span class="zh">依据设计系统与原型实现界面。</span>
+                    </p>
+                </div>
+                <div class="person">
+                    <div class="who">Loïc Remise–Seguin</div>
+                    <span class="what"><span class="en">Back-end Developer &amp; Database Administrator</span><span class="zh">后端开发与数据库管理</span></span>
+                    <p style="font-size:14.5px;margin:10px 0 0">
+                        <span class="en">Data model, accounts, event and friendship stores.</span>
+                        <span class="zh">数据模型、账号体系、活动与好友关系存储。</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== 10 — OUTCOME ===================== -->
+    <section id="outcome">
+        <div class="wrap">
+            <div class="sechead">
+                <span class="num">10</span>
+                <div>
+                    <span class="kicker"><span class="en">Honest accounting</span><span class="zh">诚实的复盘</span></span>
+                    <h2>
+                        <span class="en">Outcome, Limits &amp; Next</span>
+                        <span class="zh">成果、局限与下一步</span>
+                    </h2>
+                </div>
+            </div>
+
+            <h3><span class="en">What was delivered</span><span class="zh">交付了什么</span></h3>
+            <ul>
+                <li><span class="en">A competitive audit with gap positioning across four established
+                        services.</span>
+                    <span class="zh">覆盖四家成熟服务的竞品审计与空白定位。</span></li>
+                <li><span class="en">A two-axis segmentation model, four user groups and four fully specified
+                        personas.</span>
+                    <span class="zh">双轴用户分层模型、四类用户群与四个完整定义的 Persona。</span></li>
+                <li><span class="en">An 11-screen information architecture with documented rationale for its two
+                        contested decisions.</span>
+                    <span class="zh">11 个页面的信息架构，并为其中两个有争议的决策附上了论证。</span></li>
+                <li><span class="en">A complete visual system: type scale, colour tokens with semantic roles, and a
+                        six-piece reusable element library.</span>
+                    <span class="zh">完整的视觉系统：字阶、带语义分工的颜色 token、6 件套可复用元素库。</span></li>
+                <li><span class="en">A clickable high-fidelity prototype covering the full user journey, handed to
+                        front-end implementation.</span>
+                    <span class="zh">覆盖完整用户旅程的可交互高保真原型，并已交付前端实现。</span></li>
+            </ul>
+
+            <h3><span class="en">What we did not prove</span><span class="zh">我们没能证明的部分</span></h3>
+            <div class="callout pink">
+                <span class="label"><span class="en">Limitations</span><span class="zh">局限</span></span>
+                <p>
+                    <span class="en">
+                        The research here is <strong>desk-based and competitor-derived</strong>. The personas are
+                        reasonable constructions from grouped behaviour, not transcripts — no interviews were
+                        conducted with real board gamers, and no usability testing was run on the prototype.
+                        Consequently the personas should be treated as <strong>hypotheses to validate</strong>, not as
+                        evidence. The 3-click principle and the notification-as-a-page decision in particular are
+                        unverified assumptions that a first round of testing would likely challenge.
+                    </span>
+                    <span class="zh">
+                        本项目的研究是<strong>桌面研究 + 竞品推导</strong>的产物。Persona 是基于行为归类的合理建构，而不是访谈逐字稿 —— 我们没有对真实桌游玩家做访谈，也没有对原型跑过可用性测试。因此这些 Persona 应当被当作<strong>待验证的假设</strong>，而不是证据。
+                        尤其是「三次点击可达」原则与「通知做成页面」这两个决策，属于尚未验证的假设，第一轮测试很可能就会提出挑战。
+                    </span>
+                </p>
+            </div>
+
+            <h3><span class="en">What we would do next</span><span class="zh">接下来会做什么</span></h3>
+            <ol>
+                <li><span class="en"><strong>Validate the threshold assumption.</strong> Run a moderated usability
+                        test with five true newcomers (Sarah-type) to check whether skill tagging genuinely lowers the
+                        entry barrier, or merely relabels it.</span>
+                    <span class="zh"><strong>验证「门槛」假设。</strong>招募 5 位真正的新手（Sarah 型）做有主持的可用性测试，检验段位标签是真的降低了进入门槛，还是只是把门槛换了个说法。</span></li>
+                <li><span class="en"><strong>Test the organiser's load, not the player's.</strong> Tom-type club
+                        organisers are the heaviest users and the ones the retention loop depends on; the creation
+                        flow deserves its own round of task-based testing.</span>
+                    <span class="zh"><strong>测组织者的负担，而不是玩家的。</strong>Tom 型的俱乐部组织者是使用强度最高、也是留存闭环最依赖的人；创建流程值得单独做一轮任务型测试。</span></li>
+                <li><span class="en"><strong>Decide the notification model on evidence.</strong> Instrument whether
+                        users revisit the notification page at all — if they don't, the page is overhead and a digest
+                        email is the better answer.</span>
+                    <span class="zh"><strong>用证据决定通知形态。</strong>埋点观察用户到底会不会回看通知页 —— 如果不会，这个页面就是纯开销，改用摘要邮件更合适。</span></li>
+                <li><span class="en"><strong>Define the north-star metric.</strong> This project never picked one.
+                        The candidate — <em>number of repeat tables formed between at least two returning
+                            members</em> — measures the loop, not vanity activity.</span>
+                    <span class="zh"><strong>确定北极星指标。</strong>本项目从未选定一个。候选方案是「<em>至少两名复访成员之间重复组局的次数</em>」—— 它衡量的是闭环，而不是虚荣活跃度。</span></li>
+            </ol>
+
+            <div class="callout">
+                <span class="label"><span class="en">Takeaway</span><span class="zh">结论</span></span>
+                <p>
+                    <span class="en">
+                        The most transferable lesson from UGames is not the neon interface — it is that
+                        <strong>re-framing the question moved the design</strong>. Asking "which scenario is broken?"
+                        instead of "which feature is missing?" turned four separate products into one positioning
+                        gap, and turned four persona challenge lists into three concrete design pillars. A feature
+                        list would have shipped a fifth fragmented tool.
+                    </span>
+                    <span class="zh">
+                        UGames 最可迁移的经验不是那套霓虹界面 —— 而是<strong>换一个提问方式，就换掉了一整套设计</strong>。把「缺哪个功能」换成「哪个场景断了」，让四个各自成立的产品收敛成一个定位空白；也让四份 Persona 的挑战清单收敛成三根具体的设计支柱。如果当初按功能清单做，做出来的只会是第五个同样破碎的工具。
+                    </span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer>
+        <div class="wrap foot-inner">
+            <div>
+                <a class="ghost" href="/zh/work/ugames/ugames.html">
+                    <span class="en">← Back to project page</span>
+                    <span class="zh">← 返回项目页</span>
+                </a>
+            </div>
+            <div class="copyright">
+                <span class="en">© 2026 UGames project description — designed &amp; written by Yihan Lou</span>
+                <span class="zh">© 2026 UGames 项目说明 —— 由 Yihan Lou 设计与撰写</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var KEY = 'ugames-desc-lang';
+
+            function apply(lang) {
+                document.body.classList.toggle('lang-zh', lang === 'zh');
+                document.documentElement.lang = (lang === 'zh') ? 'zh-CN' : 'en';
+            }
+
+            // restore saved preference, default to the language of the page you came from
+            var saved = null;
+            try { saved = localStorage.getItem(KEY); } catch (e) { }
+            if (!saved) {
+                // /zh/ paths default to Chinese, otherwise English
+                saved = location.pathname.indexOf('/zh/') === 0 ? 'zh' : 'en';
+            }
+            apply(saved);
+
+            var btn = document.getElementById('langToggle');
+            if (btn) {
+                btn.addEventListener('click', function () {
+                    var next = document.body.classList.contains('lang-zh') ? 'en' : 'zh';
+                    apply(next);
+                    try { localStorage.setItem(KEY, next); } catch (e) { }
+                });
+            }
+        })();
+    </script>
+</body>
+
+</html>
