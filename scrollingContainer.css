@@ -2,6 +2,7 @@
     padding-top: 20px;
     padding-bottom: 10px;
     position: relative;
+    isolation: isolate; /* keep the z-index:-1 background video contained & never hidden behind an ancestor background */
     overflow: hidden;
     width: 100%; /* Adjust the width as needed */
     height: 100%; /* Adjust the height as needed */

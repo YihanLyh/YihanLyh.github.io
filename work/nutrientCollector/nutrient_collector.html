@@ -156,84 +156,295 @@
 
         <div class="projectContent">
             <div class="coverPic">
-                <img src="./NutrientCollectorCover.jpg" alt="NutrientCollectorCover" />
+                <img src="./NutrientCollectorCover.jpg"
+                    alt="Nutrient Collector — a VR underworld of glowing nutrient flora" />
             </div>
             <div class="heading2">Nutrient Collector 🌱 - The Living World Underground</div>
-            <div class="mainText">
-                <p>
-                    Nutrient Collector is a self-contained VR game letting the player collect to save the nutrients that
-                    drain away from the living world underground. By treasure finding and 'nutrient hunting', you are
-                    waking up the vivid underworld!
 
+            <!-- ============================================================ -->
+            <div class="execSummary">
+                <div class="esLabel">Bottom line</div>
+                <p class="esClaim">
+                    An ecological idea becomes a playable loop. Nutrient Collector asks the player to catch the
+                    nutrients draining away from a living underground world — and in doing so it never has to explain
+                    nutrient cycling, because the act of collecting <em>is</em> the explanation.
                 </p>
             </div>
-            <!-- 替换：原来的 iframe 
-            <iframe class="youtubeVideo" width="100%" height="100%" src="https://www.youtube.com/embed/77cAYHUdbgc"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-             -->
-            <video class="youtubeVideo" width="100%" height="100%" controls playsinline preload="metadata"
-                poster="./NutrientCollector_Poster.png" controlsList="nodownload" aria-label="Nutrient Collector trailer">
-                <source src="./NutrientCollectorTrailor_Yihan241006.mp4" type="video/mp4">
-                Your browser does not support embedded videos. Please <a href="./NutrientCollectorTrailor_Yihan241006.mp4" target="_blank">Click here to download or watch</a>。
-            </video>
 
-            <div class="contentPic">
-                <img src="./NutrientCollector_Poster.png" alt="NutrientCollector" />
+            <div class="statGrid">
+                <div class="stat"><span class="statNum">3</span><span class="statLabel">treasure boxes to find before
+                        the tool unlocks</span></div>
+                <div class="stat"><span class="statNum">100</span><span class="statLabel">points needed to win, against
+                        a countdown</span></div>
+                <div class="stat"><span class="statNum">2</span><span class="statLabel">locomotion modes —
+                        continuous movement and teleportation</span></div>
+                <div class="stat"><span class="statNum">1</span><span class="statLabel">self-contained VR build, no
+                        external dependencies</span></div>
             </div>
-            <div class="mainText">
+
+            <h3 class="secTitle"><span class="secNum">00</span>Executive Summary</h3>
+            <span class="csKicker">What this project is, and why it works</span>
+
+            <div class="csP">
                 <p>
-                    <b>LeftHand Controller:</b>
-                    <br>Continuous Movement, Teleportation
-                    <br><br>
-                    <b>RightHand Controller:</b>
-                    <br> Snap Turn, ‘Fire Energy Projectile’ later
-                    <br><br><br>
-                    <b>Game Logics:</b>
-                    <br><br>
-                    You first need to find and open 3 treasure boxes(you can move on the whole platform and teleport to
-                    some areas- those small discs), when completed, you will get the tool on the Right hand to 'collect'
-                    the 'nutrition bubbles' floating upwards from those giant underground livings.
-                    <br><br>
-                    By pressing the 'fire button', you can use the tool to 'fire energy' towards the target 'nutrition
-                    bubbles' to collect them and get 'scores'.
-                    <br><br>
-                    When 'scores' reach 100 points, you win the game, else if time runs out, failure. After 10s, game
-                    restart.
-                    <br><br>
-                    You can also use the 'Restart' button on the main UI Canvas to restart the game. Plus, if you fall
-                    off the edge of the platform, the game also restarts.
+                    Nutrient Collector is a self-contained VR game in which the player collects and saves the nutrients
+                    draining away from the living world underground. Through treasure finding and nutrient hunting, the
+                    player wakes up a vivid underworld that had been going dark.
                 </p>
             </div>
-            <div class="contentPic">
-                <img src="./NutrientCollector_1.jpg" alt="NutrientCollector1" />
-                <img src="./NutrientCollector_2.jpg" alt="NutrientCollector2" />
-                <img src="./NutrientCollector_3.jpg" alt="NutrientCollector3" />
-                <img src="./NutrientCollector_4.jpg" alt="NutrientCollector4" />
 
+            <ol class="hlList">
+                <li>
+                    <b>The mechanic is the message.</b> The game never explains the nutrient cycle — the player learns
+                    it by doing it. Nutrients drift upward and away, and the only way to keep the world alive is to
+                    catch them. That sentence is the entire design brief.
+                </li>
+                <li>
+                    <b>Scale carries the drama.</b> The scene is built around giant underground living things with the
+                    player at insect scale, so the environment reads as <em>alive</em> rather than as a level. The
+                    nutrient bubbles are not coins; they are something escaping from a body.
+                </li>
+                <li>
+                    <b>Onboarding is folded into the space.</b> The tool only unlocks after three treasure boxes are
+                    found, which forces the player to traverse the whole platform before facing any challenge. The
+                    tutorial is the map itself, not a pop-up.
+                </li>
+                <li>
+                    <b>Comfort was treated as a design requirement.</b> Both continuous movement and teleportation are
+                    offered, turning uses snap rather than smooth rotation, and falling off the platform restarts
+                    rather than penalises — VR comfort decisions made early, not patched in later.
+                </li>
+            </ol>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <tbody>
+                        <tr>
+                            <td>Format</td>
+                            <td>Self-contained VR game — first-person, single-player, session-based</td>
+                        </tr>
+                        <tr>
+                            <td>Scope</td>
+                            <td>Interaction design · VR gameplay mechanics · level &amp; environment design · UI/HUD · build</td>
+                        </tr>
+                        <tr>
+                            <td>Year</td>
+                            <td>2024</td>
+                        </tr>
+                        <tr>
+                            <td>Core loop</td>
+                            <td>Explore → open 3 treasure boxes → unlock the energy tool → fire at rising nutrient
+                                bubbles → reach 100 points</td>
+                        </tr>
+                        <tr>
+                            <td>Deliverables</td>
+                            <td>Playable VR build · trailer · poster &amp; control reference</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">01</span>Design Perspective</h3>
+            <span class="csKicker">Discipline: game &amp; interaction design</span>
+
+            <div class="csP">
+                <p>
+                    The design problem is not “build a VR scene” — that is an environment task. It is
+                    <strong>how do you make an abstract ecological process feel urgent in under two minutes</strong>,
+                    in a medium where the player can look anywhere and has no muscle memory to rely on.
+                </p>
+            </div>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <thead>
+                        <tr>
+                            <th>Design decision</th>
+                            <th>What it is</th>
+                            <th>Why it was made</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Collect, don't explain</td>
+                            <td>The nutrient cycle is expressed only as a verb.</td>
+                            <td>A player who has spent ninety seconds catching escaping nutrients understands loss
+                                and replenishment better than a paragraph of copy would manage.</td>
+                        </tr>
+                        <tr>
+                            <td>Gate the tool behind exploration</td>
+                            <td>Three treasure boxes must be found before the energy tool activates.</td>
+                            <td>It teaches the platform layout and the teleport points while the player still has
+                                nothing to fail at — the safest possible way to onboard.</td>
+                        </tr>
+                        <tr>
+                            <td>Make the world bigger than the player</td>
+                            <td>Giant underground organisms; the player is the smallest thing in the scene.</td>
+                            <td>Scale is what converts “a level with pickups” into “a body you are inside of”.</td>
+                        </tr>
+                        <tr>
+                            <td>Time-box the session</td>
+                            <td>A countdown to 100 points, with an automatic restart.</td>
+                            <td>A short, repeatable round suits a standing VR player far better than an open-ended
+                                level, and it makes a single arcade session legible to an observer.</td>
+                        </tr>
+                        <tr>
+                            <td>Punish nothing</td>
+                            <td>Falling off the platform restarts; the round resets after 10 seconds.</td>
+                            <td>VR failures should cost time, not progress — frustration in a headset is much more
+                                expensive than frustration at a keyboard.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="calloutBox">
+                <span class="cbLabel">Design intent</span>
+                <div class="csP">
+                    <p>
+                        The underworld starts dark and gets brighter as the player collects. The visual reward is not
+                        a score increase — it is the world coming back. That inversion is the whole point of the piece:
+                        the player is not winning points, they are
+                        <strong>keeping something alive</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">02</span>Technical Perspective</h3>
+            <span class="csKicker">Discipline: VR implementation</span>
+
+            <div class="csP">
+                <p>
+                    Technically the project is a <strong>self-contained VR build</strong>: a single continuous
+                    playable space with no loading, combining two locomotion systems, a projectile interaction, and a
+                    world-space UI — all of which have to remain comfortable for a player standing in the middle of
+                    them.
+                </p>
+            </div>
+
+            <div class="cardGrid g2">
+                <div class="csCard">
+                    <span class="cRole">Component 01</span>
+                    <h4>Dual locomotion</h4>
+                    <p>Continuous movement for players who can tolerate it, and teleportation to fixed discs for those
+                        who cannot. Offering both is what keeps the piece playable for the widest range of people
+                        without changing the level.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Component 02</span>
+                    <h4>Comfort-first turning</h4>
+                    <p>Snap turn rather than smooth rotation on the right stick — the standard mitigation for one of
+                        the most common causes of VR discomfort, chosen at design time rather than after playtesting
+                        complaints.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Component 03</span>
+                    <h4>Projectile interaction</h4>
+                    <p>The energy tool fires along a visible ray toward rising nutrient bubbles. The beam doubles as
+                        aiming feedback and as the visual language of the mechanic, so the player never has to be told
+                        what the tool does.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Component 04</span>
+                    <h4>World-space UI &amp; state machine</h4>
+                    <p>Score and countdown live on an in-world canvas alongside a restart button, with a state flow of
+                        explore → hunt → win or lose → auto-restart. Everything the player needs is in the scene, not
+                        on a flat screen.</p>
+                </div>
+            </div>
+
+            <h4 style="width:100%;max-width:1000px;font-size:17px;font-weight:600;margin:26px 0 0;">Controls</h4>
+            <div class="tableWrap">
+                <table class="csTable">
+                    <thead>
+                        <tr>
+                            <th>Input</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Left thumbstick</td>
+                            <td>Continuous movement</td>
+                        </tr>
+                        <tr>
+                            <td>Left index trigger</td>
+                            <td>Teleport to a target disc</td>
+                        </tr>
+                        <tr>
+                            <td>Right thumbstick</td>
+                            <td>Snap turn</td>
+                        </tr>
+                        <tr>
+                            <td>Right index trigger</td>
+                            <td>Fire the energy projectile at nutrient bubbles</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="calloutBox alt">
+                <span class="cbLabel">Why two locomotion modes</span>
+                <div class="csP">
+                    <p>
+                        A single locomotion system would have been simpler to build and would have excluded part of the
+                        audience. Because the level is laid out on a platform with teleport discs already present for
+                        puzzle reasons, supporting both cost almost nothing — a good example of a level-design decision
+                        and an accessibility decision being the same decision.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">03</span>Trailer &amp; Gallery</h3>
+            <span class="csKicker">The game running</span>
+
+            <div class="contentPic">
+                <video class="youtubeVideo" width="100%" height="100%" controls playsinline preload="metadata"
+                    poster="./NutrientCollector_Poster.png" controlsList="nodownload"
+                    aria-label="Nutrient Collector trailer">
+                    <source src="./NutrientCollectorTrailor_Yihan241006.mp4" type="video/mp4">
+                    Your browser does not support embedded videos. Please <a
+                        href="./NutrientCollectorTrailor_Yihan241006.mp4" target="_blank">click here to download or
+                        watch</a>.
+                </video>
+            </div>
+
+            <div class="csFigure">
+                <img src="./NutrientCollector_Poster.png"
+                    alt="Poster — score and countdown HUD, control diagram and the energy tool in use" />
+                <div class="csCap">Poster &amp; control reference — the in-world HUD (score, countdown, restart), the
+                    four control mappings, and the energy beam collecting a nutrient bubble.</div>
+            </div>
+
+            <div class="contentPic">
+                <img src="./NutrientCollector_1.jpg" alt="Nutrient Collector in-game still 1" />
+                <img src="./NutrientCollector_2.jpg" alt="Nutrient Collector in-game still 2" />
+                <img src="./NutrientCollector_3.jpg" alt="Nutrient Collector in-game still 3" />
+                <img src="./NutrientCollector_4.jpg" alt="Nutrient Collector in-game still 4" />
             </div>
         </div>
 
         <div class="linkContainer">
             
             <div class="linkPrev">
-                <a href="../yihanwebsite/yihanwebsite.html">
+                <a href="../intestineArchitecture/intestineArchitecture.html">
                     <div class="prevIcon">
                         <img src="../../images/iconPrev.svg" alt="iconPrev" />
                     </div>
                     <div class="prevTextContainer">
                         <div class="textPrevNext">PREV.</div>
-                        <div class="titlePrevNext">Yihan's Website💻</div>
+                        <div class="titlePrevNext">Intestine Architecture 🧇</div>
                     </div>
                 </a>
             </div>
             <div class="linkNext">
-                <a href="../intestineArchitecture/intestineArchitecture.html">
+                <a href="../cts/cts.html">
                     <div class="nextTextContainer">
                         <div class="textPrevNext">NEXT.</div>
-                        <div class="titlePrevNext">Intestine Architecture 🧇</div>
+                        <div class="titlePrevNext">Contamination to System 🌊</div>
                     </div>
                     <div class="prevIcon">
                         <img src="../../images/iconNext.svg" alt="iconNext" />

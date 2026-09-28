@@ -160,29 +160,407 @@
 
         <div class="projectContent">
             <div class="coverPic">
-                <img src="./vecover.jpg" alt="Cover" />
+                <img src="./vecover.jpg"
+                    alt="VR Escape — cutaway escape-room sets with stylised coloured player characters" />
             </div>
             <div class="heading2">VR ESCAPE 😶‍🌫️ – VR online escape room game strategy design</div>
-            <div class="mainText">
-                <p>
-                    VR ESCAPE is a service-oriented entertainment design project that aims to enhance the social and
-                    emotional
-                    experience of players in escape room games through customized team matching mechanisms and
-                    personalization.
-                    <br>
-                    <br>
-                    The business requirements of VR ESCAPE focus on addressing modern escape room enthusiasts’ demand
-                    for personalized, immersive experiences by offering customized team matching and tailored settings,
-                    ultimately creating a highly interactive and emotionally engaging VR escape room service.
+
+            <!-- ============================================================ -->
+            <div class="execSummary">
+                <div class="esLabel">Bottom line</div>
+                <p class="esClaim">
+                    An escape room is a social product before it is a puzzle. Move it online and the team is usually
+                    assembled at random — so the room no longer fits the people in it. VR ESCAPE reverses the order: the
+                    platform first measures the <em>team</em> and the <em>space</em>, then recommends the theme, the
+                    storyline and the puzzle set that suit them.
                 </p>
             </div>
 
-            <div class="contentPic">
-                <h3>User Experience</h3>
-                <img src="./ve1.jpg" alt="" />
-                <h3>Service Design</h3>
-                <img src="./ve2.jpg" alt="" />
-                <img src="./ve3.jpg" alt="" />
+            <div class="statGrid">
+                <div class="stat"><span class="statNum">5</span><span class="statLabel">steps in the customisation flow
+                        — team, theme, storyline, modules, gameplay</span></div>
+                <div class="stat"><span class="statNum">4</span><span class="statLabel">player roles matched — shaper,
+                        implementer, monitor evaluator, teamworker</span></div>
+                <div class="stat"><span class="statNum">3</span><span class="statLabel">scene module types — nested,
+                        hidden and multiplayer space</span></div>
+                <div class="stat"><span class="statNum">50</span><span class="statLabel">minute session, generated per
+                        team rather than fixed</span></div>
+            </div>
+
+            <h3 class="secTitle"><span class="secNum">00</span>Executive Summary</h3>
+            <span class="csKicker">What this project is, and why it works</span>
+
+            <div class="csP">
+                <p>
+                    VR ESCAPE is a service-oriented entertainment design project that aims to improve the social and
+                    emotional experience of players in escape room games through customised team-matching mechanisms and
+                    personalisation. Its business requirement is specific: modern escape room enthusiasts want
+                    personalised, immersive experiences, and the way to give it to them is customised team matching plus
+                    settings tailored to the resulting team — producing a highly interactive and emotionally engaging VR
+                    escape room service.
+                </p>
+            </div>
+
+            <ol class="hlList">
+                <li>
+                    <b>The design strategy is stated as a player constraint, not a feature list.</b> The whole project
+                    runs on one rule — <em>make game contents more suitable for the player's characteristics</em>. Every
+                    mechanism below exists to serve that rule, which is why the team is matched before the room is
+                    chosen rather than after.
+                </li>
+                <li>
+                    <b>Customisation operates on three dials, not one.</b> The platform adapts team composition
+                    (who plays), game mode (how they play) and difficulty (how hard it gets) — and the media it uses to
+                    do this are VR and real <em>space measurement</em>, which is what makes an online room physically
+                    believable.
+                </li>
+                <li>
+                    <b>The room is built from modules, so it can be recombined rather than rebuilt.</b> Scene modules
+                    (nested, hidden, multiplayer space) and puzzle modules are combined per theme. That is what makes
+                    per-team customisation economically possible instead of a bespoke build for every session.
+                </li>
+                <li>
+                    <b>The system's rules are designed to be socially safe.</b> Players are matched to fill the roles a
+                    team is missing and to avoid role clashes, and the game's first instruction is a cooperative one —
+                    take cover together when the alarm sounds. Engagement is designed to come from the group, not from a
+                    difficulty spike.
+                </li>
+            </ol>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <tbody>
+                        <tr>
+                            <td>Format</td>
+                            <td>Service-oriented entertainment design — VR escape room service, system rules and game
+                                strategy</td>
+                        </tr>
+                        <tr>
+                            <td>Scope</td>
+                            <td>Business requirements · user journey · team-matching mechanism · spatial measurement ·
+                                module system · storyline generation · scenario design</td>
+                        </tr>
+                        <tr>
+                            <td>Year</td>
+                            <td>2022.01 – 2022.03</td>
+                        </tr>
+                        <tr>
+                            <td>Team</td>
+                            <td>Individual project</td>
+                        </tr>
+                        <tr>
+                            <td>Key concept</td>
+                            <td>Make the team composition and game mode customised to some extent — media: VR and
+                                space measurement</td>
+                        </tr>
+                        <tr>
+                            <td>Deliverables</td>
+                            <td>Design strategy &amp; flow · journey map · matching mechanism · spatial requirements
+                                spec · scene &amp; puzzle module system · generated storyline example · user-perspective
+                                scenario</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">01</span>Design Perspective</h3>
+            <span class="csKicker">Discipline: service design &amp; player research</span>
+
+            <div class="csP">
+                <p>
+                    The customisation system runs as a five-step flow from team to gameplay. Each step narrows the
+                    experience around the actual players in front of it, so that by the time the room exists it is
+                    already shaped by who is in it.
+                </p>
+            </div>
+
+            <div class="cardGrid g3">
+                <div class="csCard">
+                    <span class="cRole">Step 01</span>
+                    <h4>Team composition</h4>
+                    <p>Recommend and confirm the type of player team composition — the input that everything downstream
+                        depends on.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Step 02</span>
+                    <h4>Theme</h4>
+                    <p>Recommend suitable themes for the team to select from, matched to the composition rather than
+                        listed generically.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Step 03</span>
+                    <h4>Storyline</h4>
+                    <p>Define the storyline and combine scene modules of the theme with a corresponding difficulty
+                        level.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Step 04</span>
+                    <h4>Puzzle modules</h4>
+                    <p>Define the puzzle module and the tools that will be needed, so the difficulty is set by content
+                        rather than by vague tuning.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Step 05</span>
+                    <h4>Gameplay</h4>
+                    <p>Confirm the specific gameplay for this session — the point at which the customised configuration
+                        becomes a concrete room.</p>
+                </div>
+            </div>
+
+            <div class="calloutBox">
+                <span class="cbLabel">Key concept</span>
+                <div class="csP">
+                    <p>
+                        <strong>Make the team composition and game mode customised to some extent.</strong> The word
+                        <em>some</em> is deliberate: the system does not attempt to tailor everything, only the variables
+                        a platform can actually control — team, theme, storyline, module set and difficulty. Partial
+                        customisation is what keeps the service buildable at scale.
+                    </p>
+                </div>
+            </div>
+
+            <h3 class="secTitle"><span class="secNum">02</span>Technical Perspective</h3>
+            <span class="csKicker">Discipline: VR spatial capture &amp; system rules</span>
+
+            <div class="csP">
+                <p>
+                    An online escape room is only immersive if the physical space is real to the player. The project
+                    therefore starts by measuring the <strong>play space</strong> and converting it into a game map — the
+                    step that grounds every later module in a room that actually exists.
+                </p>
+            </div>
+
+            <div class="cardGrid g2">
+                <div class="csCard">
+                    <span class="cRole">Spatial requirements</span>
+                    <h4>What the space must be</h4>
+                    <p>The play area should be basically empty, ideally a cubed combined or connected space, with sharp
+                        objects and slip-and-fall hazards removed. These are stated as requirements because unmanaged
+                        geometry is the main risk in room-scale VR.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Space information</span>
+                    <h4>What gets captured</h4>
+                    <p>Length, width and height, plus the relationships between spaces, are captured and uploaded. That
+                        data generates the virtual space map the game is then laid into.</p>
+                </div>
+            </div>
+
+            <div class="calloutBox alt">
+                <span class="cbLabel">Why measure rather than use a fixed virtual room</span>
+                <div class="csP">
+                    <p>
+                        A fixed virtual set is never quite right in a real room — walls land where furniture is, and the
+                        player has to keep re-anchoring themselves. Measuring first means the virtual room is derived
+                        from the player's own space, so walking into a virtual wall corresponds to something real. It is
+                        also what makes the service deliverable in ordinary homes rather than only in fitted venues.
+                    </p>
+                </div>
+            </div>
+
+            <h3 class="secTitle"><span class="secNum">03</span>Matching &amp; Module System</h3>
+            <span class="csKicker">Discipline: system design &amp; content architecture</span>
+
+            <div class="csP">
+                <p>
+                    Matching and content are the two halves of the same mechanism. Players are sorted into four roles
+                    and given a team level; the room is assembled from scene and puzzle modules according to what that
+                    produces.
+                </p>
+            </div>
+
+            <div class="cardGrid g4">
+                <div class="csCard">
+                    <span class="cRole">Role 01 · Lv.2</span>
+                    <h4>Shaper</h4>
+                    <p>Tends to drive the team. Here paired with an existing friend, so at least part of the group
+                        arrives with an established working relationship.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Role 02 · Lv.1</span>
+                    <h4>Implementer</h4>
+                    <p>The second of the pre-paired "friends together" slots — the pair anchors the team's stability
+                        before strangers are added.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Role 03 · Lv.1</span>
+                    <h4>Monitor Evaluator</h4>
+                    <p>Filled by AI recommendation, chosen to complement the roles already present rather than to
+                        duplicate them.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Role 04 · Lv.2</span>
+                    <h4>Teamworker</h4>
+                    <p>The fourth slot, also AI-recommended — the role that keeps a mixed group of strangers working
+                        together under time pressure.</p>
+                </div>
+            </div>
+
+            <div class="calloutBox">
+                <span class="cbLabel">How the recommendation actually runs</span>
+                <div class="csP">
+                    <p>
+                        Where two players both belong to <strong>Type C (action-oriented)</strong>, the AI recommends
+                        players of <strong>Type A (thinking)</strong> and <strong>Type B (socialising)</strong> at a
+                        similar team level, to raise the chance of good cooperation rather than to stack the team with
+                        the same disposition. Where the team is action-dominated and junior, the system recommends the
+                        simple mode and confrontation-based themes with multiple side missions — an appropriate
+                        challenge set, not a random one.
+                    </p>
+                </div>
+            </div>
+
+            <div class="csP">
+                <p>
+                    The room itself is assembled from two module families. Scene modules define what kind of space is
+                    being entered; puzzle modules define what can be done inside it.
+                </p>
+            </div>
+
+            <div class="cardGrid g3">
+                <div class="csCard">
+                    <span class="cRole">Scene module A</span>
+                    <h4>Nested space</h4>
+                    <p>Rooms contained within rooms, used to build gradual discovery.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Scene module B</span>
+                    <h4>Hidden space</h4>
+                    <p>Space that is concealed until the storyline reveals it — the module that carries the surprise.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Scene module C</span>
+                    <h4>Multiplayer space</h4>
+                    <p>Space built for coordinated action, which is what allows the group's roles to matter.</p>
+                </div>
+            </div>
+
+            <div class="cardGrid g2">
+                <div class="csCard">
+                    <span class="cRole">Puzzle inventory</span>
+                    <h4>What players can do</h4>
+                    <p>Unlock hidden areas (a prepared box, codes in wall space); turn on switches (machine, mechanism,
+                        lock, lights); get information (files, pictures, photos, second-hand information); get tools
+                        (the key, switch, sample container); and avoid negative elements — roles inside the game's
+                        storyline that work against them.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Combination rule</span>
+                    <h4>Layout &amp; route planning</h4>
+                    <p>Scene modules are laid out and unlocked in turn according to mission completion, and the puzzle
+                        modules are then laid over that route to flesh out each mission's content. The room is therefore
+                        sequenced by the story, not by an arbitrary floor plan.</p>
+                </div>
+            </div>
+
+            <h3 class="secTitle"><span class="secNum">04</span>Generated Storyline — A Worked Example</h3>
+            <span class="csKicker">From team profile to a playable room</span>
+
+            <div class="csP">
+                <p>
+                    The clearest test of the system is what it produces. For this team the platform generated a story
+                    referencing the ‘Bloody Handwrit of Medical Professor’ format, set at a psychologist's home with the
+                    player cast as a private detective.
+                </p>
+            </div>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <tbody>
+                        <tr>
+                            <td>Background</td>
+                            <td>All signs point to the death of the psychologist's husband; under pressure from the
+                                psychiatrist, detectives are commissioned to gather evidence.</td>
+                        </tr>
+                        <tr>
+                            <td>Main mission</td>
+                            <td>Investigate the case, collect evidence and restore the truth — infiltrate the doctor's
+                                home to find more evidence according to the employer's information.</td>
+                        </tr>
+                        <tr>
+                            <td>Side missions</td>
+                            <td>Find the medical file of patient K · find the medication used by patient K · restore
+                                electricity to the room · find the access card and unlock the area · learn about the
+                                psychologist's plan from the diary · unlock the combination cabinet · find the door card
+                                and take out the documents about the illegal medication · deal with the used medication
+                                in the smart medicine cabinet · find the organ in the container.</td>
+                        </tr>
+                        <tr>
+                            <td>Rules</td>
+                            <td>When the sound of gold and iron begins, take cover in the nearest monitoring dead end —
+                                under the desk, in the corner of the wall.</td>
+                        </tr>
+                        <tr>
+                            <td>Time limit</td>
+                            <td>50 minutes. The team must finish within the time, otherwise the truth is lost.</td>
+                        </tr>
+                        <tr>
+                            <td>The truth</td>
+                            <td>The psychiatrist is in fact a psychopath who murders patients, sells their organs, and
+                                "repeatedly enjoys" their deaths.</td>
+                        </tr>
+                        <tr>
+                            <td>Ending</td>
+                            <td>Take the evidence found and return the way you came, to evacuate the rooms quickly.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="calloutBox alt">
+                <span class="cbLabel">Why this is a system output, not a story idea</span>
+                <div class="csP">
+                    <p>
+                        Every element traces back to a team variable: the nine side missions are what an action-oriented
+                        junior team needs to stay occupied for the 50-minute window; the cover rule converts the group's
+                        physical coordination into a game mechanic rather than a safety note; and the ending is written
+                        as a return route so it can be assembled from modules the platform already has. The narrative is
+                        specific because the configuration was — that is the whole claim of the project.
+                    </p>
+                </div>
+            </div>
+
+            <h3 class="secTitle"><span class="secNum">05</span>Scenario &amp; Supporting Elements</h3>
+            <span class="csKicker">What the player actually sees and hears</span>
+
+            <div class="csFigure">
+                <img src="./ve1.jpg"
+                    alt="Design strategy and journey map — the five-step customisation flow, spatial and puzzle modules, and the theme and mode method" />
+                <div class="csCap">Design strategy &amp; journey map — the five-step customisation flow, the spatial and
+                    puzzle module families, and the method by which theme and mode are derived from team composition.</div>
+            </div>
+
+            <div class="csFigure">
+                <img src="./ve2.jpg"
+                    alt="Space measurement, teammates matching, theme and mode, and the storyline generation example" />
+                <div class="csCap">The working mechanism — measuring and uploading the play space, matching the four
+                    player roles, deriving theme and mode with a team level, and the generated storyline example with
+                    its missions, rules, truth and ending.</div>
+            </div>
+
+            <div class="csFigure">
+                <img src="./ve3.jpg"
+                    alt="Module description and combination example, plus the user-perspective scenario and design reflection" />
+                <div class="csCap">System in play — how scene and puzzle modules combine into a planned route, the
+                    user-perspective scenario with audio, tips, identity markers and each player's view, and the design
+                    reflection on interaction, offsite assistance and where VR makes escape rooms more competitive.</div>
+            </div>
+
+            <div class="cardGrid g2">
+                <div class="csCard">
+                    <span class="cRole">Supporting element</span>
+                    <h4>Interaction between players</h4>
+                    <p>Players communicate and interact through connected servers, and can see each other's actions via
+                        identity markers — which is what keeps a remote team reading as a group rather than as four
+                        separate players in the same map.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Supporting element</span>
+                    <h4>Offsite assistance</h4>
+                    <p>Players can easily get hints wherever the built-in modules appear in space, so the team is not
+                        stranded by a single unsolved element.</p>
+                </div>
             </div>
         </div>
 

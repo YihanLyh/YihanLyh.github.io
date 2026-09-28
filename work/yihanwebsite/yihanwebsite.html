@@ -161,38 +161,288 @@
 
         <div class="projectContent">
             <div class="coverPic">
-                <img src="./yihanweb_cover.jpg" alt="yihanweb_Cover" />
+                <img src="./yihanweb_cover.jpg" alt="Yihan's portfolio website — the new home page" />
             </div>
             <div class="heading2">Yihan's New Portfolio Website</div>
-            <div class="mainText">
-                <p>
-                    After years of working with a Hugo static web framework offering solid blogging experience but
-                    limited creative flexibility, I set out to reinvent my online presence.
-                    <br><br>
-                    The new website is built entirely from scratch using HTML, CSS, and JavaScript and hosted on GitHub
-                    Pages—giving me the freedom to create a more interactive, engaging, and visually stunning
-                    experience.
-                    <br><br>
-                    While this platform highlights my recent projects, my former site still houses
-                    <a class="blueTexts" href="https://yhannahl.github.io/en/projects/page/3/"> some archived
-                        projects.</a>
+
+            <!-- ============================================================ -->
+            <div class="execSummary">
+                <div class="esLabel">Bottom line</div>
+                <p class="esClaim">
+                    After years on a Hugo static framework — a solid blogging experience with very little creative room —
+                    I rebuilt my online presence from scratch in HTML, CSS and JavaScript, hosted on GitHub Pages. The
+                    project is unusual in one respect: <em>the page you are reading is the deliverable.</em> Every
+                    component on this site is the outcome described below.
                 </p>
             </div>
-            <br><br>
-            <div class="contentPic">
-                <h3>Layout & Information Design</h3>
-                <img src="./1920_X.jpg" alt="home page optimization" />
-                <img src="./1920_X-1.jpg" alt="work page optimization" />
+
+            <div class="statGrid">
+                <div class="stat"><span class="statNum">2</span><span class="statLabel">core pages redesigned against a
+                        documented before-and-after</span></div>
+                <div class="stat"><span class="statNum">7</span><span class="statLabel">responsive states specified —
+                        desktop and mobile, page by page</span></div>
+                <div class="stat"><span class="statNum">5</span><span class="statLabel">colours fixed into a 60 / 30 / 10
+                        system</span></div>
+                <div class="stat"><span class="statNum">0</span><span class="statLabel">frameworks — hand-built HTML, CSS
+                        and JavaScript throughout</span></div>
             </div>
-            <br><br>
-            <div class="contentPic">
-                <h3>Responsiveness Demo</h3>
-                <img src="./yihanwed1.png" alt="1" />
+
+            <h3 class="secTitle"><span class="secNum">00</span>Executive Summary</h3>
+            <span class="csKicker">What this project is, and why it works</span>
+
+            <div class="csP">
+                <p>
+                    The previous site ran on a Hugo static web framework. It offered a solid blogging experience but
+                    limited creative flexibility, so the replacement was built entirely from scratch with HTML, CSS and
+                    JavaScript and hosted on GitHub Pages — which gave the freedom to create a more interactive, more
+                    engaging and more visually distinctive experience.
+                </p>
             </div>
-            <br><br>
-            <div class="contentPic">
-                <h3>System Design</h3>
-                <img src="./yihanweb2.png" alt="2" />
+
+            <ol class="hlList">
+                <li>
+                    <b>The rebuild was driven by an audit, not by taste.</b> The old home and work pages were reviewed
+                    first and their specific failures written down — missing information, no interactivity, no visual
+                    elements, navigation that required repeated clicks, no responsiveness, and too much scrolling for the
+                    content it carried. Each optimised element on the new site answers a named limitation.
+                </li>
+                <li>
+                    <b>Interactivity was added where it does actual work.</b> The self-introduction became a stylised,
+                    interactive piece, recent projects moved into filter tabs presented as a carousel, and interactive
+                    visual elements were introduced across the page — so the visitor handles the content instead of
+                    reading past it.
+                </li>
+                <li>
+                    <b>Readability was treated as a layout problem, not a typography one.</b> The old work page's main
+                    weakness was excessive vertical scrolling; the new one holds visual unity with the home page while
+                    navigating information through tabs, so the same content occupies far less depth without losing any
+                    of it.
+                </li>
+                <li>
+                    <b>Responsiveness was specified rather than left to chance.</b> Seven states — home, menu, work and
+                    project page on mobile; home, work and project page on desktop — were designed individually, which is
+                    what keeps the mobile experience from being a compressed desktop one.
+                </li>
+            </ol>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <tbody>
+                        <tr>
+                            <td>Format</td>
+                            <td>Personal portfolio website — design system, information architecture and front-end
+                                implementation</td>
+                        </tr>
+                        <tr>
+                            <td>Year</td>
+                            <td>2025 — ongoing</td>
+                        </tr>
+                        <tr>
+                            <td>Role</td>
+                            <td>Design and development — audit, layout, design system, responsive specification,
+                                implementation</td>
+                        </tr>
+                        <tr>
+                            <td>Stack</td>
+                            <td>Hand-written HTML, CSS and JavaScript; no framework; hosted on GitHub Pages</td>
+                        </tr>
+                        <tr>
+                            <td>Replaced</td>
+                            <td>A Hugo static site — strong for blogging, restrictive for interaction and visual design</td>
+                        </tr>
+                        <tr>
+                            <td>Deliverables</td>
+                            <td>Page audit with before-and-after · home page · work page · project page template ·
+                                responsive specification · typographic and colour system</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">01</span>Design Perspective</h3>
+            <span class="csKicker">Discipline: layout &amp; information design</span>
+
+            <div class="csP">
+                <p>
+                    Both core pages were judged against the old versions rather than in isolation, and the findings were
+                    recorded as limitations before any new layout was drawn. That record is what the redesign is
+                    accountable to.
+                </p>
+            </div>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <tbody>
+                        <tr>
+                            <td>Home — limitations</td>
+                            <td>Lacked some information · lacked interactivity · lacked visual elements · navigation
+                                required repeated clicks.</td>
+                        </tr>
+                        <tr>
+                            <td>Home — optimisation</td>
+                            <td>Stylised interactivity on the self-introduction · recent work projects added with filter
+                                tabs presented as a carousel · interactive visual elements introduced · clear information
+                                navigation kept.</td>
+                        </tr>
+                        <tr>
+                            <td>Work — limitations</td>
+                            <td>Lack of responsiveness across devices · too much “scrolling down”, which reduced
+                                readability.</td>
+                        </tr>
+                        <tr>
+                            <td>Work — optimisation</td>
+                            <td>Maintains visual unity with the home page · simple and interactive information
+                                navigation · effective responsiveness design.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="calloutBox">
+                <span class="cbLabel">Methodology</span>
+                <div class="csP">
+                    <p>
+                        Each limitation was paired with a specific remedy of the same granularity — <em>“lack of visual
+                            elements”</em> became the illustrated self-introduction, <em>“need clicks for
+                            navigation”</em> became filter tabs, <em>“too much scrolling”</em> became the tabbed work
+                        grid. Keeping the audit at this level of detail is what prevents a redesign from becoming a
+                        restyling: every change can be pointed back at something a visitor actually lost.
+                    </p>
+                </div>
+            </div>
+
+            <div class="csFigure">
+                <img src="./1920_X.jpg"
+                    alt="Home page before and after — the old Hugo home page with its limitations listed, beside the new interactive home page with its optimisations" />
+                <div class="csCap">Home page — the previous version and its recorded limitations, beside the new page
+                    and the optimisations applied against them.</div>
+            </div>
+
+            <div class="csFigure">
+                <img src="./1920_X-1.jpg"
+                    alt="Work page before and after — the old scrolling project list beside the new tabbed project grid" />
+                <div class="csCap">Work page — the old vertical project list, whose length was its own weakness, beside
+                    the tabbed grid that carries the same projects in a fraction of the depth.</div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">02</span>Technical Perspective</h3>
+            <span class="csKicker">Discipline: front-end implementation &amp; responsive design</span>
+
+            <div class="csP">
+                <p>
+                    The site is hand-written: HTML, CSS and JavaScript with no framework and no build step, deployed
+                    directly from the repository to GitHub Pages. That choice is what removes the constraint the previous
+                    framework imposed — every interaction on these pages is code I control, rather than a theme option.
+                </p>
+            </div>
+
+            <div class="cardGrid g3">
+                <div class="csCard">
+                    <span class="cRole">Responsive state 01</span>
+                    <h4>Home</h4>
+                    <p>Desktop and mobile are designed separately, so the mobile home keeps the self-introduction's
+                        interactivity rather than dropping it for space.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Responsive state 02</span>
+                    <h4>Menu</h4>
+                    <p>A dedicated mobile menu state, since the desktop navigation has no equivalent at narrow widths.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Responsive state 03</span>
+                    <h4>Work</h4>
+                    <p>The project grid is specified for both breakpoints, which is where the old page's scrolling
+                        problem was solved.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Responsive state 04</span>
+                    <h4>Project page</h4>
+                    <p>A template state for every case study — category, content and year held in a consistent header so
+                        that the 12 project pages read as one system.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Interaction</span>
+                    <h4>Filter tabs &amp; carousel</h4>
+                    <p>Client-side filtering and a carousel over recent work, so a visitor can reach any project without
+                        travelling down the page.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Delivery</span>
+                    <h4>GitHub Pages</h4>
+                    <p>Static hosting straight from the repository — no server to maintain, and the bilingual
+                        English/Chinese structure served from one deployment.</p>
+                </div>
+            </div>
+
+            <div class="csFigure">
+                <img src="./yihanwed1.png"
+                    alt="Responsive specification — mobile home, menu, work and project pages, plus desktop home, work and project pages" />
+                <div class="csCap">Responsive specification — the mobile states (home, menu, work, project page) and
+                    their desktop counterparts, designed individually rather than derived by compressing one into the
+                    other.</div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">03</span>Design System</h3>
+            <span class="csKicker">Discipline: typography &amp; colour system</span>
+
+            <div class="csFigure">
+                <img src="./yihanweb2.png"
+                    alt="Design system — Montserrat Alternates and Montserrat type scale for desktop and mobile, the colour set, and the 60/30/10 ratio" />
+                <div class="csCap">Design system — one type family (Montserrat Alternates with Montserrat) at three
+                    heading sizes for desktop and their mobile counterparts, alongside the full colour set and its 60 /
+                    30 / 10 distribution.</div>
+            </div>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <tbody>
+                        <tr>
+                            <td>Type</td>
+                            <td>Montserrat Alternates with Montserrat — a single family carrying headings 1–3, so the
+                                site's voice stays constant from the home page into every case study.</td>
+                        </tr>
+                        <tr>
+                            <td>Colour</td>
+                            <td>Five values: <strong>#224055</strong> navy, <strong>#8FC4D2</strong> accent blue,
+                                <strong>#191D20</strong> near-black, <strong>#FFFFFF</strong> white, <strong>#FFB9A6</strong> peach.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Ratio</td>
+                            <td>60 / 30 / 10 — near-black for 60% of the surface, navy for 30%, accent blue for 10%.
+                                Holding this ratio is what keeps the accent colour reading as an accent across twelve
+                                different project pages.</td>
+                        </tr>
+                        <tr>
+                            <td>Scale</td>
+                            <td>Desktop and mobile type scales are specified independently rather than scaled
+                                proportionally.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="calloutBox alt">
+                <span class="cbLabel">Why the system matters more than any single page</span>
+                <div class="csP">
+                    <p>
+                        Each project page carries its own palette — a board-game platform, a VR service, a robotic
+                        performance. The site's own system has to sit underneath all of them without competing, which is
+                        exactly what the 60 / 30 / 10 ratio and the single type family are for: the chrome stays quiet so
+                        the work can be loud.
+                    </p>
+                </div>
+            </div>
+
+            <div class="csP">
+                <p>
+                    While this platform highlights recent work, the former site still houses
+                    <a class="blueTexts" href="https://yhannahl.github.io/en/projects/page/3/">some archived
+                        projects</a>.
+                </p>
             </div>
         </div>
 
@@ -209,10 +459,10 @@
                 </a>
             </div>
             <div class="linkNext">
-                <a href="../nutrientCollector/nutrient_collector.html">
+                <a href="../intestineArchitecture/intestineArchitecture.html">
                     <div class="nextTextContainer">
                         <div class="textPrevNext">NEXT.</div>
-                        <div class="titlePrevNext">nutrient Collector 🌱</div>
+                        <div class="titlePrevNext">Intestine Architecture 🧇</div>
                     </div>
                     <div class="prevIcon">
                         <img src="../../images/iconNext.svg" alt="iconNext" />

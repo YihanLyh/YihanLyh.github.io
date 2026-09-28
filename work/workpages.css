@@ -361,3 +361,310 @@ nav li:first-child {
 		font-size: 16px;
 	}
 }
+
+/* ============================================================
+   Structured case-study components
+   Used by project write-ups that lead with conclusions.
+   Site palette: #191d20 ground / #ffffff text / #8FC4D2 accent / #224055
+   All rules are additive and class-scoped — existing pages are unaffected.
+   ============================================================ */
+
+.csBlock {
+	width: 100%;
+	max-width: 1000px;
+	margin: 0 0 26px;
+}
+
+/* --- section titles --- */
+h3.secTitle {
+	width: 100%;
+	max-width: 1000px;
+	font-size: 24px;
+	font-weight: 600;
+	margin: 46px 0 16px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+.secNum {
+	display: inline-block;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: .08em;
+	color: #191d20;
+	background: #8FC4D2;
+	border-radius: 6px;
+	padding: 3px 8px;
+	margin-right: 10px;
+	vertical-align: 3px;
+}
+.csKicker {
+	display: block;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: .16em;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.5);
+	margin-bottom: 10px;
+}
+
+/* --- executive summary (conclusion first) --- */
+.execSummary {
+	width: 100%;
+	max-width: 1000px;
+	margin: 10px 0 22px;
+	padding: 26px 28px;
+	border-left: 4px solid #8FC4D2;
+	border-radius: 0 14px 14px 0;
+	background: linear-gradient(90deg, rgba(143, 196, 210, 0.13), rgba(143, 196, 210, 0));
+}
+.esLabel {
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: .18em;
+	text-transform: uppercase;
+	color: #8FC4D2;
+	margin-bottom: 10px;
+}
+.esClaim {
+	font-size: 21px;
+	line-height: 1.62;
+	font-weight: 600;
+	margin: 0;
+	color: #ffffff;
+}
+
+/* --- stat strip --- */
+.statGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+	gap: 1px;
+	background: rgba(255, 255, 255, 0.14);
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	border-radius: 14px;
+	overflow: hidden;
+	width: 100%;
+	max-width: 1000px;
+	margin: 22px 0;
+}
+.stat { background: #191d20; padding: 20px 22px; }
+.statNum {
+	display: block;
+	font-size: 34px;
+	font-weight: 700;
+	line-height: 1;
+	color: #8FC4D2;
+	letter-spacing: -0.02em;
+}
+.statLabel { display: block; font-size: 13.5px; color: rgba(255, 255, 255, 0.72); margin-top: 8px; line-height: 1.5; }
+
+/* --- numbered highlight list --- */
+.hlList {
+	list-style: none;
+	padding: 0;
+	margin: 22px 0;
+	width: 100%;
+	max-width: 1000px;
+	counter-reset: hl;
+}
+.hlList li {
+	position: relative;
+	counter-increment: hl;
+	padding: 18px 22px 18px 64px;
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	border-radius: 14px;
+	margin-bottom: 12px;
+	background: rgba(255, 255, 255, 0.03);
+}
+.hlList li::before {
+	content: counter(hl, decimal-leading-zero);
+	position: absolute;
+	left: 20px;
+	top: 18px;
+	font-size: 14px;
+	font-weight: 700;
+	color: #8FC4D2;
+}
+.hlList b { color: #ffffff; }
+
+/* --- callouts --- */
+.calloutBox {
+	width: 100%;
+	max-width: 1000px;
+	margin: 22px 0;
+	padding: 18px 24px;
+	border-left: 3px solid #8FC4D2;
+	background: rgba(143, 196, 210, 0.09);
+	border-radius: 0 12px 12px 0;
+}
+.calloutBox.alt {
+	border-left-color: #E07DEF;
+	background: rgba(224, 125, 239, 0.09);
+}
+.cbLabel {
+	display: block;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: .16em;
+	text-transform: uppercase;
+	color: #8FC4D2;
+	margin-bottom: 8px;
+}
+.calloutBox.alt .cbLabel { color: #E07DEF; }
+
+/* --- tables --- */
+.tableWrap {
+	width: 100%;
+	max-width: 1000px;
+	margin: 22px 0;
+	overflow-x: auto;
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	border-radius: 14px;
+}
+table.csTable {
+	width: 100%;
+	border-collapse: collapse;
+	min-width: 620px;
+}
+table.csTable th {
+	text-align: left;
+	padding: 13px 18px;
+	font-size: 11.5px;
+	font-weight: 600;
+	letter-spacing: .12em;
+	text-transform: uppercase;
+	color: #8FC4D2;
+	background: rgba(143, 196, 210, 0.08);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+	white-space: nowrap;
+}
+table.csTable td {
+	text-align: left;
+	padding: 14px 18px;
+	font-size: 15px;
+	line-height: 1.6;
+	color: rgba(255, 255, 255, 0.78);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+	vertical-align: top;
+}
+table.csTable td:first-child { color: #ffffff; font-weight: 600; white-space: nowrap; }
+table.csTable tbody tr:last-child td { border-bottom: none; }
+
+/* --- cards / grids --- */
+.cardGrid {
+	display: grid;
+	gap: 14px;
+	width: 100%;
+	max-width: 1000px;
+	margin: 22px 0;
+}
+.g2 { grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); }
+.g3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.g4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+
+.csCard {
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	border-radius: 14px;
+	padding: 20px;
+	background: rgba(255, 255, 255, 0.03);
+}
+.csCard h4 { font-size: 16.5px; font-weight: 600; margin: 0 0 8px; color: #ffffff; }
+.csCard .cRole {
+	display: block;
+	font-size: 11.5px;
+	font-weight: 600;
+	letter-spacing: .12em;
+	text-transform: uppercase;
+	color: #8FC4D2;
+	margin-bottom: 12px;
+}
+.csCard p { font-size: 15px; line-height: 1.62; color: rgba(255, 255, 255, 0.75); margin: 0 0 8px; }
+.csCard ul { font-size: 15px; line-height: 1.55; padding-left: 20px; margin: 0; color: rgba(255, 255, 255, 0.75); }
+.csCard li { margin-bottom: 5px; }
+.csCard .cMini {
+	display: block;
+	font-size: 12px;
+	color: rgba(255, 255, 255, 0.5);
+	letter-spacing: .04em;
+	margin-bottom: 2px;
+}
+
+/* --- IA tree --- */
+.iaTree { width: 100%; max-width: 1000px; margin: 22px 0; }
+.iaRoot {
+	display: inline-block;
+	border: 1px solid #8FC4D2;
+	border-radius: 10px;
+	padding: 10px 18px;
+	font-weight: 600;
+	font-size: 15px;
+	background: rgba(143, 196, 210, 0.08);
+}
+.iaBranch { border-left: 2px solid rgba(143, 196, 210, 0.5); margin-left: 20px; padding-left: 22px; }
+.iaNode {
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	border-radius: 10px;
+	padding: 13px 18px;
+	margin: 12px 0;
+	background: rgba(255, 255, 255, 0.03);
+}
+.iaNode strong { display: block; font-size: 15.5px; color: #ffffff; font-weight: 600; }
+.iaNode span.iaDesc { font-size: 14px; color: rgba(255, 255, 255, 0.6); }
+.iaSubs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.iaSub {
+	font-size: 13px;
+	color: rgba(255, 255, 255, 0.8);
+	border: 1px dashed rgba(143, 196, 210, 0.5);
+	border-radius: 999px;
+	padding: 5px 13px;
+}
+.iaCross {
+	margin-top: 16px;
+	border: 1px dashed rgba(255, 255, 255, 0.2);
+	border-radius: 10px;
+	padding: 13px 18px;
+	font-size: 14px;
+	color: rgba(255, 255, 255, 0.6);
+}
+
+/* --- colour swatches --- */
+.swatchGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+	gap: 12px;
+	width: 100%;
+	max-width: 1000px;
+	margin: 22px 0;
+}
+.swatch { border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 12px; overflow: hidden; }
+.swatch .chip { height: 78px; }
+.swatch .swInfo { padding: 12px 14px; background: rgba(255, 255, 255, 0.04); }
+.swatch code { font-size: 13px; color: #ffffff; font-family: ui-monospace, Menlo, monospace; }
+.swatch span.swNote { display: block; font-size: 12.5px; color: rgba(255, 255, 255, 0.55); margin-top: 3px; }
+
+/* --- figures --- */
+.csFigure { width: 100%; max-width: 1000px; margin: 0 0 28px; }
+.csFigure img { width: 100%; display: block; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.12); }
+.csCap {
+	font-size: 13.5px;
+	color: rgba(255, 255, 255, 0.55);
+	margin-top: 10px;
+	padding-left: 12px;
+	border-left: 2px solid #224055;
+}
+
+/* --- small utility --- */
+.csP { width: 100%; max-width: 1000px; }
+.csP p { font-size: 17px; line-height: 1.72; color: rgba(255, 255, 255, 0.8); margin: 0 0 14px; }
+.csList { width: 100%; max-width: 1000px; padding-left: 22px; }
+.csList li { font-size: 16.5px; line-height: 1.68; color: rgba(255, 255, 255, 0.8); margin-bottom: 10px; }
+.blueTexts { color: #8FC4D2; }
+
+@media (max-width: 640px) {
+	.execSummary { padding: 20px 18px; }
+	.esClaim { font-size: 18px; }
+	.hlList li { padding: 16px 18px 16px 56px; }
+	.hlList li::before { left: 16px; }
+	.statNum { font-size: 28px; }
+	h3.secTitle { font-size: 20px; }
+	.iaBranch { margin-left: 8px; padding-left: 14px; }
+}
