@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <link rel="icon" href="../../../images/character_Yihan.png" type="image/x-icon">
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="en" href="https://yihanlyh.github.io/work/theFourthNaturetour/theFourthNaturetour.html">
+    <link rel="alternate" hreflang="zh" href="https://yihanlyh.github.io/zh/work/theFourthNaturetour/theFourthNaturetour.html">
+    <title>The Fourth Nature Tour — 一场穿越工业痕迹与生态再生的 VR 旅程 | Yihan Lou</title>
+    <link rel="stylesheet" type="text/css" href="../../../work/workpages.css" />
+    <link rel="stylesheet" type="text/css" href="../../../foldedTags.css" />
+    <link rel="stylesheet" type="text/css" href="../../../rollingtext.css" />
+    <link rel="stylesheet" type="text/css" href="../../../scrollTopButton.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="The Fourth Nature Tour — 一项以硕士论文为基础的 VR 研究体验（Unity URP · Meta Quest 3），可视化“第四自然”概念：后工业废墟如何自发野化、形成新的城市生态系统。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- mobile navigation -->
+        <div class="mobile-container" id="folded-tag">
+            <div class="header">
+                <div>
+                    <a href="../../../index.html" class="homeLink" style="color: azure;">
+                        <ul class="textlogo">
+                            <li>YIHAN.</li>
+                            <li class="lou">LOU</li>
+                        </ul>
+                    </a>
+                </div>
+                <div class="headerContact">
+                    <a href="https://www.instagram.com/yhannah.l/" target="_blank" hidden>
+                        <img src="../../../images/icon_instagram.svg" alt="insta_icon" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/louyihan" target="_blank" hidden>
+                        <img src="../../../images/icon_linkedin.svg" alt="linkin_icon" />
+                    </a>
+                    <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                        <img src="../../../images/icon_email.svg" alt="email_icon" />
+                    </a>
+                    <!-- language switch -->
+                    <button class="lang-btn" aria-label="切换语言">EN</button>
+                </div>
+                <div class="folded_icon" id="folded-icon">
+                    <img src="../../../images/icon_foldedCross.svg" alt="folded_icon" />
+                </div>
+            </div>
+
+            <div class="rolling-text-container">
+                <div class="rolling-text">
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+
+            <div class="headerCover">
+                <div class="mobilePages">
+                    <a href="../index.html" class="mobilePageTag">WORK</a>
+                    <a href="../../../about/index.html" class="mobilePageTag">ABOUT</a>
+                    <a href="../../../blog/index.html" class="mobilePageTag">BLOG</a>
+                </div>
+            </div>
+            <div class="emailBottom">
+                <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                    yihan.louyh@outlook.com
+                </a>
+            </div>
+            <div class="dotsArray">
+                <p></p>
+            </div>
+            <div class="copyright">
+                © 2026 Yihan Lou with AI, All rights reserved
+            </div>
+        </div>
+        <!-- main page -->
+        <div class="header">
+            <div>
+                <a href="../../../index.html" class="homeLink" style="color: azure;">
+                    <ul class="textlogo">
+                        <li>YIHAN.</li>
+                        <li class="lou">LOU</li>
+                    </ul>
+                </a>
+            </div>
+            <div class="headerPage">
+                <a href="../../../work/index.html" class="headerPageTag">WORK</a>
+                <a href="../../../about/index.html" class="headerPageTag">ABOUT</a>
+                <a href="../../../blog/index.html" class="headerPageTag">BLOG</a>
+            </div>
+
+            <div class="headerContact">
+                <a href="https://www.instagram.com/yhannah.l/" target="_blank" hidden>
+                    <img src="../../../images/icon_instagram.svg" alt="insta_icon" />
+                </a>
+                <a href="https://www.linkedin.com/in/louyihan" target="_blank" hidden>
+                    <img src="../../../images/icon_linkedin.svg" alt="linkin_icon" />
+                </a>
+                <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                    <img src="../../../images/icon_email.svg" alt="email_icon" />
+                </a>
+                <!-- language switch -->
+                <button class="lang-btn" aria-label="切换语言">EN</button>
+            </div>
+            <div class="folded_icon" id="unfolded-icon">
+                <img src="../../../images/icon_folded.svg" alt="unfolded_icon" />
+            </div>
+        </div>
+        <div class="heading1">The Fourth Nature Tour 🌲</div>
+
+        <div class="dotsArray1">
+            <p></p>
+        </div>
+
+        <div class="rolling-text-container">
+            <div class="rolling-text">
+                <span> 虚拟现实&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; 研究&nbsp;&nbsp;&nbsp;&nbsp;
+                    *&nbsp;&nbsp;&nbsp;&nbsp; AI&nbsp;&nbsp;&nbsp;&nbsp;*
+                </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span> 虚拟现实&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; 研究&nbsp;&nbsp;&nbsp;&nbsp;
+                    *&nbsp;&nbsp;&nbsp;&nbsp; AI&nbsp;&nbsp;&nbsp;&nbsp;*
+                </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span> 虚拟现实&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; 研究&nbsp;&nbsp;&nbsp;&nbsp;
+                    *&nbsp;&nbsp;&nbsp;&nbsp; AI&nbsp;&nbsp;&nbsp;&nbsp;*
+                </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span> 虚拟现实&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; 研究&nbsp;&nbsp;&nbsp;&nbsp;
+                    *&nbsp;&nbsp;&nbsp;&nbsp; AI&nbsp;&nbsp;&nbsp;&nbsp;*
+                </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span> 虚拟现实&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; 研究&nbsp;&nbsp;&nbsp;&nbsp;
+                    *&nbsp;&nbsp;&nbsp;&nbsp; AI&nbsp;&nbsp;&nbsp;&nbsp;*
+                </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span> 虚拟现实&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; 研究&nbsp;&nbsp;&nbsp;&nbsp;
+                    *&nbsp;&nbsp;&nbsp;&nbsp; AI&nbsp;&nbsp;&nbsp;&nbsp;*
+                </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            </div>
+        </div>
+
+        <div class="projectContent">
+            <div class="coverPic">
+                <img src="../../../work/theFourthNaturetour/theFourthNatureTour_cover.jpg"
+                    alt="The Fourth Nature Tour — 一片低多边形 VR 松林正在 reclaiming 废弃铁轨，呈现生态再生" />
+            </div>
+            <div class="heading2">The Fourth Nature Tour 🌲 — 一场穿越工业痕迹与生态再生的 VR 旅程</div>
+
+            <!-- ============================================================ -->
+            <div class="execSummary">
+                <div class="esLabel">一句话结论</div>
+                <p class="esClaim">
+                    “第四自然（Fourth Nature）”指后工业土地上自发生长的野性生态——一个对展板说明而言过于抽象的概念。这项硕士研究用一段
+                    <strong>虚拟现实体验</strong>而非海报来回应：基于 Unity URP 为 Meta Quest 3 开发，它让体验者以昆虫尺度的视角，从松林出发，途经铁路的修建与驶过，最终抵达数年后的同一地点——如今已被先锋植物重新占据。这件作品既是“故事”，也是“方法”：它运用 5W1H
+                    设计策略、一条 <strong>AI 起草、设计师掌闸</strong> 的 AI 协同生产管线，以及以伦理为先的用户测试闭环，证明 VR 能够把一个跨学科的生态概念，变成陌生人也能够“感受”的东西。
+                </p>
+            </div>
+
+            <div class="statGrid">
+                <div class="stat"><span class="statNum">1</span><span class="statLabel">一个被体验化的抽象概念——第四自然，即后工业土地自发生长的野性生态</span></div>
+                <div class="stat"><span class="statNum">3</span><span class="statLabel">三套资产管线并用——手工 Blender、AI 辅助实验建模、精选 Asset Store 素材库</span></div>
+                <div class="stat"><span class="statNum">8</span><span class="statLabel">位参与者进行定性用户测试（其中 3 位参与回访），驱动了一轮有记录的迭代</span></div>
+                <div class="stat"><span class="statNum">&gt;50%</span><span class="statLabel">相较纯手工低多边形建模，AI 辅助工作流节省的建模时间</span></div>
+            </div>
+
+            <h3 class="secTitle"><span class="secNum">00</span>结论摘要</h3>
+            <span class="csKicker">这个项目是什么，以及它为什么成立</span>
+
+            <div class="csP">
+                <p>
+                    <em>The Fourth Nature Tour</em> 是一项个人硕士论文项目，旨在设计开发一段传达“第四自然”概念的 VR 体验——即人类产业退场后浮现的新颖、自发的生态系统。作品不只是“描述”这一概念，而是将其编排为一段旅程：一本翻开的书开启叙事，灯光引导体验者走向传送门，两个依次展开的阶段对照了“工业入侵”与“生态演替”。其研究贡献是一套可复用的工作流——<strong>概念解构
+                        → 5W1H 设计策略 → 叙事 + 场景 + 交互原型 → AI 辅助生产 → 用户测试迭代</strong>——并在可运行的 Quest 3
+                    版本上完成了端到端验证。
+                </p>
+            </div>
+
+            <ol class="hlList">
+                <li>
+                    <b>它把问题定义为“沟通”问题，而非数据问题。</b>第四自然的价值在于公众可达性；项目将抽象的生态学原理转化为可触摸、可探索的叙事，让人们去“共同感知”城市生态再生，而非仅仅阅读它。
+                </li>
+                <li>
+                    <b>方法是显式且可复用的。</b>5W1H 框架（Lasswell，经扩展）被情境转译为一项设计策略，覆盖内容、目的、受众、场景、载体与方法——可作为其他跨学科生态概念迁移使用的模板。
+                </li>
+                <li>
+                    <b>技术服务于概念。</b>Unity URP + Meta Quest 3 提供沉浸式临场感；C# 脚本、Unity Events 与 Shader Graph 构建出可控、动态的交互系统；低多边形资产在独立 VR 硬件上平衡了性能、辨识度与迭代速度。
+                </li>
+                <li>
+                    <b>AI 是一条带闸门的管线，而非噱头。</b>AI 辅助分镜、实验性 3D 建模、音效生成与结对编程（Cursor、GitHub
+                        Copilot）各自压缩了一个生产环节——但每一份产出都要通过人工闸门，而耐久的成果是一份可复用的提示词契约（角色 / 需求 /
+                    输出 + 参考图），而非任何一件生成物。
+                </li>
+            </ol>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <tbody>
+                        <tr>
+                            <td>形式</td>
+                            <td>虚拟现实体验 — Meta Quest 3 头显，Unity URP，独立运行版本</td>
+                        </tr>
+                        <tr>
+                            <td>时间</td>
+                            <td>2025.09 – 2026.06</td>
+                        </tr>
+                        <tr>
+                            <td>背景</td>
+                            <td>硕士毕业论文项目（个人完成）</td>
+                        </tr>
+                        <tr>
+                            <td>我的角色</td>
+                            <td>概念研究 · 叙事与交互设计 · Unity / C# 开发 · AI 辅助生产 · 用户测试与迭代</td>
+                        </tr>
+                        <tr>
+                            <td>设计框架</td>
+                            <td>5W1H 策略（Lasswell）→ 用户旅程与分镜 → VR 原型</td>
+                        </tr>
+                        <tr>
+                            <td>交付物</td>
+                            <td>概念研究 · 5W1H 设计策略 · 分镜 · 三套低多边形 VR 场景（初始 + 阶段一 + 阶段二）· C#
+                                交互系统 · Shader Graph 特效 · AI 辅助资产与音效管线 · 可复用提示词契约与人工验证闸门 ·
+                                以伦理为先的用户测试迭代</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">01</span>背景研究</h3>
+            <span class="csKicker">学科：生态概念研究 &amp; VR 媒介分析</span>
+
+            <div class="csP">
+                <p>
+                    研究首先夯实概念、审视媒介。“第四自然”指人为、自发生长的城市野地——生态潜力高却难以被感知。选择虚拟现实作为载体有两点理由：其沉浸式三维环境（替代现实 + 超越现实）让体验者栖居于超越物理限制的世界；其具身、多模态的交互把旁观者变成行动者。一项案例对比分析——奥赛博物馆的
+                    <em>La Palette de Van Gogh</em>（线性、人类中心式复原）与 Marshmallow Laser Feast 的
+                    <em>In the Eyes of the Animal</em>（探索式、非人类中心式感知）——提炼出项目有意融合的两种策略：用叙事引导保证清晰度，用视角切换激发好奇心。
+                </p>
+            </div>
+
+            <div class="cardGrid g3">
+                <div class="csCard">
+                    <span class="cRole">发现 01</span>
+                    <h4>第四自然的传播价值</h4>
+                    <p>将抽象生态原理转化为可触体验，可提升公众的可达性与接受度，让人与人共同创造城市自然，而非仅仅了解它。</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">发现 02</span>
+                    <h4>作为生态媒介的 VR</h4>
+                    <p>全感官沉浸与空间临场感，使 VR 成为呈现自然概念的独特平台——包括切换到非人类、昆虫尺度的视角以建立共情。</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">发现 03</span>
+                    <h4>两条可迁移策略</h4>
+                    <p>案例分析显示：叙事引导提升信息传递效率，视角切换激发探索欲——项目将二者结合，实现“有引导却开放”的生态发现。</p>
+                </div>
+            </div>
+
+            <div class="calloutBox">
+                <span class="cbLabel">我们可以如何（How might we）</span>
+                <div class="csP">
+                    <p>
+                        研究由此生发出的命题：<strong>我们如何借助虚拟现实，让抽象的“第四自然”概念变得可感知、可体验</strong>——突破时空限制，使体验者感知生态价值与演化过程，强化环境意识？这一问题把理论变成了可构建的 VR 叙事。
+                    </p>
+                </div>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../work/theFourthNaturetour/Scene%20Map.jpg"
+                    alt="The Fourth Nature Tour 场景地图——初始场景中枢连接阶段一（工业入侵）与阶段二（第四自然浮现），含环境元素、触发点与视听线索" />
+                <div class="csCap">项目场景地图。以昆虫尺度视角建立人与自然的亲近感；旅程由
+                    <strong>初始场景</strong>中枢锚定，连接两个依次展开的阶段——阶段一（工业入侵下的自然）与阶段二（人类退场后第四自然的浮现）——各自携带环境元素、交互触发点与视听线索以增强沉浸。</div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">02</span>设计方法论</h3>
+            <span class="csKicker">学科：5W1H 设计策略 &amp; 用户旅程</span>
+
+            <div class="csP">
+                <p>
+                    5W1H 框架（Lasswell 传播模型，扩展出“How”）被情境转译为具体的设计策略。<em>What（内容）</em>——生态再生的动态过程可视化与变化对比。<em>Why（目的）</em>——突破时空约束，让人体验生态价值与演化过程。<em>Who（受众）</em>——普通公众与学生科普群体。<em>When（场景）</em>——类博物馆展览空间与线上平台。<em>Where（载体）</em>——VR 头显、沉浸展厅、动态视频。<em>How（方法）</em>——融合三维建模、交互与机械设计、概念可视化与 AI
+                    辅助设计，闭合“叙事—场景—交互”的体验环。
+                </p>
+            </div>
+
+            <div class="cardGrid g2">
+                <div class="csCard">
+                    <span class="cRole">框架</span>
+                    <h4>5W1H → 设计策略</h4>
+                    <p>一套可复用、源自实践的设计策略，将每个维度映射到一项 VR 设计决策——内容呈现即“动态过程 + 变化对比”，经由博物馆展览与线上媒体面向公众生态传播。</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">叙事</span>
+                    <h4>书本隐喻与传送闭环</h4>
+                    <p>一本翻开的书作为叙事锚点；灯光引导体验者走向传送门。初始场景在阶段一与阶段二之间循环回接，降低认知负荷、维持跨阶段的叙事连续。</p>
+                </div>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../work/theFourthNaturetour/Initial%20-%20storyboards.jpg"
+                    alt="The Fourth Nature Tour 分镜序列——书本式开场、工业 displacement 与生态恢复对照，及两阶段用户旅程" />
+                <div class="csCap">完整分镜序列。体验者遇见一本巨幅翻开的书：左页呈现被人工产业 displacement 的植物，右页呈现产业废弃后的复苏。灯光引导进入阶段一（茂密松林 → 伐木 → 铁路 → 列车），返回后进入阶段二——植被覆盖锈迹斑斑的铁轨，直观表达第四自然。</div>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../work/theFourthNaturetour/AI-assisted%20workflow-1-storyBoard.jpg"
+                    alt="AI 辅助分镜工作流——前后对比，展示通过结构化提示词与参考图对草图进行优化" />
+                <div class="csCap">AI 辅助分镜优化。一套可复用的提示词模板（角色 / 要求 / 输出，Markdown 格式）外加两张参考图——内容草图与风格图——让粗糙草图快速迭代为精致的概念帧，在概念阶段同时提升呈现质量与效率。</div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">03</span>技术开发</h3>
+            <span class="csKicker">学科：Unity URP 工程 &amp; 交互系统</span>
+
+            <div class="csP">
+                <p>
+                    原型基于 <strong>Unity 通用渲染管线（URP）</strong>构建，取其 XR 渲染特性与后处理空间，部署至
+                    <strong>Meta Quest 3</strong>（高分辨率双 LCD、独立运行、易获取）。XR Plug-in Management 与 XR Interaction
+                    Toolkit 构成开发基座；头显通过 Meta Quest Link 接入以便设计时测试。交互逻辑以 <strong>C#</strong>
+                    实现：自定义脚本实时检测体验者位置与交互点；<strong>Unity Events</strong> 提供可视化编辑器，将脚本函数与 UI 按钮、空间触发点相连（见下图），无需改代码即可调整交互的触发条件与执行顺序——显著加快设计迭代。
+                </p>
+            </div>
+
+            <div class="cardGrid g2">
+                <div class="csCard">
+                    <span class="cRole">架构</span>
+                    <h4>初始场景 → 阶段一 → 阶段二</h4>
+                    <p>由中枢锚定的线性、故事驱动推进。阶段一编排工业介入（松林 → 伐木 → 铁路修建 → 列车驶过）；阶段二编排废弃铁路上的自发演替——形成第四自然节点，随后淡出收束。</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">视觉系统</span>
+                    <h4>Shader Graph 与动态材质</h4>
+                    <p>顶点动画着色器实现“随风的植物生长”效果；传送门着色器在场景切换时让画面渐溶重组，弱化切换的突兀感。这些材质与 C# 逻辑相连，强化交互反馈的趣味性。</p>
+                </div>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../work/theFourthNaturetour/Interaction%20Architecture%20and%20Mechanism%20Design.jpg"
+                    alt="交互架构与机制设计——初始场景、阶段一工业入侵、阶段二第四自然浮现三大模块及其触发点与视听线索" />
+                <div class="csCap">交互架构。三大模块——初始场景、阶段一（工业入侵下的自然）与阶段二（第四自然浮现）——将引导式交互与场景传送相整合，形成由用户自主操作驱动、从引导到开放探索的叙事流。</div>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../work/theFourthNaturetour/UnityEvent.jpg"
+                    alt="Unity Editor 中的 Unity Events 应用——将脚本函数可视化连线至 UI 按钮与空间触发点，构建 VR 交互系统" />
+                <div class="csCap">Unity Events 实践。可视化编辑器将 C# 函数连至 UI 按钮与空间触发点；触发条件与执行顺序可拖拽调整，使设计迭代与代码重写解耦。</div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">04</span>AI × 设计 × 工程</h3>
+            <span class="csKicker">一套整合方法——AI 起草，设计师定调，人工闸门决定什么可以进入构建</span>
+
+            <div class="csP">
+                <p>
+                    把 AI 仅仅罗列为“工具清单”，其实低估了这里真正发生的事。AI 在管线中是以<strong>“起草—验证”闭环</strong>运行的：每一阶段由模型产出首稿，设计师设定意图并决定采纳或返工，任何产物在通过人工检查前都不会进入构建。真正耐久的产出并不是某张生成图或某个网格，而是那份<strong>可复用的提示词契约</strong>（角色
+                    / 需求 / 输出，以 Markdown 书写，并配一张内容参考图与一张风格参考图）——它让每个阶段可重复，且可跨模型迁移。
+                </p>
+            </div>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <thead>
+                        <tr>
+                            <th>阶段</th>
+                            <th>AI 产出什么</th>
+                            <th>设计师掌握什么（闸门）</th>
+                            <th>结果</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>分镜</td>
+                            <td>由粗略内容草图 + 风格参考图生成精修概念帧</td>
+                            <td>撰写“角色 / 需求 / 输出”契约、挑选两张参考图，并否决偏离叙事的画面</td>
+                            <td>在改动成本最低的阶段，更快得到更高质量的概念帧</td>
+                        </tr>
+                        <tr>
+                            <td>3D 资产</td>
+                            <td>文本 → 概念图 → 带纹理 3D 网格</td>
+                            <td>在 Blender 中重做拓扑、比例与材质，并判定哪些叙事关键部件必须手工制作</td>
+                            <td>建模时间节省 &gt;50%，同时拓展了可探索的概念形态空间</td>
+                        </tr>
+                        <tr>
+                            <td>音效</td>
+                            <td>由 AI 音频平台生成初步音效</td>
+                            <td>对每个叙事节点的声音进行编辑、分层与安置</td>
+                            <td>音轨足够早地存在从而可被测试，随后在迭代中逐节点补全</td>
+                        </tr>
+                        <tr>
+                            <td>代码</td>
+                            <td>语法检查与逻辑优化建议</td>
+                            <td>掌握交互架构、C# 逻辑、Unity Events 接线与着色器参数</td>
+                            <td>排错更快，同时设计师保有对系统行为的完全控制</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="csP">
+                <p>
+                    同一套闸门逻辑也决定了一件资产<em>从哪来</em>。并非一切都该被生成：<strong>叙事关键</strong>元素保持手工制作，因为它们的形态承载着论证；<strong>概念性或探索性</strong>元素交给
+                    AI，因为在那里“选项的广度”比“精度”更重要；<strong>通用填充</strong>取自精选素材库，因为它应当几乎不耗成本。这条路由规则——而不是某一个工具——才是方法中可复用的部分。
+                </p>
+            </div>
+
+            <div class="cardGrid g2">
+                <div class="csCard">
+                    <span class="cRole">路线 01</span>
+                    <h4>手工低多边形建模</h4>
+                    <p>叙事关键部件在 Blender 中以定制材质手工建模——当精确的形态、风格与细节控制决定了故事能否被读懂时，就选它。</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">路线 02</span>
+                    <h4>AI 辅助实验建模</h4>
+                    <p>文本生图 → 带纹理 3D → Blender 细化。用在“广度胜过精度”的地方：抽象、概念性的形态，探索速度远超手工（节省
+                        &gt;50% 时间）。</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">路线 03</span>
+                    <h4>精选 Asset Store 素材</h4>
+                    <p>通用环境填充（松树、草、石）只取不做——丰富空间层次，却不消耗概念预算、也不稀释概念本身。</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">音效与代码</span>
+                    <h4>AI 生成音频与结对编程</h4>
+                    <p>OptimizerAI 产出初步音效，再于音频编辑器中精修；Cursor 与 GitHub Copilot 辅助排错与逻辑优化——压缩音效与开发两条链路。</p>
+                </div>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../work/theFourthNaturetour/modeling.jpg"
+                    alt="传统低多边形 3D 建模示例——手工构建的场景元素，材质贴合设计风格" />
+                <div class="csCap">路线 01——手工建模的低多边形资产。需要精确形态、风格与细节控制的场景组件在 Blender
+                    中构建并匹配材质；它们是把场景流转与“第四自然形成”叙事绑在一起的关键视觉载体。</div>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../work/theFourthNaturetour/modeling%20AI%20assisted.jpg"
+                    alt="AI 辅助实验建模工作流——文本生图、图转带纹理 3D，再到 Blender 细化" />
+                <div class="csCap">路线 02——AI 辅助建模工作流，以及它背后的闸门。概念参考图由文本生成，转为带纹理的
+                    3D 模型，再回到三维软件中重做：效率提升逾 50%，但网格只有在设计师修正过它的拓扑、比例与材质之后才会进入构建。</div>
+            </div>
+
+            <div class="calloutBox">
+                <span class="cbLabel">来源标注与人工闸门</span>
+                <div class="csP">
+                    <p>
+                        每一件 AI 辅助资产在进入构建前都经过审阅并在 Blender 中返工；而承载概念论证的元素被刻意保留为手工制作，使叙事永远不会依赖一次设计师无法控制的生成。论文中对
+                        AI 的使用按阶段逐项记录，而不是将其呈现为“作者身份”——这条管线对哪部分是生成的、哪部分是手工做的保持透明。
+                    </p>
+                </div>
+            </div>
+
+            <div class="calloutBox">
+                <span class="cbLabel">前瞻——对照当下的 AI Agent 工具重读</span>
+                <div class="csP">
+                    <p>
+                        这个项目是用“单轮、提示词驱动”的助手完成的——Cursor 与 GitHub Copilot 写代码，OptimizerAI
+                        做音效，文本转 3D 做资产。而它所固化下来的那份契约（角色、需求、输出格式，外加参考图），恰恰正是今天
+                        Agent 式、会调用工具的模型所消费的接口：同样的四个阶段，现在可以作为“多步骤任务”被委派，而不必一次一个提示词。这改变了设计师的杠杆所在——从<em>操作</em>每一个工具，转向<em>定义意图并验证产出</em>；于是真正会复利的技能是闸门，而不是生成。同时，原本便宜的环节会更便宜：分镜与资产变体、自动化的拓扑清理、着色器脚手架、测试访谈稿的归纳，以及双语文档的同步维护，如今都切实可以交出去。
+                    </p>
+                    <p>
+                        不变的是这篇论文真正挣到的那个结论。压缩生产并不等于验证概念：更快的资产并没有让引导变得更清晰——是头显里的
+                        8 位参与者让它变清晰的。任何由 Agent 驱动的这条管线，终点仍然必须是真人测试，否则它只会把一个令人困惑的体验打磨得更精致而已。
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">05</span>原型、评估与结果</h3>
+            <span class="csKicker">以伦理为先的测试，以及证据实际说明了什么</span>
+
+            <div class="csP">
+                <p>
+                    测试遵循以人为本的伦理原则，覆盖三个维度——参与者身心健康（安全场地、晕动症预检、单场头显 &lt;10 分钟 / 总计 &lt;30 分钟）、体验真实性（延迟、非侵入式反馈；知情披露但不泄露评价点）、隐私（就数据用途取得知情同意）。在场景约完成 70% / 交互约 80% / 音效约 10%
+                    时，<strong>8 位参与者</strong>参与了定性可用性测试，其中 <strong>3 位</strong>参与回访；观察记录结合半结构化访谈，汇入一轮有文档的迭代。
+                </p>
+            </div>
+
+            <div class="cardGrid g2">
+                <div class="csCard">
+                    <span class="cRole">方法</span>
+                    <h4>定性、非侵入式测试</h4>
+                    <p>参与者在无任务清单下自由探索；其行为与卡点被同步记录，体验后通过一对一半结构化访谈收集反馈——优先于问题识别与设计改进。</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">迭代</span>
+                    <h4>四个响应方向</h4>
+                    <p>反馈聚类为引导清晰度、路径流畅度、动画时序与音效层次。迭代增加了交互式 UI + 环境光状态变化、以隐藏边界块规设主路径、丰富转场着色器、补全逐节点音效。</p>
+                </div>
+            </div>
+
+            <div class="calloutBox">
+                <span class="cbLabel">测试验证了什么</span>
+                <div class="csP">
+                    <p>
+                        核心概念传播目标被验证，但引导模糊与转场突兀损害了流畅度。对应的修复——更强化的场景内 UI 引导、受限的可探索范围、更顺滑的淡入淡出、更丰富的音效——印证了项目自身的结论：对抽象概念而言，<strong>清晰的信息设计与流畅的交互逻辑，远比技术复杂度重要</strong>。
+                    </p>
+                </div>
+            </div>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <thead>
+                        <tr>
+                            <th>研究问题</th>
+                            <th>设计决策</th>
+                            <th>技术实现</th>
+                            <th>测试显示了什么</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>抽象的生态概念能否被感知？</td>
+                            <td>把它编排为一段旅程，对照“工业入侵”与“生态演替”</td>
+                            <td>初始场景 → 阶段一 → 阶段二 的枢纽架构，配合传送门着色器转场</td>
+                            <td>可以——核心概念传播成功，第四自然的理念被参与者接收到</td>
+                        </tr>
+                        <tr>
+                            <td>叙事引导是帮助，还是束缚探索？</td>
+                            <td>书的隐喻、灯光线索，以及会回环的枢纽场景</td>
+                            <td>C# 触发器经 Unity Events 接到 UI 与灯光</td>
+                            <td>引导是必要的，但在某些位置含糊——通过场景内 UI 与环境光状态变化解决</td>
+                        </tr>
+                        <tr>
+                            <td>AI 辅助资产能否撑住真实的 VR 构建？</td>
+                            <td>按叙事关键度路由——手工制作、生成、或直接取用</td>
+                            <td>Blender 细化 → 低多边形资产 → Unity URP 运行于 Quest 3</td>
+                            <td>AI 辅助资产进入了被测试的 Quest 3 版本，建模时间节省 &gt;50%</td>
+                        </tr>
+                        <tr>
+                            <td>这个体验是否安全、是否合乎伦理到足以测试？</td>
+                            <td>覆盖健康、真实性与隐私的伦理优先方案</td>
+                            <td>晕动症预检；头显内 &lt;10 分钟 / 单场 &lt;30 分钟</td>
+                            <td>方案成立——8 位参与者完成测试，其中 3 位选择回访</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <thead>
+                        <tr>
+                            <th>反馈主题</th>
+                            <th>已交付的修复</th>
+                            <th>预期效果</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>引导清晰度</td>
+                            <td>交互式 UI + 环境光状态变化</td>
+                            <td>方向在场景内变得明确，而不必靠体验者自行推断</td>
+                        </tr>
+                        <tr>
+                            <td>路径流畅度</td>
+                            <td>以隐藏边界块规设主路径</td>
+                            <td>探索保持开放但有边界，体验者不再丢失主线</td>
+                        </tr>
+                        <tr>
+                            <td>动画时序</td>
+                            <td>丰富传送转场着色器</td>
+                            <td>场景切换不再被读作生硬的跳切</td>
+                        </tr>
+                        <tr>
+                            <td>音效层次</td>
+                            <td>补全逐节点音效</td>
+                            <td>声音在节点间承载连续性，而非单薄的单一层次</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../work/theFourthNaturetour/AI-assisted%20workflow-storyBoard-application.jpg"
+                    alt="应用后的分镜与最终 VR 场景——植被重新占据工业废墟，即原型中呈现的第四自然形成" />
+                <div class="csCap">概念的应用。交付的原型呈现第四自然的形成——新的植物群落逐渐覆盖废弃、锈迹斑斑的铁路轨道——直观证明自然将工业废弃重构成全新生态系统。</div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">06</span>交付、反思与下一步</h3>
+            <span class="csKicker">研究贡献——已验证什么、仍未验证什么、接下来去哪</span>
+
+            <div class="csP">
+                <p>
+                    MVP 验证了 VR 能够承载抽象的生态概念，并留下了一套可复用参考框架：<strong>概念转译设计策略 + 闭环工作流 +
+                        场景资产构建 + 测试迭代流程</strong>。三项贡献尤为突出——面向跨学科生态概念的可视化工作流；一套建立在“可复用提示词契约
+                        + 人工验证闸门”之上的端到端 AI 集成系统（分镜、3D 资产、音效、编程）；以及“模拟人类影响 + 暗示非人类视角”的双重框架。
+                </p>
+            </div>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <thead>
+                        <tr>
+                            <th>已验证</th>
+                            <th>仍未验证</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>VR 能让抽象的生态概念变得可感知——第四自然的理念被参与者接收到。</td>
+                            <td>没有量化的理解基线：结论是定性的，缺少可比较的前后测数据。</td>
+                        </tr>
+                        <tr>
+                            <td>五阶段工作流可以端到端执行——它产出了一版可运行的 Quest 3 构建。</td>
+                            <td>只构建并测试了一条场地叙事（铁路）；能否迁移到其他后工业场地尚未证明。</td>
+                        </tr>
+                        <tr>
+                            <td>AI 辅助能在不破坏构建的前提下压缩生产——建模时间节省 &gt;50%。</td>
+                            <td>这一节省来自设计师自身的估算，而非与同等手工构建对照测得。</td>
+                        </tr>
+                        <tr>
+                            <td>对抽象概念而言，引导的清晰度与交互的流畅度胜过技术复杂度。</td>
+                            <td>测试时音效仅约完成 10%，因此声音层的贡献尚无证据支撑。</td>
+                        </tr>
+                        <tr>
+                            <td>伦理优先的方案切实可行——8 位参与者完成测试，3 位回访。</td>
+                            <td>AI 辅助资产的质量由设计师判定，未经参与者独立评价。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <ol class="csList">
+                <li><strong>可复用工作流。</strong>一套模块化管线，其他生态概念可直接采用或调整，降低抽象概念 VR 化的门槛。</li>
+                <li><strong>AI + 传统设计。</strong>AI 在每一环节——分镜、建模、音效、代码——作为“闸门之后的起草伙伴”嵌入，靠的是可复用的提示词契约，而非一次性的提示词。</li>
+                <li><strong>概念重于复杂。</strong>用户反馈证实，对抽象概念而言，引导的清晰度与交互的流畅度胜过技术炫技。</li>
+                <li><strong>开放扩展。</strong>功能模块（物种识别、可参数调节的生态系统）、更多载体（城市废墟、废弃矿区），以及更深的
+                    AI + VR 以实现实时动态生态场景，仍是明确的下一步。</li>
+            </ol>
+
+            
+        </div>
+
+        <div class="linkContainer">
+            <div class="linkNext">
+                <a href="../ugames/ugames.html">
+                    <div class="nextIcon">
+                        <img src="../../../images/iconNext.svg" alt="iconNext" />
+                    </div>
+                    <div class="nextTextContainer">
+                        <div class="textPrevNext">下一篇</div>
+                        <div class="titlePrevNext">UGames 🎲</div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <footer>
+            <div class="dotsArray">
+                <p></p>
+            </div>
+
+            <div class="rolling-text-container">
+                <div class="rolling-text">
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+
+            <div class="footerContainer">
+                <div>
+                    <ul class="textLogoBottom">
+                        <li>YIHAN.</li>
+                        <li class="lou">LOU</li>
+                    </ul>
+                </div>
+                <div class="emailBottom">
+                    <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                        yihan.louyh@outlook.com
+                    </a>
+                </div>
+
+                <div class="footerContact">
+                    <a href="https://www.instagram.com/yhannah.l/" target="_blank" hidden>
+                        <img src="../../../images/icon_instagram.svg" alt="insta_icon" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/louyihan" target="_blank" hidden>
+                        <img src="../../../images/icon_linkedin.svg" alt="linkin_icon" />
+                    </a>
+                    <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                        <img src="../../../images/icon_email.svg" alt="email_icon" />
+                    </a>
+                </div>
+
+                <button id="scrollToTop" class="scrollTopButton">⏫</button>
+
+                <div class="dotsArray">
+                    <p></p>
+                </div>
+                <div class="copyright">
+                    © 2026 Designed & Developed by Yihan Lou with AI, All rights reserved
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script defer src="../../../foldedTags.js"></script>
+    <script defer src="../../../lang.js"></script>
+    <script defer src="../../../rollingtext.js"></script>
+    <script defer src="../../../scrollTopButton.js"></script>
+</body>
+
+</html>

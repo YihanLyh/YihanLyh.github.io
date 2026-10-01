@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="/images/character_Yihan.png" type="image/x-icon">
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="en" href="https://yihanlyh.github.io/work/theFourthNaturetour/theFourthNaturetour.html">
+    <link rel="alternate" hreflang="zh" href="https://yihanlyh.github.io/zh/work/theFourthNaturetour/theFourthNaturetour.html">
+    <title>The Fourth Nature Tour — A VR Journey Through Industrial Trace and Ecological Regeneration | Yihan Lou</title>
+    <link rel="stylesheet" type="text/css" href="../workpages.css" />
+    <link rel="stylesheet" type="text/css" href="../../foldedTags.css" />
+    <link rel="stylesheet" type="text/css" href="../../rollingtext.css" />
+    <link rel="stylesheet" type="text/css" href="../../scrollTopButton.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="The Fourth Nature Tour — a master's research VR experience (Unity URP · Meta Quest 3) that visualises the Fourth Nature concept: how a post-industrial wasteland spontaneously rewilds into a new urban ecosystem." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- mobile navigation -->
+        <div class="mobile-container" id="folded-tag">
+            <div class="header">
+                <div>
+                    <a href="../../index.html" class="homeLink" style="color: azure;">
+                        <ul class="textlogo">
+                            <li>YIHAN.</li>
+                            <li class="lou">LOU</li>
+                        </ul>
+                    </a>
+                </div>
+                <div class="headerContact">
+                    <a href="https://www.instagram.com/yhannah.l/" target="_blank" hidden>
+                        <img src="../../images/icon_instagram.svg" alt="insta_icon" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/louyihan" target="_blank" hidden>
+                        <img src="../../images/icon_linkedin.svg" alt="linkin_icon" />
+                    </a>
+                    <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                        <img src="../../images/icon_email.svg" alt="email_icon" />
+                    </a>
+                    <!-- language switch -->
+                    <button class="lang-btn" aria-label="切换语言">中文</button>
+                </div>
+                <div class="folded_icon" id="folded-icon">
+                    <img src="../../images/icon_foldedCross.svg" alt="folded_icon" />
+                </div>
+            </div>
+
+            <div class="rolling-text-container">
+                <div class="rolling-text">
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+
+            <div class="headerCover">
+                <div class="mobilePages">
+                    <a href="../index.html" class="mobilePageTag">WORK</a>
+                    <a href="../../about/index.html" class="mobilePageTag">ABOUT</a>
+                    <a href="../../blog/index.html" class="mobilePageTag">BLOG</a>
+                </div>
+            </div>
+            <div class="emailBottom">
+                <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                    yihan.louyh@outlook.com
+                </a>
+            </div>
+            <div class="dotsArray">
+                <p></p>
+            </div>
+            <div class="copyright">
+                © 2026 Yihan Lou with AI, All rights reserved
+            </div>
+        </div>
+        <!-- main page -->
+        <div class="header">
+            <div>
+                <a href="../../index.html" class="homeLink" style="color: azure;">
+                    <ul class="textlogo">
+                        <li>YIHAN.</li>
+                        <li class="lou">LOU</li>
+                    </ul>
+                </a>
+            </div>
+            <div class="headerPage">
+                <a href="../../work/index.html" class="headerPageTag">WORK</a>
+                <a href="../../about/index.html" class="headerPageTag">ABOUT</a>
+                <a href="../../blog/index.html" class="headerPageTag">BLOG</a>
+            </div>
+
+            <div class="headerContact">
+                <a href="https://www.instagram.com/yhannah.l/" target="_blank" hidden>
+                    <img src="../../images/icon_instagram.svg" alt="insta_icon" />
+                </a>
+                <a href="https://www.linkedin.com/in/louyihan" target="_blank" hidden>
+                    <img src="../../images/icon_linkedin.svg" alt="linkin_icon" />
+                </a>
+                <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                    <img src="../../images/icon_email.svg" alt="email_icon" />
+                </a>
+                <!-- language switch -->
+                <button class="lang-btn" aria-label="切换语言">中文</button>
+            </div>
+            <div class="folded_icon" id="unfolded-icon">
+                <img src="../../images/icon_folded.svg" alt="unfolded_icon" />
+            </div>
+        </div>
+        <div class="heading1">The Fourth Nature Tour 🌲</div>
+
+        <div class="dotsArray1">
+            <p></p>
+        </div>
+
+        <div class="rolling-text-container">
+            <div class="rolling-text">
+                <span> VIRTUAL&nbsp;REALITY&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; RESEARCH&nbsp;&nbsp;&nbsp;&nbsp;
+                    *&nbsp;&nbsp;&nbsp;&nbsp; AI&nbsp;&nbsp;&nbsp;&nbsp;*
+                </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span> VIRTUAL&nbsp;REALITY&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; RESEARCH&nbsp;&nbsp;&nbsp;&nbsp;
+                    *&nbsp;&nbsp;&nbsp;&nbsp; AI&nbsp;&nbsp;&nbsp;&nbsp;*
+                </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span> VIRTUAL&nbsp;REALITY&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; RESEARCH&nbsp;&nbsp;&nbsp;&nbsp;
+                    *&nbsp;&nbsp;&nbsp;&nbsp; AI&nbsp;&nbsp;&nbsp;&nbsp;*
+                </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span> VIRTUAL&nbsp;REALITY&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; RESEARCH&nbsp;&nbsp;&nbsp;&nbsp;
+                    *&nbsp;&nbsp;&nbsp;&nbsp; AI&nbsp;&nbsp;&nbsp;&nbsp;*
+                </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span> VIRTUAL&nbsp;REALITY&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; RESEARCH&nbsp;&nbsp;&nbsp;&nbsp;
+                    *&nbsp;&nbsp;&nbsp;&nbsp; AI&nbsp;&nbsp;&nbsp;&nbsp;*
+                </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span> VIRTUAL&nbsp;REALITY&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; RESEARCH&nbsp;&nbsp;&nbsp;&nbsp;
+                    *&nbsp;&nbsp;&nbsp;&nbsp; AI&nbsp;&nbsp;&nbsp;&nbsp;*
+                </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            </div>
+        </div>
+
+        <div class="projectContent">
+            <div class="coverPic">
+                <img src="./theFourthNatureTour_cover.jpg"
+                    alt="The Fourth Nature Tour — a low-poly VR scene of a pine forest reclaiming an abandoned railway, conveying ecological regeneration" />
+            </div>
+            <div class="heading2">The Fourth Nature Tour 🌲 — A VR journey through industrial trace and ecological regeneration</div>
+
+            <!-- ============================================================ -->
+            <div class="execSummary">
+                <div class="esLabel">Bottom line</div>
+                <p class="esClaim">
+                    “Fourth Nature” names the wild, self-organising ecology that grows on post-industrial land — a
+                    concept too abstract for a museum placard. This master's research answers that with a <strong>virtual
+                        reality experience</strong> rather than a poster: built in Unity URP for the Meta Quest 3, it lets
+                    a participant walk an insect-scale path from a pine forest, through the construction and passage of a
+                    railway, into the same place years later — now reclaimed by pioneer plants. The piece is as much a
+                    <strong>method</strong> as a story: it applies a 5W1H design strategy, an AI-assisted production
+                    pipeline in which <strong>AI drafts and the designer holds the gate</strong>, and an ethics-aware
+                    user-testing loop, to prove that VR can turn an interdisciplinary ecological concept into something a
+                    stranger can feel.
+                </p>
+            </div>
+
+            <div class="statGrid">
+                <div class="stat"><span class="statNum">1</span><span class="statLabel">abstract concept made
+                        experiential — Fourth Nature, the self-wilding ecology of post-industrial land</span></div>
+                <div class="stat"><span class="statNum">3</span><span class="statLabel">asset pipelines combined —
+                        manual Blender, AI-assisted experimental modelling, and curated Asset Store
+                        libraries</span></div>
+                <div class="stat"><span class="statNum">8</span><span class="statLabel">participants in qualitative
+                        user testing (3 in follow-up), driving a documented iteration cycle</span></div>
+                <div class="stat"><span class="statNum">&gt;50%</span><span class="statLabel">modelling time saved by the
+                        AI-assisted workflow versus fully manual low-poly construction</span></div>
+            </div>
+
+            <h3 class="secTitle"><span class="secNum">00</span>Executive Summary</h3>
+            <span class="csKicker">What this project is, and why it works</span>
+
+            <div class="csP">
+                <p>
+                    <em>The Fourth Nature Tour</em> is an individual master's thesis project that designs and develops a
+                    VR experience communicating the “Fourth Nature” concept — the novel, spontaneous ecosystem that
+                    emerges where human industry withdraws. Rather than describing the idea, the experience stages it as
+                    a journey: an open book opens the narrative, lighting cues lead the participant to a portal, and two
+                    sequential stages contrast industrial invasion with ecological succession. The research contribution
+                    is a reusable workflow — <strong>concept deconstruction → 5W1H design strategy → narrative + scene +
+                        interaction prototype → AI-assisted production → user-test iteration</strong> — validated end to
+                    end on a working Quest 3 build.
+                </p>
+            </div>
+
+            <ol class="hlList">
+                <li>
+                    <b>It treats the problem as one of communication, not data.</b> The value of Fourth Nature lies in
+                    public accessibility; the project translates an abstract ecological principle into a tangible,
+                    explorable narrative so people can co-perceive urban ecological regeneration rather than read about
+                    it.
+                </li>
+                <li>
+                    <b>The method is explicit and reusable.</b> A 5W1H framework (Lasswell, extended) is scenario-translated
+                    into a design strategy covering content, purpose, audience, scenario, carrier and method — a
+                    transferable template for other interdisciplinary ecological concepts.
+                </li>
+                <li>
+                    <b>Technology serves the concept.</b> Unity URP + Meta Quest 3 deliver immersive presence; C# scripts,
+                    Unity Events and Shader Graph build a controllable, dynamic interaction system; low-poly assets
+                    balance performance, legibility and iteration speed on standalone VR hardware.
+                </li>
+                <li>
+                    <b>AI is a gated pipeline, not a gimmick.</b> AI-assisted storyboarding, experimental 3D modelling,
+                    sound generation and pair-programming (Cursor, GitHub Copilot) each compress a production stage — but
+                    every output passes a human gate, and the durable artefact is a reusable prompt contract
+                    (role / requirements / output + references) rather than any single generated asset.
+                </li>
+            </ol>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <tbody>
+                        <tr>
+                            <td>Format</td>
+                            <td>Virtual reality experience — Meta Quest 3 headset, Unity URP, standalone build</td>
+                        </tr>
+                        <tr>
+                            <td>Year</td>
+                            <td>2025.09 – 2026.06</td>
+                        </tr>
+                        <tr>
+                            <td>Context</td>
+                            <td>Master's thesis graduation project (individual)</td>
+                        </tr>
+                        <tr>
+                            <td>My roles</td>
+                            <td>Conceptual research · Narrative &amp; interaction design · Unity / C# development ·
+                                AI-assisted production · User testing &amp; iteration</td>
+                        </tr>
+                        <tr>
+                            <td>Design framework</td>
+                            <td>5W1H strategy (Lasswell) → user journey &amp; storyboard → VR prototype</td>
+                        </tr>
+                        <tr>
+                            <td>Deliverables</td>
+                            <td>Concept research · 5W1H design strategy · storyboard · three low-poly VR scenes (Initial
+                                + Stage 1 + Stage 2) · C# interaction system · Shader Graph effects · AI-assisted asset
+                                &amp; sound pipeline · reusable prompt contract &amp; human verification gates ·
+                                ethics-aware user-test iteration</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">01</span>Background Research</h3>
+            <span class="csKicker">Discipline: ecological concept research &amp; VR medium analysis</span>
+
+            <div class="csP">
+                <p>
+                    The research begins by grounding the concept and interrogating the medium. “Fourth Nature” denotes
+                    anthropogenic, self-wilding urban land — high in ecological potential yet hard to perceive. Virtual
+                    reality is chosen as the carrier for two reasons: its immersive 3D environment (reality-substituting
+                    + reality-transcending) lets participants inhabit a world beyond physical constraints, and its
+                    embodied, multimodal interaction turns a spectator into an actor. A comparative case analysis —
+                    Musée d'Orsay's <em>La Palette de Van Gogh</em> (linear, anthropocentric reconstruction) versus
+                    Marshmallow Laser Feast's <em>In the Eyes of the Animal</em> (exploratory, non-anthropocentric
+                    perception) — distils two strategies the project deliberately fuses: narrative guidance for clarity,
+                    and perspective-shift for curiosity.
+                </p>
+            </div>
+
+            <div class="cardGrid g3">
+                <div class="csCard">
+                    <span class="cRole">Finding 01</span>
+                    <h4>Communication value of Fourth Nature</h4>
+                    <p>Translating abstract ecological principles into tangible experiences improves public accessibility
+                        and acceptance, letting people co-create with urban nature rather than merely learn about it.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Finding 02</span>
+                    <h4>VR as a medium for ecology</h4>
+                    <p>Full-sensory immersion and spatial presence make VR a distinctive platform for presenting natural
+                        concepts — including the shift to non-human, insect-scale viewpoints that build empathy.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Finding 03</span>
+                    <h4>Two transferable strategies</h4>
+                    <p>Case analysis shows narrative guidance improves information delivery, while perspective-shifting
+                        stimulates exploration — the project combines both for guided-yet-open ecological discovery.</p>
+                </div>
+            </div>
+
+            <div class="calloutBox">
+                <span class="cbLabel">How might we</span>
+                <div class="csP">
+                    <p>
+                        The brief the research produced: <strong>how might we use virtual reality to make the abstract
+                            Fourth Nature concept perceptible and experiential</strong> — breaking the constraints of time
+                        and space so participants perceive ecological value and evolutionary process, and strengthen
+                        environmental awareness? That question turns theory into a buildable VR narrative.
+                    </p>
+                </div>
+            </div>
+
+            <div class="csFigure">
+                <img src="./Scene%20Map.jpg"
+                    alt="Scene map of The Fourth Nature Tour — Initial Scene hub linking Stage 1 (industrial invasion) and Stage 2 (Fourth Nature emergence), with environmental elements, triggers and audio-visual cues" />
+                <div class="csCap">The project scene map. An insect-scale perspective establishes closeness to nature; the
+                    journey is anchored by an <strong>Initial Scene</strong> hub that links two sequential stages — Stage
+                    1 (nature under industrial invasion) and Stage 2 (Fourth Nature emergence after human withdrawal) —
+                    each carrying environmental elements, interactive triggers and audio-visual cues for immersion.</div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">02</span>Design Methodology</h3>
+            <span class="csKicker">Discipline: 5W1H design strategy &amp; user journey</span>
+
+            <div class="csP">
+                <p>
+                    The 5W1H framework (Lasswell's communication model, extended with “How”) is scenario-translated into a
+                    concrete design strategy. <em>What</em> — dynamic process visualisation and comparative change of
+                    ecological regeneration. <em>Why</em> — perceive ecological value beyond time/space constraints.
+                    <em>Who</em> — general public &amp; student science-education groups. <em>When</em> — museum-like
+                    exhibition spaces and online platforms. <em>Where</em> — VR headsets, immersive halls, dynamic video.
+                    <em>How</em> — 3D modelling, interaction &amp; mechanical design, conceptual visualisation, and
+                    AI-assisted design, closing the narrative–scene–interaction loop.
+                </p>
+            </div>
+
+            <div class="cardGrid g2">
+                <div class="csCard">
+                    <span class="cRole">Framework</span>
+                    <h4>5W1H → design strategy</h4>
+                    <p>A reusable, practice-derived strategy mapping each dimension to a VR design decision — content
+                        presentation as dynamic-process + change-comparison, delivered through museum exhibitions and
+                        online media for public ecological communication.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Narrative</span>
+                    <h4>The book metaphor &amp; teleportation loop</h4>
+                    <p>An open book is the narrative anchor; lighting cues guide the participant to portals. The Initial
+                        Scene cycles back to bridge Stage 1 and Stage 2, lowering cognitive load and keeping narrative
+                        continuity across the experience.</p>
+                </div>
+            </div>
+
+            <div class="csFigure">
+                <img src="./Initial%20-%20storyboards.jpg"
+                    alt="Storyboard sequence of The Fourth Nature Tour — the open-book intro, industrial-displacement versus ecological-recovery contrast, and the two-stage user journey" />
+                <div class="csCap">The full storyboard sequence. The participant meets a monumental open book: the left
+                    page shows plants displaced by artificial industry, the right shows resurgence after industrial
+                    abandonment. Lighting cues lead to Stage 1 (dense pine forest → logging → railway → train) and, on
+                    return, to Stage 2 — where vegetation reclaims the rusted tracks, intuitively expressing Fourth
+                    Nature.</div>
+            </div>
+
+            <div class="csFigure">
+                <img src="./AI-assisted%20workflow-1-storyBoard.jpg"
+                    alt="AI-assisted storyboard workflow — before/after comparison showing sketch optimisation through structured prompts and reference images" />
+                <div class="csCap">AI-assisted storyboard optimisation. A reusable prompt template (role / requirements /
+                    output, in Markdown) plus two reference images — a content sketch and a style image — let rough
+                    sketches iterate into polished concept frames quickly, raising both presentation quality and efficiency
+                    at the conceptual stage.</div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">03</span>Technical Development</h3>
+            <span class="csKicker">Discipline: Unity URP engineering &amp; interaction system</span>
+
+            <div class="csP">
+                <p>
+                    The prototype is built on the <strong>Unity Universal Render Pipeline (URP)</strong> for its XR
+                    rendering features and post-processing headroom, deployed to the <strong>Meta Quest 3</strong> (high-resolution
+                    dual LCD, standalone, widely accessible). XR Plug-in Management and the XR Interaction Toolkit form the
+                    development foundation; the headset connects via Meta Quest Link for in-design testing. Interaction
+                    logic is implemented in <strong>C#</strong>: custom scripts detect participant position and
+                    interaction points in real time, while <strong>Unity Events</strong> expose a visual editor that
+                    wires script functions to UI buttons and spatial triggers without code changes — sharply raising
+                    iteration speed.
+                </p>
+            </div>
+
+            <div class="cardGrid g2">
+                <div class="csCard">
+                    <span class="cRole">Architecture</span>
+                    <h4>Initial Scene → Stage 1 → Stage 2</h4>
+                    <p>A linear, story-driven progression anchored by a hub. Stage 1 stages industrial intervention
+                        (pine forest → logging → railway construction → train passage); Stage 2 stages spontaneous
+                        succession on the abandoned railway — forming the Fourth Nature node before a closing fade-out.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Visual systems</span>
+                    <h4>Shader Graph &amp; dynamic materials</h4>
+                    <p>A vertex-animation shader drives a “move with wind” plant-growth effect; a portal shader dissolves
+                        and reassembles the screen during teleportation, smoothing scene changes. These materials are
+                        linked to C# logic to enrich interaction feedback.</p>
+                </div>
+            </div>
+
+            <div class="csFigure">
+                <img src="./Interaction%20Architecture%20and%20Mechanism%20Design.jpg"
+                    alt="Interaction architecture and mechanism design — the three-module flow of Initial Scene, Stage 1 industrial invasion, and Stage 2 Fourth Nature emergence with triggers and audio-visual cues" />
+                <div class="csCap">The interaction architecture. Three modules — Initial Scene, Stage 1 (nature under
+                    industrial invasion) and Stage 2 (Fourth Nature emergence) — integrate guided interaction with scene
+                    teleportation, forming a narrative flow driven by user-autonomous operation from guidance to open
+                    exploration.</div>
+            </div>
+
+            <div class="csFigure">
+                <img src="./UnityEvent.jpg"
+                    alt="Unity Events application in the Unity Editor — visual wiring linking script functions to UI buttons and spatial triggers for the VR interaction system" />
+                <div class="csCap">Unity Events in practice. The visual editor links C# functions to UI buttons and spatial
+                    triggers; trigger conditions and execution order can be rearranged by drag-and-drop, decoupling design
+                    iteration from code rewrites.</div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">04</span>AI × Design × Engineering</h3>
+            <span class="csKicker">One integrated method — AI drafts, the designer directs, a human gate decides what ships</span>
+
+            <div class="csP">
+                <p>
+                    Listing AI tools undersells what is actually happening here. AI runs through the pipeline as a
+                    <strong>draft-and-verify loop</strong>: at each stage a model produces a first-pass artefact, the
+                    designer sets the intent and accepts or reworks it, and nothing enters the build until it clears a
+                    human check. The durable output is not any single generated image or mesh — it is the
+                    <strong>reusable prompt contract</strong> (role / requirements / output, written in Markdown and
+                    paired with one content reference and one style reference) that makes each stage repeatable and
+                    portable across models.
+                </p>
+            </div>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <thead>
+                        <tr>
+                            <th>Stage</th>
+                            <th>What AI produces</th>
+                            <th>What the designer owns (the gate)</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Storyboard</td>
+                            <td>Polished concept frames generated from a rough content sketch plus a style reference</td>
+                            <td>Writes the role / requirements / output contract, selects the two references, and rejects frames that drift from the narrative</td>
+                            <td>Higher-quality concept frames produced faster — at the stage where changes are cheapest</td>
+                        </tr>
+                        <tr>
+                            <td>3D assets</td>
+                            <td>Text → concept image → textured 3D mesh</td>
+                            <td>Reworks topology, scale and material in Blender, and decides which narrative-critical pieces must stay hand-built</td>
+                            <td>&gt;50% modelling time saved, plus a wider space of conceptual forms to explore</td>
+                        </tr>
+                        <tr>
+                            <td>Sound</td>
+                            <td>Preliminary SFX from an AI audio platform</td>
+                            <td>Edits, layers and places every cue against its narrative node</td>
+                            <td>A sound track that existed early enough to be tested, then completed per node in iteration</td>
+                        </tr>
+                        <tr>
+                            <td>Code</td>
+                            <td>Syntax checking and logic-optimisation suggestions</td>
+                            <td>Owns the interaction architecture, C# logic, Unity Events wiring and shader parameters</td>
+                            <td>Faster debugging while the designer keeps full control of system behaviour</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="csP">
+                <p>
+                    The same gate logic decides <em>where</em> an asset comes from. Not everything should be generated:
+                    <strong>narrative-critical</strong> elements stay hand-built, because their shape carries the
+                    argument; <strong>conceptual or exploratory</strong> elements go to AI, because breadth of options
+                    matters more than precision there; <strong>generic fill</strong> comes from curated libraries,
+                    because it should cost almost nothing. That routing rule — not any single tool — is the reusable part
+                    of the method.
+                </p>
+            </div>
+
+            <div class="cardGrid g2">
+                <div class="csCard">
+                    <span class="cRole">Route 01</span>
+                    <h4>Hand-built low-poly</h4>
+                    <p>Narrative-critical pieces are modelled in Blender with bespoke materials — chosen where precise shape, style and detail control decide whether the story reads.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Route 02</span>
+                    <h4>AI-assisted experimental modelling</h4>
+                    <p>Text-to-image → textured 3D → Blender refinement. Used where breadth beats precision: abstract, conceptual forms explored far faster than by hand (&gt;50% time saved).</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Route 03</span>
+                    <h4>Curated Asset Store libraries</h4>
+                    <p>Generic environment fill (pine, grass, stone) is sourced, not made — enriching spatial hierarchy without spending concept budget or diluting the idea.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Sound &amp; Code</span>
+                    <h4>AI-generated audio &amp; pair programming</h4>
+                    <p>OptimizerAI produces preliminary SFX, refined in an audio editor; Cursor and GitHub Copilot assist debugging and logic optimisation — compressing the sound and development tracks alike.</p>
+                </div>
+            </div>
+
+            <div class="csFigure">
+                <img src="./modeling.jpg"
+                    alt="Traditional low-poly 3D modelling examples — manually built scene elements with materials matching the design style" />
+                <div class="csCap">Route 01 — hand-modelled low-poly assets. Scene components requiring precise shape, style
+                    and detail control are built in Blender with matching materials; they are the visual carriers that tie
+                    scene flow to the Fourth Nature formation story.</div>
+            </div>
+
+            <div class="csFigure">
+                <img src="./modeling%20AI%20assisted.jpg"
+                    alt="AI-assisted experimental modelling workflow — text to concept image, image to textured 3D, then Blender refinement" />
+                <div class="csCap">Route 02 — the AI-assisted modelling workflow, and the gate behind it. Conceptual
+                    reference images are generated from text, converted into textured 3D models, then reworked in 3D
+                    software: efficiency improves by over 50%, but the mesh only ships after a designer has corrected its
+                    topology, scale and material.</div>
+            </div>
+
+            <div class="calloutBox">
+                <span class="cbLabel">Provenance &amp; the human gate</span>
+                <div class="csP">
+                    <p>
+                        Every AI-assisted asset was reviewed and reworked in Blender before entering the build, and the
+                        elements that carry the concept argument were deliberately hand-built so the narrative never rests
+                        on a generation the designer cannot control. AI use is documented stage by stage in the thesis
+                        rather than presented as authorship — the pipeline stays transparent about which parts were
+                        generated and which were made.
+                    </p>
+                </div>
+            </div>
+
+            <div class="calloutBox">
+                <span class="cbLabel">Forward look — read against today's agent tooling</span>
+                <div class="csP">
+                    <p>
+                        This was built with single-turn, prompt-driven assistants — Cursor and GitHub Copilot for code,
+                        OptimizerAI for sound, text-to-3D for assets. The contract it formalised (role, requirements,
+                        output format, plus references) is exactly the interface today's agentic, tool-using models
+                        consume, so the same four stages can now be delegated as multi-step jobs instead of one prompt at
+                        a time. That shifts where the designer's leverage sits: from <em>operating</em> each tool to
+                        <em>specifying intent and verifying output</em>, which makes the gate — not the generation — the
+                        skill that compounds. It also makes the cheap stages cheaper still: storyboard and asset variants,
+                        automated topology cleanup, shader scaffolding, playtest-transcript synthesis, and keeping
+                        bilingual documentation in sync are all realistic to hand over.
+                    </p>
+                    <p>
+                        What does not move is the finding this thesis actually earned. Compressing production is not the
+                        same as validating a concept: faster assets did not make the guidance clearer — eight participants
+                        in a headset did. Any agent-driven version of this pipeline still has to end in human testing, or
+                        it will simply ship a more polished version of a confusing experience.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">05</span>Prototype, Evaluation &amp; Results</h3>
+            <span class="csKicker">Ethics-aware testing, and what the evidence actually shows</span>
+
+            <div class="csP">
+                <p>
+                    Testing followed human-centric ethical principles across three dimensions — participant health
+                    (safe space, cybersickness pre-check, &lt;10 min headset / &lt;30 min total per session), experience
+                    authenticity (delayed, non-intrusive feedback; informed disclosure without leaking evaluation points),
+                    and privacy (informed consent on data use). <strong>Eight participants</strong> took part in
+                    qualitative usability testing at ~70% scene / 80% interaction / 10% audio completion, with
+                    <strong>three</strong> returning for follow-up; observation records plus semi-structured interviews
+                    fed a documented iteration cycle.
+                </p>
+            </div>
+
+            <div class="cardGrid g2">
+                <div class="csCard">
+                    <span class="cRole">Method</span>
+                    <h4>Qualitative, non-intrusive testing</h4>
+                    <p>Participants freely explored without a task list; behaviours and sticking points were recorded
+                        synchronously, then discussed in one-on-one semi-structured interviews — prioritising problem
+                        identification and design improvement.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Iteration</span>
+                    <h4>Four response directions</h4>
+                    <p>Feedback clustered into guidance clarity, path fluency, animation timing and sound layering.
+                        Iterations added interactive UI + ambient-light state changes, laid main paths with hidden
+                        boundary blocks, enriched transition shaders, and completed per-node sound.</p>
+                </div>
+            </div>
+
+            <div class="calloutBox">
+                <span class="cbLabel">What the testing confirmed</span>
+                <div class="csP">
+                    <p>
+                        Core concept communication succeeded, but guidance ambiguity and abrupt transitions hurt fluency.
+                        The fix — stronger in-scene UI guidance, restricted explorable ranges, smoother fade transitions
+                        and richer sound — validates the project's own conclusion: for abstract concepts, <strong>clear
+                            information design and fluent interaction logic matter far more than technical complexity</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <thead>
+                        <tr>
+                            <th>Research question</th>
+                            <th>Design decision</th>
+                            <th>Technical implementation</th>
+                            <th>What the test showed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Can an abstract ecological concept be made perceptible?</td>
+                            <td>Stage the concept as a journey that contrasts industrial invasion with ecological succession</td>
+                            <td>Initial → Stage 1 → Stage 2 hub architecture with portal-shader transitions</td>
+                            <td>Yes — core concept communication succeeded; the Fourth Nature idea landed with participants</td>
+                        </tr>
+                        <tr>
+                            <td>Does narrative guidance help, or does it constrain exploration?</td>
+                            <td>Book metaphor, light cues and a hub that loops back</td>
+                            <td>C# triggers wired through Unity Events to UI and lighting</td>
+                            <td>Guidance was necessary but ambiguous in places — resolved by in-scene UI and ambient-light state changes</td>
+                        </tr>
+                        <tr>
+                            <td>Do AI-assisted assets survive a real VR build?</td>
+                            <td>Route by narrative criticality — hand-build, generate, or source</td>
+                            <td>Blender refinement → low-poly assets in Unity URP on Quest 3</td>
+                            <td>AI-assisted assets shipped into the tested Quest 3 build, with &gt;50% modelling time saved</td>
+                        </tr>
+                        <tr>
+                            <td>Is the experience safe and ethical enough to test?</td>
+                            <td>Ethics-first protocol across health, authenticity and privacy</td>
+                            <td>Cybersickness pre-check; &lt;10 min in headset / &lt;30 min per session</td>
+                            <td>The protocol held — 8 participants completed the session and 3 chose to return for follow-up</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <thead>
+                        <tr>
+                            <th>Feedback theme</th>
+                            <th>Fix shipped</th>
+                            <th>Intended effect</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Guidance clarity</td>
+                            <td>Interactive UI plus ambient-light state changes</td>
+                            <td>Direction becomes explicit inside the scene instead of having to be inferred</td>
+                        </tr>
+                        <tr>
+                            <td>Path fluency</td>
+                            <td>Main paths laid out with hidden boundary blocks</td>
+                            <td>Exploration stays open but bounded, so participants stop losing the thread</td>
+                        </tr>
+                        <tr>
+                            <td>Animation timing</td>
+                            <td>Richer transition shaders on teleportation</td>
+                            <td>Scene changes stop reading as abrupt cuts</td>
+                        </tr>
+                        <tr>
+                            <td>Sound layering</td>
+                            <td>Per-node sound completed</td>
+                            <td>Audio carries continuity across nodes instead of thin, single-layer cues</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="csFigure">
+                <img src="./AI-assisted%20workflow-storyBoard-application.jpg"
+                    alt="Applied storyboard and final VR scene — the Fourth Nature formation with vegetation reclaiming industrial ruins, as delivered in the prototype" />
+                <div class="csCap">The concept applied. The delivered prototype presents the Fourth Nature formation — new
+                    plant communities gradually covering abandoned, rusted railway tracks — the visual proof that nature
+                    reconstructs industrial abandonment into a novel ecosystem.</div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">06</span>Delivery, Reflection &amp; Next</h3>
+            <span class="csKicker">Research contribution — what is verified, what is still open, where it goes next</span>
+
+            <div class="csP">
+                <p>
+                    The MVP verifies that VR can carry an abstract ecological concept, and leaves behind a reusable
+                    reference framework: <strong>concept-transformation design strategy + closed-loop workflow +
+                        scene-asset construction + testing-iteration process</strong>. Three contributions stand out — a
+                    visualisation workflow for interdisciplinary ecological concepts; an end-to-end AI-integration
+                    system (storyboard, 3D asset, sound, programming) built on a reusable prompt contract with human
+                    verification gates; and a dual framework of simulating human impact while implying non-human
+                    perspectives.
+                </p>
+            </div>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <thead>
+                        <tr>
+                            <th>Verified</th>
+                            <th>Still open</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>VR can make an abstract ecological concept perceptible — the Fourth Nature idea landed with participants.</td>
+                            <td>No quantitative comprehension baseline: the result is qualitative, with no pre/post measure to compare against.</td>
+                        </tr>
+                        <tr>
+                            <td>The five-stage workflow is executable end to end — it produced a running Quest 3 build.</td>
+                            <td>Only one site narrative (a railway) was built and tested; transfer to other post-industrial sites is unproven.</td>
+                        </tr>
+                        <tr>
+                            <td>AI assistance compresses production without breaking the build — &gt;50% modelling time saved.</td>
+                            <td>That saving is the designer's own estimate, not a measured comparison against a matched manual build.</td>
+                        </tr>
+                        <tr>
+                            <td>For abstract concepts, clarity of guidance and fluency of interaction beat technical complexity.</td>
+                            <td>Audio was only ~10% complete at test time, so the sound layer's contribution is not yet evidenced.</td>
+                        </tr>
+                        <tr>
+                            <td>An ethics-first protocol is practical — 8 participants tested, 3 returned for follow-up.</td>
+                            <td>AI-assisted asset quality was judged by the designer, not independently by participants.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <ol class="csList">
+                <li><strong>Reusable workflow.</strong> A modular pipeline other ecological concepts can adopt or adapt,
+                    lowering the threshold for VR transformation of abstract ideas.</li>
+                <li><strong>AI + traditional design.</strong> AI is embedded at every stage — storyboard, modelling,
+                    sound, code — as a drafting partner behind a human gate, with a reusable prompt contract rather than
+                    one-off prompts.</li>
+                <li><strong>Concept over complexity.</strong> User feedback confirmed clarity of guidance and fluency of
+                    interaction outperform technical sophistication in communicating abstract ideas.</li>
+                <li><strong>Open expansion.</strong> Functional modules (species identification, parameter-adjustable
+                    ecosystems), more carriers (urban ruins, abandoned mines), and deeper AI + VR for real-time dynamic
+                    ecological scenes remain as concrete next steps.</li>
+            </ol>
+
+            
+        </div>
+
+        <div class="linkContainer">
+            <div class="linkNext">
+                <a href="../ugames/ugames.html">
+                    <div class="nextIcon">
+                        <img src="../../images/iconNext.svg" alt="iconNext" />
+                    </div>
+                    <div class="nextTextContainer">
+                        <div class="textPrevNext">NEXT.</div>
+                        <div class="titlePrevNext">UGames 🎲</div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <footer>
+            <div class="dotsArray">
+                <p></p>
+            </div>
+
+            <div class="rolling-text-container">
+                <div class="rolling-text">
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+
+            <div class="footerContainer">
+                <div>
+                    <ul class="textLogoBottom">
+                        <li>YIHAN.</li>
+                        <li class="lou">LOU</li>
+                    </ul>
+                </div>
+                <div class="emailBottom">
+                    <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                        yihan.louyh@outlook.com
+                    </a>
+                </div>
+
+                <div class="footerContact">
+                    <a href="https://www.instagram.com/yhannah.l/" target="_blank" hidden>
+                        <img src="../../images/icon_instagram.svg" alt="insta_icon" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/louyihan" target="_blank" hidden>
+                        <img src="../../images/icon_linkedin.svg" alt="linkin_icon" />
+                    </a>
+                    <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                        <img src="../../images/icon_email.svg" alt="email_icon" />
+                    </a>
+                </div>
+
+                <button id="scrollToTop" class="scrollTopButton">⏫</button>
+
+                <div class="dotsArray">
+                    <p></p>
+                </div>
+                <div class="copyright">
+                    © 2026 Designed & Developed by Yihan Lou with AI, All rights reserved
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script defer src="../../foldedTags.js"></script>
+    <script defer src="../../lang.js"></script>
+    <script defer src="../../rollingtext.js"></script>
+    <script defer src="../../scrollTopButton.js"></script>
+</body>
+
+</html>

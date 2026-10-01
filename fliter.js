@@ -5,6 +5,7 @@ const buttonD = document.querySelector("#filter-dev");
 const buttonE = document.querySelector("#filter-interact");
 const buttonF = document.querySelector("#filter-vr");
 const buttonG = document.querySelector("#filter-motion");
+const buttonH = document.querySelector("#filter-AI");
 
 const aBoxes = Array.from(document.querySelectorAll(".allProjectsCards .a"));
 const bBoxes = Array.from(document.querySelectorAll(".allProjectsCards .b"));
@@ -13,8 +14,9 @@ const dBoxes = Array.from(document.querySelectorAll(".allProjectsCards .d"));
 const eBoxes = Array.from(document.querySelectorAll(".allProjectsCards .e"));
 const fBoxes = Array.from(document.querySelectorAll(".allProjectsCards .f"));
 const gBoxes = Array.from(document.querySelectorAll(".allProjectsCards .g"));
+const hBoxes = Array.from(document.querySelectorAll(".allProjectsCards .h"));
 
-const allBoxes = [...aBoxes, ...bBoxes, ...cBoxes, ...dBoxes, ...eBoxes, ...fBoxes, ...gBoxes];
+const allBoxes = [...aBoxes, ...bBoxes, ...cBoxes, ...dBoxes, ...eBoxes, ...fBoxes, ...gBoxes, ...hBoxes];
 
 buttonB.addEventListener("click", () => {
     buttonB.classList.add("active");
@@ -24,8 +26,9 @@ buttonB.addEventListener("click", () => {
     buttonE.classList.remove("active");
     buttonF.classList.remove("active");
     buttonG.classList.remove("active");
+    buttonH.classList.remove("active");
 
-    const hideBoxes = [...aBoxes, ...cBoxes, ...dBoxes, ...eBoxes, ...fBoxes, ...gBoxes];
+    const hideBoxes = [...aBoxes, ...cBoxes, ...dBoxes, ...eBoxes, ...fBoxes, ...gBoxes, ...hBoxes];
     hideBoxes.map((box) => {
         box.style.display = "none";
     });
@@ -44,8 +47,9 @@ buttonC.addEventListener("click", () => {
     buttonE.classList.remove("active");
     buttonF.classList.remove("active");
     buttonG.classList.remove("active");
+    buttonH.classList.remove("active");
 
-    const hideBoxes = [...aBoxes, ...bBoxes, ...dBoxes, ...eBoxes, ...fBoxes, ...gBoxes];
+    const hideBoxes = [...aBoxes, ...bBoxes, ...dBoxes, ...eBoxes, ...fBoxes, ...gBoxes, ...hBoxes];
     hideBoxes.map((box) => {
         box.style.display = "none";
     });
@@ -64,8 +68,9 @@ buttonD.addEventListener("click", () => {
     buttonE.classList.remove("active");
     buttonF.classList.remove("active");
     buttonG.classList.remove("active");
+    buttonH.classList.remove("active");
 
-    const hideBoxes = [...aBoxes, ...bBoxes, ...cBoxes, ...eBoxes, ...fBoxes, ...gBoxes];
+    const hideBoxes = [...aBoxes, ...bBoxes, ...cBoxes, ...eBoxes, ...fBoxes, ...gBoxes, ...hBoxes];
     hideBoxes.map((box) => {
         box.style.display = "none";
     });
@@ -84,8 +89,9 @@ buttonE.addEventListener("click", () => {
     buttonD.classList.remove("active");
     buttonF.classList.remove("active");
     buttonG.classList.remove("active");
+    buttonH.classList.remove("active");
 
-    const hideBoxes = [...aBoxes, ...bBoxes, ...cBoxes, ...dBoxes, ...fBoxes, ...gBoxes];
+    const hideBoxes = [...aBoxes, ...bBoxes, ...cBoxes, ...dBoxes, ...fBoxes, ...gBoxes, ...hBoxes];
     hideBoxes.map((box) => {
         box.style.display = "none";
     });
@@ -104,8 +110,9 @@ buttonF.addEventListener("click", () => {
     buttonD.classList.remove("active");
     buttonE.classList.remove("active");
     buttonG.classList.remove("active");
+    buttonH.classList.remove("active");
 
-    const hideBoxes = [...aBoxes, ...bBoxes, ...cBoxes, ...dBoxes, ...eBoxes, ...gBoxes];
+    const hideBoxes = [...aBoxes, ...bBoxes, ...cBoxes, ...dBoxes, ...eBoxes, ...gBoxes, ...hBoxes];
     hideBoxes.map((box) => {
         box.style.display = "none";
     });
@@ -124,8 +131,9 @@ buttonG.addEventListener("click", () => {
     buttonD.classList.remove("active");
     buttonE.classList.remove("active");
     buttonF.classList.remove("active");
+    buttonH.classList.remove("active");
 
-    const hideBoxes = [...aBoxes, ...bBoxes, ...cBoxes, ...dBoxes, ...eBoxes, ...fBoxes];
+    const hideBoxes = [...aBoxes, ...bBoxes, ...cBoxes, ...dBoxes, ...eBoxes, ...fBoxes, ...hBoxes];
     hideBoxes.map((box) => {
         box.style.display = "none";
     });
@@ -144,9 +152,31 @@ buttonA.addEventListener("click", () => {
     buttonE.classList.remove("active");
     buttonF.classList.remove("active");
     buttonG.classList.remove("active");
+    buttonH.classList.remove("active");
 
     allBoxes.map((box) => {
         box.style.display = "flex";
         //box.style.opacity = "1";
     });
+});
+
+buttonH.addEventListener("click", () => {
+    buttonH.classList.add("active");
+    buttonA.classList.remove("active");
+    buttonB.classList.remove("active");
+    buttonC.classList.remove("active");
+    buttonD.classList.remove("active");
+    buttonE.classList.remove("active");
+    buttonF.classList.remove("active");
+    buttonG.classList.remove("active");
+
+    const hideBoxes = [...aBoxes, ...bBoxes, ...cBoxes, ...dBoxes, ...eBoxes, ...fBoxes, ...gBoxes];
+    hideBoxes.map((box) => {
+        box.style.display = "none";
+    });
+    hBoxes.map((box) => {
+        box.style.display = "flex";
+        box.style.opacity = "1";
+    });
+
 });

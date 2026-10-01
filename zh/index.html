@@ -20,6 +20,17 @@
 	<link rel="stylesheet" type="text/css" href="../scrollingContainer.css" />
 	<link rel="stylesheet" type="text/css" href="../scrollTopButton.css" />
 
+	<!-- 首页气泡高度。让框自动贴合文字（height:auto）：固定像素高度永远做不到上下留白相等——
+	     矮了文字会溢出贴住底边，高了底部就会留出多余空档。auto 时上下的 8px 内边距天然对称。
+	     实测行距约 23px（4 行 ≈ 92px、3 行 ≈ 69px）。
+	     margin-bottom 用于抵消高度变化：保持「框高 + margin-bottom」等于原先固定高度的推进量
+	     （113 / 95 / 135），因此下方三个角色的位置完全不变——它们都排在气泡的下一行。 -->
+	<style>
+		.textbox1 { height: auto; margin-bottom: 1px; }
+		.textbox2 { height: auto; margin-bottom: -17px; }
+		.textbox3 { height: auto; margin-bottom: 46px; }
+	</style>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -86,7 +97,7 @@
 				<p></p>
 			</div>
 			<div class="copyright">
-				© 2025 Yihan Lou, All rights reserved
+				© 2026 Yihan Lou with AI, All rights reserved
 			</div>
 		</div>
 		<!-- main page -->
@@ -137,19 +148,19 @@
 			<img id="floatingImg" src="../images/DotMouse.png" alt="Cursor Image">
 			<div class="myCharacterMain">
 				<div class="layer textbox1">
-					嗨！<br>
-					<span class="blueTexts">欢迎来到我的网站 :)</span><br>
-					<span class="blueTexts">我是</span> Yihan，<br>
-					<span class="blueTexts">一名</span>创意设计师与开发者。
+					嗨！我是 Yihan，<br>
+					一名<span class="blueTexts">跨界设计师</span>。<br>
+					<span class="blueTexts">AI 等新技术</span>，<br>
+					我把它们做成体验。
 				</div>
 				<img src="../images/waving1 1.png" class="layer myCharacter1" />
 			</div>
 			<div class="myCharacterLeft">
 				<div class="layer textbox2">
-					<span class="blueTexts">我创作</span><br>
-					数字设计<br>
-					<span class="blueTexts">带来</span>交互式<br>
-					体验。
+					<span class="blueTexts">探索</span>各种技术，<br>
+					做成可交互的<br>
+					数字体验，<br>
+					也讲好故事。
 				</div>
 				<img src="../images/meTyping.png" class="layer myCharacterL" />
 			</div>
@@ -158,9 +169,9 @@
 			</div>
 			<div class="myCharacterRight">
 				<div class="layer textbox3">
-					<span class="blueTexts">打造</span>3D 设计，开发数字体验。<br>
-					<br>
-					<span class="blueTexts">享受</span>现实与虚拟世界之间的趣味 :)
+					<span class="blueTexts">从 AI 到 XR</span>，<br>
+					技术我都愿意上手；<br>
+					<span class="blueTexts">跨界</span>实践，是我的默认设置 :)
 				</div>
 				<img src="../images/meVR.png" class="layer myCharacterR" />
 			</div>
@@ -182,6 +193,7 @@
 					<li id="filter-interact" class="filter-button e">交互</li>
 					<li id="filter-vr" class="filter-button f">VR</li>
 					<li id="filter-motion" class="filter-button g">动效</li>
+					<li id="filter-AI" class="filter-button h">AI</li>
 				</ul>
 			</div>
 
@@ -191,7 +203,30 @@
 					Your browser does not support the video tag.
 				</video>
 				<div class="allProjectsCards">
-					<div class="projectsCardsContainer b e">
+					<div class="projectsCardsContainer e f h">
+						<div class="projectsCard">
+							<div class="cardTitle">THE FOURTH NATURE TOUR 🌲</div>
+							<div class="cardSubtitle">
+								<div class="subtitle">VR 生态研究</div>
+								<div class="cardYear">2026</div>
+							</div>
+							<div class="cardPic">
+								<a href="work/theFourthNaturetour/theFourthNaturetour.html">
+									<img src="../images/cover_theFourthNatureTour.jpg" class="cardImg" alt="Cover_img" />
+								</a>
+							</div>
+							<div class="cardCategory">
+								VR 体验 —— 研究与 AI
+							</div>
+							<div class="cardBottom">
+								<div>
+									<ul class="cardTags">
+										<li class="tag">VR</li><li class="tag">AI</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div><div class="projectsCardsContainer b e">
 						<div class="projectsCard">
 							<div class="cardTitle">UGAMES<br>🕹️</div>
 							<div class="cardSubtitle">
@@ -218,7 +253,7 @@
 					<div class="projectsCardsContainer b d ">
 						<div class="projectsCard">
 
-							<div class="cardTitle">YIHAN's<br>WEBSITE💻</div>
+							<div class="cardTitle">YIHAN's<br>WEBSITE 💻</div>
 							<div class="cardSubtitle">
 								<div class="subtitle">改版与开发</div>
 								<div class="cardYear">2025</div>
@@ -270,7 +305,7 @@
 
 				<div class="projectsCardsContainer c d f">
 						<div class="projectsCard">
-							<div class="cardTitle">NUTRIENT<br>COLLECTOR🌱</div>
+							<div class="cardTitle">NUTRIENT<br>COLLECTOR 🌱</div>
 							<div class="cardSubtitle">
 								<div class="subtitle">地下生物世界</div>
 								<div class="cardYear">2024</div>
@@ -295,7 +330,7 @@
 					</div>
 				</div>
 
-				<div class="projectsCardsContainer e g">
+				<div class="projectsCardsContainer e g h">
 					<div class="projectsCard">
 						<div class="cardTitle">CONTAMINATION<br> TO SYSTEM 🌊</div>
 						<div class="cardSubtitle">
@@ -313,8 +348,9 @@
 						<div class="cardBottom">
 							<div>
 								<ul class="cardTags">
-									<li class="tag">交互</li>
+									<li class="tag">具身交互</li>
 									<li class="tag">动效</li>
+									<li class="tag">AI</li>
 								</ul>
 							</div>
 						</div>
@@ -340,7 +376,7 @@
 							<div>
 								<ul class="cardTags">
 									<li class="tag">投影</li>
-									<li class="tag">实时</li>
+									<li class="tag">具身交互</li>
 								</ul>
 							</div>
 						</div>
@@ -397,6 +433,32 @@
 					</div>
 				</div>
 
+				<div class="projectsCardsContainer d e g h">
+					<div class="projectsCard">
+						<div class="cardTitle">ECHO OF<br>NATURELAND 👂🏻</div>
+						<div class="cardSubtitle">
+							<div class="subtitle">音频驱动 AI 影像</div>
+							<div class="cardYear">2023</div>
+						</div>
+						<div class="cardPic">
+							<a href="work/echoofnatureland/echoofnatureland.html">
+								<img src="../images/cover_eon.jpg" class="cardImg" alt="Cover" />
+							</a>
+						</div>
+						<div class="cardCategory">
+							生成视觉 —— AI
+						</div>
+						<div class="cardBottom">
+							<div>
+								<ul class="cardTags">
+									<li class="tag">动效</li>
+									<li class="tag">AI</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
 				<div class="projectsCardsContainer e g">
 					<div class="projectsCard">
 						<div class="cardTitle">BLOSSOM<br>TO SOAR 🦋</div>
@@ -415,7 +477,7 @@
 						<div class="cardBottom">
 							<div>
 								<ul class="cardTags">
-									<li class="tag">交互</li>
+									<li class="tag">具身交互</li>
 									<li class="tag">动效</li>
 								</ul>
 							</div>
@@ -492,6 +554,7 @@
 							<div>
 								<ul class="cardTags">
 									<li class="tag">动效</li>
+									<li class="tag">具身交互</li>
 								</ul>
 							</div>
 						</div>
@@ -516,7 +579,7 @@
 						<div class="cardBottom">
 							<div>
 								<ul class="cardTags">
-									<li class="tag">交互</li>
+									<li class="tag">具身交互</li>
 									<li class="tag">动效</li>
 								</ul>
 							</div>
@@ -573,7 +636,7 @@
 						<p></p>
 					</div>
 					<div class="copyright">
-						© 2026 Designed & Developed by Yihan Lou, All rights reserved
+						© 2026 Designed & Developed by Yihan Lou with AI, All rights reserved
 					</div>
 				</div>
 			</footer>

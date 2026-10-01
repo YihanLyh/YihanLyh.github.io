@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <link rel="icon" href="/images/character_Yihan.png" type="image/x-icon">
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="en"
+        href="https://yihanlyh.github.io/blog/aiAgentInternship/aiAgentInternship.html">
+    <link rel="alternate" hreflang="zh"
+        href="https://yihanlyh.github.io/zh/blog/aiAgentInternship/aiAgentInternship.html">
+    <title>AI 智能体体验设计 —— 淘宝闪购实习 | Yihan Lou</title>
+    <link rel="stylesheet" type="text/css" href="../../../work/workpages.css" />
+    <link rel="stylesheet" type="text/css" href="../../../foldedTags.css" />
+    <link rel="stylesheet" type="text/css" href="../../../rollingtext.css" />
+    <link rel="stylesheet" type="text/css" href="../../../scrollTopButton.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="在淘宝闪购（原「饿了么」）的一段体验设计实习，参与天猫精灵智能点外卖项目的语音交互探索：为什么「固定任务流 + 模板化回复」锁死了体验，以及如何通过亲手搭一个可运行的 MVP，把设计批评变成一份技术路线图。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- mobile navigation -->
+        <div class="mobile-container" id="folded-tag">
+            <div class="header">
+                <div>
+                    <a href="../../index.html" class="homeLink" style="color: azure;">
+                        <ul class="textlogo">
+                            <li>YIHAN.</li>
+                            <li class="lou">LOU</li>
+                        </ul>
+                    </a>
+                </div>
+                <div class="headerContact">
+                    <a href="https://www.instagram.com/yhannah.l/" target="_blank" hidden>
+                        <img src="../../../images/icon_instagram.svg" alt="insta_icon" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/louyihan" target="_blank" hidden>
+                        <img src="../../../images/icon_linkedin.svg" alt="linkin_icon" />
+                    </a>
+                    <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                        <img src="../../../images/icon_email.svg" alt="email_icon" />
+                    </a>
+                    <!-- language switch -->
+                    <button class="lang-btn" aria-label="切换语言">EN</button>
+                </div>
+                <div class="folded_icon" id="folded-icon">
+                    <img src="../../../images/icon_foldedCross.svg" alt="folded_icon" />
+                </div>
+            </div>
+
+            <div class="rolling-text-container">
+                <div class="rolling-text">
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+
+            <div class="headerCover">
+                <div class="mobilePages">
+                    <a href="../../work/index.html" class="mobilePageTag">作品</a>
+                    <a href="../../about/index.html" class="mobilePageTag">关于</a>
+                    <a href="../index.html" class="mobilePageTag">博客</a>
+                </div>
+            </div>
+            <div class="emailBottom">
+                <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                    yihan.louyh@outlook.com
+                </a>
+            </div>
+            <div class="dotsArray">
+                <p></p>
+            </div>
+            <div class="copyright">
+                © 2026 Yihan Lou with AI, All rights reserved
+            </div>
+        </div>
+        <!-- main page -->
+        <div class="header">
+            <div>
+                <a href="../../index.html" class="homeLink" style="color: azure;">
+                    <ul class="textlogo">
+                        <li>YIHAN.</li>
+                        <li class="lou">LOU</li>
+                    </ul>
+                </a>
+            </div>
+            <div class="headerPage">
+                <a href="../../work/index.html" class="headerPageTag">作品</a>
+                <a href="../../about/index.html" class="headerPageTag">关于</a>
+                <a href="../../blog/index.html" class="headerPageTag">博客</a>
+            </div>
+
+            <div class="headerContact">
+                <a href="https://www.instagram.com/yhannah.l/" target="_blank" hidden>
+                    <img src="../../../images/icon_instagram.svg" alt="insta_icon" />
+                </a>
+                <a href="https://www.linkedin.com/in/louyihan" target="_blank" hidden>
+                    <img src="../../../images/icon_linkedin.svg" alt="linkin_icon" />
+                </a>
+                <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                    <img src="../../../images/icon_email.svg" alt="email_icon" />
+                </a>
+                <!-- language switch -->
+                <button class="lang-btn" aria-label="切换语言">EN</button>
+            </div>
+            <div class="folded_icon" id="unfolded-icon">
+                <img src="../../../images/icon_folded.svg" alt="unfolded_icon" />
+            </div>
+        </div>
+        <div class="heading1">
+            AI 智能体体验设计 🤖
+        </div>
+
+        <div class="dotsArray1">
+            <p></p>
+        </div>
+
+        <div class="rolling-text-container">
+            <div class="rolling-text">
+                <span> AI&nbsp;智能体&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;
+                    语音点餐&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;
+                    暑期实习&nbsp;&nbsp;&nbsp;&nbsp;*
+                </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span> AI&nbsp;智能体&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;
+                    语音点餐&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;
+                    暑期实习&nbsp;&nbsp;&nbsp;&nbsp;*
+                </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span> AI&nbsp;智能体&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;
+                    语音点餐&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;
+                    暑期实习&nbsp;&nbsp;&nbsp;&nbsp;*
+                </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+        </div>
+
+        <div class="projectContent">
+            <div class="coverPic">
+                <img src="../../../blog/aiAgentInternship/cover.jpg"
+                    alt="实习述职封面页 —— 跨领域探索实践，语音点餐 MVP Demo" />
+            </div>
+            <div class="heading2">AI 智能体体验设计 🤖 — 淘宝闪购（原「饿了么」）：把语音点餐从演示推向技术路线图</div>
+
+            <!-- ============================================================ -->
+            <div class="execSummary">
+                <div class="esLabel">一句话结论</div>
+                <p class="esClaim">
+                    2025 年 5 月到 9 月，我在<strong>淘宝闪购（原「饿了么」）</strong>的<strong>C
+                    端体验设计团队</strong>，负责<strong>天猫精灵智能点外卖项目</strong>的语音交互方向——对着智能音箱说句话就把外卖点了，全程没有屏幕。交给我的问题不是「做一个语音功能」，而是更难的那个：<strong>纯语音交易到底能不能成立？如果不能，缺的究竟是哪一项能力？</strong>已上线的智能体给出的答案倾向于「不能」：它被锁在「固定任务流
+                    + 模板化回复」里，对不上脚本的请求直接失败，回复读起来像一份套话。而这救不了——限制是架构性的，不是措辞性的。为了找到真正的天花板而不是凭空猜测，我<strong>亲手搭了一个能跑通完整点餐闭环的
+                        MVP</strong>（基于真实大模型），再用它把「技术接下来必须长出什么」从观点推向证据。这段实习最终的产出不是一份设计批评，而是一份<strong>由设计牵头的技术路线图</strong>：三条体验准则，各自对应一个工程方向与一个可执行的首个动作。我自己的角色边界也随之移动——大约四分之三做设计，四分之一动手工程。
+                </p>
+            </div>
+
+            <div class="statGrid">
+                <div class="stat"><span class="statNum">80%</span><span class="statLabel">MVP 端到端跑通的点餐旅程：搜索
+                        → 加购修改 → 提单下单 → 购后</span></div>
+                <div class="stat"><span class="statNum">3</span><span class="statLabel">条成为路线图验收标准的体验准则——自然语言的多样表达、模糊意图的识别、较复杂任务的自主执行</span></div>
+                <div class="stat"><span class="statNum">3/4</span><span class="statLabel">的时间用于设计，其余由我自己配置模型、提示词与模拟工具</span></div>
+                <div class="stat"><span class="statNum">0</span><span class="statLabel">个生产环境接口被上线：MVP 是用来暴露边界的研究探针，不是一次发布</span></div>
+            </div>
+
+            <h3 class="secTitle"><span class="secNum">00</span>我做了什么，为什么做</h3>
+            <span class="csKicker">职责范围、关键发现，以及它最后变成了什么</span>
+
+            <div class="csP">
+                <p>
+                    <strong>淘宝闪购（原「饿了么」）</strong>正在建设面向<strong>纯语音场景的 Agent
+                    能力</strong>：对着天猫精灵智能音箱说句话，外卖就点好了，全程没有屏幕。演示很有说服力，线上体验却总在同一个地方塌——对不上预设流程的请求得不到服务，回复又像一份套话。两个症状的根是同一个：智能体不被允许自由推理，因为自由推理既慢、又偶尔会编。<strong>我要回答的是：这个天花板究竟是设计问题还是技术问题</strong>——整个实习就是围绕这一问展开的。
+                </p>
+            </div>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <thead>
+                        <tr>
+                            <th>工作线</th>
+                            <th>我做了什么</th>
+                            <th>为什么值得做</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>语音点餐智能体</td>
+                            <td>先诊断线上失败，再基于一个开源语音助手项目与真实大模型搭出 MVP，端到端跑通搜索 →
+                                加购修改 → 提单下单 → 购后。</td>
+                            <td>验证纯语音点餐到底能不能成立，并定位技术究竟停在哪一步。</td>
+                        </tr>
+                        <tr>
+                            <td>AI 搜索入口</td>
+                            <td>把 AI 入口前移到搜索建议列表里，让用户在敲定查询词之前就看见它。</td>
+                            <td>一个没人看见的 AI 能力等于不存在——可达性决定这个功能是否真的存在。</td>
+                        </tr>
+                        <tr>
+                            <td>AI 生成筛选项</td>
+                            <td>搭了一条生成链路——采集维度 → 用户画像 → 角色提示词 →
+                                结构化输出——产出个性化筛选项文案，以试点形式交付。</td>
+                            <td>品类标签对单个用户太粗、不产生意义；要验证的是「与我相关」才值得点。</td>
+                        </tr>
+                        <tr>
+                            <td>常规交互设计</td>
+                            <td>C 端产品的常规产品与交互设计工作。</td>
+                            <td>让 AI 方向的探索始终锚定在它最终要落进去的产品里。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <ol class="hlList">
+                <li>
+                    <b>我把限制当设计命题，而不是障碍。</b>智能体的体验限制是架构性的——固定任务流加模板化回复——所以更好的文案救不了它，修复必须发生在技术层面。这意味着，值得设计师自己动手去搭建，并了解相关技术链路。
+                </li>
+                <li>
+                    <b>我动手是为了搞清楚问题，不是为了交付。</b>MVP
+                    的职责是让技术真实的边界变得可见，使路线图能建立在证据而不是观点之上。它的价值在于让团队学到了什么，而不在于它替代了什么。
+                </li>
+                <li>
+                    <b>我推开了自己的角色边界。</b>约四分之三的时间在做设计，其余用于配置语音模型与提示词、搭建模拟数据与工具脚本、自己写通接口逻辑。
+                </li>
+                <li>
+                    <b>设计原则没有被技术吞掉。</b>自然语言的多样性、对模糊意图的容忍、自主完成多步任务——这三条成了技术路线图要对齐的标准，也就是由设计来给工程出题。
+                </li>
+            </ol>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <tbody>
+                        <tr>
+                            <td>形式</td>
+                            <td>设计实习 —— AI 智能体体验设计</td>
+                        </tr>
+                        <tr>
+                            <td>公司</td>
+                            <td>淘宝闪购（原「饿了么」）—— 体验设计团队</td>
+                        </tr>
+                        <tr>
+                            <td>项目</td>
+                            <td>天猫精灵智能点外卖 —— 语音交互方向</td>
+                        </tr>
+                        <tr>
+                            <td>时间</td>
+                            <td>2025.05 – 2025.09</td>
+                        </tr>
+                        <tr>
+                            <td>背景</td>
+                            <td>C 端体验设计团队 · APP 平台与用户增长</td>
+                        </tr>
+                        <tr>
+                            <td>命题</td>
+                            <td>判断纯语音点餐能否成立；若不成立，明确缺的是哪一项能力</td>
+                        </tr>
+                        <tr>
+                            <td>范围</td>
+                            <td>语音点餐智能体 MVP（天猫精灵）· AI 搜索入口 · AI 生成筛选项内容 · 常规交互设计</td>
+                        </tr>
+                        <tr>
+                            <td>方法</td>
+                            <td>提示词工程 · 检索增强生成（RAG）· 语音模型配置 · 模拟数据与工具脚本 · 可用性推理</td>
+                        </tr>
+                        <tr>
+                            <td>产出</td>
+                            <td>可运行的语音点餐 MVP · 设计牵头的技术路线图 · AI 编程工具研究 · AI 生成筛选项试点</td>
+                        </tr>
+                        <tr>
+                            <td>关于脱敏</td>
+                            <td>内部数据已刻意隐去；文中数字描述的是我搭建的原型，而非生产系统。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../blog/aiAgentInternship/01-positioning.jpg"
+                    alt="定位页 —— 一名跨领域的设计师在设计与开发之间探索实践：设计思维、交互技术，覆盖网站、3D、虚拟现实、动画与互动投影" />
+                <div class="csCap">这段经历从一开始的定位就是：一位<strong>横跨设计与开发</strong>、而不是待在单一赛道里的设计师——设计思维与交互技术，覆盖网站、3D、虚拟现实、动画与互动投影。
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">01</span>亲历这个约束</h3>
+            <span class="csKicker">学科：问题定义 &amp; 技术理解力</span>
+
+            <div class="csP">
+                <p>
+                    先把目标架构说清楚，因为后面的一切都是对它的回应。用户对着天猫精灵智能音箱说话；音箱把语音转成文字；智能体识别意图；大语言模型进行推理；然后一组<strong>平台工具</strong>去执行——搜索商品、推荐商品、修改购物车、确认订单、完成支付。用户听到结果被读回来。纸面上，这是一个完整的对话式交易闭环。
+                </p>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../blog/aiAgentInternship/03-target-workflow.jpg"
+                    alt="理想模式工作流图 —— 用户到天猫精灵智能音箱 ASR，再到智能体的意图识别与 LLM，再到针对平台工具（搜索、推荐、购物车、确认订单、支付）的自主执行，最后经 TTS 返回" />
+                <div class="csCap">理想工作流。关键在于中间那一段：<strong>对一组平台工具的自主执行</strong>。整个体验都依赖这项能力，而它恰恰是技术最没准备好的那部分。
+                </div>
+            </div>
+
+            <div class="cardGrid g2">
+                <div class="csCard">
+                    <span class="cRole">局限 01</span>
+                    <h4>响应时间长</h4>
+                    <p>大模型的深度推理耗时，超过人在对话里愿意等待的长度。电话里的沉默像断线；音箱的沉默则像是坏了。</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">局限 02</span>
+                    <h4>幻觉问题</h4>
+                    <p>被赋予自主性的模型有时会编造。反应时间越短，编得越多——两个局限互相拉扯，而不是干净地此消彼长。</p>
+                </div>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../blog/aiAgentInternship/04-tech-limits.jpg"
+                    alt="当前技术框架局限 —— 响应时间长与幻觉问题，并标注二者为何与业务直接相关" />
+                <div class="csCap">两项结构性局限，以及它们为何不抽象：响应慢会被体验成「坏了」，而幻觉会被体验成「被欺骗」——两者都直接落在产品上。</div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">02</span>体验到底坏在哪</h3>
+            <span class="csKicker">学科：可用性诊断</span>
+
+            <div class="csP">
+                <p>
+                    线上，这两项局限被两种应对方式吸收掉了——<strong>固定任务流</strong>与<strong>模板化回复</strong>。两者都是合理的工程选择，但两者也都把技术限制转译成了用户可见的失败，而且这些失败具体到可以命名。
+                </p>
+            </div>
+
+            <div class="cardGrid g2">
+                <div class="csCard">
+                    <span class="cRole">症状 01</span>
+                    <h4>模糊指令难达成</h4>
+                    <p>「再给我加一杯另外那个」无法被固定流程执行，因为流程里没有一步能解析「另外那个」。用户只能和一个握不住指代的系统反复协商。</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">症状 02</span>
+                    <h4>功能覆盖不全</h4>
+                    <p>预设步骤之外的能力不是被拒绝，而只是不存在。用户分不清「你们不做」和「你没被做出来」。</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">症状 03</span>
+                    <h4>回复语言较机械</h4>
+                    <p>模板化回复正确却没有生命。在纯语音产品里，措辞就是全部界面，所以机械的措辞会被直接读成「不聪明」。</p>
+                </div>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../blog/aiAgentInternship/05-live-ux-issues.jpg"
+                    alt="实际上线体验问题 —— 模糊指令难达成、功能覆盖不全、回复语言较机械，配以语音助手对话示例" />
+                <div class="csCap">同样三类失败在线上产品中的样子，以语音助手对话为例。它们都不是措辞问题——每一条都是某个结构性决策露出的边缘。</div>
+            </div>
+
+            <div class="calloutBox">
+                <span class="cbLabel">我指认出的张力</span>
+                <div class="csP">
+                    <p>
+                        产品正在用<strong>可控性</strong>直接换取<strong>智能感</strong>。两者都是真实需求——一个听错就下单的智能体，比一个反问一句的智能体更糟。但这个取舍是被架构<em>默认</em>做掉的，而不是被<em>选择</em>的。把它命名成一次取舍，是我做的第一件有用的事：取舍可以被移动，而架构可以被商榷。
+                    </p>
+                </div>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../blog/aiAgentInternship/06-reframe.jpg"
+                    alt="一架天平，两端分别标注「可控性」与「智能感」，支点上是一个思考表情" />
+                <div class="csCap">让整件事得以推进的重新表述：问题不是「智能体不够聪明」，而是「它在用智能换可控性，而没有人决定换多少」。</div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">03</span>打破僵局</h3>
+            <span class="csKicker">学科：原型搭建 &amp; 系统配置</span>
+
+            <div class="calloutBox">
+                <span class="cbLabel">我问自己的问题</span>
+                <div class="csP">
+                    <p>
+                        当下的技术瓶颈，是否意味着我们就做不出好的产品体验？我不认为答案是否定的——更重要的是，我认为这件事<strong>靠争论解决不了</strong>。它只能靠把东西<strong>做出来、看它究竟在哪里断掉</strong>来解决。
+                    </p>
+                </div>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../blog/aiAgentInternship/07-mvp-goal.jpg"
+                    alt="搭建语音点餐 MVP Demo —— 基于开源语音助手项目搭建原型，先跑通核心体验，再反推技术落地路径" />
+                <div class="csCap">做法是：用一个开源语音助手项目搭建 MVP，替代天猫精灵的点餐链路，<strong>先跑通核心体验</strong>，再反推通往真实生产架构的路径。由体验来证明可行性，技术随后跟上。
+                </div>
+            </div>
+
+            <div class="csP">
+                <p>
+                    选型是刻意的。我需要一个真正<strong>可语音交互</strong>的东西——一个本来就听得见、说得出的项目，让「对话」本身就是媒介，而不是对对话的模拟；同时它必须<strong>开源</strong>，这样关键部件才能被重新配置，而不只是被使用。此后每一步，都是关于「这段体验不能缺哪些能力」的设计判断。
+                </p>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../blog/aiAgentInternship/08-core-capabilities.jpg"
+                    alt="需实现的智能体核心能力 —— 意图识别、自主执行与结果反馈，以及在大模型之外实现它们的方式：配置语音模型、模拟数据、提示词与工具脚本" />
+                <div class="csCap">把智能体的三项核心能力——<strong>意图识别、自主执行、结果反馈</strong>——与实现它们的机器拆开看待。正是这次拆分让搭建变得可行：三者中真正属于大模型的只有一项。
+                </div>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../blog/aiAgentInternship/16-voice-config.jpg"
+                    alt="配置语音模型与模型提示词 —— 唤醒词与语音识别配置，把它从「听不见、说不出」变成「能听、会说」；以及结构化 Markdown 提示词，把它从「聊天」变成「聊外卖」" />
+                <div class="csCap">先让它听得见、说得出。唤醒词与语音识别配置把 MVP 从<em>听不见、说不出</em>变成<em>能听、会说</em>；一份<strong>结构化
+                        Markdown 提示词加上明确的技能边界</strong>，把它从泛泛聊天变成能回答点餐问题。改变它行为的是结构，不是篇幅。</div>
+            </div>
+
+            <div class="csP">
+                <p>
+                    让它<em>执行</em>，和让它<em>说话</em>是两回事。这里有用的框架是一个象限：模型是否懂这个业务领域，以及是否知道具体事实？提示词工程解决的是模型已经理解的部分；而它不理解的，答案不<strong>是写更多提示词，而是检索增强生成</strong>——给它材料，而不是给它指令。
+                </p>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../blog/aiAgentInternship/09-prompt-rag.jpg"
+                    alt="象限图对比提示词工程、自然语言交互、提示词加检索增强生成、检索增强生成四种方式，结论是「告诉大模型外卖具体有哪些业务」" />
+                <div class="csCap">这个推理过程是在<em>选择</em>技术，而不是默认某一种：智能体缺的不是「怎么点餐」的更好指令，而是「平台具体提供什么」的事实——这是检索问题，不是提示词问题。
+                </div>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../blog/aiAgentInternship/17-rag-tools.jpg"
+                    alt="实现基础 RAG 功能 —— 以模拟商家与历史订单数据构成知识库（店、时间、位置、品规格），以及经 AI 辅助编写、暴露给模型的工具脚本，使其能搜索、改购物车、提交与下单" />
+                <div class="csCap">检索层从两头一起实现：用<strong>模拟的商家与订单数据</strong>充当知识库（店、时间、位置、品规格），并<strong>把工具脚本暴露给模型</strong>，让它真的能搜索、改购物车、下单。脚本是借助
+                    AI 写出来的——用的正是这段实习本该锻炼的那项能力。</div>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../blog/aiAgentInternship/10-mvp-result.jpg"
+                    alt="实现语音点外卖 MVP Demo 的前后对比 —— 点一杯附近的奶茶、点一杯之前点过的咖啡，从无法推荐具体商品变为实现商品推荐与模拟复购" />
+                <div class="csCap">MVP 证明了什么。两个固定流程接不住的场景——点附近的东西、复购之前点过的东西——变成了<strong>具体的商品推荐和可用的复购流程</strong>。能力缺口是真实的，而且是可以合上的。
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">04</span>把 Demo 变成路线图</h3>
+            <span class="csKicker">学科：体验准则 → 技术方案</span>
+
+            <div class="csP">
+                <p>
+                    Demo 本身不是交付物，它的价值在于它支撑的论证。既然已经证明核心旅程能跑通，我就把它翻过来，去问这段体验对技术<strong>提出了什么要求</strong>——然后把这些要求写成<em>准则</em>而不是<em>偏好</em>，这样工程可以被它约束，设计也要对它负责。
+                </p>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../blog/aiAgentInternship/11-reverse-roadmap.jpg"
+                    alt="反推技术落地路径 —— 三条体验准则（能以多种形式给出自然语言回复、能识别模糊意图、能自主执行较复杂任务）映射到两个优化方向及其初步执行" />
+                <div class="csCap">反推出的路线图。三条体验准则——<strong>自然语言的多样表达、对模糊意图的识别、对较复杂任务的自主执行</strong>——各自映射到一个优化方向和一个初步执行动作。如果要指认这段实习真正的产出，就是它：一份工程可以直接照着做的设计文档。
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">05</span>重新定义设计角色</h3>
+            <span class="csKicker">学科：协作模式 &amp; 职业边界</span>
+
+            <div class="csP">
+                <p>
+                    最有迁移价值的收获与智能体无关，而是关于：当产品的核心难点是技术性的，设计这个职能会发生什么。在传统模式里，设计夹在产品与工程之间，交出一份规格说明。而在这次工作中，设计必须<strong>拉动工程</strong>，而不是交付给工程——因为桌面上这个问题（体验应该对模型提出什么要求）只有同时握着体验意图、又具备足够技术素养去争辩可行性的人，才答得出来。
+                </p>
+            </div>
+
+            <div class="cardGrid g2">
+                <div class="csCard">
+                    <span class="cRole">转变 01</span>
+                    <h4>从被动响应到主动探索</h4>
+                    <p>从被动接受一份需求，转向主动把问题打开。任务不是「把这个流程设计出来」，而是「这个流程跑不通，去找出为什么」。</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">转变 02</span>
+                    <h4>技术必须证明产品价值</h4>
+                    <p>把技术工作当作手段：一项能力凭它为用户打开了什么而立身，而不是凭它有多亮眼。这与一项设计决策要过的检验是同一个。</p>
+                </div>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../blog/aiAgentInternship/12-design-boundary.jpg"
+                    alt="设计能力边界探索 —— 四分之三设计与四分之一技术的时间配比，以及由设计拉动工程的协作模式，并明确标注其局限" />
+                <div class="csCap">角色的实际配比——<strong>四分之三设计、四分之一技术</strong>——以及由此形成的协作模式，并把局限诚实写下来：MVP
+                    只覆盖核心交互逻辑，未对接真实商家系统、支付与数据层，因此无法在生产环境闭环。把这条局限写清楚，本身就是工作的一部分。</div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">06</span>一边倡导、一边自己用</h3>
+            <span class="csKicker">学科：AI 辅助实践</span>
+
+            <div class="csP">
+                <p>
+                    主张设计师应当与 AI 协作，只有落到自己的活儿上才算数。我做了一个小研究，从<strong>非开发者</strong>的视角对比两款
+                    AI 编程工具——读代码、建项目、改动、跑起来——并访谈了三位专业开发者，用来校正我自己的判断里哪些是天真的。有用的结论不是一个孰优孰劣的判决，而是一个工作闭环：<strong>AI
+                        解释代码让我学，我提供规范让 AI 学</strong>。
+                </p>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../blog/aiAgentInternship/13-ai-coding-tools.jpg"
+                    alt="AI 编程工具研究 —— 面向非专业开发者对比两款工具的使用链路，访谈三位专业开发者，并形成「AI 解释代码给设计师、设计师提供规范给 AI」的双向模型，并在语音项目中实际应用" />
+                <div class="csCap">从对比到实践。这个双向闭环——<em>AI 把代码解释给我，我把规范交给 AI</em>——让我能在技术侧真正出力，而不必假装自己是开发。我直接把它用在语音项目里：例如某个接口的协议格式我并不了解，就找一份同类协议给模型参照，快速改出可用的版本。</div>
+            </div>
+
+            <div class="csP">
+                <p>
+                    同一种本能也用在了第二条工作线上。产品原有的筛选项颗粒度太粗，对个人用户几乎不构成意义，所以我没有凭手感去编更好的词，而是<strong>搭了一条生成管线</strong>：先定义要采集哪些维度，再拼出用户画像，再在提示词里定义模型的角色，最后把结构化输出作为候选筛选项。
+                </p>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../blog/aiAgentInternship/14-experiment-workflow.jpg"
+                    alt="实验工作流 —— 定义数据采集维度、建立用户画像、定义模型角色与 Prompt、整合 AI 输出筛选标签，每一步都标注其目的" />
+                <div class="csCap">这条生成管线，每一步都标注了<em>目的</em>而不只是<em>方法</em>。采集场景与偏好维度是给模型证据；用户画像让输出相关；角色提示词让输出格式成立；最后一步把貌似合理的语言变成可上线的筛选项标签。
+                </div>
+            </div>
+
+            <div class="calloutBox">
+                <span class="cbLabel">为什么是「个性化」</span>
+                <div class="csP">
+                    <p>
+                        设计依据不是「个性化是好事」，而是一个观察：<strong>让一个筛选项有吸引力的是「自我相关性」</strong>——一个说出你所处境况的类目，比一个只说出某种食物的类目更容易换来一次点击。这是一个关于注意力的、可被检验的论断，也正因如此，这件事的终点是试点而不是结论。
+                    </p>
+                </div>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../blog/aiAgentInternship/15-search-entry-demo.jpg"
+                    alt="入口方案 Demo —— 把 AI 搜索入口提前到搜索联想页，让用户在输入之前就能看见这项能力" />
+                <div class="csCap">同一条教训用在入口上：一项用户根本注意不到的 AI 能力等于零，所以方案把 AI 搜索入口<strong>提前到旅程更前面</strong>——放进搜索联想页，让用户在决定要问什么之前就能看见它。
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">07</span>我的收获</h3>
+            <span class="csKicker">反思</span>
+
+            <ol class="csList">
+                <li><strong>限制是设计材料，不是障碍。</strong>智能体的局限恰恰是它最有意思的地方；把它当作一份需求（而不是一句抱怨）来处理，才产出了这段实习唯一有分量的东西。</li>
+                <li><strong>先把问题搭出来，再回答它。</strong>MVP 的存在不是为了上线，而是为了让关于技术的争论有可被演示的东西作为地基。</li>
+                <li><strong>当设计握有准则时，它可以引领技术工作。</strong>把体验要求写成<em>准则</em>而非<em>偏好</em>，是让设计在路线图上有发言权的原因。</li>
+                <li><strong>说清自己原型的边界。</strong>写明 MVP 做不到什么（没有真实商家系统、没有支付、没有数据层），是它显得可信而非吹嘘的原因。</li>
+                <li><strong>AI 是工作方法，不是话题。</strong>最有价值的 AI 工作，是把 AI 用在自己的流程上——对比工具、从生成的代码里学、搭建生成管线——而不只是设计 AI 功能。</li>
+            </ol>
+
+        </div>
+
+        <div class="linkContainer">
+            <div class="linkNext">
+                <a href="../2410Iceland/2410Iceland.html">
+                    <div class="nextTextContainer">
+                        <div class="textPrevNext">下一篇</div>
+                        <div class="titlePrevNext">AUTUMN IN
+                            ICELAND 🇮🇸</div>
+                    </div>
+                    <div class="prevIcon">
+                        <img src="../../../images/iconNext.svg" alt="iconNext" />
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <div class="dotsArray">
+                <p></p>
+            </div>
+
+            <div class="rolling-text-container">
+                <div class="rolling-text">
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+
+            <div class="footerContainer">
+                <div>
+                    <ul class="textLogoBottom">
+                        <li>YIHAN.</li>
+                        <li class="lou">LOU</li>
+                    </ul>
+                </div>
+                <div class="emailBottom">
+                    <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                        yihan.louyh@outlook.com
+                    </a>
+                </div>
+
+                <div class="footerContact">
+                    <a href="https://www.instagram.com/yhannah.l/" target="_blank" hidden>
+                        <img src="../../../images/icon_instagram.svg" alt="insta_icon" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/louyihan" target="_blank" hidden>
+                        <img src="../../../images/icon_linkedin.svg" alt="linkin_icon" />
+                    </a>
+                    <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                        <img src="../../../images/icon_email.svg" alt="email_icon" />
+                    </a>
+                </div>
+
+                <button id="scrollToTop" class="scrollTopButton">⏫</button>
+
+                <div class="dotsArray">
+                    <p></p>
+                </div>
+                <div class="copyright">
+                    © 2026 Designed & Developed by Yihan Lou with AI, All rights reserved
+                </div>
+        </footer>
+    </div>
+
+    </div>
+    <script defer src="../../../foldedTags.js"></script>
+    <script defer src="../../../lang.js"></script>
+    <script defer src="../../../rollingtext.js"></script>
+    <script defer src="../../../scrollTopButton.js"></script>
+</body>
+
+</html>

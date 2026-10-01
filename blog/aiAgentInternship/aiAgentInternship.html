@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="/images/character_Yihan.png" type="image/x-icon">
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="en"
+        href="https://yihanlyh.github.io/blog/aiAgentInternship/aiAgentInternship.html">
+    <link rel="alternate" hreflang="zh"
+        href="https://yihanlyh.github.io/zh/blog/aiAgentInternship/aiAgentInternship.html">
+    <title>Designing for AI Agents — Taobao Shangou Internship | Yihan Lou</title>
+    <link rel="stylesheet" type="text/css" href="../../work/workpages.css" />
+    <link rel="stylesheet" type="text/css" href="../../foldedTags.css" />
+    <link rel="stylesheet" type="text/css" href="../../rollingtext.css" />
+    <link rel="stylesheet" type="text/css" href="../../scrollTopButton.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="A design internship at Taobao Shangou (formerly Ele.me) on the Tmall Genie voice-ordering project: why a fixed task flow and templated replies capped the experience, and how building a working MVP turned a design critique into a technical roadmap." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- mobile navigation -->
+        <div class="mobile-container" id="folded-tag">
+            <div class="header">
+                <div>
+                    <a href="../../index.html" class="homeLink" style="color: azure;">
+                        <ul class="textlogo">
+                            <li>YIHAN.</li>
+                            <li class="lou">LOU</li>
+                        </ul>
+                    </a>
+                </div>
+                <div class="headerContact">
+                    <a href="https://www.instagram.com/yhannah.l/" target="_blank" hidden>
+                        <img src="../../images/icon_instagram.svg" alt="insta_icon" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/louyihan" target="_blank" hidden>
+                        <img src="../../images/icon_linkedin.svg" alt="linkin_icon" />
+                    </a>
+                    <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                        <img src="../../images/icon_email.svg" alt="email_icon" />
+                    </a>
+                    <!-- language switch -->
+                    <button class="lang-btn" aria-label="切换语言">中文</button>
+                </div>
+                <div class="folded_icon" id="folded-icon">
+                    <img src="../../images/icon_foldedCross.svg" alt="folded_icon" />
+                </div>
+            </div>
+
+            <div class="rolling-text-container">
+                <div class="rolling-text">
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+
+            <div class="headerCover">
+                <div class="mobilePages">
+                    <a href="../../work/index.html" class="mobilePageTag">WORK</a>
+                    <a href="../../about/index.html" class="mobilePageTag">ABOUT</a>
+                    <a href="../index.html" class="mobilePageTag">BLOG</a>
+                </div>
+            </div>
+            <div class="emailBottom">
+                <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                    yihan.louyh@outlook.com
+                </a>
+            </div>
+            <div class="dotsArray">
+                <p></p>
+            </div>
+            <div class="copyright">
+                © 2026 Yihan Lou with AI, All rights reserved
+            </div>
+        </div>
+        <!-- main page -->
+        <div class="header">
+            <div>
+                <a href="../../index.html" class="homeLink" style="color: azure;">
+                    <ul class="textlogo">
+                        <li>YIHAN.</li>
+                        <li class="lou">LOU</li>
+                    </ul>
+                </a>
+            </div>
+            <div class="headerPage">
+                <a href="../../work/index.html" class="headerPageTag">WORK</a>
+                <a href="../../about/index.html" class="headerPageTag">ABOUT</a>
+                <a href="../../blog/index.html" class="headerPageTag">BLOG</a>
+            </div>
+
+            <div class="headerContact">
+                <a href="https://www.instagram.com/yhannah.l/" target="_blank" hidden>
+                    <img src="../../images/icon_instagram.svg" alt="insta_icon" />
+                </a>
+                <a href="https://www.linkedin.com/in/louyihan" target="_blank" hidden>
+                    <img src="../../images/icon_linkedin.svg" alt="linkin_icon" />
+                </a>
+                <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                    <img src="../../images/icon_email.svg" alt="email_icon" />
+                </a>
+                <!-- language switch -->
+                <button class="lang-btn" aria-label="切换语言">中文</button>
+            </div>
+            <div class="folded_icon" id="unfolded-icon">
+                <img src="../../images/icon_folded.svg" alt="unfolded_icon" />
+            </div>
+        </div>
+        <div class="heading1">
+            Designing for AI Agents 🤖
+        </div>
+
+        <div class="dotsArray1">
+            <p></p>
+        </div>
+
+        <div class="rolling-text-container">
+            <div class="rolling-text">
+                <span> AI&nbsp;AGENT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;
+                    VOICE&nbsp;COMMERCE&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;
+                    INTERNSHIP&nbsp;&nbsp;&nbsp;&nbsp;*
+                </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span> AI&nbsp;AGENT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;
+                    VOICE&nbsp;COMMERCE&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;
+                    INTERNSHIP&nbsp;&nbsp;&nbsp;&nbsp;*
+                </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span> AI&nbsp;AGENT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;
+                    VOICE&nbsp;COMMERCE&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;
+                    INTERNSHIP&nbsp;&nbsp;&nbsp;&nbsp;*
+                </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+        </div>
+
+        <div class="projectContent">
+            <div class="coverPic">
+                <img src="./cover.jpg"
+                    alt="Title slide of the internship deck — cross-disciplinary exploration, voice ordering MVP demo" />
+            </div>
+            <div class="heading2">Designing for AI Agents 🤖 — Taobao Shangou (formerly Ele.me): from a voice-ordering demo to a technical roadmap</div>
+
+            <!-- ============================================================ -->
+            <div class="execSummary">
+                <div class="esLabel">Bottom line</div>
+                <p class="esClaim">
+                    From May to September 2025 I was on the <strong>consumer-facing experience design
+                    team</strong> at <strong>Taobao Shangou (formerly Ele.me)</strong>, owning the voice-interaction
+                    workstream of the <strong>Tmall Genie smart takeaway-ordering project</strong> — ordering a meal by
+                    talking to a smart speaker, with no screen anywhere in the loop. The question I was handed was not
+                    "design a voice feature" but a harder one: <strong>can a pure-voice transaction actually work, and
+                    if not, what exactly is missing?</strong> The shipped agent suggested not. It was pinned to a fixed
+                    task flow with templated replies, so any request outside the script simply failed and the answers
+                    read like a form letter — and no rewriting of the copy could fix that, because the limit was
+                    architectural rather than linguistic. To locate the real ceiling instead of guessing at it, I
+                    <strong>built a working MVP</strong> on a real large language model that ran the entire ordering
+                    loop, then used it to derive — from evidence — which capabilities the technology has to grow next.
+                    The internship closed with a <strong>design-led technical roadmap</strong>: three experience
+                    principles, each mapped to an engineering direction and a first action. My own boundary moved with
+                    it — roughly three quarters design, one quarter hands-on engineering.
+                </p>
+            </div>
+
+            <div class="statGrid">
+                <div class="stat"><span class="statNum">80%</span><span class="statLabel">of the ordering journey
+                        reproduced end to end in the MVP — search → cart edits → checkout →
+                        post-purchase</span></div>
+                <div class="stat"><span class="statNum">3</span><span class="statLabel">experience principles that
+                        became the roadmap's acceptance criteria — natural-language variety, ambiguous intent,
+                        autonomous multi-step execution</span></div>
+                <div class="stat"><span class="statNum">3/4</span><span class="statLabel">of my time on design; the
+                        rest went on configuring models, prompts and mock tools myself</span></div>
+                <div class="stat"><span class="statNum">0</span><span class="statLabel">production endpoints shipped —
+                        the MVP was a probe built to expose limits, not a release</span></div>
+            </div>
+
+            <h3 class="secTitle"><span class="secNum">00</span>What I Did and Why</h3>
+            <span class="csKicker">The remit, the finding, and what it turned into</span>
+
+            <div class="csP">
+                <p>
+                    <strong>Taobao Shangou (formerly Ele.me)</strong> is building an Agent capability for
+                    <strong>pure-voice commerce</strong>: you speak to a Tmall Genie smart speaker and the meal is
+                    ordered, with no screen in the loop. The demo was convincing; the live product kept failing in the
+                    same two places — requests that did not match a pre-set flow could not be served, and the replies
+                    sounded like a form letter. Both symptoms had one root: the agent was not allowed to reason
+                    freely, because reasoning freely is slow and occasionally invents things. <strong>My remit was to
+                    establish whether that ceiling is a design problem or a technical one</strong> — the question the
+                    whole internship was organised around.
+                </p>
+            </div>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <thead>
+                        <tr>
+                            <th>Workstream</th>
+                            <th>What I did</th>
+                            <th>Why it mattered</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Voice-ordering agent</td>
+                            <td>Diagnosed the live failures, then built an MVP on an open-source voice assistant and a
+                                real LLM that ran search → cart edits → checkout → post-purchase end to end.</td>
+                            <td>To test whether pure-voice ordering can work at all — and to locate exactly where the
+                                technology stops.</td>
+                        </tr>
+                        <tr>
+                            <td>AI search entry</td>
+                            <td>Moved the AI entry point earlier in the journey, into the search suggestion list, so
+                                users see it before committing to a query.</td>
+                            <td>An AI capability nobody notices is worth nothing — reachability decides whether the
+                                feature exists at all.</td>
+                        </tr>
+                        <tr>
+                            <td>AI-generated filters</td>
+                            <td>Built a generation pipeline — dimensions → user portrait → role prompt → structured
+                                output — to produce personalised filter labels, shipped as a pilot.</td>
+                            <td>Category labels were too coarse to mean anything to one person; the claim under test
+                                was that self-relevance earns the tap.</td>
+                        </tr>
+                        <tr>
+                            <td>Core interaction design</td>
+                            <td>Conventional product and interaction design on the consumer-facing app.</td>
+                            <td>Kept the AI work anchored to the product it had to ship inside.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <ol class="hlList">
+                <li>
+                    <b>I treated the constraint as a brief, not a blocker.</b> The agent's failure was
+                    architectural — a fixed task flow plus templated replies — so better copy could not fix it. The fix
+                    had to be technical in kind, which is why it was worth the designer going to build it and learn the
+                    underlying technical path.
+                </li>
+                <li>
+                    <b>I built in order to learn, not to ship.</b> The MVP's job was to make the technology's real
+                    limits visible, so the roadmap could be argued from evidence instead of opinion. Its value is
+                    what it taught the team, not what it replaced.
+                </li>
+                <li>
+                    <b>I moved my own boundary.</b> About three quarters of my time was design; the rest went on
+                    configuring a speech model and prompts, wiring mock data and tool scripts, and writing the
+                    interface logic myself.
+                </li>
+                <li>
+                    <b>The design principles survived the technology.</b> Variety in natural language, tolerance of
+                    ambiguous intent, and autonomous multi-step execution became the criteria the technical roadmap
+                    was built to serve — design setting the brief for engineering.
+                </li>
+            </ol>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <tbody>
+                        <tr>
+                            <td>Format</td>
+                            <td>Design internship — AI agent experience design</td>
+                        </tr>
+                        <tr>
+                            <td>Company</td>
+                            <td>Taobao Shangou (formerly Ele.me) — experience design team</td>
+                        </tr>
+                        <tr>
+                            <td>Project</td>
+                            <td>Tmall Genie smart takeaway ordering — the voice-interaction workstream</td>
+                        </tr>
+                        <tr>
+                            <td>Duration</td>
+                            <td>2025.05 – 2025.09</td>
+                        </tr>
+                        <tr>
+                            <td>Context</td>
+                            <td>Consumer-facing experience design team · app platform &amp; user growth</td>
+                        </tr>
+                        <tr>
+                            <td>Mandate</td>
+                            <td>Establish whether pure-voice ordering can work — and if not, identify precisely which
+                                capability is missing</td>
+                        </tr>
+                        <tr>
+                            <td>Focus</td>
+                            <td>Voice-ordering agent MVP (Tmall Genie) · AI search entry · AI-generated filter content
+                                · core interaction design</td>
+                        </tr>
+                        <tr>
+                            <td>Method</td>
+                            <td>Prompt engineering · retrieval-augmented generation · speech model configuration ·
+                                mock data &amp; tool scripts · usability reasoning</td>
+                        </tr>
+                        <tr>
+                            <td>Output</td>
+                            <td>A running voice-ordering MVP · a design-led technical roadmap · an AI coding-tool
+                                study · a pilot for AI-generated category filters</td>
+                        </tr>
+                        <tr>
+                            <td>On discretion</td>
+                            <td>Internal figures are deliberately withheld. The numbers shown describe the prototype I
+                                built, not production systems.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="csFigure">
+                <img src="./01-positioning.jpg"
+                    alt="Framing slide — one cross-disciplinary designer exploring across design and development: design thinking, interaction technology, websites, 3D, virtual reality, animation, interactive projection" />
+                <div class="csCap">How the work was framed from the start: a designer working
+                    <strong>across design and development</strong> rather than inside one lane — design thinking and
+                    interaction technology, spanning web, 3D, VR, animation and interactive projection.</div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">01</span>Experiencing the Constraint</h3>
+            <span class="csKicker">Discipline: problem framing &amp; technical literacy</span>
+
+            <div class="csP">
+                <p>
+                    The target architecture is worth stating plainly, because everything that follows is a response to
+                    it. A user speaks to a Tmall Genie smart speaker; the device transcribes the speech; the agent
+                    recognises the intent; a large language model reasons about it; and a set of
+                    <strong>platform tools</strong> then
+                    executes — searching products, recommending items, editing the cart, confirming the order and
+                    taking payment. The user hears the result read back. On paper it is a complete conversational
+                    commerce loop.
+                </p>
+            </div>
+
+            <div class="csFigure">
+                <img src="./03-target-workflow.jpg"
+                    alt="Ideal workflow diagram — user to a Tmall Genie smart speaker ASR, to the agent's intent recognition and LLM, to autonomous execution against platform tools such as search, recommendation, cart, order confirmation and payment, returning through TTS" />
+                <div class="csCap">The intended workflow. The interesting part is the middle: <strong>autonomous
+                        execution against a set of platform tools</strong>. That is the capability the whole experience
+                    depends on, and the one the technology was least ready to give.</div>
+            </div>
+
+            <div class="cardGrid g2">
+                <div class="csCard">
+                    <span class="cRole">Limit 01</span>
+                    <h4>Response latency</h4>
+                    <p>Deep reasoning on a large model takes longer than people tolerate in a spoken conversation.
+                        Silence on a phone call feels broken; the same silence from a speaker reads as malfunction.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Limit 02</span>
+                    <h4>Hallucination</h4>
+                    <p>A model given autonomy will sometimes invent. The shorter the response time, the more it
+                        invents — so the two limits pull against each other rather than trading off cleanly.</p>
+                </div>
+            </div>
+
+            <div class="csFigure">
+                <img src="./04-tech-limits.jpg"
+                    alt="Current technical framework limits — response latency and hallucination risk, with notes on why both are directly relevant to the business" />
+                <div class="csCap">The two structural limits, and why both land directly on the product rather than
+                    staying abstract: latency is experienced as brokenness, and hallucination is experienced as being
+                    lied to.</div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">02</span>Where the Experience Broke</h3>
+            <span class="csKicker">Discipline: usability diagnosis</span>
+
+            <div class="csP">
+                <p>
+                    In production those limits had been absorbed by two coping strategies — a <strong>fixed task
+                        flow</strong> and <strong>templated replies</strong>. Both are reasonable engineering
+                    responses. Both also convert a technical limitation into a user-visible failure, and the failures
+                    were specific enough to name.
+                </p>
+            </div>
+
+            <div class="cardGrid g2">
+                <div class="csCard">
+                    <span class="cRole">Symptom 01</span>
+                    <h4>Ambiguous instructions fail</h4>
+                    <p>"Add one more of the other one" cannot be carried out by a fixed flow, because the flow has no
+                        step that resolves "the other one". The user is left negotiating with a system that cannot
+                        hold the reference.</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Symptom 02</span>
+                    <h4>Coverage stops at the flow</h4>
+                    <p>Anything outside the pre-set steps is simply unavailable — not refused, just absent. Users
+                        cannot tell the difference between "we don't do that" and "I wasn't built for that".</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Symptom 03</span>
+                    <h4>The language feels mechanical</h4>
+                    <p>Templated replies are correct and lifeless. In a voice-only product, phrasing is the entire
+                        interface, so mechanical phrasing reads as low intelligence.</p>
+                </div>
+            </div>
+
+            <div class="csFigure">
+                <img src="./05-live-ux-issues.jpg"
+                    alt="Live experience problems — ambiguous instructions not fulfilled, incomplete feature coverage, and mechanical templated reply language, illustrated with voice-assistant chat examples" />
+                <div class="csCap">The same three failures as they appeared on the live product, illustrated with
+                    voice-assistant transcripts. None of them is a wording problem — each is the visible edge of a
+                    structural decision.</div>
+            </div>
+
+            <div class="calloutBox">
+                <span class="cbLabel">The tension I named</span>
+                <div class="csP">
+                    <p>
+                        The product was optimising for <strong>controllability</strong> at the direct expense of the
+                        <strong>feeling of intelligence</strong>. Both are real requirements — an agent that acts on a
+                        misheard order is worse than one that asks again. But the trade-off had been made implicitly,
+                        by the architecture, rather than chosen. Naming it as a trade-off was the first useful thing I
+                        did, because a trade-off can be moved and an architecture can be argued with.
+                    </p>
+                </div>
+            </div>
+
+            <div class="csFigure">
+                <img src="./06-reframe.jpg"
+                    alt="A balance scale labelled controllability versus sense of intelligence, with a thinking-face emoji at the fulcrum" />
+                <div class="csCap">The framing that unlocked the work: not "the agent is not smart enough" but "the
+                    agent is buying controllability with intelligence, and nobody decided how much".</div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">03</span>Breaking the Deadlock</h3>
+            <span class="csKicker">Discipline: prototyping &amp; systems configuration</span>
+
+            <div class="calloutBox">
+                <span class="cbLabel">The question I put to myself</span>
+                <div class="csP">
+                    <p>
+                        Does a current technical limit mean we cannot build a good product experience? I did not think
+                        the answer was yes — and more importantly, I did not think it could be settled by argument. It
+                        had to be settled by <strong>building the thing and seeing where it actually
+                            broke</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="csFigure">
+                <img src="./07-mvp-goal.jpg"
+                    alt="Building a voice-ordering MVP demo — a prototype built on an open-source voice assistant project to prove the core experience first and then reverse-engineer the technical path to production" />
+                <div class="csCap">The approach: build the MVP on an open-source voice-assistant project standing in
+                    for the Tmall Genie ordering flow, run the <strong>core experience first</strong>, and only then
+                    reverse-engineer the route to a real production stack. Experience proves the case; technology
+                    follows it.</div>
+            </div>
+
+            <div class="csP">
+                <p>
+                    The tool choice was deliberate. I needed something genuinely <strong>voice-interactive</strong> —
+                    a project that could already hear and speak, so the conversation was the medium rather than a
+                    simulation of one — and I needed it to be <strong>open source</strong>, so the parts that mattered
+                    could be reconfigured rather than merely used. Everything past that point was a design decision
+                    about which capabilities the experience could not do without.
+                </p>
+            </div>
+
+            <div class="csFigure">
+                <img src="./08-core-capabilities.jpg"
+                    alt="Capabilities the agent needs — intent recognition, autonomous execution and result feedback — and the ways to achieve them outside the model: configuring a speech model, mock data, prompts and tool scripts" />
+                <div class="csCap">Separating the agent's three core capabilities — <strong>intent recognition,
+                        autonomous execution, result feedback</strong> — from the machinery that implements them. That
+                    separation is what made the build tractable: only one of the three is really the model's job.</div>
+            </div>
+
+            <div class="csFigure">
+                <img src="./16-voice-config.jpg"
+                    alt="Configuring the speech model and the model prompt — wake-word and speech-recognition configuration moving from cannot hear or speak to can hear and speak, and a structured Markdown prompt moving the assistant from chatting to handling food-ordering questions" />
+                <div class="csCap">Making it hear and speak. A wake-word and speech-recognition configuration took the
+                    MVP from <em>cannot hear or speak</em> to <em>can hear and speak</em>; a
+                    <strong>Markdown-structured prompt with an explicit skill scope</strong> moved it from generic
+                    chatting to answering ordering questions. Structure, not verbosity, was what changed its
+                    behaviour.</div>
+            </div>
+
+            <div class="csP">
+                <p>
+                    Making it <em>execute</em> was a different problem from making it <em>talk</em>. Here the useful
+                    frame was a quadrant: does the model know the business domain or not, and does it know the specific
+                    facts or not? Prompt engineering covers what the model already understands; where it does not,
+                    the answer is not more prompting but <strong>retrieval-augmented generation</strong> — giving it
+                    material instead of instructions.
+                </p>
+            </div>
+
+            <div class="csFigure">
+                <img src="./09-prompt-rag.jpg"
+                    alt="A quadrant comparing prompt engineering, natural language interaction, prompt plus retrieval-augmented generation, and retrieval-augmented generation — the conclusion being to tell the large model which food-delivery tasks concretely exist" />
+                <div class="csCap">The reasoning that chose the technique rather than defaulting to one: the agent did
+                    not need better instructions about <em>how</em> to order, it needed to be told <em>what the
+                    platform concretely offers</em> — which is a retrieval problem, not a prompting one.</div>
+            </div>
+
+            <div class="csFigure">
+                <img src="./17-rag-tools.jpg"
+                    alt="Implementing basic RAG — mock merchant and order data forming a knowledge base across shop, time, location and specification, and AI-assisted tool scripts exposed to the model so it can search, edit the cart, submit and place orders" />
+                <div class="csCap">Implementing the retrieval layer on both sides:
+                    <strong>mock merchant and order data</strong> standing in for a real knowledge base (shop, time,
+                    location, specification), and <strong>tool scripts exposed to the model</strong> so it could
+                    actually search, edit a cart and place an order. The scripts were written with AI assistance — the
+                    same skill the internship was meant to build.</div>
+            </div>
+
+            <div class="csFigure">
+                <img src="./10-mvp-result.jpg"
+                    alt="Voice ordering MVP demo results — before and after for ordering a nearby milk tea and for reordering a previous coffee, where the MVP moves from being unable to recommend a specific product to recommending one and simulating repeat purchase" />
+                <div class="csCap">What the MVP proved. Two cases that the fixed flow could not handle — ordering
+                    something nearby, and reordering something before — became
+                    <strong>specific product recommendations and a working repeat-purchase flow</strong>. The
+                    capability gap was real, and it was closable.</div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">04</span>Turning the Demo into a Roadmap</h3>
+            <span class="csKicker">Discipline: experience criteria → technical plan</span>
+
+            <div class="csP">
+                <p>
+                    A demo is not a deliverable on its own; its value is the argument it supports. Having shown that
+                    the core journey could work, I turned it around and asked what the experience
+                    <strong>demanded</strong> of the technology — then wrote those demands down as criteria rather
+                    than preferences, so that engineering could be held to them and design could be accountable to
+                    them.
+                </p>
+            </div>
+
+            <div class="csFigure">
+                <img src="./11-reverse-roadmap.jpg"
+                    alt="Reverse-engineering the technical path — three experience criteria (varied natural-language replies, recognition of ambiguous intent, autonomous execution of more complex tasks) mapped to two optimisation directions and their first concrete steps" />
+                <div class="csCap">The reverse-engineered roadmap. Three experience criteria —
+                    <strong>natural language variety, recognition of ambiguous intent, and autonomous execution of
+                        more complex tasks</strong> — each mapped to an optimisation direction and a first concrete
+                    step. This is the artefact I would point to as the internship's real output: a design document
+                    that engineering could act on.</div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">05</span>Redefining the Design Role</h3>
+            <span class="csKicker">Discipline: collaboration model &amp; professional boundary</span>
+
+            <div class="csP">
+                <p>
+                    The most transferable thing I learned was not about agents. It was about what happens to the design
+                    function when the product's core difficulty is technical. In the conventional model, design sits
+                    between product and engineering and hands over a specification. In this work, design had to
+                    <strong>pull engineering</strong> rather than hand off to it, because the question on the table —
+                    what should the experience demand of the model — could only be answered by someone holding both
+                    the experience intent and enough technical literacy to argue about feasibility.
+                </p>
+            </div>
+
+            <div class="cardGrid g2">
+                <div class="csCard">
+                    <span class="cRole">Shift 01</span>
+                    <h4>From answering to exploring</h4>
+                    <p>Moving from passively responding to a specification toward proactively opening the question. The
+                        brief was not "design this flow" — it was "this flow cannot work; find out why".</p>
+                </div>
+                <div class="csCard">
+                    <span class="cRole">Shift 02</span>
+                    <h4>Technology must prove product value</h4>
+                    <p>Treating technical work as instrumental: a capability earns its place by what it makes possible
+                        for the user, not by being impressive. That is the same test a design decision has to pass.</p>
+                </div>
+            </div>
+
+            <div class="csFigure">
+                <img src="./12-design-boundary.jpg"
+                    alt="Exploring the boundary of the design role — a three-quarters design and one-quarter technology split, and a collaboration model where design leads and pulls engineering, documented with its explicit limitations" />
+                <div class="csCap">The role as it actually split — <strong>three quarters design, one quarter
+                        technology</strong> — and the collaboration model that came out of it, with the limitations
+                    written down honestly: the MVP covers core interaction logic only and does not connect to real
+                    merchant systems, payment or data, so it cannot close the loop in production. Stating that limit
+                    was part of the work.</div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">06</span>Practising What I Was Preaching</h3>
+            <span class="csKicker">Discipline: AI-assisted practice</span>
+
+            <div class="csP">
+                <p>
+                    Arguing that designers should work with AI only means something if you do it on your own work. I
+                    ran a small study comparing two AI coding tools from a <strong>non-developer's</strong> point of
+                    view — reading the code, setting up a project, editing, running it — and interviewed three
+                    professional developers to check where my reading of the tools was naive. The useful finding was
+                    a working loop rather than a verdict: <strong>AI explains code so I can learn it, and I supply the
+                    specifications so the AI can learn them</strong>.
+                </p>
+            </div>
+
+            <div class="csFigure">
+                <img src="./13-ai-coding-tools.jpg"
+                    alt="Research into AI coding tools — a comparison of two tools for non-professional developers, three interviews with professional developers, and a working model of AI explaining code to the designer while the designer supplies specification to the AI, applied in the voice project" />
+                <div class="csCap">From comparison to practice. The two-way loop — <em>AI explains code to me, I supply
+                        specification to the AI</em> — is what let me contribute on the technical side without
+                    pretending to be a developer. I used it directly in the voice project, for instance to work out
+                    an interface script whose protocol format I did not know, by showing the model a comparable
+                    specification.</div>
+            </div>
+
+            <div class="csP">
+                <p>
+                    The same instinct applied to a second workstream. Product filters were too coarse to mean anything
+                    to an individual user, so rather than invent better labels by taste I
+                    <strong>built a generation pipeline</strong>: define what dimensions to collect, assemble a user
+                    portrait, define the model's role in a prompt, then take structured output as candidate filters.
+                </p>
+            </div>
+
+            <div class="csFigure">
+                <img src="./14-experiment-workflow.jpg"
+                    alt="Experiment workflow — defining data-collection dimensions, building a user portrait, defining the model role and prompt, and integrating the AI output into filter tags, with the purpose annotated at each step" />
+                <div class="csCap">The generation pipeline, with the purpose annotated at every step rather than only
+                    the method. Collecting scenario and preference dimensions gives the model evidence; the user
+                    portrait makes output relevant; the role prompt makes it well-formed; and the final step turns
+                    plausible language into shippable filter labels.</div>
+            </div>
+
+            <div class="calloutBox">
+                <span class="cbLabel">Why personalisation, specifically</span>
+                <div class="csP">
+                    <p>
+                        The design rationale was not "personalisation is good". It was the observation that
+                        <strong>self-relevance is what makes a filter label attractive</strong> — a category that
+                        names your situation earns a tap in a way a category that names a food type does not. That is
+                        a testable claim about attention, which is why the work ended with a pilot rather than a
+                        conclusion.
+                    </p>
+                </div>
+            </div>
+
+            <div class="csFigure">
+                <img src="./15-search-entry-demo.jpg"
+                    alt="Entry-point demo — moving the AI search entry earlier into the search suggestion list so the AI capability becomes visible to users before they commit to a query" />
+                <div class="csCap">The same lesson applied to an entry point: an AI capability that users never notice
+                    is worth nothing, so the demo moved the AI search entry
+                    <strong>earlier in the journey</strong>, into the suggestion list, where it can be seen before the
+                    user has committed to a query.</div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">07</span>What I Took Away</h3>
+            <span class="csKicker">Reflection</span>
+
+            <ol class="csList">
+                <li><strong>Constraints are design material, not obstacles.</strong> The agent's limitations were the
+                    most interesting thing about it, and treating them as a brief — rather than a complaint — is what
+                    produced the only substantial output of the internship.</li>
+                <li><strong>Build the question before answering it.</strong> The MVP did not exist to be shipped. It
+                    existed so the argument about the technology would be grounded in something demonstrable.</li>
+                <li><strong>Design can lead technical work when it holds the criteria.</strong> Writing the experience
+                    requirements down as criteria — not preferences — is what gave design a say in the roadmap.</li>
+                <li><strong>State the limits of your own prototype.</strong> Recording what the MVP could not do
+                    (no real merchant systems, no payment, no data layer) was what made it credible rather than
+                    oversold.</li>
+                <li><strong>AI is a working method, not a topic.</strong> The most useful AI work was using it on my
+                    own process — comparing tools, learning from generated code, and building generation pipelines —
+                    rather than only designing AI features.</li>
+            </ol>
+
+        </div>
+
+        <div class="linkContainer">
+            <div class="linkNext">
+                <a href="../2410Iceland/2410Iceland.html">
+                    <div class="nextTextContainer">
+                        <div class="textPrevNext">NEXT.</div>
+                        <div class="titlePrevNext">AUTUMN IN
+                            ICELAND 🇮🇸</div>
+                    </div>
+                    <div class="prevIcon">
+                        <img src="../../images/iconNext.svg" alt="iconNext" />
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <div class="dotsArray">
+                <p></p>
+            </div>
+
+            <div class="rolling-text-container">
+                <div class="rolling-text">
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+
+            <div class="footerContainer">
+                <div>
+                    <ul class="textLogoBottom">
+                        <li>YIHAN.</li>
+                        <li class="lou">LOU</li>
+                    </ul>
+                </div>
+                <div class="emailBottom">
+                    <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                        yihan.louyh@outlook.com
+                    </a>
+                </div>
+
+                <div class="footerContact">
+                    <a href="https://www.instagram.com/yhannah.l/" target="_blank" hidden>
+                        <img src="../../images/icon_instagram.svg" alt="insta_icon" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/louyihan" target="_blank" hidden>
+                        <img src="../../images/icon_linkedin.svg" alt="linkin_icon" />
+                    </a>
+                    <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                        <img src="../../images/icon_email.svg" alt="email_icon" />
+                    </a>
+                </div>
+
+                <button id="scrollToTop" class="scrollTopButton">⏫</button>
+
+                <div class="dotsArray">
+                    <p></p>
+                </div>
+                <div class="copyright">
+                    © 2026 Designed & Developed by Yihan Lou with AI, All rights reserved
+                </div>
+        </footer>
+    </div>
+
+    </div>
+    <script defer src="../../foldedTags.js"></script>
+    <script defer src="../../lang.js"></script>
+    <script defer src="../../rollingtext.js"></script>
+    <script defer src="../../scrollTopButton.js"></script>
+</body>
+
+</html>
