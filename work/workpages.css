@@ -546,7 +546,14 @@ table.csTable td {
 	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 	vertical-align: top;
 }
-table.csTable td:first-child { color: #ffffff; font-weight: 600; white-space: nowrap; }
+table.csTable td:first-child {
+	color: #ffffff;
+	font-weight: 600;
+	/* labels wrap instead of stretching the table wider than its container */
+	white-space: normal;
+	overflow-wrap: break-word;
+	word-break: break-word;
+}
 table.csTable tbody tr:last-child td { border-bottom: none; }
 
 /* --- cards / grids --- */
@@ -644,6 +651,18 @@ table.csTable tbody tr:last-child td { border-bottom: none; }
 /* --- figures --- */
 .csFigure { width: 100%; max-width: 1000px; margin: 0 0 28px; }
 .csFigure img { width: 100%; display: block; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.12); }
+/* --- video (same frame as .csFigure, so it sits in the report rhythm) --- */
+.csVideo { width: 100%; max-width: 1000px; margin: 0 0 28px; }
+.csVideo video {
+	width: 100%;
+	display: block;
+	border-radius: 12px;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	background: #000;
+}
+.csVideo video:focus-visible { outline: 2px solid #8FC4D2; outline-offset: 2px; }
+.csVideo .csCap { margin-top: 10px; }
+
 .csCap {
 	font-size: 13.5px;
 	color: rgba(255, 255, 255, 0.55);
@@ -667,4 +686,9 @@ table.csTable tbody tr:last-child td { border-bottom: none; }
 	.statNum { font-size: 28px; }
 	h3.secTitle { font-size: 20px; }
 	.iaBranch { margin-left: 8px; padding-left: 14px; }
+
+	/* tables: two-column fact tables fit the screen instead of scrolling sideways;
+	   wider comparison tables keep the horizontal scroll but now wrap their first column */
+	table.csTable:has(> tbody > tr > td:last-child:nth-child(2)) { min-width: 0; }
+	table.csTable td { padding: 12px 14px; font-size: 14px; }
 }
