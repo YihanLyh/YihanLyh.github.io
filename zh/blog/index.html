@@ -19,6 +19,14 @@
     <link rel="stylesheet" type="text/css" href="../../filter.css" />
     <link rel="stylesheet" type="text/css" href="../../rollingtext.css" />
     <link rel="stylesheet" type="text/css" href="../../scrollTopButton.css" />
+    <!-- Header bubbles: hug the text (height:auto) so the 0.5rem padding is symmetric
+         above and below, matching the homepage bubbles. margin-bottom keeps
+         "box height + margin" equal to the fixed height it replaces, so the character
+         below stays exactly where it is. -->
+    <style>
+        .textbox2 { height: auto; margin-bottom: 13px; }
+        .textbox3 { height: auto; margin-bottom: -7px; }
+    </style>
 </head>
 
 <body>

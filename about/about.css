@@ -2,11 +2,11 @@ body {
 	padding: 0;
 	background-color: #191d20;
 	color: white;
-	font-family: "Montserrat Alternates", serif;
+	font-family: "Montserrat Alternates", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Microsoft YaHei UI", "Source Han Sans SC", "Noto Sans SC", "WenQuanYi Micro Hei", sans-serif;
 	margin: 0;
 }
 .custom-font {
-	font-family: "Montserrat", sans-serif;
+	font-family: "Montserrat", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Microsoft YaHei UI", "Source Han Sans SC", "Noto Sans SC", "WenQuanYi Micro Hei", sans-serif;
 }
 
 /* language toggle button */
@@ -170,7 +170,7 @@ h3{
 }
 #cvButton {
 	text-decoration: none;
-	font-family: "Montserrat Alternates", serif;
+	font-family: "Montserrat Alternates", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Microsoft YaHei UI", "Source Han Sans SC", "Noto Sans SC", "WenQuanYi Micro Hei", sans-serif;
 	color: #ffffff;
 	background-color: #191d20;
 	border: 2px solid #ffffff;
