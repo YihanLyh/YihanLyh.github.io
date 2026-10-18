@@ -375,8 +375,17 @@ body {
 
 .linkIcon {
 	width: 50px;
-	object-fit: fill;
+	height: auto;
+	object-fit: contain;
 	transition-duration: 0.5s;
+}
+
+/* Aspect-ratio safeguard — every image keeps its original ratio and can never
+   be stretched. The width/height attributes supply the intrinsic ratio (good
+   for layout stability); height:auto stops that attribute height from acting
+   as a fixed box height whenever CSS sets only a width. */
+img {
+	height: auto;
 }
 .linkIcon:hover {
 	scale: 1.1;

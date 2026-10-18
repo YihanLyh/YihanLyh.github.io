@@ -118,6 +118,7 @@ body {
 }
 .coverPic img {
 	width: 100%;
+	height: auto;
 }
 .youtubeVideo {
 	max-width: 1000px;
@@ -138,6 +139,7 @@ body {
 .contentPic img {
 	width: 100%;
 	max-width: 1000px;
+	height: auto;
 	margin-bottom: 20px;
 }
 .heading1 {
@@ -650,7 +652,15 @@ table.csTable tbody tr:last-child td { border-bottom: none; }
 
 /* --- figures --- */
 .csFigure { width: 100%; max-width: 1000px; margin: 0 0 28px; }
-.csFigure img { width: 100%; display: block; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.12); }
+.csFigure img { width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.12); }
+
+/* Aspect-ratio safeguard — every image keeps its original ratio and can never
+   be stretched. The width/height attributes supply the intrinsic ratio (good
+   for layout stability); height:auto stops that attribute height from acting
+   as a fixed box height whenever CSS sets only a width. */
+img {
+	height: auto;
+}
 /* --- video (same frame as .csFigure, so it sits in the report rhythm) --- */
 .csVideo { width: 100%; max-width: 1000px; margin: 0 0 28px; }
 .csVideo video {

@@ -6,7 +6,7 @@ body {
 	margin: 0;
 }
 .custom-font {
-	font-family: "Montserrat", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Microsoft YaHei UI", "Source Han Sans SC", "Noto Sans SC", "WenQuanYi Micro Hei", sans-serif;
+	font-family: "Montserrat Alternates", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Microsoft YaHei UI", "Source Han Sans SC", "Noto Sans SC", "WenQuanYi Micro Hei", sans-serif;
 }
 
 /* language toggle button */
@@ -135,10 +135,17 @@ body {
 }
 
 #YihanPic {
+	width: 100%;
+	height: auto;
 	margin-top: 20px;
 	margin-bottom: 10px;
 	border-radius: 20px;
 	border: 0.8rem solid #224055;
+}
+
+/* Aspect-ratio safeguard — images always keep their original ratio. */
+img {
+	height: auto;
 }
 
 h3{

@@ -116,6 +116,7 @@ body {
 }
 .coverPic img {
 	width: 100%;
+	height: auto;
 }
 .youtubeVideo {
 	max-width: 1344px;
@@ -128,6 +129,12 @@ body {
 }
 .contentPic img {
 	width: 100%;
+	height: auto;
+}
+
+/* Aspect-ratio safeguard — images always keep their original ratio. */
+img {
+	height: auto;
 }
 .heading1 {
 	font-size: 32px;
