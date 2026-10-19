@@ -263,6 +263,12 @@
             </div>
 
             <div class="csFigure">
+                <img src="../../../blog/aiAgentInternship/22-voice-journey-map.jpg"
+                    alt="平台自身的电商核心链路——首页、导购、店铺、提单与下单、购后，每一段的核心模块与辅助模块，并标出语音点外卖需要触达的关键节点" / width="1400" height="609" decoding="async" loading="lazy">
+                <div class="csCap"><strong>先补业务。</strong>动手设计之前，我先画清了平台自己的五段链路——首页、导购、店铺、提单与下单、购后——以及每一段的核心模块与辅助模块，再标出语音点外卖真正要落到的节点：入口段的搜索与店铺页，提单段的商品 SKU（规格/口味/备注）与确认信息，支付，以及购后的履约与售后。语音不是替代这条链路，而是必须在这些指名节点上重新进链。</div>
+            </div>
+
+            <div class="csFigure">
                 <img src="../../../blog/aiAgentInternship/03-target-workflow.jpg"
                     alt="目标工作流——用户语音到 ASR，到意图识别与大模型，再到对搜索、推荐、购物车、确认订单、支付等平台能力的自主执行，最后通过 TTS 返回" / width="1400" height="609" decoding="async" loading="lazy">
                 <div class="csCap">目标链路。中间那段<strong>自主执行</strong>，是整条链上技术唯一还没准备好接住的一环。</div>
@@ -374,7 +380,7 @@
                 <span class="cbLabel">MVP 定下来的事</span>
                 <div class="csP">
                     <p>
-                        语音点外卖 <strong>80% 的核心体验</strong>端到端跑通，并由此验证了三项关键体验：能以多种形式给出自然语言回复、能识别模糊意图、能自主执行较复杂任务。差距是真的——也是能补上的。
+                        语音点外卖 <strong>80% 的核心体验</strong>端到端跑通，并由此验证了三项关键体验：能以多种形式给出自然语言回复、能识别模糊意图、能自主执行较复杂任务。这套方法后来也带回团队做了一场分享——讲原型真正需要什么、每一块是怎么攻的。差距是真的——也是能补上的。
                     </p>
                 </div>
             </div>
@@ -458,25 +464,43 @@
             </div>
 
             <!-- ============================================================ -->
-            <h3 class="secTitle"><span class="secNum">05</span>把方法讲出去</h3>
-            <span class="csKicker">回到团队</span>
+            <h3 class="secTitle"><span class="secNum">05</span>提示词设计与迭代</h3>
+            <span class="csKicker">三条可复用的原则，任何 LLM 功能都能套</span>
 
             <div class="csP">
                 <p>
-                    只留在项目里的工作只付一次钱。所以方法和更大的语境，我都带回了团队——一场讲「语音点餐 MVP 到底是怎么搭出来的」的方法分享，以及一期面向每周 AI 资讯场的 AI 眼镜市场简报。
+                    我把提示词当成一份写下来的规格，而不是文案工作——而真正起作用的那一轮迭代，改的是<strong>指令的种类</strong>，不是措辞。两条工作线用到它：一条是把语音 Agent 从「闲聊」扭到「回答点餐问题」的角色提示词；另一条撑起智能筛选项，在这条线里提示词本身成了设计对象。最后沉淀出三条原则。
                 </p>
             </div>
 
+            <ol class="csList">
+                <li><strong>规定角色和形状，不要规定措辞。</strong>最后落定的结构有四层，顺序不能换：<strong>角色 → 技能 → 任务 → 输出</strong>。角色定「它是谁、服务谁」；技能定「它能从什么里取材」——在筛选项里是两类输入：场景（时段、地域口味、天气或特殊场景）× 个人（地域、消费力、年龄层、近 30
+                    天点击/下单品类 TOP3、搜索词 TOP5）；任务只写一件事：读近期订单 → 建画像 → 生成筛选词；输出钉死结构：一段画像 + 一个筛选词数组。最后一层最常被跳过，却最要紧——固定形状让每次结果可横向比较，提示词才<em>可被验收</em>，而不只是「看着不错」。措辞是我花时间最少的一层，因为它对结果的影响最小。</li>
+                <li><strong>模版买来可靠，代价是同质。</strong>第一版是案例模版化：给模型几个示例词，让它照模式填。它跑得很顺——而每个用户拿到的都是同一张清单的变体。这种输出读起来像<em>生成</em>的，不像<em>懂你</em>；加更多示例也救不回来，因为示例本身就是问题。我现在用的检验很粗：把两个用户的输出并排放——如果我分不出谁是谁，这条提示词就是一张绕了几步的查表。</li>
+                <li><strong>迭代指令的种类，不是词。</strong>第二版丢掉示例，改成<strong>从分析用户偏好切入</strong>：给它可推理的偏好维度、示范「一个人会怎么形容想吃的东西」而不是直接给词、允许它表达而不是挑选。多样性回来了——方差也跟着回来，而方差必须用测试兜住。这个交换我每次都愿意做：同质的答案不是更便宜的答案，是错的答案。</li>
+            </ol>
+
             <div class="csFigure">
-                <img src="../../../blog/aiAgentInternship/18-sharing-kungfu.jpg"
-                    alt="团队内分享场——分享搭建语音点餐 MVP Demo 的具体经验与方法" / width="1400" height="609" decoding="async" loading="lazy">
-                <div class="csCap"><strong>讲方法，不讲 Demo。</strong>把原型为什么这么做拆开：要攻的三项能力，以及我用什么方式去攻。</div>
+                <img src="../../../blog/aiAgentInternship/20-prompt-first-attempt.jpg"
+                    alt="第一版提示词与它的 JSON 输出——角色、任务、用户画像评估维度、输出格式与用户近期下单行为，返回画像与推荐词数组"
+                    width="1400" height="609" decoding="async" loading="lazy">
+                <div class="csCap"><strong>第一版——可靠，也一模一样。</strong>角色、任务、画像评估维度、输出格式加上用户近期订单，产出了一段具体可用的画像和一个说得通的筛选词数组。「说得通」正是陷阱：每次输出都是同一种语域，而模型自己的备注承认了缺的那一半——这套词给哪个人群、每个词怎么对应到具体商品。</div>
             </div>
 
             <div class="csFigure">
-                <img src="../../../blog/aiAgentInternship/19-ai-glasses-briefing.jpg"
-                    alt="每周 AI 资讯场——总结分享一期从 Google Glass 而来的 AI 眼镜市场资讯" / width="1400" height="609" decoding="async" loading="lazy">
-                <div class="csCap"><strong>更大的语境。</strong>总结分享一期 AI 眼镜市场简报——从消费视角看这个赛道现在到底在哪。</div>
+                <img src="../../../blog/aiAgentInternship/21-prompt-optimisation.jpg"
+                    alt="提示词优化——左侧为案例模版化的原提示词，右侧为从用户偏好分析切入的优化提示词，以及 App 中更多样的筛选词结果"
+                    width="1400" height="609" decoding="async" loading="lazy">
+                <div class="csCap"><strong>第二版——换的是指令的种类。</strong>左边是案例模版化；右边从偏好分析切入，把表达空间还给模型——筛选词才开始像「一个人会点的那一下」。</div>
+            </div>
+
+            <div class="calloutBox">
+                <span class="cbLabel">Prompt策略结论</span>
+                <div class="csP">
+                    <p>
+                        提示词的质量不看「输出对不对」，而看「输出是不是<strong>这个人的</strong>」。模版买来可控，代价是同质；分析买来多样，代价是要用测试兜住方差。
+                    </p>
+                </div>
             </div>
 
             <!-- ============================================================ -->

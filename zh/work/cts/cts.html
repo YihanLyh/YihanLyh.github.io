@@ -151,16 +151,15 @@
             <div class="execSummary">
                 <div class="esLabel">简介</div>
                 <p class="esClaim">
-                    作品不向访客展示污染 —— <em>访客本身就是污染的源头</em>。当人走进投影的那一刻，垃圾与污染液就开始从他自己的双手与身体里渗出，周围的海洋随之变异。污染不再是布景，而变成了观看者本人正在生产的东西。
+                    作品不向访客展示污染 —— <em>访客本身就是“污染的源头”</em>。当人走进投影的那一刻，垃圾与污染液就开始从他自己的双手与身体里渗出，周围的海洋随之变异。污染不再是布景，而变成了观看者本人正在生产的东西。
                 </p>
             </div>
 
             <div class="statGrid">
-                <div class="stat"><span class="statNum">0</span><span class="statLabel">帧预渲染 —— 所有画面均为实时生成</span></div>
+                <div class="stat"><span class="statNum">1</span><span class="statLabel">个传感器 —— 深度摄像头作为具身交互输入端</span></div>
+                <div class="stat"><span class="statNum">1</span><span class="statLabel">个实时管线工具：基于TouchDesigner实时生成可交互影像</span></div>
                 <div class="stat"><span class="statNum">2</span><span class="statLabel">个投影面 —— 墙面与地面，环绕访客连续铺开</span></div>
-                <div class="stat"><span class="statNum">3</span><span class="statLabel">个实时管线工具：Blender、TouchDesigner、Stable Diffusion</span></div>
-                <div class="stat"><span class="statNum">1</span><span class="statLabel">个传感器 —— 访客的身体是唯一输入</span></div>
-            </div>
+                </div>
 
             <h3 class="secTitle"><span class="secNum">00</span>结论摘要</h3>
             <span class="csKicker">这个作品是什么，以及它为什么成立</span>
@@ -321,7 +320,74 @@
             </div>
 
             <!-- ============================================================ -->
-            <h3 class="secTitle"><span class="secNum">03</span>视频与画面</h3>
+            <h3 class="secTitle"><span class="secNum">03</span>AI 工作流与提示词结构</h3>
+            <span class="csKicker">一套可被判断的生成资产语汇</span>
+
+            <div class="csP">
+                <p>
+                    画面里的塑料垃圾是<strong>生成出来的，不是建模出来的</strong>——Stable Diffusion 文字生成三维白模，再回到 Blender 里清理与整理。重点不是「用了 AI」，而是把提示词写成一份<strong>收窄的契约</strong>，让输出可被判断；同时把迭代设计成每一轮只证明一件事。
+                </p>
+            </div>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <thead>
+                        <tr>
+                            <th>层级</th>
+                            <th>它固定了什么</th>
+                            <th>在这个项目里</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>主体</td>
+                            <td>只要这个物体，不要别的</td>
+                            <td>每次只生成一件塑料垃圾——瓶子、袋子、碎片、渔网——画面里不带环境</td>
+                        </tr>
+                        <tr>
+                            <td>形态与材质约束</td>
+                            <td>下游必须成立的部分</td>
+                            <td>无贴图的基底网格、清晰的轮廓、可信的体积。表面不是要求，因为它最终会被投影覆盖</td>
+                        </tr>
+                        <tr>
+                            <td>输出形态</td>
+                            <td>回来的是什么、什么状态</td>
+                            <td>白模 / 基底网格，直接交给 Blender 做拓扑、缩放与材质准备</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="csP">
+                <p>
+                    作用最大的一条约束，是要求<em>不要贴图</em>。在常规三维流程里贴图是最贵的一环；这里它是浪费——资产的职责是轮廓，表面由投影负责。把这句话写进提示词，决定了它是「一个能用的资产」，还是「一个好看、但必须重做的资产」。
+                </p>
+            </div>
+
+            <div class="csP">
+                <p>
+                    迭代被设计成一道三轮闸门，每一轮只回答一个问题：
+                </p>
+            </div>
+
+            <ol class="csList">
+                <li><strong>形态轮。</strong>先放宽生成、多出几个，但只用轮廓与比例来判断——放到墙面尺度、被两个表面压平之后，它还读得出「塑料垃圾」吗？写实度不是这一轮的准则，用它来判断，只会因为错误的理由留下一个网格。</li>
+                <li><strong>可控重建轮。</strong>选中的网格进 Blender，拓扑、缩放、材质由我决定，而不是由模型决定。提示词提供语汇，工具提供物体。</li>
+                <li><strong>语境轮。</strong>重建后的资产放回投影里就地判断——它读得出「累积」吗？和身体并置时站得住吗？不合格的退回第一轮，并点名是哪条约束失效——这一步才让循环不至于变成凭感觉挑图。
+                </li>
+            </ol>
+
+            <div class="calloutBox">
+                <span class="cbLabel">可迁移的部分</span>
+                <div class="csP">
+                    <p>
+                        真正可复用的是这个分工：<strong>提示词提供原始形态，设计师判断哪个轮廓留下，三维工具让它可用</strong>。如果直接向模型要一个成品资产，迭代次数更多、可控性更差——而同一套分工，也是这件作品其余部分能保持实时生成的原因。
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">04</span>视频与画面</h3>
             <span class="csKicker">装置运行中</span>
 
             <div class="contentPic">

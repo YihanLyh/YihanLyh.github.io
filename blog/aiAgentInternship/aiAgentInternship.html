@@ -300,6 +300,17 @@
             </div>
 
             <div class="csFigure">
+                <img src="./22-voice-journey-map.jpg"
+                    alt="The platform's own commerce journey — home, discovery, store, order and post-order — with core and auxiliary modules per stage, and the nodes a voice order has to touch marked" / width="1400" height="609" decoding="async" loading="lazy">
+                <div class="csCap"><strong>The business first.</strong> Before designing anything I mapped the
+                    platform's own five-stage journey — home, discovery, store, order, post-order — with its core and
+                    auxiliary modules, then marked the nodes a voice order actually touches: search and the store
+                    page on the way in, spec / taste / notes and order confirmation in the basket, payment, then
+                    fulfilment and after-sales. Voice does not replace this funnel — it has to re-enter it at named
+                    points.</div>
+            </div>
+
+            <div class="csFigure">
                 <img src="./03-target-workflow.jpg"
                     alt="Target workflow — speech to ASR, to intent recognition and the LLM, to autonomous execution against platform tools such as search, recommendation, cart, order confirmation and payment, returning through TTS" / width="1400" height="609" decoding="async" loading="lazy">
                 <div class="csCap">The target chain. The middle — <strong>autonomous execution</strong> — is the only
@@ -443,8 +454,9 @@
                     <p>
                         Roughly <strong>80% of the core voice-ordering experience</strong> ran end to end, and three
                         key experiences came out verified: the agent can reply in varied natural language, can
-                        resolve ambiguous intent, and can execute a fairly complex task autonomously. The gap was
-                        real — and it was closable.
+                        resolve ambiguous intent, and can execute a fairly complex task autonomously. The method
+                        behind the build then went back to the team as an internal workshop — what the prototype
+                        actually needed, and how each piece was attacked. The gap was real — and it was closable.
                     </p>
                 </div>
             </div>
@@ -544,29 +556,72 @@
             </div>
 
             <!-- ============================================================ -->
-            <h3 class="secTitle"><span class="secNum">05</span>Passing It On</h3>
-            <span class="csKicker">Back to the team</span>
+            <h3 class="secTitle"><span class="secNum">05</span>Prompt Design &amp; Iteration</h3>
+            <span class="csKicker">Three principles I now apply to any LLM feature</span>
 
             <div class="csP">
                 <p>
-                    Work that stays inside one project only pays once. So the method and the wider context both went
-                    back to the team — a workshop on how the voice-ordering MVP was actually
-                    built, and a briefing on the AI-glasses market for the weekly AI news session.
+                    I treated the prompt as a written specification rather than as copywriting — and the iteration
+                    that mattered changed the <em>kind</em> of instruction, not its wording. Two workstreams ran on
+                    it: the role prompt that moved the voice agent from chatting to answering ordering questions,
+                    and the prompt behind the AI-generated filter labels, where the prompt itself became the design
+                    object. Three principles came out of it.
                 </p>
             </div>
 
+            <ol class="csList">
+                <li><strong>Specify the role and the shape, not the wording.</strong> The structure I settled on has
+                    four fixed layers: <strong>role → skill → task → output</strong>. Role fixes who the model is
+                    and who it serves; skill fixes what it may draw on — for the labels, scenario (time of day,
+                    local food character, weather or occasion) × person (region, spending level, age, top-3 ordered
+                    categories, top-5 search terms over 30 days); task states one job, read recent orders → build a
+                    portrait → generate labels; output pins a schema, one portrait paragraph plus a label array. The
+                    last layer is the one most often skipped and the one that matters most: a fixed shape makes every
+                    run comparable, so the prompt can be tested instead of admired. Wording is where I spent the
+                    least time, because it moves the result the least.</li>
+                <li><strong>Templates buy reliability and charge you in sameness.</strong> My first prompt was
+                    case-templated — example labels plus "fill the pattern". It ran perfectly, and every user got a
+                    variation of the same list. That output reads as <em>generated</em>, not as
+                    <em>understanding</em>, and more examples do not fix it, because the examples are the problem.
+                    The test I use now is blunt: put two users' outputs side by side — if I cannot tell who is who,
+                    the prompt is a lookup table with extra steps.</li>
+                <li><strong>Iterate the type of instruction, not the words.</strong> The second version dropped the
+                    examples and started from <strong>analysing the user's preference</strong>: give the model
+                    dimensions to reason over, model the <em>way</em> a person describes a craving instead of handing
+                    over the words, and let it express rather than select. Variety came back — and so did variance,
+                    which now has to be covered by testing. I would take that trade every time: a homogeneous answer
+                    is not the cheaper answer, it is the wrong one.</li>
+            </ol>
+
             <div class="csFigure">
-                <img src="./18-sharing-kungfu.jpg"
-                    alt="Internal design community workshop session — sharing the concrete experience and method behind building the voice-ordering MVP demo" / width="1400" height="609" decoding="async" loading="lazy">
-                <div class="csCap"><strong>The method, not the demo.</strong> The workshop took apart what the
-                    prototype needed: three capabilities to attack, and the ways I attacked them.</div>
+                <img src="./20-prompt-first-attempt.jpg"
+                    alt="First-attempt prompt beside its JSON output — role, task, portrait evaluation dimensions, output format and the user's recent orders, returning a portrait plus a recommendation array"
+                    width="1400" height="609" decoding="async" loading="lazy">
+                <div class="csCap"><strong>Version one — reliable, and identical.</strong> Role, task, portrait
+                    dimensions, output format and the user's recent orders produced a specific portrait and a
+                    plausible label array. Plausible was the trap: every run came back in the same register, and the
+                    model's own note admitted the missing half — which cohort the labels were for, and how a label
+                    maps to a product.</div>
             </div>
 
             <div class="csFigure">
-                <img src="./19-ai-glasses-briefing.jpg"
-                    alt="Weekly AI news session — summarising a briefing on the AI-glasses market, from Google Glass to the consumer view" / width="1400" height="609" decoding="async" loading="lazy">
-                <div class="csCap"><strong>Wider context.</strong> Summarising a weekly AI briefing on the
-                    AI-glasses market — the consumer view of where the sector actually is.</div>
+                <img src="./21-prompt-optimisation.jpg"
+                    alt="Prompt optimisation — the original case-templated prompt on the left, the preference-analysis prompt on the right, and the resulting varied filter labels in the app"
+                    width="1400" height="609" decoding="async" loading="lazy">
+                <div class="csCap"><strong>Version two — the instruction changed type.</strong> Left: case templates.
+                    Right: preference analysis, which gives the model room to phrase — and the labels start to read
+                    like something one person would actually tap.</div>
+            </div>
+
+            <div class="calloutBox">
+                <span class="cbLabel">The standard I hold</span>
+                <div class="csP">
+                    <p>
+                        Prompt quality is not measured by whether the output is correct — it is measured by whether
+                        the output is <strong>this user's</strong>. Templates buy control and pay in sameness;
+                        analysis buys variety and pays in variance you have to test.
+                    </p>
+                </div>
             </div>
 
             <!-- ============================================================ -->

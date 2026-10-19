@@ -178,14 +178,12 @@
             </div>
 
             <div class="statGrid">
-                <div class="stat"><span class="statNum">0</span><span class="statLabel">pre-rendered frames — all
-                        imagery is generated live</span></div>
+                <div class="stat"><span class="statNum">1</span><span class="statLabel">sensor — the depth camera as
+                        the embodied interaction input</span></div>
+                <div class="stat"><span class="statNum">1</span><span class="statLabel">real-time pipeline tool:
+                        TouchDesigner-driven live generative visuals</span></div>
                 <div class="stat"><span class="statNum">2</span><span class="statLabel">projection surfaces — wall and
                         floor, continuous around the visitor</span></div>
-                <div class="stat"><span class="statNum">3</span><span class="statLabel">tools in the real-time pipeline:
-                        Blender, TouchDesigner, Stable Diffusion</span></div>
-                <div class="stat"><span class="statNum">1</span><span class="statLabel">sensor — the visitor's own body
-                        is the only input</span></div>
             </div>
 
             <h3 class="secTitle"><span class="secNum">00</span>Executive Summary</h3>
@@ -377,7 +375,92 @@
             </div>
 
             <!-- ============================================================ -->
-            <h3 class="secTitle"><span class="secNum">03</span>Video &amp; Gallery</h3>
+            <h3 class="secTitle"><span class="secNum">03</span>AI Workflow &amp; Prompt Structure</h3>
+            <span class="csKicker">A generated asset vocabulary, kept controllable</span>
+
+            <div class="csP">
+                <p>
+                    The plastic waste in the scene was <strong>generated, not modelled</strong> — Stable Diffusion
+                    text-to-3D producing untextured white models that Blender then cleaned up and prepared. The point
+                    is not that AI was used; it is that the prompt was written as a <strong>narrow contract</strong> so
+                    the output could be judged, and that the loop was built so each round had to prove only one thing.
+                </p>
+            </div>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <thead>
+                        <tr>
+                            <th>Layer</th>
+                            <th>What it fixes</th>
+                            <th>In this project</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Subject</td>
+                            <td>The object, and nothing else</td>
+                            <td>One piece of plastic waste per run — bottle, bag, fragment, net — with no scene around
+                                it</td>
+                        </tr>
+                        <tr>
+                            <td>Form &amp; material constraint</td>
+                            <td>What has to stay true downstream</td>
+                            <td>Untextured base mesh, readable silhouette, believable mass. Surface is not a
+                                requirement, because projection replaces it</td>
+                        </tr>
+                        <tr>
+                            <td>Output mode</td>
+                            <td>What comes back, and in what state</td>
+                            <td>White model / base mesh, handed straight to Blender for topology, scale and material
+                                preparation</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="csP">
+                <p>
+                    The constraint that did the most work was asking for <em>no texture</em>. Everywhere else in a 3D
+                    pipeline texture is the expensive part; here it was waste, because the asset's job is silhouette
+                    and the projection supplies the surface. Writing that into the prompt was the difference between a
+                    usable asset and a pretty one that has to be rebuilt.
+                </p>
+            </div>
+
+            <div class="csP">
+                <p>
+                    Iteration ran as a three-round gate, each round answering a different question:
+                </p>
+            </div>
+
+            <ol class="csList">
+                <li><strong>Form check.</strong> Generate broadly, then judge only silhouette and proportion — at wall
+                    scale, flattened across two surfaces, does it still read as plastic waste? Photorealism is not a
+                    criterion here, and judging by it is how a run gets kept for the wrong reason.</li>
+                <li><strong>Controlled rebuild.</strong> The selected mesh goes into Blender, where topology, scale and
+                    material are decisions I make rather than decisions the model made. The prompt supplies
+                    vocabulary; the tool supplies the object.</li>
+                <li><strong>Context check.</strong> The rebuilt asset returns to the projection and is judged in place
+                    — does it read as accumulation, does it hold beside the body. Whatever fails goes back to round
+                    one with the failed constraint named, which is what stops the loop from becoming taste-testing.
+                </li>
+            </ol>
+
+            <div class="calloutBox">
+                <span class="cbLabel">What transfers</span>
+                <div class="csP">
+                    <p>
+                        The division of labour is the reusable part: <strong>the prompt supplies raw form, the designer
+                            decides which silhouette survives, and the 3D tool makes it usable</strong>. Asking the
+                        model for a finished asset would have cost more iterations and produced less control — and the
+                        same split is what kept the rest of the piece running in real time.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">04</span>Video &amp; Gallery</h3>
             <span class="csKicker">The installation running</span>
 
             <div class="contentPic">
