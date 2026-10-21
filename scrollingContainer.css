@@ -17,8 +17,31 @@
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -1;
+    z-index: -2;              /* sits below the side-fade overlays (-1) and the cards (0) */
     opacity: 0.75;
+  }
+
+  /* Side fade + soft blur: feathers the background video into the page colour on wide screens.
+     z-index:-1 keeps it above the video but below the project cards, so cards stay crisp & clickable. */
+  .allProjectsContainer::before,
+  .allProjectsContainer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: clamp(44px, 9%, 160px);
+    z-index: -1;
+    pointer-events: none;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .allProjectsContainer::before {
+    left: 0;
+    background: linear-gradient(to right, #191d20 0%, rgba(25, 29, 32, 0) 100%);
+  }
+  .allProjectsContainer::after {
+    right: 0;
+    background: linear-gradient(to left, #191d20 0%, rgba(25, 29, 32, 0) 100%);
   }
 
 .allProjectsCards {
