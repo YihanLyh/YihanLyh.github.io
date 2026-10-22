@@ -16,7 +16,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
-        content="A personal-IP character, Han, brought to life as daily short films through a reusable AI pipeline on TapNow / Tapflow — three films and the workflow behind them." />
+        content="A personal-IP character, Han, brought to life as daily short films through an AI workflow on TapNow — three films and the workflow behind them." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -169,10 +169,10 @@
             <div class="execSummary">
                 <div class="esLabel">Bottom line</div>
                 <p class="esClaim">
-                    <strong>Han is my 3D Q-version personal IP.</strong> I built a reusable AI production pipeline on
-                    TapNow / Tapflow that turns a one-line idea — a quiet autumn morning, a walk up Gem Mountain, a tea
+                    <strong>Han is the 3D Q-version personal IP character I designed.</strong> I built an AI workflow on
+                    TapNow and collaborate with WorkBuddy and AI agents: it turns a one-line idea — a quiet autumn morning, a climb up Gem Mountain, a tea
                     break — into a finished short with the <em>same</em> character every time. Below are three of those
-                    daily films and the workflow that makes them repeatable.
+                    daily films and the process behind them.
                 </p>
             </div>
 
@@ -182,8 +182,9 @@
 
             <div class="csP">
                 <p>
-                    Each film starts from a written idea and a shot list, then runs through the pipeline. The first is
-                    a 16:9 vignette; the other two are 9:16 vertical pieces built for short-video feeds.
+                    Each film starts from a one-line idea and a shot list, then runs through the workflow. The
+                    character setup is done once and reused for every film — so all three share the same soul, Han,
+                    yet each can carry a different inspiration, scene, action and mood.
                 </p>
             </div>
 
@@ -239,7 +240,7 @@
                 <li><strong>Scene concept.</strong> One-line idea → script → shot breakdown (timecode, camera, light,
                     suggested sound). Lock the shots here before generating, to avoid rework.</li>
                 <li><strong>Visual generation.</strong> Text-to-image keyframes per shot, then image-to-video with
-                    Cinema Lab camera moves; broken frames are fixed with inpainting, not a full re-render.</li>
+                    camera moves; broken frames are fixed with inpainting, not a full re-render.</li>
                 <li><strong>Audio.</strong> Generate BGM and layered SFX, optionally a voiceover, and mix them to the
                     timeline.</li>
                 <li><strong>Post &amp; export.</strong> Edit the shots together, add captions, upscale, export MP4
@@ -269,7 +270,7 @@
 规格    = 9:16 1080x1920
 负向    = {{global: back buttons, side roundel, outfit variant, photoreal}} + {{shot-specific}}
 
-<span style="color:#8FC4D2;"># image-to-video · Cinema Lab (per shot)</span>
+<span style="color:#8FC4D2;"># image-to-video (per shot)</span>
 运镜    = {{push-in / pull-back / pan / tilt-up / orbit / follow}}
 动态    = {{camera or subtle character motion}}
 时长    = {{seconds per shot}}
@@ -286,8 +287,8 @@ seed_lock = on
 
             <div class="csP">
                 <p>
-                    Pre-production is just a table. Writing the shots out first is what lets the pipeline stay
-                    consistent — the film above came straight from this list.
+                    I build the shot list together with AI in pre-production. Locking the shots up front is what keeps
+                    the generation consistent — the film above came straight from this list.
                 </p>
             </div>
 
@@ -339,15 +340,15 @@ seed_lock = on
                     <tbody>
                         <tr>
                             <td>Character</td>
-                            <td>Han — 3D Q-version personal IP (designed and locked by me)</td>
+                            <td>Han — 3D Q-version personal IP (I designed and modeled the character; AI assisted the schematic three-view sheets)</td>
                         </tr>
                         <tr>
                             <td>Tooling</td>
-                            <td>TapNow / Tapflow — Nano Banana 2 (image), Kling 3.0 (video), Cinema Lab (camera)</td>
+                            <td>TapNow — Nano Banana (image), Seedance (video), built-in audio node (audio)</td>
                         </tr>
                         <tr>
                             <td>Format</td>
-                            <td>9:16 vertical (and one 16:9 vignette) · 1080×1920 · 25 fps</td>
+                            <td>9:16 vertical · 1080×1920 · 25 fps</td>
                         </tr>
                         <tr>
                             <td>Films</td>
@@ -355,7 +356,7 @@ seed_lock = on
                         </tr>
                         <tr>
                             <td>Method</td>
-                            <td>Reference-locked generation · fill-in prompt templates · cloneable node graph</td>
+                            <td>Reference-locked character · structured prompt templates · AI workflow</td>
                         </tr>
                     </tbody>
                 </table>

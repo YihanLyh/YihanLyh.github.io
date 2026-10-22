@@ -8,7 +8,7 @@
         href="https://yihanlyh.github.io/blog/hanDaily/hanDaily.html">
     <link rel="alternate" hreflang="zh"
         href="https://yihanlyh.github.io/zh/blog/hanDaily/hanDaily.html">
-    <title>Han 的日常短片 — AI 生成的个人 IP 角色短片 | Lou Yihan</title>
+    <title>Han 的日常短片 — AI 生成的个人 IP 角色短片</title>
     <link rel="stylesheet" type="text/css" href="../../../work/workpages.css" />
     <link rel="stylesheet" type="text/css" href="../../../foldedTags.css" />
     <link rel="stylesheet" type="text/css" href="../../../rollingtext.css" />
@@ -16,7 +16,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
-        content="个人 IP 角色 Han，通过 TapNow / Tapflow 上一条可复用的 AI 生产流水线，变成一支支日常短片——三支影片，以及背后的工作流。" />
+        content="个人 IP 角色 Han，基于TapNow工作流，AI生成日常短片。" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -163,14 +163,14 @@
                 <img src="./HanCover.jpg"
                     alt="三段短片的三个画面：Han 端着晨间咖啡、Han 走在茶园里、Han 站在宝石山的保俶塔下" / width="1400" height="803" decoding="async" loading="lazy">
             </div>
-            <div class="heading2">Han 的日常短片 🎬 — 用一条 AI 流水线，把个人 IP 角色变成日常短片</div>
+            <div class="heading2">Han 的日常短片 🎬 — 用 AI ，制作个人 IP 角色变成日常短片</div>
 
             <!-- ============================================================ -->
             <div class="execSummary">
                 <div class="esLabel">结论</div>
                 <p class="esClaim">
-                    <strong>Han 是我设计的 Q 版 3D 个人 IP 角色。</strong>我在 TapNow / Tapflow 上搭了一条可复用的 AI
-                    生产流水线：把一个一句话的灵感——一个安静的秋晨、一次宝石山登高、一段喝茶的片刻——变成一支角色始终如一的成片。下面是一支支日常短片，以及让它们能被反复生产出来的工作流。
+                    <strong>Han 是我设计的 Q 版 3D 个人 IP 角色。</strong>我在 TapNow上搭建AI
+                    工作流，使用WorkBuddy与Agent协作：把灵感——一个安静的秋晨、一次宝石山登高、一段喝茶的片刻——变成一支角色始终如一的成片。以下日常短片，以及过程记录。
                 </p>
             </div>
 
@@ -180,7 +180,7 @@
 
             <div class="csP">
                 <p>
-                    每支短片都从一句想法和一份分镜表开始，再走一遍流水线。第一支是 16:9 的小品，另外两支是面向短视频平台的 9:16 竖屏。
+                    每支短片都从一句想法和一份分镜表开始，再走一遍工作流。角色设定只做一次，后续每支片子都复用——所以三支短片的灵魂是同一个角色 Han，但每支片子都能有不同的灵感、场景、动作和情绪。
                 </p>
             </div>
 
@@ -217,24 +217,24 @@
 
             <div class="csP">
                 <p>
-                    整条流水线是一张节点图：<strong>角色设定 → 场景构思 → 视觉生成 → 音频 → 后期导出</strong>。角色设定只做一次、全程复用；其余环节都由一份文字 brief 和填空式提示词模板驱动，所以新片基本就是"换灵感、留骨架"。
+                    整条工作流归纳节点图：<strong>角色设定 → 场景构思 → 视觉生成 → 音频 → 后期导出</strong>。角色设定只做一次、全程复用；其余环节都由一份文字 brief 和填空式提示词模板驱动，所以新片基本就是"换灵感、留骨架"。
                 </p>
             </div>
 
             <ol class="csList">
                 <li><strong>角色设定（一次）。</strong>做 Han 的参考图与一致性锁，固定外观——帽子、衬衫、短裤、短靴，以及胸口三颗纽扣——让同一个角色在每支片子里都站得住，正面、侧面、背面皆然。</li>
-                <li><strong>场景构思。</strong>一句话灵感 → 脚本 → 分镜（时间码、机位、光线、建议音效）。生成前先定稿，避免返工。</li>
-                <li><strong>视觉生成。</strong>逐镜文生图首帧，再图生视频配 Cinema Lab 运镜；崩坏的镜用局部重绘修，不必整段重生成。</li>
-                <li><strong>音频。</strong>生成 BGM 与分层 SFX，可选配音，混到时间轴上。</li>
-                <li><strong>后期导出。</strong>按时间码拼镜、加字幕、超分，导出 MP4（H.264）。</li>
+                <li><strong>场景构思。</strong>一句话灵感 → 脚本 → 分镜（时间码、机位、光线、建议音效）。在生成前，确定分镜设定。</li>
+                <li><strong>视觉生成。</strong>逐镜文生图首帧，再图生视频配合运镜；崩坏的镜用局部重绘修。</li>
+                <li><strong>音频。</strong>生成 BGM 与分层 SFX、可选配音，混到时间轴上。</li>
+                <li><strong>后期导出。</strong>按时间码剪辑，导出 MP4（H.264）。</li>
             </ol>
 
             <h3 class="secTitle">提示词模板</h3>
-            <span class="csKicker">真正可复用的部分——填空，而非重写</span>
+            <span class="csKicker">可复用的结构化提示词</span>
 
             <div class="csP">
                 <p>
-                    这条流水线真正的资产是提示词的"形状"。下面两个模板包揽了大部分工作，影片之间只换 <code>{{占位符}}</code>。
+                    AI工作流除了内容生成逻辑外可服用的资产是提示词。总结在这个项目中关键节点「文生图（关键帧）」、「图生视频（分镜）」结构化提示词<code>{{占位符}}</code>。
                 </p>
             </div>
 
@@ -251,14 +251,14 @@
 规格    = 9:16 1080x1920
 负向    = {{全局：背面纽扣，侧面圆饰，服装变体，写实真人}} + {{本镜专属}}
 
-<span style="color:#8FC4D2;"># 图生视频 · Cinema Lab（逐镜）</span>
+<span style="color:#8FC4D2;"># 图生视频（逐镜）</span>
 运镜    = {{推 / 拉 / 摇 / 升 / 环绕 / 跟}}
 动态    = {{镜头或角色微动作}}
 时长    = {{单镜秒数}}
 motion  = {{0.25–0.7；抒情低、动作高}}
 seed_lock = on
 一致性参考 = {{背面镜 → 背面帧；侧面镜 → 侧面帧}}</div>
-                <div class="csCap">负向提示词是护栏：它保证 Han 的背面、侧面不长出正面才有的纽扣——这是最费额度的翻车来源。</div>
+                <div class="csCap">负向提示词是护栏：它保证 Han 的背面、侧面不长出正面才有的纽扣。</div>
             </div>
 
             <!-- ============================================================ -->
@@ -267,7 +267,7 @@ seed_lock = on
 
             <div class="csP">
                 <p>
-                    前期就是一张表。先把镜头写清楚，流水线才能保持一致——上面的那支片子就直接来自这张清单。
+                    前期和AI共同完成分镜表。确定清楚了镜头，从而在AI生成时，增强一致性。
                 </p>
             </div>
 
@@ -319,23 +319,23 @@ seed_lock = on
                     <tbody>
                         <tr>
                             <td>角色</td>
-                            <td>Han —— Q 版 3D 个人 IP（由我设计并锁定）</td>
+                            <td>Han —— Q 版 3D 个人 IP（我完成设计建模的模型，AI辅助生成板式化三视图）</td>
                         </tr>
                         <tr>
                             <td>工具</td>
-                            <td>TapNow / Tapflow —— Nano Banana 2（图）、Kling 3.0（视频）、Cinema Lab（运镜）</td>
+                            <td>TapNow —— Nano Banana （图）、Seedance（视频）、内置音频节点（音频）</td>
                         </tr>
                         <tr>
                             <td>规格</td>
-                            <td>9:16 竖屏（另有一支 16:9 小品）· 1080×1920 · 25 fps</td>
+                            <td>9:16 竖屏· 1080×1920 · 25 fps</td>
                         </tr>
                         <tr>
                             <td>短片</td>
-                            <td>3 支日常短片——秋晨咖啡、宝石山、茶与灵感（2025–2026）</td>
+                            <td>3 支日常短片——秋晨咖啡、宝石山、茶与灵感</td>
                         </tr>
                         <tr>
                             <td>方法</td>
-                            <td>参考图锁角色 · 填空式提示词模板 · 可克隆节点图</td>
+                            <td>参考图锁定角色 · 结构化提示词 · AI工作流</td>
                         </tr>
                     </tbody>
                 </table>
