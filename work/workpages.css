@@ -653,6 +653,8 @@ table.csTable tbody tr:last-child td { border-bottom: none; }
 /* --- figures --- */
 .csFigure { width: 100%; max-width: 1000px; margin: 0 0 28px; }
 .csFigure img { width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.12); }
+/* inline diagrams (SVG) share the same frame as the raster figures */
+.csFigure svg { width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.12); }
 
 /* Aspect-ratio safeguard — every image keeps its original ratio and can never
    be stretched. The width/height attributes supply the intrinsic ratio (good

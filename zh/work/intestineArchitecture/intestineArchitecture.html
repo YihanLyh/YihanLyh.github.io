@@ -164,7 +164,7 @@
             <h3 class="secTitle">概述</h3>
             <div class="csP">
                 <p>
-                    一件 VR 作品，素材来自冰岛田野调查与一座扫描的草皮屋；它把观者从微生物尺度放大到人体尺度，并承载一条从诞生到复苏的情感弧线。
+                    一件 VR 作品，素材来自冰岛田野调查与一座扫描的草皮屋；它把观者从微生物尺度放大到人体尺度，并承载一条从诞生到复苏的情感弧线。在技术层面，这是一套实时点云运行环境：约 8000 万点的 LiDAR 测绘在 Houdini 中清理、裁剪后，再导入 Unity 跑 VR。
                 </p>
             </div>
             <h3 class="secTitle">关键部分</h3>
@@ -172,6 +172,7 @@
                 <li><b>从田野到 VR。</b> 一周冰岛田野调查与对 Keldur 草皮屋的激光扫描，直接喂进构建。</li>
                 <li><b>尺度即叙事。</b> 观者从微生物尺度走到人体尺度，身体本身成为故事的结构。</li>
                 <li><b>一条情感弧线。</b> 诞生与生长、离开、归来、复苏四个节点，让生物旅程有了人的温度。</li>
+                <li><b>扫描到实时的管线。</b>约 8000 万点的 LiDAR 测绘在 Houdini 中清理、抽稀、裁剪并重新居中，再以实时 VR 点云的形式导入 Unity。</li>
             </ul>
 
             <!-- ============================================================
@@ -213,7 +214,7 @@
                         </tr>
                         <tr>
                             <td>我的角色</td>
-                            <td>交互设计 · VR 编程 · 机制设计 · 游戏音频 · 视觉特效</td>
+                            <td>交互设计 · VR 编程 · 点云处理（Houdini）· 机制设计 · 游戏音频 · 视觉特效</td>
                         </tr>
                         <tr>
                             <td>时间</td>
@@ -225,7 +226,7 @@
                         </tr>
                         <tr>
                             <td>技术流程</td>
-                            <td>LiDAR 扫描 → RISCAN PRO → Houdini → Unity（VR）</td>
+                            <td>LiDAR 扫描 → RISCAN PRO → Houdini（清理 / 裁剪 / 导出 .pcache）→ Unity（VR）</td>
                         </tr>
                         <tr>
                             <td>交付物</td>
@@ -367,12 +368,209 @@
                 <div class="csCard">
                     <span class="cRole">步骤 03</span>
                     <h4>Houdini</h4>
-                    <p>点云清理、优化，并预处理为可实时运行的格式。</p>
+                    <p>约 8000 万点的原始扫描被清理、抽稀、裁剪并重新居中，导出为可供 Unity 使用的 .pcache。</p>
                 </div>
                 <div class="csCard">
                     <span class="cRole">步骤 04</span>
                     <h4>Unity</h4>
                     <p>重组为可探索的 VR 运行环境，并在扫描数据之上叠加特效与音频。</p>
+                </div>
+            </div>
+
+            <h4 style="width:100%;max-width:1000px;font-size:17px;font-weight:600;margin:26px 0 0;">在 Houdini 中编辑点云</h4>
+            <div class="csP">
+                <p>
+                    原始测绘数据太重，无法直接跑 VR，所以点云在进入 Unity 之前，先在 Houdini 里走一遍基于节点的处理流程。借助 Unity 的 Point-Cache 数字资产做最终导出，约 8000 万点的点云被压到实时预算内、裁剪到只剩扫描到的室内区域，并重新注册到一个干净的坐标原点，最后以只含位置与颜色的 .pcache 交给 Unity。
+                </p>
+            </div>
+
+            <div class="csFigure" style="margin-top:22px;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1000" width="2000" height="1000" role="img" aria-labelledby="fpt" aria-describedby="fpd" style="font-family:'Montserrat Alternates','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans SC',sans-serif;">
+                <title id="fpt">点云处理管线 —— 九步 Houdini 节点操作，从 LiDAR 扫描到 Unity</title>
+                <desc id="fpd">从左到右的流程图，九步 Houdini 节点操作：导入 .laz、Range 1:20 抽稀、从点云取色、移动质心并旋转、包围盒分组、删除未选中、关闭 Range 回密、质心归原点、导出 .pcache 进 Unity。</desc>
+                <rect width="2000" height="1000" fill="#000000"/>
+                <circle cx="66" cy="69" r="4" fill="#B2FEB3"/>
+                <text x="82" y="79" font-size="30" fill="#B2FEB3" font-weight="500">从扫描到实时点云：</text>
+                <text x="63" y="116" font-size="20" fill="#FFFFFF" font-weight="400" fill-opacity="0.62">九步节点操作，把约 8000 万点的 LiDAR 测绘，变成可直接进 Unity 的 .pcache —— 不建模，也不重建。</text>
+                <line x1="63" y1="142" x2="1937" y2="142" stroke="#B2FEB3" stroke-opacity=".16"/>
+                <g transform="translate(63,190)" fill="none" stroke="#B2FEB3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 13.5h22"/>
+                <path d="M3 13.5v8a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2v-8"/>
+                <path d="M14 2v11.2"/>
+                <path d="M9 8.2 14 13l5-4.8"/>
+                </g>
+                <text x="393" y="210" font-size="15" fill="#B2FEB3" font-weight="400" text-anchor="end" letter-spacing=".1em" fill-opacity="0.55">01</text>
+                <text x="63" y="260" font-size="33" fill="#B2FEB3" font-weight="500">Lidar 导入</text>
+                <text x="63" y="293" font-size="18" fill="#B2FEB3" font-weight="400" letter-spacing=".02em" fill-opacity="0.6">.laz · Geometry 节点</text>
+                <text x="63" y="326" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">把原始扫描导入</text>
+                <text x="63" y="355" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">一个 Geometry 节点。</text>
+                <line x1="63" y1="411" x2="393" y2="411" stroke="#B2FEB3" stroke-opacity=".22"/>
+                <circle cx="63" cy="411" r="3.2" fill="#B2FEB3"/>
+                <g transform="translate(449,190)" fill="none" stroke="#B2FEB3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="6" cy="6" r="2.1" fill="#B2FEB3" stroke="none" fill-opacity=".22"/>
+                <circle cx="6" cy="14" r="2.1" fill="#B2FEB3" stroke="none" fill-opacity=".22"/>
+                <circle cx="6" cy="22" r="2.1" fill="#B2FEB3" stroke="none" fill-opacity=".22"/>
+                <circle cx="14" cy="6" r="2.1" fill="#B2FEB3" stroke="none" fill-opacity=".22"/>
+                <circle cx="14" cy="14" r="2.7" fill="#B2FEB3" stroke="none"/>
+                <circle cx="14" cy="22" r="2.1" fill="#B2FEB3" stroke="none" fill-opacity=".22"/>
+                <circle cx="22" cy="6" r="2.1" fill="#B2FEB3" stroke="none" fill-opacity=".22"/>
+                <circle cx="22" cy="14" r="2.1" fill="#B2FEB3" stroke="none" fill-opacity=".22"/>
+                <circle cx="22" cy="22" r="2.1" fill="#B2FEB3" stroke="none" fill-opacity=".22"/>
+                </g>
+                <text x="779" y="210" font-size="15" fill="#B2FEB3" font-weight="400" text-anchor="end" letter-spacing=".1em" fill-opacity="0.55">02</text>
+                <text x="449" y="260" font-size="33" fill="#B2FEB3" font-weight="500">Range 1:20</text>
+                <text x="449" y="293" font-size="18" fill="#B2FEB3" font-weight="400" letter-spacing=".02em" fill-opacity="0.6">每 20 点留 1 点</text>
+                <text x="449" y="326" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">把 8000 万点的云</text>
+                <text x="449" y="355" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">压进实时预算。</text>
+                <line x1="449" y1="411" x2="779" y2="411" stroke="#B2FEB3" stroke-opacity=".22"/>
+                <circle cx="449" cy="411" r="3.2" fill="#B2FEB3"/>
+                <g transform="translate(835,190)" fill="none" stroke="#B2FEB3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="10.5" cy="11" r="6.6"/>
+                <circle cx="17.5" cy="11" r="6.6" stroke-opacity=".62"/>
+                <circle cx="14" cy="17.6" r="6.6" stroke-opacity=".42"/>
+                </g>
+                <text x="1165" y="210" font-size="15" fill="#B2FEB3" font-weight="400" text-anchor="end" letter-spacing=".1em" fill-opacity="0.55">03</text>
+                <text x="835" y="260" font-size="33" fill="#B2FEB3" font-weight="500">Color from</text>
+                <text x="835" y="293" font-size="33" fill="#B2FEB3" font-weight="500">Point Cloud</text>
+                <text x="835" y="326" font-size="18" fill="#B2FEB3" font-weight="400" letter-spacing=".02em" fill-opacity="0.6">保留扫描 RGB</text>
+                <text x="835" y="359" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">让点云看上去</text>
+                <text x="835" y="388" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">仍像那栋建筑。</text>
+                <line x1="835" y1="411" x2="1165" y2="411" stroke="#B2FEB3" stroke-opacity=".22"/>
+                <circle cx="835" cy="411" r="3.2" fill="#B2FEB3"/>
+                <g transform="translate(1221,190)" fill="none" stroke="#B2FEB3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="14" cy="14" r="12.4" stroke-opacity=".26"/>
+                <circle cx="14" cy="14" r="3.1" fill="#B2FEB3" stroke="none"/>
+                <path d="M14 1.4v5.6M14 21v5.6M1.4 14h5.6M21 14h5.6" stroke-opacity=".55"/>
+                <path d="M20.6 7.4a9 9 0 0 1 1.2 7.6" stroke-opacity=".9"/>
+                <path d="M21.8 14.9l.1-3.2-3 1.1"/>
+                </g>
+                <text x="1551" y="210" font-size="15" fill="#B2FEB3" font-weight="400" text-anchor="end" letter-spacing=".1em" fill-opacity="0.55">04</text>
+                <text x="1221" y="260" font-size="33" fill="#B2FEB3" font-weight="500">Move Centroid</text>
+                <text x="1221" y="293" font-size="33" fill="#B2FEB3" font-weight="500">+ Rotate</text>
+                <text x="1221" y="326" font-size="18" fill="#B2FEB3" font-weight="400" letter-spacing=".02em" fill-opacity="0.6">重新对位</text>
+                <text x="1221" y="359" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">把点云核心移到</text>
+                <text x="1221" y="388" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">世界原点，方便编辑。</text>
+                <line x1="1221" y1="411" x2="1551" y2="411" stroke="#B2FEB3" stroke-opacity=".22"/>
+                <circle cx="1221" cy="411" r="3.2" fill="#B2FEB3"/>
+                <g transform="translate(1607,190)" fill="none" stroke="#B2FEB3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="4" width="20" height="20" rx="1.5" stroke-dasharray="3 3.4"/>
+                <circle cx="4" cy="4" r="1.9" fill="#B2FEB3" stroke="none"/>
+                <circle cx="24" cy="4" r="1.9" fill="#B2FEB3" stroke="none"/>
+                <circle cx="4" cy="24" r="1.9" fill="#B2FEB3" stroke="none"/>
+                <circle cx="24" cy="24" r="1.9" fill="#B2FEB3" stroke="none"/>
+                <circle cx="10" cy="10" r="1.3" fill="#B2FEB3" stroke="none" fill-opacity=".65"/>
+                <circle cx="16.5" cy="9" r="1.3" fill="#B2FEB3" stroke="none" fill-opacity=".65"/>
+                <circle cx="12" cy="16" r="1.3" fill="#B2FEB3" stroke="none" fill-opacity=".65"/>
+                <circle cx="18.5" cy="17" r="1.3" fill="#B2FEB3" stroke="none" fill-opacity=".65"/>
+                </g>
+                <text x="1937" y="210" font-size="15" fill="#B2FEB3" font-weight="400" text-anchor="end" letter-spacing=".1em" fill-opacity="0.55">05</text>
+                <text x="1607" y="260" font-size="33" fill="#B2FEB3" font-weight="500">Group 区域分组</text>
+                <text x="1607" y="293" font-size="18" fill="#B2FEB3" font-weight="400" letter-spacing=".02em" fill-opacity="0.6">包围盒选取</text>
+                <text x="1607" y="326" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">把扫描到的可用区域</text>
+                <text x="1607" y="355" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">选为 selected。</text>
+                <line x1="1607" y1="411" x2="1937" y2="411" stroke="#B2FEB3" stroke-opacity=".22"/>
+                <circle cx="1607" cy="411" r="3.2" fill="#B2FEB3"/>
+                <line x1="398.0" y1="411.0" x2="442.0" y2="411.0" stroke="#B2FEB3" stroke-opacity=".5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="1 5.5"/>
+                <path d="M444.2 413.8L449 411L444.2 408.2" fill="none" stroke="#B2FEB3" stroke-opacity=".85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="784.0" y1="411.0" x2="828.0" y2="411.0" stroke="#B2FEB3" stroke-opacity=".5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="1 5.5"/>
+                <path d="M830.2 413.8L835 411L830.2 408.2" fill="none" stroke="#B2FEB3" stroke-opacity=".85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="1170.0" y1="411.0" x2="1214.0" y2="411.0" stroke="#B2FEB3" stroke-opacity=".5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="1 5.5"/>
+                <path d="M1216.2 413.8L1221 411L1216.2 408.2" fill="none" stroke="#B2FEB3" stroke-opacity=".85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="1556.0" y1="411.0" x2="1600.0" y2="411.0" stroke="#B2FEB3" stroke-opacity=".5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="1 5.5"/>
+                <path d="M1602.2 413.8L1607 411L1602.2 408.2" fill="none" stroke="#B2FEB3" stroke-opacity=".85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M1937 411C1937 470 1830 486 1560 486C1000 486 400 486 120 512C110 523 104 540 104 558" fill="none" stroke="#B2FEB3" stroke-opacity=".5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="1 5.5"/>
+                <circle cx="1937" cy="411" r="3.2" fill="#B2FEB3"/>
+                <path d="M98.5 552L104 559L109.5 552" fill="none" stroke="#B2FEB3" stroke-opacity=".85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <g transform="translate(63,565)" fill="none" stroke="#B2FEB3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="7" cy="8" r="1.9" fill="#B2FEB3" stroke="none"/>
+                <circle cx="13" cy="6.5" r="1.9" fill="#B2FEB3" stroke="none"/>
+                <circle cx="9" cy="14" r="1.9" fill="#B2FEB3" stroke="none"/>
+                <circle cx="15" cy="12" r="1.9" fill="#B2FEB3" stroke="none" fill-opacity=".22"/>
+                <path d="M17.5 17.5l6 6M23.5 17.5l-6 6"/>
+                </g>
+                <text x="393" y="585" font-size="15" fill="#B2FEB3" font-weight="400" text-anchor="end" letter-spacing=".1em" fill-opacity="0.55">06</text>
+                <text x="63" y="635" font-size="33" fill="#B2FEB3" font-weight="500">Delete</text>
+                <text x="63" y="668" font-size="33" fill="#B2FEB3" font-weight="500">Non-Selected</text>
+                <text x="63" y="701" font-size="18" fill="#B2FEB3" font-weight="400" letter-spacing=".02em" fill-opacity="0.6">裁剪</text>
+                <text x="63" y="734" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">只保留被分组的区域，</text>
+                <text x="63" y="763" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">其余全部丢掉。</text>
+                <line x1="63" y1="786" x2="393" y2="786" stroke="#B2FEB3" stroke-opacity=".22"/>
+                <circle cx="63" cy="786" r="3.2" fill="#B2FEB3"/>
+                <g transform="translate(449,565)" fill="none" stroke="#B2FEB3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="5.5" cy="8" r="1.7" fill="#B2FEB3" stroke="none"/>
+                <circle cx="5.5" cy="14" r="1.7" fill="#B2FEB3" stroke="none"/>
+                <circle cx="5.5" cy="20" r="1.7" fill="#B2FEB3" stroke="none"/>
+                <path d="M10.5 8.6l4-1.4M10.5 14h4M10.5 19.4l4 1.4"/>
+                <path d="M13.4 6.2l1.6 1-.4-1.9M13.4 13l1.6 1-.4-1.9M13.4 21.8l1.6-1-.4 1.9"/>
+                <circle cx="19.5" cy="6" r="1.5" fill="#B2FEB3" stroke="none" fill-opacity=".8"/>
+                <circle cx="23.5" cy="11" r="1.5" fill="#B2FEB3" stroke="none" fill-opacity=".8"/>
+                <circle cx="19.5" cy="16.5" r="1.5" fill="#B2FEB3" stroke="none" fill-opacity=".8"/>
+                <circle cx="23.5" cy="21.5" r="1.5" fill="#B2FEB3" stroke="none" fill-opacity=".8"/>
+                </g>
+                <text x="779" y="585" font-size="15" fill="#B2FEB3" font-weight="400" text-anchor="end" letter-spacing=".1em" fill-opacity="0.55">07</text>
+                <text x="449" y="635" font-size="33" fill="#B2FEB3" font-weight="500">关闭 Range</text>
+                <text x="449" y="668" font-size="18" fill="#B2FEB3" font-weight="400" letter-spacing=".02em" fill-opacity="0.6">重新加密</text>
+                <text x="449" y="701" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">在保留的裁剪区内</text>
+                <text x="449" y="730" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">恢复细节。</text>
+                <line x1="449" y1="786" x2="779" y2="786" stroke="#B2FEB3" stroke-opacity=".22"/>
+                <circle cx="449" cy="786" r="3.2" fill="#B2FEB3"/>
+                <g transform="translate(835,565)" fill="none" stroke="#B2FEB3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="14" cy="14" r="12" stroke-opacity=".22"/>
+                <circle cx="14" cy="14" r="7" stroke-opacity=".45"/>
+                <circle cx="14" cy="14" r="2.2" fill="#B2FEB3" stroke="none"/>
+                <path d="M14 1v4M14 23v4M1 14h4M23 14h4" stroke-opacity=".55"/>
+                </g>
+                <text x="1165" y="585" font-size="15" fill="#B2FEB3" font-weight="400" text-anchor="end" letter-spacing=".1em" fill-opacity="0.55">08</text>
+                <text x="835" y="635" font-size="33" fill="#B2FEB3" font-weight="500">Transform</text>
+                <text x="835" y="668" font-size="18" fill="#B2FEB3" font-weight="400" letter-spacing=".02em" fill-opacity="0.6">质心归原点</text>
+                <text x="835" y="701" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">重新居中裁剪结果，</text>
+                <text x="835" y="730" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">给 Unity 干净原点。</text>
+                <line x1="835" y1="786" x2="1165" y2="786" stroke="#B2FEB3" stroke-opacity=".22"/>
+                <circle cx="835" cy="786" r="3.2" fill="#B2FEB3"/>
+                <g transform="translate(1221,565)" fill="none" stroke="#B2FEB3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 17v4.5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V17"/>
+                <path d="M14 18.5V3"/>
+                <path d="M8 9l6-6 6 6"/>
+                </g>
+                <text x="1551" y="585" font-size="15" fill="#B2FEB3" font-weight="400" text-anchor="end" letter-spacing=".1em" fill-opacity="0.55">09</text>
+                <text x="1221" y="635" font-size="33" fill="#B2FEB3" font-weight="500">.pcache 导出</text>
+                <text x="1221" y="668" font-size="18" fill="#B2FEB3" font-weight="400" letter-spacing=".02em" fill-opacity="0.6">P, Cd · Invert X</text>
+                <text x="1221" y="701" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">只含位置与颜色，</text>
+                <text x="1221" y="730" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">坐标系翻转直进 Unity。</text>
+                <line x1="1221" y1="786" x2="1551" y2="786" stroke="#B2FEB3" stroke-opacity=".22"/>
+                <circle cx="1221" cy="786" r="3.2" fill="#B2FEB3"/>
+                <line x1="398.0" y1="786.0" x2="442.0" y2="786.0" stroke="#B2FEB3" stroke-opacity=".5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="1 5.5"/>
+                <path d="M444.2 788.8L449 786L444.2 783.2" fill="none" stroke="#B2FEB3" stroke-opacity=".85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="784.0" y1="786.0" x2="828.0" y2="786.0" stroke="#B2FEB3" stroke-opacity=".5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="1 5.5"/>
+                <path d="M830.2 788.8L835 786L830.2 783.2" fill="none" stroke="#B2FEB3" stroke-opacity=".85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="1170.0" y1="786.0" x2="1214.0" y2="786.0" stroke="#B2FEB3" stroke-opacity=".5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="1 5.5"/>
+                <path d="M1216.2 788.8L1221 786L1216.2 783.2" fill="none" stroke="#B2FEB3" stroke-opacity=".85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="1607" y="565" width="330" height="230" rx="14" fill="#B2FEB3" fill-opacity=".055" stroke="#B2FEB3" stroke-opacity=".32"/>
+                <g transform="translate(1633,583)" fill="none" stroke="#B2FEB3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 10h20v7a4 4 0 0 1-4 4h-2.5l-3-3h-4l-3 3H8a4 4 0 0 1-4-4z"/>
+                </g>
+                <text x="1633" y="637" font-size="33" fill="#B2FEB3" font-weight="500">Unity VR</text>
+                <text x="1633" y="670" font-size="33" fill="#B2FEB3" font-weight="500">运行时</text>
+                <text x="1633" y="703" font-size="18" fill="#B2FEB3" font-weight="400" letter-spacing=".02em" fill-opacity="0.6">终点</text>
+                <text x="1633" y="736" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">处理好的点云</text>
+                <text x="1633" y="765" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">无需重建即可落进场景。</text>
+                <line x1="1556.0" y1="786.0" x2="1600.0" y2="786.0" stroke="#B2FEB3" stroke-opacity=".5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="1 5.5"/>
+                <path d="M1602.2 788.8L1607 786L1602.2 783.2" fill="none" stroke="#B2FEB3" stroke-opacity=".85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="63" y1="872" x2="1937" y2="872" stroke="#B2FEB3" stroke-opacity=".14"/>
+                <text x="63" y="902" font-size="12" fill="#B2FEB3" font-weight="400" letter-spacing=".2em" fill-opacity="0.45">来源</text>
+                <text x="63" y="929" font-size="18" fill="#FFFFFF" font-weight="400" fill-opacity="0.72">RISCAN PRO  ·  .laz  ·  约 8000 万点</text>
+                <text x="1937" y="902" font-size="12" fill="#B2FEB3" font-weight="400" text-anchor="end" letter-spacing=".2em" fill-opacity="0.45">输出</text>
+                <text x="1937" y="929" font-size="18" fill="#FFFFFF" font-weight="400" text-anchor="end" fill-opacity="0.72">.pcache  ·  P, Cd  ·  Invert X  →  Unity</text>
+                </svg>
+                <div class="csCap">点云处理管线 —— 九步节点操作，从约 8000 万点的原始扫描，到可直接进 Unity 的 .pcache。</div>
+            </div>
+
+            <div class="calloutBox">
+                <span class="cbLabel">工具</span>
+                <div class="csP">
+                    <p>
+                        <strong>把扫描当作数据，而不是素材。</strong>每一步编辑都是一个节点 —— 导入、过滤、分组、删除、变换、导出 —— 所以整遍清理流程可复现、可替换。经由 Unity 的 Point-Cache 桥（P + Cd，并用 Invert X 做右手坐标系翻转）导出，是让处理好的点云无需重建就能直接落进 VR 运行环境的关键。
+                    </p>
                 </div>
             </div>
 

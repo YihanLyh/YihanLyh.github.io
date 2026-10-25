@@ -166,7 +166,7 @@
             <h3 class="secTitle">Outcome lead</h3>
             <div class="csP">
                 <p>
-                    A VR piece built from Iceland fieldwork and a scanned turf house that scales the viewer from microbe to human inside the body, carrying an emotional arc from birth to reawakening.
+                    A VR piece built from Iceland fieldwork and a scanned turf house that scales the viewer from microbe to human inside the body, carrying an emotional arc from birth to reawakening. Technically it is a real-time point-cloud runtime: an ~80-million-point LiDAR survey cleaned and cropped in Houdini, then streamed into Unity for VR.
                 </p>
             </div>
             <h3 class="secTitle">Featured Outputs</h3>
@@ -174,6 +174,7 @@
                 <li><b>Fieldwork to VR.</b> A week of Iceland fieldwork and laser scanning of the Keldur turf house feed directly into the build.</li>
                 <li><b>Scale as narrative.</b> The viewer travels from microbe scale to human scale, so the body becomes the story's structure.</li>
                 <li><b>An emotional arc.</b> Four beats — birth and growth, leave, come back, reawake — give the biological journey a human feeling.</li>
+                <li><b>Scan-to-realtime pipeline.</b> An ~80-million-point LiDAR survey is cleaned, downsampled, cropped and re-centred in Houdini, then streamed into Unity as a real-time VR point cloud.</li>
             </ul>
 
             <!-- ============================================================
@@ -228,7 +229,7 @@
                         </tr>
                         <tr>
                             <td>My role</td>
-                            <td>Interaction design · VR programming · mechanic design · game audio · visual effects
+                            <td>Interaction design · VR programming · point-cloud processing (Houdini) · mechanic design · game audio · visual effects
                             </td>
                         </tr>
                         <tr>
@@ -241,7 +242,7 @@
                         </tr>
                         <tr>
                             <td>Pipeline</td>
-                            <td>LiDAR scan → RISCAN PRO → Houdini → Unity (VR)</td>
+                            <td>LiDAR scan → RISCAN PRO → Houdini (clean / crop / export .pcache) → Unity (VR)</td>
                         </tr>
                         <tr>
                             <td>Deliverables</td>
@@ -406,12 +407,217 @@
                 <div class="csCard">
                     <span class="cRole">Step 03</span>
                     <h4>Houdini</h4>
-                    <p>Point clouds cleaned, optimised and pre-processed for real-time use.</p>
+                    <p>Raw ~80M-point scan cleaned, downsampled, cropped and re-centred; exported as a Unity-ready .pcache.</p>
                 </div>
                 <div class="csCard">
                     <span class="cRole">Step 04</span>
                     <h4>Unity</h4>
                     <p>Reassembled as an explorable VR runtime, with VFX and audio layered onto the scans.</p>
+                </div>
+            </div>
+
+            <h4 style="width:100%;max-width:1000px;font-size:17px;font-weight:600;margin:26px 0 0;">Point-cloud editing in Houdini</h4>
+            <div class="csP">
+                <p>
+                    The raw survey is far too heavy to run in VR, so the LiDAR import is processed as a node-based
+                    pipeline before it ever reaches Unity. Working in Houdini with Unity's Point-Cache digital asset
+                    for the final export, the ~80-million-point cloud is brought down to a real-time budget, cropped
+                    to just the scanned interior, and re-registered to a clean origin, then handed to Unity as a
+                    .pcache carrying position and colour only.
+                </p>
+            </div>
+
+            <div class="csFigure" style="margin-top:22px;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1000" width="2000" height="1000" role="img" aria-labelledby="fpt" aria-describedby="fpd" style="font-family:'Montserrat Alternates','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans SC',sans-serif;">
+                <title id="fpt">Point-cloud pipeline — nine Houdini node operations from LiDAR scan to Unity</title>
+                <desc id="fpd">A left-to-right flowchart of nine Houdini node operations: Lidar import, Range 1:20 downsample, colour from point cloud, move centroid and rotate, group bounding box, delete non-selected, disable Range, transform to origin, and .pcache export into Unity.</desc>
+                <rect width="2000" height="1000" fill="#000000"/>
+                <circle cx="66" cy="69" r="4" fill="#B2FEB3"/>
+                <text x="82" y="79" font-size="30" fill="#B2FEB3" font-weight="500">From scan to real-time:</text>
+                <text x="63" y="116" font-size="20" fill="#FFFFFF" font-weight="400" fill-opacity="0.62">Nine node operations take an ~80M-point LiDAR survey to a Unity-ready .pcache — no mesh, no rebuild.</text>
+                <line x1="63" y1="142" x2="1937" y2="142" stroke="#B2FEB3" stroke-opacity=".16"/>
+                <g transform="translate(63,190)" fill="none" stroke="#B2FEB3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 13.5h22"/>
+                <path d="M3 13.5v8a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2v-8"/>
+                <path d="M14 2v11.2"/>
+                <path d="M9 8.2 14 13l5-4.8"/>
+                </g>
+                <text x="393" y="210" font-size="15" fill="#B2FEB3" font-weight="400" text-anchor="end" letter-spacing=".1em" fill-opacity="0.55">01</text>
+                <text x="63" y="260" font-size="33" fill="#B2FEB3" font-weight="500">Lidar Import</text>
+                <text x="63" y="293" font-size="18" fill="#B2FEB3" font-weight="400" letter-spacing=".02em" fill-opacity="0.6">.laz · Geometry node</text>
+                <text x="63" y="326" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">Raw survey pulled in</text>
+                <text x="63" y="355" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">from the RISCAN export.</text>
+                <line x1="63" y1="411" x2="393" y2="411" stroke="#B2FEB3" stroke-opacity=".22"/>
+                <circle cx="63" cy="411" r="3.2" fill="#B2FEB3"/>
+                <g transform="translate(449,190)" fill="none" stroke="#B2FEB3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="6" cy="6" r="2.1" fill="#B2FEB3" stroke="none" fill-opacity=".22"/>
+                <circle cx="6" cy="14" r="2.1" fill="#B2FEB3" stroke="none" fill-opacity=".22"/>
+                <circle cx="6" cy="22" r="2.1" fill="#B2FEB3" stroke="none" fill-opacity=".22"/>
+                <circle cx="14" cy="6" r="2.1" fill="#B2FEB3" stroke="none" fill-opacity=".22"/>
+                <circle cx="14" cy="14" r="2.7" fill="#B2FEB3" stroke="none"/>
+                <circle cx="14" cy="22" r="2.1" fill="#B2FEB3" stroke="none" fill-opacity=".22"/>
+                <circle cx="22" cy="6" r="2.1" fill="#B2FEB3" stroke="none" fill-opacity=".22"/>
+                <circle cx="22" cy="14" r="2.1" fill="#B2FEB3" stroke="none" fill-opacity=".22"/>
+                <circle cx="22" cy="22" r="2.1" fill="#B2FEB3" stroke="none" fill-opacity=".22"/>
+                </g>
+                <text x="779" y="210" font-size="15" fill="#B2FEB3" font-weight="400" text-anchor="end" letter-spacing=".1em" fill-opacity="0.55">02</text>
+                <text x="449" y="260" font-size="33" fill="#B2FEB3" font-weight="500">Range 1:20</text>
+                <text x="449" y="293" font-size="18" fill="#B2FEB3" font-weight="400" letter-spacing=".02em" fill-opacity="0.6">keep 1 of every 20</text>
+                <text x="449" y="326" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">Downsamples the cloud</text>
+                <text x="449" y="355" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">into a real-time budget.</text>
+                <line x1="449" y1="411" x2="779" y2="411" stroke="#B2FEB3" stroke-opacity=".22"/>
+                <circle cx="449" cy="411" r="3.2" fill="#B2FEB3"/>
+                <g transform="translate(835,190)" fill="none" stroke="#B2FEB3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="10.5" cy="11" r="6.6"/>
+                <circle cx="17.5" cy="11" r="6.6" stroke-opacity=".62"/>
+                <circle cx="14" cy="17.6" r="6.6" stroke-opacity=".42"/>
+                </g>
+                <text x="1165" y="210" font-size="15" fill="#B2FEB3" font-weight="400" text-anchor="end" letter-spacing=".1em" fill-opacity="0.55">03</text>
+                <text x="835" y="260" font-size="33" fill="#B2FEB3" font-weight="500">Color from</text>
+                <text x="835" y="293" font-size="33" fill="#B2FEB3" font-weight="500">Point Cloud</text>
+                <text x="835" y="326" font-size="18" fill="#B2FEB3" font-weight="400" letter-spacing=".02em" fill-opacity="0.6">scanned RGB</text>
+                <text x="835" y="359" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">Keeps the cloud looking</text>
+                <text x="835" y="388" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">like the building.</text>
+                <line x1="835" y1="411" x2="1165" y2="411" stroke="#B2FEB3" stroke-opacity=".22"/>
+                <circle cx="835" cy="411" r="3.2" fill="#B2FEB3"/>
+                <g transform="translate(1221,190)" fill="none" stroke="#B2FEB3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="14" cy="14" r="12.4" stroke-opacity=".26"/>
+                <circle cx="14" cy="14" r="3.1" fill="#B2FEB3" stroke="none"/>
+                <path d="M14 1.4v5.6M14 21v5.6M1.4 14h5.6M21 14h5.6" stroke-opacity=".55"/>
+                <path d="M20.6 7.4a9 9 0 0 1 1.2 7.6" stroke-opacity=".9"/>
+                <path d="M21.8 14.9l.1-3.2-3 1.1"/>
+                </g>
+                <text x="1551" y="210" font-size="15" fill="#B2FEB3" font-weight="400" text-anchor="end" letter-spacing=".1em" fill-opacity="0.55">04</text>
+                <text x="1221" y="260" font-size="33" fill="#B2FEB3" font-weight="500">Move Centroid</text>
+                <text x="1221" y="293" font-size="33" fill="#B2FEB3" font-weight="500">+ Rotate</text>
+                <text x="1221" y="326" font-size="18" fill="#B2FEB3" font-weight="400" letter-spacing=".02em" fill-opacity="0.6">re-register</text>
+                <text x="1221" y="359" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">Parks the scan at a</text>
+                <text x="1221" y="388" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">usable scene origin.</text>
+                <line x1="1221" y1="411" x2="1551" y2="411" stroke="#B2FEB3" stroke-opacity=".22"/>
+                <circle cx="1221" cy="411" r="3.2" fill="#B2FEB3"/>
+                <g transform="translate(1607,190)" fill="none" stroke="#B2FEB3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="4" width="20" height="20" rx="1.5" stroke-dasharray="3 3.4"/>
+                <circle cx="4" cy="4" r="1.9" fill="#B2FEB3" stroke="none"/>
+                <circle cx="24" cy="4" r="1.9" fill="#B2FEB3" stroke="none"/>
+                <circle cx="4" cy="24" r="1.9" fill="#B2FEB3" stroke="none"/>
+                <circle cx="24" cy="24" r="1.9" fill="#B2FEB3" stroke="none"/>
+                <circle cx="10" cy="10" r="1.3" fill="#B2FEB3" stroke="none" fill-opacity=".65"/>
+                <circle cx="16.5" cy="9" r="1.3" fill="#B2FEB3" stroke="none" fill-opacity=".65"/>
+                <circle cx="12" cy="16" r="1.3" fill="#B2FEB3" stroke="none" fill-opacity=".65"/>
+                <circle cx="18.5" cy="17" r="1.3" fill="#B2FEB3" stroke="none" fill-opacity=".65"/>
+                </g>
+                <text x="1937" y="210" font-size="15" fill="#B2FEB3" font-weight="400" text-anchor="end" letter-spacing=".1em" fill-opacity="0.55">05</text>
+                <text x="1607" y="260" font-size="33" fill="#B2FEB3" font-weight="500">Group (bbox)</text>
+                <text x="1607" y="293" font-size="18" fill="#B2FEB3" font-weight="400" letter-spacing=".02em" fill-opacity="0.6">selection</text>
+                <text x="1607" y="326" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">Marks the scanned</text>
+                <text x="1607" y="355" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">interior as “selected”.</text>
+                <line x1="1607" y1="411" x2="1937" y2="411" stroke="#B2FEB3" stroke-opacity=".22"/>
+                <circle cx="1607" cy="411" r="3.2" fill="#B2FEB3"/>
+                <line x1="398.0" y1="411.0" x2="442.0" y2="411.0" stroke="#B2FEB3" stroke-opacity=".5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="1 5.5"/>
+                <path d="M444.2 413.8L449 411L444.2 408.2" fill="none" stroke="#B2FEB3" stroke-opacity=".85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="784.0" y1="411.0" x2="828.0" y2="411.0" stroke="#B2FEB3" stroke-opacity=".5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="1 5.5"/>
+                <path d="M830.2 413.8L835 411L830.2 408.2" fill="none" stroke="#B2FEB3" stroke-opacity=".85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="1170.0" y1="411.0" x2="1214.0" y2="411.0" stroke="#B2FEB3" stroke-opacity=".5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="1 5.5"/>
+                <path d="M1216.2 413.8L1221 411L1216.2 408.2" fill="none" stroke="#B2FEB3" stroke-opacity=".85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="1556.0" y1="411.0" x2="1600.0" y2="411.0" stroke="#B2FEB3" stroke-opacity=".5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="1 5.5"/>
+                <path d="M1602.2 413.8L1607 411L1602.2 408.2" fill="none" stroke="#B2FEB3" stroke-opacity=".85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M1937 411C1937 470 1830 486 1560 486C1000 486 400 486 120 512C110 523 104 540 104 558" fill="none" stroke="#B2FEB3" stroke-opacity=".5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="1 5.5"/>
+                <circle cx="1937" cy="411" r="3.2" fill="#B2FEB3"/>
+                <path d="M98.5 552L104 559L109.5 552" fill="none" stroke="#B2FEB3" stroke-opacity=".85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <g transform="translate(63,565)" fill="none" stroke="#B2FEB3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="7" cy="8" r="1.9" fill="#B2FEB3" stroke="none"/>
+                <circle cx="13" cy="6.5" r="1.9" fill="#B2FEB3" stroke="none"/>
+                <circle cx="9" cy="14" r="1.9" fill="#B2FEB3" stroke="none"/>
+                <circle cx="15" cy="12" r="1.9" fill="#B2FEB3" stroke="none" fill-opacity=".22"/>
+                <path d="M17.5 17.5l6 6M23.5 17.5l-6 6"/>
+                </g>
+                <text x="393" y="585" font-size="15" fill="#B2FEB3" font-weight="400" text-anchor="end" letter-spacing=".1em" fill-opacity="0.55">06</text>
+                <text x="63" y="635" font-size="33" fill="#B2FEB3" font-weight="500">Delete</text>
+                <text x="63" y="668" font-size="33" fill="#B2FEB3" font-weight="500">Non-Selected</text>
+                <text x="63" y="701" font-size="18" fill="#B2FEB3" font-weight="400" letter-spacing=".02em" fill-opacity="0.6">crop</text>
+                <text x="63" y="734" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">Everything outside the</text>
+                <text x="63" y="763" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">box is dropped.</text>
+                <line x1="63" y1="786" x2="393" y2="786" stroke="#B2FEB3" stroke-opacity=".22"/>
+                <circle cx="63" cy="786" r="3.2" fill="#B2FEB3"/>
+                <g transform="translate(449,565)" fill="none" stroke="#B2FEB3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="5.5" cy="8" r="1.7" fill="#B2FEB3" stroke="none"/>
+                <circle cx="5.5" cy="14" r="1.7" fill="#B2FEB3" stroke="none"/>
+                <circle cx="5.5" cy="20" r="1.7" fill="#B2FEB3" stroke="none"/>
+                <path d="M10.5 8.6l4-1.4M10.5 14h4M10.5 19.4l4 1.4"/>
+                <path d="M13.4 6.2l1.6 1-.4-1.9M13.4 13l1.6 1-.4-1.9M13.4 21.8l1.6-1-.4 1.9"/>
+                <circle cx="19.5" cy="6" r="1.5" fill="#B2FEB3" stroke="none" fill-opacity=".8"/>
+                <circle cx="23.5" cy="11" r="1.5" fill="#B2FEB3" stroke="none" fill-opacity=".8"/>
+                <circle cx="19.5" cy="16.5" r="1.5" fill="#B2FEB3" stroke="none" fill-opacity=".8"/>
+                <circle cx="23.5" cy="21.5" r="1.5" fill="#B2FEB3" stroke="none" fill-opacity=".8"/>
+                </g>
+                <text x="779" y="585" font-size="15" fill="#B2FEB3" font-weight="400" text-anchor="end" letter-spacing=".1em" fill-opacity="0.55">07</text>
+                <text x="449" y="635" font-size="33" fill="#B2FEB3" font-weight="500">Range off</text>
+                <text x="449" y="668" font-size="18" fill="#B2FEB3" font-weight="400" letter-spacing=".02em" fill-opacity="0.6">re-density</text>
+                <text x="449" y="701" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">Detail comes back</text>
+                <text x="449" y="730" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">inside the kept crop.</text>
+                <line x1="449" y1="786" x2="779" y2="786" stroke="#B2FEB3" stroke-opacity=".22"/>
+                <circle cx="449" cy="786" r="3.2" fill="#B2FEB3"/>
+                <g transform="translate(835,565)" fill="none" stroke="#B2FEB3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="14" cy="14" r="12" stroke-opacity=".22"/>
+                <circle cx="14" cy="14" r="7" stroke-opacity=".45"/>
+                <circle cx="14" cy="14" r="2.2" fill="#B2FEB3" stroke="none"/>
+                <path d="M14 1v4M14 23v4M1 14h4M23 14h4" stroke-opacity=".55"/>
+                </g>
+                <text x="1165" y="585" font-size="15" fill="#B2FEB3" font-weight="400" text-anchor="end" letter-spacing=".1em" fill-opacity="0.55">08</text>
+                <text x="835" y="635" font-size="33" fill="#B2FEB3" font-weight="500">Transform</text>
+                <text x="835" y="668" font-size="18" fill="#B2FEB3" font-weight="400" letter-spacing=".02em" fill-opacity="0.6">centroid → origin</text>
+                <text x="835" y="701" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">A clean origin, ready</text>
+                <text x="835" y="730" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">for Unity.</text>
+                <line x1="835" y1="786" x2="1165" y2="786" stroke="#B2FEB3" stroke-opacity=".22"/>
+                <circle cx="835" cy="786" r="3.2" fill="#B2FEB3"/>
+                <g transform="translate(1221,565)" fill="none" stroke="#B2FEB3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 17v4.5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V17"/>
+                <path d="M14 18.5V3"/>
+                <path d="M8 9l6-6 6 6"/>
+                </g>
+                <text x="1551" y="585" font-size="15" fill="#B2FEB3" font-weight="400" text-anchor="end" letter-spacing=".1em" fill-opacity="0.55">09</text>
+                <text x="1221" y="635" font-size="33" fill="#B2FEB3" font-weight="500">.pcache export</text>
+                <text x="1221" y="668" font-size="18" fill="#B2FEB3" font-weight="400" letter-spacing=".02em" fill-opacity="0.6">P + Cd · Invert X</text>
+                <text x="1221" y="701" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">Position and colour only,</text>
+                <text x="1221" y="730" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">right-handed for Unity.</text>
+                <line x1="1221" y1="786" x2="1551" y2="786" stroke="#B2FEB3" stroke-opacity=".22"/>
+                <circle cx="1221" cy="786" r="3.2" fill="#B2FEB3"/>
+                <line x1="398.0" y1="786.0" x2="442.0" y2="786.0" stroke="#B2FEB3" stroke-opacity=".5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="1 5.5"/>
+                <path d="M444.2 788.8L449 786L444.2 783.2" fill="none" stroke="#B2FEB3" stroke-opacity=".85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="784.0" y1="786.0" x2="828.0" y2="786.0" stroke="#B2FEB3" stroke-opacity=".5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="1 5.5"/>
+                <path d="M830.2 788.8L835 786L830.2 783.2" fill="none" stroke="#B2FEB3" stroke-opacity=".85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="1170.0" y1="786.0" x2="1214.0" y2="786.0" stroke="#B2FEB3" stroke-opacity=".5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="1 5.5"/>
+                <path d="M1216.2 788.8L1221 786L1216.2 783.2" fill="none" stroke="#B2FEB3" stroke-opacity=".85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="1607" y="565" width="330" height="230" rx="14" fill="#B2FEB3" fill-opacity=".055" stroke="#B2FEB3" stroke-opacity=".32"/>
+                <g transform="translate(1633,583)" fill="none" stroke="#B2FEB3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 10h20v7a4 4 0 0 1-4 4h-2.5l-3-3h-4l-3 3H8a4 4 0 0 1-4-4z"/>
+                </g>
+                <text x="1633" y="637" font-size="33" fill="#B2FEB3" font-weight="500">Unity VR</text>
+                <text x="1633" y="670" font-size="33" fill="#B2FEB3" font-weight="500">runtime</text>
+                <text x="1633" y="703" font-size="18" fill="#B2FEB3" font-weight="400" letter-spacing=".02em" fill-opacity="0.6">destination</text>
+                <text x="1633" y="736" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">The cloud drops in</text>
+                <text x="1633" y="765" font-size="22" fill="#FFFFFF" font-weight="400" fill-opacity="0.68">without a rebuild.</text>
+                <line x1="1556.0" y1="786.0" x2="1600.0" y2="786.0" stroke="#B2FEB3" stroke-opacity=".5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="1 5.5"/>
+                <path d="M1602.2 788.8L1607 786L1602.2 783.2" fill="none" stroke="#B2FEB3" stroke-opacity=".85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="63" y1="872" x2="1937" y2="872" stroke="#B2FEB3" stroke-opacity=".14"/>
+                <text x="63" y="902" font-size="12" fill="#B2FEB3" font-weight="400" letter-spacing=".2em" fill-opacity="0.45">SOURCE</text>
+                <text x="63" y="929" font-size="18" fill="#FFFFFF" font-weight="400" fill-opacity="0.72">RISCAN PRO  ·  .laz  ·  ~80M points</text>
+                <text x="1937" y="902" font-size="12" fill="#B2FEB3" font-weight="400" text-anchor="end" letter-spacing=".2em" fill-opacity="0.45">OUTPUT</text>
+                <text x="1937" y="929" font-size="18" fill="#FFFFFF" font-weight="400" text-anchor="end" fill-opacity="0.72">.pcache  ·  P + Cd  ·  Invert X  →  Unity</text>
+                </svg>
+                <div class="csCap">Point-cloud pipeline — nine node operations, from the ~80M-point raw scan to a Unity-ready .pcache.</div>
+            </div>
+
+            <div class="calloutBox">
+                <span class="cbLabel">Tooling</span>
+                <div class="csP">
+                    <p>
+                        <strong>Treat the scan as data, not an asset.</strong> Every edit is a node, import, filter,
+                        group, delete, transform, export, so the whole cleaning pass is reproducible and swappable.
+                        Exporting through Unity's Point-Cache bridge (P plus Cd, with Invert X for the right-handed
+                        coordinate flip) is what lets the processed cloud drop straight into the VR runtime without a
+                        rebuild.
+                    </p>
                 </div>
             </div>
 

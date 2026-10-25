@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <link rel="icon" href="/images/character_Yihan.png" type="image/x-icon">
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="en"
+        href="https://yihanlyh.github.io/blog/networkParty/networkParty.html">
+    <link rel="alternate" hreflang="zh"
+        href="https://yihanlyh.github.io/zh/blog/networkParty/networkParty.html">
+    <title>在 Network Party —— 广场混合现实体验与互动装置 | Yihan Lou</title>
+    <link rel="stylesheet" type="text/css" href="../../../work/workpages.css" />
+    <link rel="stylesheet" type="text/css" href="../../../foldedTags.css" />
+    <link rel="stylesheet" type="text/css" href="../../../rollingtext.css" />
+    <link rel="stylesheet" type="text/css" href="../../../scrollTopButton.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="2022 年在 Network Party 的实习，主要参与到两个项目：一个城市广场的混合现实鲸鱼体验（360° 拍摄、基于 Nreal Cloud XDK 的点云 MR、鲸鱼模型重新适配并做动画效果），以及辅助制作一份面向商场的互动灯光装置提案。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- mobile navigation -->
+        <div class="mobile-container" id="folded-tag">
+            <div class="header">
+                <div>
+                    <a href="../../../index.html" class="homeLink" style="color: azure;">
+                        <ul class="textlogo">
+                            <li>YIHAN.</li>
+                            <li class="lou">LOU</li>
+                        </ul>
+                    </a>
+                </div>
+                <div class="headerContact">
+                    <a href="https://www.instagram.com/yhannah.l/" target="_blank" hidden>
+                        <img src="../../../images/icon_instagram.svg" alt="insta_icon" / decoding="async" fetchpriority="high">
+                    </a>
+                    <a href="https://www.linkedin.com/in/louyihan" target="_blank" hidden>
+                        <img src="../../../images/icon_linkedin.svg" alt="linkin_icon" / decoding="async" loading="lazy">
+                    </a>
+                    <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                        <img src="../../../images/icon_email.svg" alt="email_icon" / decoding="async" loading="lazy">
+                    </a>
+                    <!-- language switch -->
+                    <button class="lang-btn" aria-label="切换语言">EN</button>
+                </div>
+                <div class="folded_icon" id="folded-icon">
+                    <img src="../../../images/icon_foldedCross.svg" alt="folded_icon" / decoding="async" loading="lazy">
+                </div>
+            </div>
+
+            <div class="rolling-text-container">
+                <div class="rolling-text">
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+
+            <div class="headerCover">
+                <div class="mobilePages">
+                    <a href="../../../work/index.html" class="mobilePageTag">作品</a>
+                    <a href="../../../about/index.html" class="mobilePageTag">关于</a>
+                    <a href="../../../blog/index.html" class="mobilePageTag">博客</a>
+                </div>
+            </div>
+            <div class="emailBottom">
+                <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                    yihan.louyh@outlook.com
+                </a>
+            </div>
+            <div class="dotsArray">
+                <p></p>
+            </div>
+            <div class="copyright">
+                © 2026 Yihan Lou with AI, All rights reserved
+            </div>
+        </div>
+        <!-- main page -->
+        <div class="header">
+            <div>
+                <a href="../../../index.html" class="homeLink" style="color: azure;">
+                    <ul class="textlogo">
+                        <li>YIHAN.</li>
+                        <li class="lou">LOU</li>
+                    </ul>
+                </a>
+            </div>
+            <div class="headerPage">
+                <a href="../../../work/index.html" class="headerPageTag">作品</a>
+                <a href="../../../about/index.html" class="headerPageTag">关于</a>
+                <a href="../../../blog/index.html" class="headerPageTag">博客</a>
+            </div>
+
+            <div class="headerContact">
+                <a href="https://www.instagram.com/yhannah.l/" target="_blank" hidden>
+                    <img src="../../../images/icon_instagram.svg" alt="insta_icon" / decoding="async" loading="lazy">
+                </a>
+                <a href="https://www.linkedin.com/in/louyihan" target="_blank" hidden>
+                    <img src="../../../images/icon_linkedin.svg" alt="linkin_icon" / decoding="async" loading="lazy">
+                </a>
+                <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                    <img src="../../../images/icon_email.svg" alt="email_icon" / decoding="async" loading="lazy">
+                </a>
+                <!-- language switch -->
+                <button class="lang-btn" aria-label="切换语言">EN</button>
+            </div>
+            <div class="folded_icon" id="unfolded-icon">
+                <img src="../../../images/icon_folded.svg" alt="unfolded_icon" / decoding="async" loading="lazy">
+            </div>
+        </div>
+        <div class="heading1">
+            Network Party 实习 🎨
+        </div>
+
+        <div class="dotsArray1">
+            <p></p>
+        </div>
+
+        <div class="rolling-text-container">
+            <div class="rolling-text">
+                <span> INTERNSHIP&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; MR
+                    EXPERIENCE&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; INTERACTIVE
+                    INSTALLATION&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; 2022&nbsp;&nbsp;&nbsp;&nbsp;*
+                </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span> INTERNSHIP&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; MR
+                    EXPERIENCE&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; INTERACTIVE
+                    INSTALLATION&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; 2022&nbsp;&nbsp;&nbsp;&nbsp;*
+                </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span> INTERNSHIP&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; MR
+                    EXPERIENCE&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; INTERACTIVE
+                    INSTALLATION&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; 2022&nbsp;&nbsp;&nbsp;&nbsp;*
+                </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+        </div>
+
+        <div class="projectContent">
+            <div class="coverPic">
+                <img src="../../../blog/networkParty/cover.jpg"
+                    alt="Network Party 实习 —— 城市广场的混合现实鲸鱼与一架互动灯光钢琴" / width="1400" height="608" decoding="async" loading="lazy">
+            </div>
+            <div class="heading2">Network Party 实习 🎨 —— 广场混合现实体验与互动装置（2022）</div>
+
+            <!-- ============================================================ -->
+            <div class="execSummary">
+                <div class="esLabel">简介</div>
+                <p class="esClaim">
+                    <strong>2022 年在 Network Party 的实习围绕两条线展开。</strong>一条是面向城市广场的混合现实体验：我用
+                    Insta360 对场地做 360° 全景拍摄，配合技术开发做远程场景测试，再把鲸鱼数字模型重新适配 MR
+                    渲染、做动画，推进后续数字化开发。另一条是商场的互动装置与展厅数字化提案，「Play Me I'm
+                    Yours」钢琴灯光互动装置，这个项目提案里主要做了装置模型的渲染与动画效果。这段经历也进一步推动我在后来的研究生阶段，研究设计方法以及项目落地技术的学习，并不断探索和应用新的技术。
+                </p>
+            </div>
+
+            <h3 class="secTitle">概述</h3>
+            <div class="csP">
+                <p>
+                    2022 年在 Network Party 的空间与交互实习，主要参与两个项目：一个城市广场的混合现实鲸鱼空间体验项目，以及一份面向商场的互动灯光装置提案。
+                </p>
+            </div>
+            <h3 class="secTitle">关键部分</h3>
+            <ul class="hlList">
+                <li><b>广场 MR 鲸鱼体验。</b> 场地 360° 拍摄、交付基于 Nreal Cloud XDK 的点云 MR 开发测试，以及为 MR 效果重新适配渲染并做动画的鲸鱼模型。</li>
+                <li><b>Play Me I'm Yours 钢琴灯光装置。</b> 面向商场的互动装置的概念、场地分析、数字模型渲染与品牌策划；我的部分装置动画。</li>
+                <li><b>留在我身上的那条线。</b> 把 MR 从拍摄、改模型、做动画到看它落进真实空间的全过程做下来，正是它埋下了我后来读研做设计技术研究的种子。</li>
+            </ul>
+
+            
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">00</span>我做了什么</h3>
+            
+
+            <div class="csP">
+                <p>
+                    <strong>Network Party</strong> 是 2022 年的实习。它产出两个主要交付物：一个面向城市广场的混合现实体验demo，以及一份商场互动装置与展厅数字化提案。我的动手部分，一边是
+                    MR 鲸鱼模型的重新适配与动画，一边是钢琴装置的动画。
+                </p>
+            </div>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <thead>
+                        <tr>
+                            <th>交付物</th>
+                            <th>我做了什么</th>
+                            <th>结果价值</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>广场 MR 鲸鱼<br>体验</td>
+                            <td>场地 360° 拍摄（Insta360）、3D 资产预处理与场景测试、鲸鱼模型重新适配 MR 渲染、为开发管线做动画。</td>
+                            <td>不是做 mock-up，而是在真实场地、用真实作品把 MR 流程跑通。</td>
+                        </tr>
+                        <tr>
+                            <td>商场互动装置<br>&amp; 展厅提案</td>
+                            <td>场地分析、概念设计、数字模型渲染、品牌策划；以及「Play Me I'm Yours」钢琴灯光装置。</td>
+                            <td>把一个文化展陈的想法，从概念推进到真正可落地的装置。</td>
+                        </tr>
+                        <tr>
+                            <td>我在两段中的角色</td>
+                            <td>鲸鱼：模型重新适配 + 动画。钢琴：装置动画。</td>
+                            <td>两段都是动手制作——学习恰恰就落在手上。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">01</span>广场 MR —— 鲸鱼</h3>
+            <span class="csKicker">先拍下场地，再把模型锚进它</span>
+
+            <div class="csP">
+                <p>
+                    鲸鱼本身是一项真实的<em>空间装置</em>——一件已经在北京落地的作品。我在实习里负责的是它朝向 MR 的那一层：先用 Insta360 把场地做 360°
+                    拍摄、配合技术开发做远程场景测试，再把鲸鱼数字模型重新适配 MR 渲染、做动画，用来做 MR <em>视觉与交互</em>效果的原型，推进后续的数字化开发。当时这一阶段还不能直接进入
+                    MR 工程，这个原型是在移动设备上观看，而不是头显。
+                </p>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../blog/networkParty/cloud_sdk.jpg"
+                    alt="Cloud XDK 开发视图 —— Nreal 的 Unity SDK 把拍摄到的环境重建成点云，用于 MR 摆放" / width="1706" height="1280" decoding="async" loading="lazy">
+                <div class="csCap"><strong>与技术开发沟通。</strong> 这次 MR 探索基于 Nreal 的 <strong>Cloud
+                    XDK</strong>把拍摄到的环境重建成点云、并据此对设备进行定位的 Unity SDK，于是数字模型能被放进真实广场、并在其中移动。这当时对于我而言，是向技术开发的探索，
+                    ，原型最终是在移动设备上观看。</div>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../blog/networkParty/whale_scene.jpg"
+                    alt="为 MR 重新适配渲染的鲸鱼数字模型，锚定在拍摄到的广场环境里" / width="1600" height="900" decoding="async" loading="lazy">
+                <div class="csCap">为 MR 重新适配渲染的鲸鱼数字模型，锚定在拍摄到的广场环境里——数字层与访客共享同一片地面。</div>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../blog/networkParty/whale_anim.jpg"
+                    alt="为 MR 体验制作的鲸鱼动画中的一帧" / width="1600" height="900" decoding="async" loading="lazy">
+                <div class="csCap">为 MR 体验制作的鲸鱼动画中的一帧。</div>
+            </div>
+
+            <div class="csVideo">
+                <video controls playsinline preload="metadata" poster="../../../blog/networkParty/whale_mr_poster.jpg"
+                    aria-label="鲸鱼 MR 原型 —— 模型被放进拍摄到的场地并做动画，在移动设备上观看">
+                    <source src="../../../blog/networkParty/whale_mr.mp4" type="video/mp4" />
+                    您的浏览器无法播放这段视频 —— <a href="../../../blog/networkParty/whale_mr.mp4">点击下载或观看</a>。
+                </video>
+                <div class="csCap"><b>鲸鱼 MR 原型。</b> MR 视觉与交互效果的屏幕录制——鲸鱼模型被放进拍摄到的场地并做动画，在移动设备上观看。这一视觉与交互层，从我重新适配模型到最终运动，都是我负责的部分。</div>
+            </div>
+
+           
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">02</span>商场装置与展厅提案</h3>
+            
+            <div class="csP">
+                <p>
+                    第二个交付物把镜头从一只生物放宽到一个整个场域。我们提议用互动装置把商场的文娱项目数字化——其中包括「Play Me
+                    I'm Yours」，一架琴键亮起、邀请路人来弹的钢琴。我的主要贡献是装置动画：让这件作品动起来的方式，像一个「来玩」的邀请该有的感觉。
+                </p>
+            </div>
+
+            <div class="csFigure">
+                <img src="../../../blog/networkParty/pmiy.jpg"
+                    alt="「Play Me I'm Yours」钢琴灯光装置 —— 一个被重新想象成互动、由光驱动的「来玩」邀请的熟悉物件" / width="1600" height="856" decoding="async" loading="lazy">
+                <div class="csCap">「Play Me I'm Yours」钢琴灯光装置——一个被重新想象成互动、由光驱动的「来玩」邀请的熟悉物件。</div>
+            </div>
+
+            <div class="csVideo">
+                <video controls playsinline preload="metadata" poster="../../../blog/networkParty/pmiy_poster.jpg"
+                    aria-label="「Play Me I'm Yours」钢琴灯光装置的装置动画">
+                    <source src="../../../blog/networkParty/pmiy.mp4" type="video/mp4" />
+                    您的浏览器无法播放这段视频 —— <a href="../../../blog/networkParty/pmiy.mp4">点击下载或观看</a>。
+                </video>
+                <div class="csCap"><b>装置灯光演示动画片段。</b> </div>
+            </div>
+ 
+              
+        </div>
+
+        <div class="linkContainer">
+            <div class="linkPrev">
+                <a href="../../../blog/23RambleinHangzhou/23hangzhou.html">
+                    <div class="prevIcon">
+                        <img src="../../../images/iconPrev.svg" alt="iconPrev" / decoding="async" loading="lazy">
+                    </div>
+                    <div class="prevTextContainer">
+                        <div class="textPrevNext">上一篇</div>
+                        <div class="titlePrevNext">杭州漫步 💙</div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <footer>
+            <div class="dotsArray">
+                <p></p>
+            </div>
+
+            <div class="rolling-text-container">
+                <div class="rolling-text">
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+
+            <div class="footerContainer">
+                <div>
+                    <ul class="textLogoBottom">
+                        <li>YIHAN.</li>
+                        <li class="lou">LOU</li>
+                    </ul>
+                </div>
+                <div class="emailBottom">
+                    <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                        yihan.louyh@outlook.com
+                    </a>
+                </div>
+
+                <div class="footerContact">
+                    <a href="https://www.instagram.com/yhannah.l/" target="_blank" hidden>
+                        <img src="../../../images/icon_instagram.svg" alt="insta_icon" / decoding="async" loading="lazy">
+                    </a>
+                    <a href="https://www.linkedin.com/in/louyihan" target="_blank" hidden>
+                        <img src="../../../images/icon_linkedin.svg" alt="linkin_icon" / decoding="async" loading="lazy">
+                    </a>
+                    <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                        <img src="../../../images/icon_email.svg" alt="email_icon" / decoding="async" loading="lazy">
+                    </a>
+                </div>
+
+                <button id="scrollToTop" class="scrollTopButton">⏫</button>
+
+                <div class="dotsArray">
+                    <p></p>
+                </div>
+                <div class="copyright">
+                    © 2026 Designed & Developed by Yihan Lou with AI, All rights reserved
+                </div>
+        </footer>
+    </div>
+
+    </div>
+    <script defer src="../../../foldedTags.js"></script>
+    <script defer src="../../../lang.js"></script>
+    <script defer src="../../../rollingtext.js"></script>
+    <script defer src="../../../scrollTopButton.js"></script>
+</body>
+
+</html>
