@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <link rel="icon" href="/images/character_Yihan.png" type="image/x-icon">
+    <title>3DGS 竞品分析</title>
+    <link rel="stylesheet" type="text/css" href="../../../work/workpages.css" />
+    <link rel="stylesheet" type="text/css" href="../../../foldedTags.css" />
+    <link rel="stylesheet" type="text/css" href="../../../rollingtext.css" />
+    <link rel="stylesheet" type="text/css" href="../../../scrollTopButton.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ---- draft publish switch ---- */
+        .draftNotice { display: none; }
+        html.page-unpublished .heading1,
+        html.page-unpublished .dotsArray1,
+        html.page-unpublished .rolling-text-container,
+        html.page-unpublished .projectContent { display: none !important; }
+        html.page-unpublished .draftNotice {
+            display: block;
+            max-width: 720px;
+            margin: 56px auto 80px;
+            padding: 30px 34px;
+            border: 1px solid #8FC4D2;
+            border-radius: 14px;
+            text-align: center;
+            color: #8FC4D2;
+            font-family: 'Montserrat Alternates', "PingFang SC", sans-serif;
+            line-height: 1.7;
+        }
+        html.page-unpublished .draftNotice strong { color: #ffffff; }
+
+        /* ---- tool showcase (interface sketches + plain-language notes) ---- */
+        .toolShowcase { display: grid; grid-template-columns: 1fr; gap: 22px; margin: 24px 0 8px; }
+        .toolItem {
+            display: flex; gap: 22px; align-items: flex-start;
+            border: 1px solid rgba(143,196,210,0.28); border-radius: 14px;
+            padding: 18px 20px; background: rgba(143,196,210,0.04);
+        }
+        .toolShot { flex: 0 0 300px; max-width: 300px; }
+        .toolShot img { width: 100%; height: auto; border-radius: 10px; display: block; }
+        .toolBody { flex: 1 1 auto; }
+        .toolName { font-weight: 700; color: #8FC4D2; font-size: 21px; margin-bottom: 3px;
+            font-family: 'Montserrat Alternates', "PingFang SC", sans-serif; }
+        .toolTag { font-size: 13px; color: #9fb0b6; margin-bottom: 10px; letter-spacing: .3px; }
+        .toolPlain { font-size: 15.5px; line-height: 1.8; color: #e8eef0; }
+        .toolPlain b { color: #ffffff; }
+        @media (max-width: 760px) {
+            .toolItem { flex-direction: column; }
+            .toolShot { flex: 1 1 auto; max-width: 100%; }
+        }
+    </style>
+    <script>
+        /* =========================================================
+           页面发布开关 / PAGE PUBLISH SWITCH
+           把 true 改为 false → 一键隐藏全页正文（草稿随时下线，无需删文件）
+           Set to false to hide all page content instantly.
+           ========================================================= */
+        var PAGE_PUBLISHED = true;
+        if (!PAGE_PUBLISHED) { document.documentElement.className += ' page-unpublished'; }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- mobile navigation -->
+        <div class="mobile-container" id="folded-tag">
+            <div class="header">
+                <div>
+                    <a href="../../../zh/index.html" class="homeLink" style="color: azure;">
+                        <ul class="textlogo">
+                            <li>YIHAN.</li>
+                            <li class="lou">LOU</li>
+                        </ul>
+                    </a>
+                </div>
+                <div class="headerContact">
+                    <a href="https://www.instagram.com/yhannah.l/" target="_blank" hidden>
+                        <img src="../../../images/icon_instagram.svg" alt="insta_icon" / decoding="async" fetchpriority="high">
+                    </a>
+                    <a href="https://www.linkedin.com/in/louyihan" target="_blank" hidden>
+                        <img src="../../../images/icon_linkedin.svg" alt="linkin_icon" / decoding="async" loading="lazy">
+                    </a>
+                    <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                        <img src="../../../images/icon_email.svg" alt="email_icon" / decoding="async" loading="lazy">
+                    </a>
+                    <!-- language switch -->
+                    <button class="lang-btn" aria-label="切换语言">EN</button>
+                </div>
+                <div class="folded_icon" id="folded-icon">
+                    <img src="../../../images/icon_foldedCross.svg" alt="folded_icon" / decoding="async" loading="lazy">
+                </div>
+            </div>
+
+            <div class="rolling-text-container">
+                <div class="rolling-text">
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+
+            <div class="headerCover">
+                <div class="mobilePages">
+                    <a href="../../../zh/work/index.html" class="mobilePageTag">WORK</a>
+                    <a href="../../../zh/about/index.html" class="mobilePageTag">ABOUT</a>
+                    <a href="../../../zh/blog/index.html" class="mobilePageTag">BLOG</a>
+                </div>
+            </div>
+            <div class="emailBottom">
+                <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                    yihan.louyh@outlook.com
+                </a>
+            </div>
+            <div class="dotsArray">
+                <p></p>
+            </div>
+            <div class="copyright">
+                © 2026 Yihan Lou with AI, All rights reserved
+            </div>
+        </div>
+        <!-- main page -->
+        <div class="header">
+            <div>
+                <a href="../../../zh/index.html" class="homeLink" style="color: azure;">
+                    <ul class="textlogo">
+                        <li>YIHAN.</li>
+                        <li class="lou">LOU</li>
+                    </ul>
+                </a>
+            </div>
+            <div class="headerPage">
+                <a href="../../../zh/work/index.html" class="headerPageTag">WORK</a>
+                <a href="../../../zh/about/index.html" class="headerPageTag">ABOUT</a>
+                <a href="../../../zh/blog/index.html" class="headerPageTag">BLOG</a>
+            </div>
+
+            <div class="headerContact">
+                <a href="https://www.instagram.com/yhannah.l/" target="_blank" hidden>
+                    <img src="../../../images/icon_instagram.svg" alt="insta_icon" / decoding="async" loading="lazy">
+                </a>
+                <a href="https://www.linkedin.com/in/louyihan" target="_blank" hidden>
+                    <img src="../../../images/icon_linkedin.svg" alt="linkin_icon" / decoding="async" loading="lazy">
+                </a>
+                <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                    <img src="../../../images/icon_email.svg" alt="email_icon" / decoding="async" loading="lazy">
+                </a>
+                <!-- language switch -->
+                <button class="lang-btn" aria-label="切换语言">EN</button>
+            </div>
+            <div class="folded_icon" id="unfolded-icon">
+                <img src="../../../images/icon_folded.svg" alt="unfolded_icon" / decoding="async" loading="lazy">
+            </div>
+        </div>
+        <div class="heading1">
+            3DGS 竞品分析
+        </div>
+
+        <div class="dotsArray1">
+            <p></p>
+        </div>
+
+        <div class="rolling-text-container">
+            <div class="rolling-text">
+                <span> 3D GAUSSIAN SPLATTING&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; COMPETITIVE
+                    ANALYSIS&nbsp;&nbsp;&nbsp;&nbsp;
+                    *&nbsp;&nbsp;&nbsp;&nbsp; 2025–2026&nbsp;&nbsp;&nbsp;&nbsp;
+                    *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span> 3D GAUSSIAN SPLATTING&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; COMPETITIVE
+                    ANALYSIS&nbsp;&nbsp;&nbsp;&nbsp;
+                    *&nbsp;&nbsp;&nbsp;&nbsp; 2025–2026&nbsp;&nbsp;&nbsp;&nbsp;
+                    *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span> 3D GAUSSIAN SPLATTING&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; COMPETITIVE
+                    ANALYSIS&nbsp;&nbsp;&nbsp;&nbsp;
+                    *&nbsp;&nbsp;&nbsp;&nbsp; 2025–2026&nbsp;&nbsp;&nbsp;&nbsp;
+                    *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span> 3D GAUSSIAN SPLATTING&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; COMPETITIVE
+                    ANALYSIS&nbsp;&nbsp;&nbsp;&nbsp;
+                    *&nbsp;&nbsp;&nbsp;&nbsp; 2025–2026&nbsp;&nbsp;&nbsp;&nbsp;
+                    *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span> 3D GAUSSIAN SPLATTING&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; COMPETITIVE
+                    ANALYSIS&nbsp;&nbsp;&nbsp;&nbsp;
+                    *&nbsp;&nbsp;&nbsp;&nbsp; 2025–2026&nbsp;&nbsp;&nbsp;&nbsp;
+                    *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+        </div>
+
+        <div class="draftNotice">
+            🚧 本页面为草稿，暂未发布。<br>
+            <strong>将页面 head 中的 <code>PAGE_PUBLISHED</code> 改为 true 即可显示正文。</strong>
+        </div>
+
+        <div class="projectContent">
+
+            <!-- ============================================================ -->
+            <div class="execSummary">
+                <div class="esLabel">Bottom line</div>
+                <p class="esClaim">
+                    3D Gaussian Splatting 正从研究 demo 走向生产工具——但<em>体验</em>仍然碎片化。腾讯混元选择了
+                    Mesh 路线，同时仍输出 3DGS 点；其余玩家都在拼 mesh 生成；而专门处理 splat 的工具（采集 → 训练 →
+                    清理 → 导出）被拆散在本地 / 云端、移动 / 桌面之间。这个尚未被整合的空白，是一套面向专业用户的、清晰连贯的端到端界面/完整工作流。
+                </p>
+            </div>
+
+            <h3 class="secTitle"><span class="secNum">00</span>概述</h3>
+            <span class="csKicker">AI辅助竞品走查</span>
+
+            <div class="csP">
+                <p>
+                    对公开 3DGS 生态的竞品梳理（截至 2025–2026）。分为两部分：
+                    <b>第一部分</b>看 AI 生成 3D / 3DGS 的<em>产品</em>（做出了什么），<b>第二部分</b>看 3DGS
+                    建模与模型处理<em>平台</em>（splat 如何被真正采集、训练、清理与交付），并带界面层面的分析。
+                </p>
+            </div>
+
+            <div class="calloutBox">
+                <span class="cbLabel">3DGS 直观理解</span>
+                <div class="csP">
+                    <p>
+                        用手机把一个椅子从各个角度拍几秒，然后这段视频被"变成"一个能绕着走的 3D 场景——照片级真实、加载很轻、算法直接生成。这大致就是 3DGS 干的事。"高斯泼溅（Gaussian splat）"只是它用来"画"出这个场景的那些小毛茸茸的点的技术名字。<b>为什么大家关心：</b>以前做 3D 得请 3D 美术；现在 3DGS + AI 让几乎任何人都能拍出来或生成 3D，并直接丢进 App、游戏或网页。这一页下面，就是在讲谁在做这些工具。
+                    </p>
+                </div>
+            </div>
+
+            <div class="calloutBox">
+                <span class="cbLabel">方法与诚实说明</span>
+                <div class="csP">
+                    <p>
+                        结论来自公开的产品页与评测，并非逐项实测。下面的界面图是<strong>示意草图</strong>（展示每个工具界面大致长什么样），不是逐像素的截图。凡厂商自报的数据均标注为"厂商口径"。本页是一份
+                        <strong>设计研究产物</strong>，不是已上线的产品——与那份 3DGS 管线分析是同一口径。
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">01</span>第一部分 — AI 生成的 3D / 3DGS 产品</h3>
+            <span class="csKicker">做出了什么：生成 vs 重建</span>
+
+            <div class="csP">
+                <p>
+                    两条路线并存。<b>生成式</b>工具吃文本或图片、吐出 mesh（Tripo、Meshy、Rodin、Stable-Fast-3D）；<b>重建式</b>工具吃照片 / 视频、吐出 mesh 或辐射场——腾讯混元
+                    WorldMirror 是同时输出 <em>3DGS 点</em>与标准 mesh 的代表。一个共同的现实是：它们都替代不了 3D
+                    美术，任何产出在进生产前都还要经过重拓扑、UV、材质与引擎接入。
+                </p>
+            </div>
+
+            <h3 class="secTitle"><span class="secNum">01·a</span>逐个看懂（大白话）</h3>
+            <span class="csKicker">左边是界面示意，右边是它到底干什么——不打术语</span>
+
+            <div class="toolShowcase">
+
+                <div class="toolItem">
+                    <div class="toolShot"><img src="../../../images/tool_hunyuan.svg" alt="腾讯混元3D 界面示意" loading="lazy" decoding="async" /></div>
+                    <div class="toolBody">
+                        <div class="toolName">腾讯混元3D（WorldMirror）</div>
+                        <div class="toolTag">AI 重建 · 免费开源</div>
+                        <div class="toolPlain">你给它一张照片或一段短视频，它一次就还你一个能 360° 转着看的 3D 模型。而且同时给你两种格式：一种是<b>"点云 / 3DGS"</b>（像一团会发光的雾，手机上就能逛），另一种是<b>标准 3D 网格</b>（Blender、Unity 直接能吃）。相当于把"拍张照"升级成"拍一段会动的 3D"。<b>最适合：</b>又快又免费地拿到一个能用的 3D 模型。</div>
+                    </div>
+                </div>
+
+                <div class="toolItem">
+                    <div class="toolShot"><img src="../../../images/tool_tripo.svg" alt="Tripo 界面示意" loading="lazy" decoding="async" /></div>
+                    <div class="toolBody">
+                        <div class="toolName">Tripo（VAST）</div>
+                        <div class="toolTag">文 / 图 → 3D 网格 · 约 $12–14 / 月</div>
+                        <div class="toolPlain">输入一句话或一张图（比如"一把红椅子"），几秒钟就出一个能旋转的干净 3D 模型。特别适合给场景里批量塞背景道具——家具、箱子、植物——但主角级资产还得靠美术。<b>最适合：</b>快速、风格化的占位模型。</div>
+                    </div>
+                </div>
+
+                <div class="toolItem">
+                    <div class="toolShot"><img src="../../../images/tool_meshy.svg" alt="Meshy 界面示意" loading="lazy" decoding="async" /></div>
+                    <div class="toolBody">
+                        <div class="toolName">Meshy</div>
+                        <div class="toolTag">文 / 图 → 带贴图网格 · $16–20 / 月</div>
+                        <div class="toolPlain">和 Tripo 思路一样，但它最发力在贴图和插件生态上，能直接连 Blender、Unity、Unreal，游戏和产品设计师不用离开自己的工具就能把模型拉进去。<b>最适合：</b>带贴图、能直接进引擎的素材。</div>
+                    </div>
+                </div>
+
+                <div class="toolItem">
+                    <div class="toolShot"><img src="../../../images/tool_rodin.svg" alt="Rodin 界面示意" loading="lazy" decoding="async" /></div>
+                    <div class="toolBody">
+                        <div class="toolName">Rodin（Hyper3D）</div>
+                        <div class="toolTag">高保真生成 · $99 / 月</div>
+                        <div class="toolPlain">专业档。它出的 3D 角色和物体保真度最高、最真实，但更慢（几分钟）也更贵。<b>最适合：</b>质量比速度重要的时候。</div>
+                    </div>
+                </div>
+
+                <div class="toolItem">
+                    <div class="toolShot"><img src="../../../images/tool_luma.svg" alt="Luma AI 界面示意" loading="lazy" decoding="async" /></div>
+                    <div class="toolBody">
+                        <div class="toolName">Luma AI</div>
+                        <div class="toolTag">拍真实物体 → 3D · 免费增值</div>
+                        <div class="toolPlain">不是文生 3D——而是你用手机拍一个真实物体或地方，它把那东西变成照片级 3D 场景。可以理解为"给沙发或房间拍一张 3D 照片"。<b>最适合：</b>把你手里已有的真实东西数字化。</div>
+                    </div>
+                </div>
+
+                <div class="toolItem">
+                    <div class="toolShot"><img src="../../../images/tool_sf3d.svg" alt="Stable-Fast-3D 界面示意" loading="lazy" decoding="async" /></div>
+                    <div class="toolBody">
+                        <div class="toolName">Stable-Fast-3D</div>
+                        <div class="toolTag">图 → 低多边形网格 · 开源 / API</div>
+                        <div class="toolPlain">极快（半秒）且开源：喂一张图，出一个简单的 3D 块。细节低，但给游戏里几百个背景物体量产正合适。<b>最适合：</b>大规模追求速度。</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <thead>
+                        <tr>
+                            <th>产品</th>
+                            <th>路线</th>
+                            <th>输出</th>
+                            <th>优势</th>
+                            <th>短板</th>
+                            <th>获取方式</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>腾讯混元3D（WorldMirror）</td>
+                            <td>统一前馈重建——图 / 视频 / 深度 / 位姿输入</td>
+                            <td>3DGS 点 <em>与</em> 标准 Mesh（GLB / OBJ）</td>
+                            <td>免费、开放权重、可本地部署；一次前向传播即得点云、深度、法线、3DGS、新视角</td>
+                            <td>为管线兼容默认选 Mesh；玻璃 / 极端光照下细节丢失</td>
+                            <td>免费 / 开源（本地需 ≥16GB 显存）</td>
+                        </tr>
+                        <tr>
+                            <td>Tripo（VAST）</td>
+                            <td>文 / 图 → Mesh</td>
+                            <td>干净四边形网格、自动绑定与动画、批量</td>
+                            <td>约 8 秒出结果；风格化（体素 / 卡通 / 乐高）；拓扑干净</td>
+                            <td>主角资产仍需后处理</td>
+                            <td>约 $12–14 / 月</td>
+                        </tr>
+                        <tr>
+                            <td>Meshy</td>
+                            <td>文 / 图 → Mesh</td>
+                            <td>PBR 网格、可打印 STL</td>
+                            <td>插件生态最成熟（Blender / Unity / Unreal）；贴图质感好</td>
+                            <td>生产级仍需清理</td>
+                            <td>$16–20 / 月</td>
+                        </tr>
+                        <tr>
+                            <td>Rodin（Hyper3D）</td>
+                            <td>几何 + 贴图分步生成</td>
+                            <td>4K PBR、GLB / STL / USDZ</td>
+                            <td>保真度最高；专业级控制</td>
+                            <td>慢（2–5 分钟）；贵</td>
+                            <td>$99 / 月</td>
+                        </tr>
+                        <tr>
+                            <td>Luma AI</td>
+                            <td>捕捉 → GS / NeRF（非文生）</td>
+                            <td>OBJ / USDZ / GLB / PLY</td>
+                            <td>真实物体照片级捕捉；Genie 免费档</td>
+                            <td>云端每扫描 20–30 分钟；文生质量不稳定</td>
+                            <td>免费增值</td>
+                        </tr>
+                        <tr>
+                            <td>Stable-Fast-3D</td>
+                            <td>图 → 低多边形网格</td>
+                            <td>GLB</td>
+                            <td>约 0.5 秒；游戏资产量产</td>
+                            <td>贴图中等；需后处理</td>
+                            <td>开源 / API</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <ul class="hlList">
+                <li><b>Mesh 与 3DGS 是路线之分，不是质量之争。</b> Mesh 今天就能直接进 Blender / Unity / Unreal；3DGS
+                    是可看的辐射场，仍与工业管线打架。混元两者都给、默认 Mesh——这是"和你的现有工具箱对话"的刻意选择。</li>
+                <li><b>"生成式 3D"只是背景 / 道具资产的头 80%，不是主角资产。</b> 任何厂商的产出都要重拓扑、UV、材质与引擎准备。</li>
+                <li><b>本地 / 云端 / 开放权重已成为定位轴。</b> 混元免费且可自托管；其余是订阅制。</li>
+                <li><b>中文界面 / 中文提示词支持</b>以 Tripo 与混元最好。</li>
+            </ul>
+
+            <div class="calloutBox">
+                <span class="cbLabel">对 3DGS 工具设计师的启示</span>
+                <div class="csP">
+                    <p>
+                        差异点早已不是"能不能生成"，而是<strong>生成之后的体验</strong>：清理、格式、与引擎的衔接、迭代速度。谁把这段"混乱的中间"做清楚，谁就赢得专业用户——这正是下一个端到端 3DGS 平台最有条件补上的缺口。
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">02</span>第二部分 — 3DGS 建模与处理平台</h3>
+            <span class="csKicker">splat 工具链的界面竞品分析</span>
+
+            <div class="csP">
+                <p>
+                    这些才是真正端到端处理 Gaussian splat 的工具。它们按<em>工作发生的位置</em>分化——设备端、云端或桌面——以及把多少流程收进同一个界面。下面这条工作流是它们共有的，而痛点出奇地一致。
+                </p>
+            </div>
+
+            <div class="csFigure">
+                <svg viewBox="0 0 2000 820" role="img"
+                    aria-label="3DGS 工具链：六个阶段与体验痛点">
+                    <rect x="0" y="0" width="2000" height="820" fill="#000000" />
+                    <text x="1000" y="74" text-anchor="middle" fill="#B2FEB3"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="40" font-weight="700"
+                        letter-spacing="2">3DGS 工具链 · 六阶段与体验痛点</text>
+
+                    <rect x="60" y="300" width="270" height="150" rx="16" fill="#000000" stroke="#B2FEB3"
+                        stroke-width="2.6" />
+                    <circle cx="98" cy="338" r="22" fill="none" stroke="#B2FEB3" stroke-width="2.4" />
+                    <text x="98" y="346" text-anchor="middle" fill="#B2FEB3"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="26" font-weight="700">1</text>
+                    <text x="195" y="360" text-anchor="middle" fill="#ffffff"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="30" font-weight="600">Capture</text>
+                    <text x="195" y="402" text-anchor="middle" fill="#B2FEB3"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="26">采集</text>
+                    <rect x="382" y="300" width="270" height="150" rx="16" fill="#000000" stroke="#B2FEB3"
+                        stroke-width="2.6" />
+                    <circle cx="420" cy="338" r="22" fill="none" stroke="#B2FEB3" stroke-width="2.4" />
+                    <text x="420" y="346" text-anchor="middle" fill="#B2FEB3"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="26" font-weight="700">2</text>
+                    <text x="517" y="360" text-anchor="middle" fill="#ffffff"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="30" font-weight="600">Pose · SfM</text>
+                    <text x="517" y="402" text-anchor="middle" fill="#B2FEB3"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="26">位姿</text>
+                    <rect x="704" y="300" width="270" height="150" rx="16" fill="#000000" stroke="#B2FEB3"
+                        stroke-width="2.6" />
+                    <circle cx="742" cy="338" r="22" fill="none" stroke="#B2FEB3" stroke-width="2.4" />
+                    <text x="742" y="346" text-anchor="middle" fill="#B2FEB3"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="26" font-weight="700">3</text>
+                    <text x="839" y="360" text-anchor="middle" fill="#ffffff"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="30" font-weight="600">Train</text>
+                    <text x="839" y="402" text-anchor="middle" fill="#B2FEB3"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="26">训练</text>
+                    <rect x="1026" y="300" width="270" height="150" rx="16" fill="#000000" stroke="#B2FEB3"
+                        stroke-width="2.6" />
+                    <circle cx="1064" cy="338" r="22" fill="none" stroke="#B2FEB3" stroke-width="2.4" />
+                    <text x="1064" y="346" text-anchor="middle" fill="#B2FEB3"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="26" font-weight="700">4</text>
+                    <text x="1161" y="360" text-anchor="middle" fill="#ffffff"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="30" font-weight="600">Clean · Edit</text>
+                    <text x="1161" y="402" text-anchor="middle" fill="#B2FEB3"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="26">编辑</text>
+                    <rect x="1348" y="300" width="270" height="150" rx="16" fill="#000000" stroke="#B2FEB3"
+                        stroke-width="2.6" />
+                    <circle cx="1386" cy="338" r="22" fill="none" stroke="#B2FEB3" stroke-width="2.4" />
+                    <text x="1386" y="346" text-anchor="middle" fill="#B2FEB3"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="26" font-weight="700">5</text>
+                    <text x="1483" y="360" text-anchor="middle" fill="#ffffff"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="30" font-weight="600">Export</text>
+                    <text x="1483" y="402" text-anchor="middle" fill="#B2FEB3"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="26">导出</text>
+                    <rect x="1670" y="300" width="270" height="150" rx="16" fill="#000000" stroke="#B2FEB3"
+                        stroke-width="2.6" />
+                    <circle cx="1708" cy="338" r="22" fill="none" stroke="#B2FEB3" stroke-width="2.4" />
+                    <text x="1708" y="346" text-anchor="middle" fill="#B2FEB3"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="26" font-weight="700">6</text>
+                    <text x="1805" y="360" text-anchor="middle" fill="#ffffff"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="30" font-weight="600">Publish</text>
+                    <text x="1805" y="402" text-anchor="middle" fill="#B2FEB3"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="26">发布</text>
+
+                    <g stroke="#B2FEB3" stroke-width="1.6" stroke-dasharray="2 12">
+                        <line x1="330" y1="375" x2="382" y2="375" />
+                        <line x1="652" y1="375" x2="704" y2="375" />
+                        <line x1="974" y1="375" x2="1026" y2="375" />
+                        <line x1="1296" y1="375" x2="1348" y2="375" />
+                        <line x1="1618" y1="375" x2="1670" y2="375" />
+                    </g>
+                    <g fill="#B2FEB3">
+                        <circle cx="330" cy="375" r="4" /><circle cx="382" cy="375" r="4" />
+                        <circle cx="652" cy="375" r="4" /><circle cx="704" cy="375" r="4" />
+                        <circle cx="974" cy="375" r="4" /><circle cx="1026" cy="375" r="4" />
+                        <circle cx="1296" cy="375" r="4" /><circle cx="1348" cy="375" r="4" />
+                        <circle cx="1618" cy="375" r="4" /><circle cx="1670" cy="375" r="4" />
+                    </g>
+
+                    <g fill="rgba(255,255,255,0.82)" font-family="'PingFang SC', 'Montserrat Alternates', sans-serif"
+                        font-size="22" text-anchor="middle">
+                        <text x="195" y="512">采集门槛高：</text>
+                        <text x="195" y="544">重叠率、光照、</text>
+                        <text x="195" y="576">机位要稳</text>
+                        <text x="517" y="512">采集时无</text>
+                        <text x="517" y="544">位姿反馈</text>
+                        <text x="839" y="512">训练黑盒、</text>
+                        <text x="839" y="544">OOM、等待久</text>
+                        <text x="1161" y="512">无自动清理</text>
+                        <text x="1161" y="544">（漂浮伪影）</text>
+                        <text x="1483" y="512">格式杂、</text>
+                        <text x="1483" y="544">PLY 不统一</text>
+                        <text x="1805" y="512">缺发布</text>
+                        <text x="1805" y="544">质检清单</text>
+                    </g>
+                </svg>
+            </div>
+
+            <h3 class="secTitle"><span class="secNum">02·a</span>逐个看懂（大白话）</h3>
+            <span class="csKicker">左边是界面示意，右边是它到底干什么——不打术语</span>
+
+            <div class="toolShowcase">
+
+                <div class="toolItem">
+                    <div class="toolShot"><img src="../../../images/tool_polycam.svg" alt="Polycam 界面示意" loading="lazy" decoding="async" /></div>
+                    <div class="toolBody">
+                        <div class="toolName">Polycam</div>
+                        <div class="toolTag">网页 + 移动端 · 云端 · 订阅</div>
+                        <div class="toolPlain">最友好的入门。用手机扫或用照片上传，它就建出一个能测量、能看的 3D 点云。基于云端，所以方便，但数据会离开设备。<b>最适合：</b>快速、可分享的扫描。</div>
+                    </div>
+                </div>
+
+                <div class="toolItem">
+                    <div class="toolShot"><img src="../../../images/tool_luma.svg" alt="Luma AI 界面示意" loading="lazy" decoding="async" /></div>
+                    <div class="toolBody">
+                        <div class="toolName">Luma AI</div>
+                        <div class="toolTag">移动 + 云端 · 免费增值</div>
+                        <div class="toolPlain">在这里 Luma 是用来<strong>采集</strong>的：拍一个真实物体或房间，云端把它重建成照片级 3D 场景。上手简单，但每次扫描要 20–30 分钟处理。<b>最适合：</b>把真实场景变成 3D。</div>
+                    </div>
+                </div>
+
+                <div class="toolItem">
+                    <div class="toolShot"><img src="../../../images/tool_kiri.svg" alt="KIRI Engine 界面示意" loading="lazy" decoding="async" /></div>
+                    <div class="toolBody">
+                        <div class="toolName">KIRI Engine</div>
+                        <div class="toolTag">移动 + 云端 + Blender · €90 / 年（解锁 3DGS）</div>
+                        <div class="toolPlain">手机、网页、Blender 都能采，同时给你 splat 和 mesh，还带一个聪明的"笔刷"——上传前就能把不要的背景擦掉，省时又省钱。<b>最适合：</b>边扫边清。</div>
+                    </div>
+                </div>
+
+                <div class="toolItem">
+                    <div class="toolShot"><img src="../../../images/tool_postshot.svg" alt="PostShot 界面示意" loading="lazy" decoding="async" /></div>
+                    <div class="toolBody">
+                        <div class="toolName">PostShot（Jungle）</div>
+                        <div class="toolTag">Windows 桌面 · 本地（NVIDIA）· 付费</div>
+                        <div class="toolPlain">硬核玩家的桌面工具。它把"对齐照片 → 训练 3D → 实时预览"全收在一个窗口里，还能拖滑块调质量。需要强 NVIDIA 显卡。<b>最适合：</b>在强机上追求最大控制。</div>
+                    </div>
+                </div>
+
+                <div class="toolItem">
+                    <div class="toolShot"><img src="../../../images/tool_supersplat.svg" alt="SuperSplat 界面示意" loading="lazy" decoding="async" /></div>
+                    <div class="toolBody">
+                        <div class="toolName">SuperSplat（PlayCanvas）</div>
+                        <div class="toolTag">网页浏览器 · 免费</div>
+                        <div class="toolPlain">免费的浏览器版 splat 查看 / 编辑器。你打开一个 3DGS 文件，手动点选删掉垃圾（杂点、漂浮物）——不用装软件。<b>最适合：</b>轻量清理。</div>
+                    </div>
+                </div>
+
+                <div class="toolItem">
+                    <div class="toolShot"><img src="../../../images/tool_scaniverse.svg" alt="Scaniverse 界面示意" loading="lazy" decoding="async" /></div>
+                    <div class="toolBody">
+                        <div class="toolName">Scaniverse（Niantic）</div>
+                        <div class="toolTag">iPhone（LiDAR）· 本地 · 免费</div>
+                        <div class="toolPlain">Niantic 的 iPhone 应用，用手机内置的 LiDAR 传感器。把手机对准房间或物体，设备端即时生成 3D 扫描。<b>最适合：</b>iPhone 上快速扫真实世界。</div>
+                    </div>
+                </div>
+
+                <div class="toolItem">
+                    <div class="toolShot"><img src="../../../images/tool_cloudcompare.svg" alt="CloudCompare 界面示意" loading="lazy" decoding="async" /></div>
+                    <div class="toolBody">
+                        <div class="toolName">CloudCompare / MeshLab</div>
+                        <div class="toolTag">桌面 · 本地 · 免费</div>
+                        <div class="toolPlain">3D 点的"电子表格"。免费桌面工具，用来打开、过滤、清理、转换超大规模点云。丑但强。<b>最适合：</b>重数据整理。</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <thead>
+                        <tr>
+                            <th>工具</th>
+                            <th>位置</th>
+                            <th>本地 / 云端</th>
+                            <th>流程完整度</th>
+                            <th>编辑</th>
+                            <th>导出</th>
+                            <th>获取方式</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Polycam</td>
+                            <td>网页 + 移动端</td>
+                            <td>云端</td>
+                            <td>捕捉 → GS，含测量工具</td>
+                            <td>应用内裁剪 / 缩放 / 调整</td>
+                            <td>多格式（Pro 档）</td>
+                            <td>订阅</td>
+                        </tr>
+                        <tr>
+                            <td>Luma AI</td>
+                            <td>移动 + 云端</td>
+                            <td>云端</td>
+                            <td>捕捉 → GS / NeRF</td>
+                            <td>有限</td>
+                            <td>OBJ / USDZ / GLB / PLY</td>
+                            <td>免费增值（每扫描 20–30 分钟）</td>
+                        </tr>
+                        <tr>
+                            <td>KIRI Engine</td>
+                            <td>移动 + 云端 + Blender 插件</td>
+                            <td>云端（含设备端裁剪）</td>
+                            <td>捕捉 → 3DGS + Mesh；统一 PBR 光照</td>
+                            <td>移动端 Sphere / Plane / Brush 裁剪；Blender 编辑 / 渲染模式</td>
+                            <td>.splats / .ply / .obj + Mesh 包</td>
+                            <td>€90 / 年（解锁 3DGS）</td>
+                        </tr>
+                        <tr>
+                            <td>PostShot（Jungle）</td>
+                            <td>Windows 桌面</td>
+                            <td>本地（NVIDIA）</td>
+                            <td>对齐 + 位姿 + 训练同一界面</td>
+                            <td>训练实时预览、参数调优</td>
+                            <td>Blender / Unreal / After Effects</td>
+                            <td>付费（需 RTX）</td>
+                        </tr>
+                        <tr>
+                            <td>SuperSplat（PlayCanvas）</td>
+                            <td>网页</td>
+                            <td>浏览器</td>
+                            <td>查看 / 清理 / 压缩</td>
+                            <td>手动选删；SplatTransform CLI</td>
+                            <td>HTML viewer / PLY</td>
+                            <td>免费</td>
+                        </tr>
+                        <tr>
+                            <td>Scaniverse（Niantic）</td>
+                            <td>iOS（LiDAR）</td>
+                            <td>本地（设备端）</td>
+                            <td>扫描 → GS</td>
+                            <td>裁剪 / 缩放 / 调整</td>
+                            <td>PLY → Blender / Unity / Unreal</td>
+                            <td>免费</td>
+                        </tr>
+                        <tr>
+                            <td>CloudCompare / MeshLab</td>
+                            <td>桌面</td>
+                            <td>本地</td>
+                            <td>点云查看 / 过滤 / 转换</td>
+                            <td>过滤 / 清理</td>
+                            <td>PLY ↔ mesh</td>
+                            <td>免费</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <ul class="hlList">
+                <li><b>本地 vs 云端是第一道体验决策。</b> PostShot、SuperSplat、Scaniverse 把数据留在本地、近乎即时；Polycam、Luma、KIRI 用云端换质量。</li>
+                <li><b>"单界面完整度"差异明显。</b> PostShot 在一个窗口里完成对齐 → 训练（对新手最友好）；其余要把移动捕捉 + 云端 + 桌面编辑拼起来。</li>
+                <li><b>设备端先做一道清理是聪明模式。</b> KIRI 的 Sphere / Plane / Brush 与 Scaniverse 的裁剪在上传前就清掉背景，把云负载降 30–40%——这是尊重用户带宽与账单的设计。</li>
+                <li><b>编辑的隐喻不同。</b> SuperSplat = 浏览器里选删；KIRI = Blender 原生编辑 / 渲染切换；PostShot = 训练期参数。还都没有消费级的<em>语义</em>清理（如"去掉所有人"）。</li>
+                <li><b>导出碎片化是真实痛点。</b> PLY 并非统一标准；SuperSplat / PostShot 重新存一遍能修兼容性。格式到引擎的衔接仍是手动。</li>
+            </ul>
+
+            <div class="calloutBox">
+                <span class="cbLabel">对 3DGS 体验设计师的启示</span>
+                <div class="csP">
+                    <p>
+                        未被满足的需求是一套<strong>清晰连贯的端到端界面</strong>：让专业用户从采集 → 训练出的 splat → 清理后的资产 → 引擎就绪的导出，全程不离开产品、也无需学四个工具。针对上面六个一致的痛点来设计：采集阈值（重叠 / 光照）、训练黑盒 + OOM、无自动清理、格式杂、缺发布质检清单。这正对应另一份单独准备的六阶段分析——产品机会，就是把这些分析落成一套连贯的界面。
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">03</span>结论</h3>
+            <span class="csKicker">3DGS 体验设计师该落手的几点</span>
+
+            <ol class="csList">
+                <li><strong>路线要清晰。</strong> 按用例决定 Mesh 默认还是 3DGS 默认，别把一种表征硬塞给所有流程。</li>
+                <li><strong>胜负在"混乱的中间"。</strong> 清理、导出、与引擎的衔接——而不是生成——才是专业用户今天耗时之处。</li>
+                <li><strong>一个连贯的界面胜过一套工具链。</strong> 设备端预清理 + 云端训练 + 应用内编辑，是要被超越的范式。</li>
+                <li><strong>为"语义操作"而非"几何操作"设计。</strong> "去掉所有人"胜过"删这 400 个 splat"——下一步的跃迁是意图，而非更多滑块。</li>
+            </ol>
+        </div>
+
+        <div class="linkContainer">
+            <div class="linkPrev">
+                <a href="../networkParty/networkParty.html">
+                    <div class="prevIcon">
+                        <img src="../../../images/iconPrev.svg" alt="iconPrev" / decoding="async" loading="lazy">
+                    </div>
+                    <div class="prevTextContainer">
+                        <div class="textPrevNext">PREV.</div>
+                        <div class="titlePrevNext">NETWORK PARTY 🎹</div>
+                    </div>
+                </a>
+            </div>
+            <div class="linkNext">
+                <a href="../index.html">
+                    <div class="nextTextContainer">
+                        <div class="textPrevNext">NEXT.</div>
+                        <div class="titlePrevNext">BLOG INDEX</div>
+                    </div>
+                    <div class="prevIcon">
+                        <img src="../../../images/iconNext.svg" alt="iconNext" / decoding="async" loading="lazy">
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <div class="dotsArray">
+                <p></p>
+            </div>
+
+            <div class="rolling-text-container">
+                <div class="rolling-text">
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+
+            <div class="footerContainer">
+                <div>
+                    <ul class="textLogoBottom">
+                        <li>YIHAN.</li>
+                        <li class="lou">LOU</li>
+                    </ul>
+                </div>
+                <div class="emailBottom">
+                    <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                        yihan.louyh@outlook.com
+                    </a>
+                </div>
+
+                <div class="footerContact">
+                    <a href="https://www.instagram.com/yhannah.l/" target="_blank" hidden>
+                        <img src="../../../images/icon_instagram.svg" alt="insta_icon" / decoding="async" loading="lazy">
+                    </a>
+                    <a href="https://www.linkedin.com/in/louyihan" target="_blank" hidden>
+                        <img src="../../../images/icon_linkedin.svg" alt="linkin_icon" / decoding="async" loading="lazy">
+                    </a>
+                    <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                        <img src="../../../images/icon_email.svg" alt="email_icon" / decoding="async" loading="lazy">
+                    </a>
+                </div>
+
+                <button id="scrollToTop" class="scrollTopButton">⏫</button>
+
+                <div class="dotsArray">
+                    <p></p>
+                </div>
+                <div class="copyright">
+                    © 2026 Designed &amp; Developed by Yihan Lou with AI, All rights reserved
+                </div>
+        </footer>
+    </div>
+
+    </div>
+    <script defer src="../../../foldedTags.js"></script>
+    <script defer src="../../../lang.js"></script>
+    <script defer src="../../../rollingtext.js"></script>
+    <script defer src="../../../scrollTopButton.js"></script>
+</body>
+
+</html>

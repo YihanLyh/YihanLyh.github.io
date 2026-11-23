@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="/images/character_Yihan.png" type="image/x-icon">
+    <title>3DGS Competitive Analysis</title>
+    <link rel="stylesheet" type="text/css" href="../../work/workpages.css" />
+    <link rel="stylesheet" type="text/css" href="../../foldedTags.css" />
+    <link rel="stylesheet" type="text/css" href="../../rollingtext.css" />
+    <link rel="stylesheet" type="text/css" href="../../scrollTopButton.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ---- draft publish switch ---- */
+        .draftNotice { display: none; }
+        html.page-unpublished .heading1,
+        html.page-unpublished .dotsArray1,
+        html.page-unpublished .rolling-text-container,
+        html.page-unpublished .projectContent { display: none !important; }
+        html.page-unpublished .draftNotice {
+            display: block;
+            max-width: 720px;
+            margin: 56px auto 80px;
+            padding: 30px 34px;
+            border: 1px solid #8FC4D2;
+            border-radius: 14px;
+            text-align: center;
+            color: #8FC4D2;
+            font-family: 'Montserrat Alternates', "PingFang SC", sans-serif;
+            line-height: 1.7;
+        }
+        html.page-unpublished .draftNotice strong { color: #ffffff; }
+
+        /* ---- tool showcase (interface sketches + plain-language notes) ---- */
+        .toolShowcase { display: grid; grid-template-columns: 1fr; gap: 22px; margin: 24px 0 8px; }
+        .toolItem {
+            display: flex; gap: 22px; align-items: flex-start;
+            border: 1px solid rgba(143,196,210,0.28); border-radius: 14px;
+            padding: 18px 20px; background: rgba(143,196,210,0.04);
+        }
+        .toolShot { flex: 0 0 300px; max-width: 300px; }
+        .toolShot img { width: 100%; height: auto; border-radius: 10px; display: block; }
+        .toolBody { flex: 1 1 auto; }
+        .toolName { font-weight: 700; color: #8FC4D2; font-size: 21px; margin-bottom: 3px;
+            font-family: 'Montserrat Alternates', "PingFang SC", sans-serif; }
+        .toolTag { font-size: 13px; color: #9fb0b6; margin-bottom: 10px; letter-spacing: .3px; }
+        .toolPlain { font-size: 15.5px; line-height: 1.78; color: #e8eef0; }
+        .toolPlain b { color: #ffffff; }
+        @media (max-width: 760px) {
+            .toolItem { flex-direction: column; }
+            .toolShot { flex: 1 1 auto; max-width: 100%; }
+        }
+    </style>
+    <script>
+        /* =========================================================
+           页面发布开关 / PAGE PUBLISH SWITCH
+           把 true 改为 false → 一键隐藏全页正文（草稿随时下线，无需删文件）
+           Set to false to hide all page content instantly.
+           ========================================================= */
+        var PAGE_PUBLISHED = true;
+        if (!PAGE_PUBLISHED) { document.documentElement.className += ' page-unpublished'; }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- mobile navigation -->
+        <div class="mobile-container" id="folded-tag">
+            <div class="header">
+                <div>
+                    <a href="../../index.html" class="homeLink" style="color: azure;">
+                        <ul class="textlogo">
+                            <li>YIHAN.</li>
+                            <li class="lou">LOU</li>
+                        </ul>
+                    </a>
+                </div>
+                <div class="headerContact">
+                    <a href="https://www.instagram.com/yhannah.l/" target="_blank" hidden>
+                        <img src="../../images/icon_instagram.svg" alt="insta_icon" / decoding="async" fetchpriority="high">
+                    </a>
+                    <a href="https://www.linkedin.com/in/louyihan" target="_blank" hidden>
+                        <img src="../../images/icon_linkedin.svg" alt="linkin_icon" / decoding="async" loading="lazy">
+                    </a>
+                    <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                        <img src="../../images/icon_email.svg" alt="email_icon" / decoding="async" loading="lazy">
+                    </a>
+                    <!-- language switch -->
+                    <button class="lang-btn" aria-label="切换语言">中文</button>
+                </div>
+                <div class="folded_icon" id="folded-icon">
+                    <img src="../../images/icon_foldedCross.svg" alt="folded_icon" / decoding="async" loading="lazy">
+                </div>
+            </div>
+
+            <div class="rolling-text-container">
+                <div class="rolling-text">
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> DESIGNER&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; DEVELOPER&nbsp;&nbsp;&nbsp;&nbsp;
+                        *
+                    </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+
+            <div class="headerCover">
+                <div class="mobilePages">
+                    <a href="../../work/index.html" class="mobilePageTag">WORK</a>
+                    <a href="../../about/index.html" class="mobilePageTag">ABOUT</a>
+                    <a href="../../blog/index.html" class="mobilePageTag">BLOG</a>
+                </div>
+            </div>
+            <div class="emailBottom">
+                <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                    yihan.louyh@outlook.com
+                </a>
+            </div>
+            <div class="dotsArray">
+                <p></p>
+            </div>
+            <div class="copyright">
+                © 2026 Yihan Lou with AI, All rights reserved
+            </div>
+        </div>
+        <!-- main page -->
+        <div class="header">
+            <div>
+                <a href="../../index.html" class="homeLink" style="color: azure;">
+                    <ul class="textlogo">
+                        <li>YIHAN.</li>
+                        <li class="lou">LOU</li>
+                    </ul>
+                </a>
+            </div>
+            <div class="headerPage">
+                <a href="../../work/index.html" class="headerPageTag">WORK</a>
+                <a href="../../about/index.html" class="headerPageTag">ABOUT</a>
+                <a href="../../blog/index.html" class="headerPageTag">BLOG</a>
+            </div>
+
+            <div class="headerContact">
+                <a href="https://www.instagram.com/yhannah.l/" target="_blank" hidden>
+                    <img src="../../images/icon_instagram.svg" alt="insta_icon" / decoding="async" loading="lazy">
+                </a>
+                <a href="https://www.linkedin.com/in/louyihan" target="_blank" hidden>
+                    <img src="../../images/icon_linkedin.svg" alt="linkin_icon" / decoding="async" loading="lazy">
+                </a>
+                <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                    <img src="../../images/icon_email.svg" alt="email_icon" / decoding="async" loading="lazy">
+                </a>
+                <!-- language switch -->
+                <button class="lang-btn" aria-label="切换语言">中文</button>
+            </div>
+            <div class="folded_icon" id="unfolded-icon">
+                <img src="../../images/icon_folded.svg" alt="unfolded_icon" / decoding="async" loading="lazy">
+            </div>
+        </div>
+        <div class="heading1">
+            3DGS Competitive Analysis
+        </div>
+
+        <div class="dotsArray1">
+            <p></p>
+        </div>
+
+        <div class="rolling-text-container">
+            <div class="rolling-text">
+                <span> 3D GAUSSIAN SPLATTING&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; COMPETITIVE
+                    ANALYSIS&nbsp;&nbsp;&nbsp;&nbsp;
+                    *&nbsp;&nbsp;&nbsp;&nbsp; 2025–2026&nbsp;&nbsp;&nbsp;&nbsp;
+                    *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span> 3D GAUSSIAN SPLATTING&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; COMPETITIVE
+                    ANALYSIS&nbsp;&nbsp;&nbsp;&nbsp;
+                    *&nbsp;&nbsp;&nbsp;&nbsp; 2025–2026&nbsp;&nbsp;&nbsp;&nbsp;
+                    *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span> 3D GAUSSIAN SPLATTING&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; COMPETITIVE
+                    ANALYSIS&nbsp;&nbsp;&nbsp;&nbsp;
+                    *&nbsp;&nbsp;&nbsp;&nbsp; 2025–2026&nbsp;&nbsp;&nbsp;&nbsp;
+                    *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span> 3D GAUSSIAN SPLATTING&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; COMPETITIVE
+                    ANALYSIS&nbsp;&nbsp;&nbsp;&nbsp;
+                    *&nbsp;&nbsp;&nbsp;&nbsp; 2025–2026&nbsp;&nbsp;&nbsp;&nbsp;
+                    *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span> 3D GAUSSIAN SPLATTING&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; COMPETITIVE
+                    ANALYSIS&nbsp;&nbsp;&nbsp;&nbsp;
+                    *&nbsp;&nbsp;&nbsp;&nbsp; 2025–2026&nbsp;&nbsp;&nbsp;&nbsp;
+                    *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+        </div>
+
+        <div class="draftNotice">
+            🚧 本页面为草稿，暂未发布。<br>
+            <strong>This page is a draft and not yet published.</strong><br>
+            Set <code>PAGE_PUBLISHED = true</code> in the page head to reveal the content.
+        </div>
+
+        <div class="projectContent">
+
+            <!-- ============================================================ -->
+            <div class="execSummary">
+                <div class="esLabel">Bottom line</div>
+                <p class="esClaim">
+                    3D Gaussian Splatting is moving from research demo to production tool — but the
+                    <em>experience</em> is still fragmented. Tencent's Hunyuan chose the Mesh route while still
+                    emitting 3DGS points; everyone else races on mesh generation; and the dedicated splat tooling
+                    (capture → train → clean → export) is split across local / cloud and mobile / desktop. The open
+                    gap is one legible,
+                    end-to-end surface for professional users.
+                </p>
+            </div>
+
+            <h3 class="secTitle"><span class="secNum">00</span>Overview</h3>
+            <span class="csKicker">What this page is, and how it is structured</span>
+
+            <div class="csP">
+                <p>
+                    This is a competitive read of the public 3DGS landscape as of 2025–2026, written while preparing
+                    for a 3DGS experience-design role. It is split into two parts: <b>Part 1</b> covers AI-generated
+                    3D / 3DGS <em>products</em> (what gets made), and <b>Part 2</b> covers the 3DGS modelling and
+                    model-processing <em>platforms</em> (how splats are actually captured, trained, cleaned and
+                    shipped) with an interface-level lens.
+                </p>
+            </div>
+
+            <div class="calloutBox">
+                <span class="cbLabel">3DGS in plain words</span>
+                <div class="csP">
+                    <p>
+                        Imagine filming a chair from every angle for a few seconds, then turning that video into a 3D
+                        scene you can walk around in on your phone — photo-real, light to load, and no 3D-modelling
+                        skills needed. That is roughly what 3DGS does. The "Gaussian splat" is just the technical name
+                        for the tiny fuzzy dots it uses to paint the scene. <b>Why people care:</b> until now, making
+                        3D meant hiring a 3D artist; 3DGS + AI lets almost anyone capture or generate 3D and drop it
+                        into apps, games or the web. The rest of this page explains who is building the tools for that.
+                    </p>
+                </div>
+            </div>
+
+            <div class="calloutBox">
+                <span class="cbLabel">Method &amp; honesty note</span>
+                <div class="csP">
+                    <p>
+                        Findings are drawn from publicly available product pages and reviews, not from hands-on
+                        benchmarking. The interface sketches below are <strong>schematic illustrations</strong> (how
+                        each tool's UI is laid out), not pixel-accurate screenshots. Where a figure is
+                        vendor-reported it is labelled as such. This page is a <strong>design research artefact</strong>,
+                        not a shipped product — the same framing used for the 3DGS pipeline study.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">01</span>Part 1 — AI-Generated 3D / 3DGS Products</h3>
+            <span class="csKicker">What gets made: generation vs reconstruction</span>
+
+            <div class="csP">
+                <p>
+                    Two routes coexist. <b>Generative</b> tools take text or an image and return a mesh (Tripo,
+                    Meshy, Rodin, Stable-Fast-3D). <b>Reconstruction</b> tools take photos / video and return either
+                    a mesh or a radiance field — Tencent's Hunyuan WorldMirror is the notable case that emits
+                    <em>both</em> 3DGS points and a standard mesh from one forward pass. The practical truth across
+                    all of them: none replaces a 3D artist, and every output still needs retopology, UV, material and
+                    engine prep before it is production-ready.
+                </p>
+            </div>
+
+            <h3 class="secTitle"><span class="secNum">01·a</span>Each tool, in plain words</h3>
+            <span class="csKicker">Interface sketch (left) + what it actually does (right) — no jargon</span>
+
+            <div class="toolShowcase">
+
+                <div class="toolItem">
+                    <div class="toolShot"><img src="../images/tool_hunyuan.svg" alt="Hunyuan3D interface sketch" loading="lazy" decoding="async" /></div>
+                    <div class="toolBody">
+                        <div class="toolName">Tencent Hunyuan3D (WorldMirror)</div>
+                        <div class="toolTag">AI reconstruction · free &amp; open-source</div>
+                        <div class="toolPlain">You hand it a photo or a short video; in one go it returns a 3D model you can spin 360°. It even gives you two flavours at once: a <b>"point-cloud / 3DGS"</b> version (a glowing fog you can explore on a phone) and a <b>standard 3D mesh</b> (the kind Blender / Unity eat). Think of it as upgrading "take a photo" to "take a living 3D snapshot." <b>Best for:</b> getting a usable 3D model fast and free.</div>
+                    </div>
+                </div>
+
+                <div class="toolItem">
+                    <div class="toolShot"><img src="../images/tool_tripo.svg" alt="Tripo interface sketch" loading="lazy" decoding="async" /></div>
+                    <div class="toolBody">
+                        <div class="toolName">Tripo (VAST)</div>
+                        <div class="toolTag">Text / image → 3D mesh · ~$12–14 / mo</div>
+                        <div class="toolPlain">Type or drop in an image ("a red chair"), and within seconds you get a clean 3D model you can rotate. Great for filling a scene with lots of background props quickly — furniture, crates, plants — but a hero character still needs an artist. <b>Best for:</b> fast, stylised placeholders.</div>
+                    </div>
+                </div>
+
+                <div class="toolItem">
+                    <div class="toolShot"><img src="../images/tool_meshy.svg" alt="Meshy interface sketch" loading="lazy" decoding="async" /></div>
+                    <div class="toolBody">
+                        <div class="toolName">Meshy</div>
+                        <div class="toolTag">Text / image → textured mesh · $16–20 / mo</div>
+                        <div class="toolPlain">Same idea as Tripo, but it leans hardest into textures and plugins. It connects straight into Blender, Unity and Unreal, so game and product designers can pull models in without leaving their tools. <b>Best for:</b> textured, game-ready assets.</div>
+                    </div>
+                </div>
+
+                <div class="toolItem">
+                    <div class="toolShot"><img src="../images/tool_rodin.svg" alt="Rodin interface sketch" loading="lazy" decoding="async" /></div>
+                    <div class="toolBody">
+                        <div class="toolName">Rodin (Hyper3D)</div>
+                        <div class="toolTag">High-fidelity generation · $99 / mo</div>
+                        <div class="toolPlain">The "pro" tier. It produces the highest-detail, most realistic 3D characters and objects, but it is slower (minutes) and pricey. <b>Best for:</b> when quality matters more than speed.</div>
+                    </div>
+                </div>
+
+                <div class="toolItem">
+                    <div class="toolShot"><img src="../images/tool_luma.svg" alt="Luma AI interface sketch" loading="lazy" decoding="async" /></div>
+                    <div class="toolBody">
+                        <div class="toolName">Luma AI</div>
+                        <div class="toolTag">Capture real things → 3D · freemium</div>
+                        <div class="toolPlain">Not text-to-3D — instead you capture a real object or place with your phone, and it turns that into a photoreal 3D scene. Think "3D photo" of your sofa or a room. <b>Best for:</b> digitising real things you already have.</div>
+                    </div>
+                </div>
+
+                <div class="toolItem">
+                    <div class="toolShot"><img src="../images/tool_sf3d.svg" alt="Stable-Fast-3D interface sketch" loading="lazy" decoding="async" /></div>
+                    <div class="toolBody">
+                        <div class="toolName">Stable-Fast-3D</div>
+                        <div class="toolTag">Image → low-poly mesh · open / API</div>
+                        <div class="toolPlain">Blazing fast (half a second) and open: feed it one image, get a simple 3D block. Lower detail, but perfect for mass-producing hundreds of background objects in a game. <b>Best for:</b> speed at scale.</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Route</th>
+                            <th>Output</th>
+                            <th>Strength</th>
+                            <th>Weakness</th>
+                            <th>Access</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tencent Hunyuan3D (WorldMirror)</td>
+                            <td>Unified feed-forward reconstruction — image / video / depth / pose in</td>
+                            <td>3DGS points <em>and</em> standard Mesh (GLB / OBJ)</td>
+                            <td>Free, open-weight, local-deployable; one pass → point cloud, depth, normal, 3DGS,
+                                novel-view</td>
+                            <td>Picked Mesh as default for pipeline compatibility; detail loss on glass / extreme
+                                light</td>
+                            <td>Free / open-source (local ≥16 GB VRAM)</td>
+                        </tr>
+                        <tr>
+                            <td>Tripo (VAST)</td>
+                            <td>Text / Image → Mesh</td>
+                            <td>Clean quad mesh, auto-rig &amp; animate, batch</td>
+                            <td>~8 s speed; stylised (voxel / cartoon / LEGO); clean topology</td>
+                            <td>Needs post for hero assets</td>
+                            <td>~$12–14 / mo</td>
+                        </tr>
+                        <tr>
+                            <td>Meshy</td>
+                            <td>Text / Image → Mesh</td>
+                            <td>PBR mesh, STL for print</td>
+                            <td>Best plugin ecosystem (Blender / Unity / Unreal); texture quality</td>
+                            <td>Needs cleanup for production</td>
+                            <td>$16–20 / mo</td>
+                        </tr>
+                        <tr>
+                            <td>Rodin (Hyper3D)</td>
+                            <td>Geometry + texture, staged</td>
+                            <td>4K PBR, GLB / STL / USDZ</td>
+                            <td>Highest fidelity; pro-level control</td>
+                            <td>Slow (2–5 min); pricey</td>
+                            <td>$99 / mo</td>
+                        </tr>
+                        <tr>
+                            <td>Luma AI</td>
+                            <td>Capture → GS / NeRF (not text-gen)</td>
+                            <td>OBJ / USDZ / GLB / PLY</td>
+                            <td>Photoreal capture of real objects; free Genie tier</td>
+                            <td>Cloud 20–30 min / scan; variable text quality</td>
+                            <td>Freemium</td>
+                        </tr>
+                        <tr>
+                            <td>Stable-Fast-3D</td>
+                            <td>Image → low-poly mesh</td>
+                            <td>GLB</td>
+                            <td>~0.5 s; game mass-production</td>
+                            <td>Mid texture; post-needed</td>
+                            <td>Open / API</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <ul class="hlList">
+                <li><b>Mesh vs 3DGS is a route split, not a quality contest.</b> Mesh drops straight into
+                    Blender / Unity / Unreal today; 3DGS is a viewable radiance field that still fights industrial
+                    pipelines. Hunyuan ships both and defaults to Mesh — a deliberate "talk to your existing toolbox"
+                    choice.</li>
+                <li><b>"Generative 3D" is the first 80% of a background or prop asset, not a hero asset.</b> Every
+                    vendor's output needs retopology, UV, material and engine preparation.</li>
+                <li><b>Local / cloud / open-weight is now a positioning axis.</b> Hunyuan is free and
+                    self-hostable; the rest are subscriptions.</li>
+                <li><b>Chinese-UI / Chinese-prompt support</b> is strongest in Tripo and Hunyuan.</li>
+            </ul>
+
+            <div class="calloutBox">
+                <span class="cbLabel">What this means for a 3DGS tool designer</span>
+                <div class="csP">
+                    <p>
+                        The differentiator is no longer "can it generate" — it is the <strong>post-generation
+                            experience</strong>: cleanup, format, the engine handshake, and iteration speed. Whoever
+                        makes the messy middle legible wins professional users. That is exactly the gap the next
+                        end-to-end 3DGS platform is positioned to close.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">02</span>Part 2 — 3DGS Modelling &amp; Processing Platforms</h3>
+            <span class="csKicker">Interface competitive analysis of the splat toolchain</span>
+
+            <div class="csP">
+                <p>
+                    These are the tools that actually handle Gaussian splats end-to-end. They split by <em>where the
+                        work happens</em> — on-device, cloud, or desktop — and by how much of the pipeline they wrap
+                    in a single surface. The workflow below is shared by all of them, and the pain points are
+                    remarkably consistent.
+                </p>
+            </div>
+
+            <div class="csFigure">
+                <svg viewBox="0 0 2000 820" role="img"
+                    aria-label="3DGS toolchain: six stages and their experience pain points">
+                    <rect x="0" y="0" width="2000" height="820" fill="#000000" />
+                    <text x="1000" y="74" text-anchor="middle" fill="#B2FEB3"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="40" font-weight="700"
+                        letter-spacing="2">3DGS TOOLCHAIN · SIX STAGES &amp; EXPERIENCE PAIN POINTS</text>
+
+                    <rect x="60" y="300" width="270" height="150" rx="16" fill="#000000" stroke="#B2FEB3"
+                        stroke-width="2.6" />
+                    <circle cx="98" cy="338" r="22" fill="none" stroke="#B2FEB3" stroke-width="2.4" />
+                    <text x="98" y="346" text-anchor="middle" fill="#B2FEB3"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="26" font-weight="700">1</text>
+                    <text x="195" y="360" text-anchor="middle" fill="#ffffff"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="30" font-weight="600">Capture</text>
+                    <text x="195" y="402" text-anchor="middle" fill="#B2FEB3"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="26">采集</text>
+                    <rect x="382" y="300" width="270" height="150" rx="16" fill="#000000" stroke="#B2FEB3"
+                        stroke-width="2.6" />
+                    <circle cx="420" cy="338" r="22" fill="none" stroke="#B2FEB3" stroke-width="2.4" />
+                    <text x="420" y="346" text-anchor="middle" fill="#B2FEB3"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="26" font-weight="700">2</text>
+                    <text x="517" y="360" text-anchor="middle" fill="#ffffff"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="30" font-weight="600">Pose · SfM</text>
+                    <text x="517" y="402" text-anchor="middle" fill="#B2FEB3"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="26">位姿</text>
+                    <rect x="704" y="300" width="270" height="150" rx="16" fill="#000000" stroke="#B2FEB3"
+                        stroke-width="2.6" />
+                    <circle cx="742" cy="338" r="22" fill="none" stroke="#B2FEB3" stroke-width="2.4" />
+                    <text x="742" y="346" text-anchor="middle" fill="#B2FEB3"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="26" font-weight="700">3</text>
+                    <text x="839" y="360" text-anchor="middle" fill="#ffffff"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="30" font-weight="600">Train</text>
+                    <text x="839" y="402" text-anchor="middle" fill="#B2FEB3"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="26">训练</text>
+                    <rect x="1026" y="300" width="270" height="150" rx="16" fill="#000000" stroke="#B2FEB3"
+                        stroke-width="2.6" />
+                    <circle cx="1064" cy="338" r="22" fill="none" stroke="#B2FEB3" stroke-width="2.4" />
+                    <text x="1064" y="346" text-anchor="middle" fill="#B2FEB3"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="26" font-weight="700">4</text>
+                    <text x="1161" y="360" text-anchor="middle" fill="#ffffff"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="30" font-weight="600">Clean · Edit</text>
+                    <text x="1161" y="402" text-anchor="middle" fill="#B2FEB3"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="26">编辑</text>
+                    <rect x="1348" y="300" width="270" height="150" rx="16" fill="#000000" stroke="#B2FEB3"
+                        stroke-width="2.6" />
+                    <circle cx="1386" cy="338" r="22" fill="none" stroke="#B2FEB3" stroke-width="2.4" />
+                    <text x="1386" y="346" text-anchor="middle" fill="#B2FEB3"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="26" font-weight="700">5</text>
+                    <text x="1483" y="360" text-anchor="middle" fill="#ffffff"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="30" font-weight="600">Export</text>
+                    <text x="1483" y="402" text-anchor="middle" fill="#B2FEB3"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="26">导出</text>
+                    <rect x="1670" y="300" width="270" height="150" rx="16" fill="#000000" stroke="#B2FEB3"
+                        stroke-width="2.6" />
+                    <circle cx="1708" cy="338" r="22" fill="none" stroke="#B2FEB3" stroke-width="2.4" />
+                    <text x="1708" y="346" text-anchor="middle" fill="#B2FEB3"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="26" font-weight="700">6</text>
+                    <text x="1805" y="360" text-anchor="middle" fill="#ffffff"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="30" font-weight="600">Publish</text>
+                    <text x="1805" y="402" text-anchor="middle" fill="#B2FEB3"
+                        font-family="'Montserrat Alternates', sans-serif" font-size="26">发布</text>
+
+                    <g stroke="#B2FEB3" stroke-width="1.6" stroke-dasharray="2 12">
+                        <line x1="330" y1="375" x2="382" y2="375" />
+                        <line x1="652" y1="375" x2="704" y2="375" />
+                        <line x1="974" y1="375" x2="1026" y2="375" />
+                        <line x1="1296" y1="375" x2="1348" y2="375" />
+                        <line x1="1618" y1="375" x2="1670" y2="375" />
+                    </g>
+                    <g fill="#B2FEB3">
+                        <circle cx="330" cy="375" r="4" /><circle cx="382" cy="375" r="4" />
+                        <circle cx="652" cy="375" r="4" /><circle cx="704" cy="375" r="4" />
+                        <circle cx="974" cy="375" r="4" /><circle cx="1026" cy="375" r="4" />
+                        <circle cx="1296" cy="375" r="4" /><circle cx="1348" cy="375" r="4" />
+                        <circle cx="1618" cy="375" r="4" /><circle cx="1670" cy="375" r="4" />
+                    </g>
+
+                    <g fill="rgba(255,255,255,0.82)" font-family="'Montserrat Alternates', sans-serif"
+                        font-size="22" text-anchor="middle">
+                        <text x="195" y="512">High capture bar:</text>
+                        <text x="195" y="544">overlap, lighting,</text>
+                        <text x="195" y="576">stable angles</text>
+                        <text x="517" y="512">No pose feedback</text>
+                        <text x="517" y="544">during capture</text>
+                        <text x="839" y="512">Black-box training,</text>
+                        <text x="839" y="544">OOM, long waits</text>
+                        <text x="1161" y="512">No auto clean</text>
+                        <text x="1161" y="544">(floaters / artifacts)</text>
+                        <text x="1483" y="512">Format sprawl,</text>
+                        <text x="1483" y="544">PLY not uniform</text>
+                        <text x="1805" y="512">No quality-check</text>
+                        <text x="1805" y="544">checklist to ship</text>
+                    </g>
+                </svg>
+            </div>
+
+            <h3 class="secTitle"><span class="secNum">02·a</span>Each tool, in plain words</h3>
+            <span class="csKicker">Interface sketch (left) + what it actually does (right) — no jargon</span>
+
+            <div class="toolShowcase">
+
+                <div class="toolItem">
+                    <div class="toolShot"><img src="../images/tool_polycam.svg" alt="Polycam interface sketch" loading="lazy" decoding="async" /></div>
+                    <div class="toolBody">
+                        <div class="toolName">Polycam</div>
+                        <div class="toolTag">Web + mobile · cloud-based · subscription</div>
+                        <div class="toolPlain">The friendly front door. You scan with your phone or upload photos; it builds a 3D point-cloud you can measure and view. Cloud-based, so it is easy but your data leaves the device. <b>Best for:</b> quick, shareable scans.</div>
+                    </div>
+                </div>
+
+                <div class="toolItem">
+                    <div class="toolShot"><img src="../images/tool_luma.svg" alt="Luma AI interface sketch" loading="lazy" decoding="async" /></div>
+                    <div class="toolBody">
+                        <div class="toolName">Luma AI</div>
+                        <div class="toolTag">Mobile + cloud · freemium</div>
+                        <div class="toolPlain">Here Luma is used for <b>capture</b>: film a real object or room and it reconstructs a photoreal 3D scene in the cloud. Simple to start, but each scan can take 20–30 minutes to process. <b>Best for:</b> turning real places into 3D.</div>
+                    </div>
+                </div>
+
+                <div class="toolItem">
+                    <div class="toolShot"><img src="../images/tool_kiri.svg" alt="KIRI Engine interface sketch" loading="lazy" decoding="async" /></div>
+                    <div class="toolBody">
+                        <div class="toolName">KIRI Engine</div>
+                        <div class="toolTag">Mobile + cloud + Blender · €90 / yr for 3DGS</div>
+                        <div class="toolPlain">Capture anywhere (phone, web, Blender) and it gives you both the splat and a mesh, with a clever "brush" to wipe away unwanted background <b>before</b> upload — saving time and cloud cost. <b>Best for:</b> cleaning as you go.</div>
+                    </div>
+                </div>
+
+                <div class="toolItem">
+                    <div class="toolShot"><img src="../images/tool_postshot.svg" alt="PostShot interface sketch" loading="lazy" decoding="async" /></div>
+                    <div class="toolBody">
+                        <div class="toolName">PostShot (Jungle)</div>
+                        <div class="toolTag">Windows desktop · local (NVIDIA) · paid</div>
+                        <div class="toolPlain">The power-user's desktop tool. It does the whole "align photos → train the 3D → preview live" in one window, with sliders to tune quality. Needs a strong NVIDIA GPU. <b>Best for:</b> maximum control on a strong PC.</div>
+                    </div>
+                </div>
+
+                <div class="toolItem">
+                    <div class="toolShot"><img src="../images/tool_supersplat.svg" alt="SuperSplat interface sketch" loading="lazy" decoding="async" /></div>
+                    <div class="toolBody">
+                        <div class="toolName">SuperSplat (PlayCanvas)</div>
+                        <div class="toolTag">Web browser · free</div>
+                        <div class="toolPlain">A free, browser-based viewer / editor for splats. You load a 3DGS file and manually click to delete junk (stray dots, floaters) — no install needed. <b>Best for:</b> light clean-up without software.</div>
+                    </div>
+                </div>
+
+                <div class="toolItem">
+                    <div class="toolShot"><img src="../images/tool_scaniverse.svg" alt="Scaniverse interface sketch" loading="lazy" decoding="async" /></div>
+                    <div class="toolBody">
+                        <div class="toolName">Scaniverse (Niantic)</div>
+                        <div class="toolTag">iPhone (LiDAR) · local · free</div>
+                        <div class="toolPlain">Niantic's iPhone app using the built-in LiDAR sensor. Point your phone at a room or object and it builds a 3D scan on-device, instantly. <b>Best for:</b> fast real-world capture on iPhone.</div>
+                    </div>
+                </div>
+
+                <div class="toolItem">
+                    <div class="toolShot"><img src="../images/tool_cloudcompare.svg" alt="CloudCompare interface sketch" loading="lazy" decoding="async" /></div>
+                    <div class="toolBody">
+                        <div class="toolName">CloudCompare / MeshLab</div>
+                        <div class="toolTag">Desktop · local · free</div>
+                        <div class="toolPlain">The "spreadsheet" of 3D points. Free desktop tools to open, filter, clean and convert massive point clouds. Ugly but powerful. <b>Best for:</b> heavy data wrangling.</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="tableWrap">
+                <table class="csTable">
+                    <thead>
+                        <tr>
+                            <th>Tool</th>
+                            <th>Where</th>
+                            <th>Local / Cloud</th>
+                            <th>Pipeline completeness</th>
+                            <th>Editing</th>
+                            <th>Export</th>
+                            <th>Access</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Polycam</td>
+                            <td>Web + mobile</td>
+                            <td>Cloud</td>
+                            <td>Capture → GS, measurement tools</td>
+                            <td>Crop / scale / adjust in-app</td>
+                            <td>Multi-format (Pro tier)</td>
+                            <td>Subscription</td>
+                        </tr>
+                        <tr>
+                            <td>Luma AI</td>
+                            <td>Mobile + cloud</td>
+                            <td>Cloud</td>
+                            <td>Capture → GS / NeRF</td>
+                            <td>Limited</td>
+                            <td>OBJ / USDZ / GLB / PLY</td>
+                            <td>Freemium (20–30 min / scan)</td>
+                        </tr>
+                        <tr>
+                            <td>KIRI Engine</td>
+                            <td>Mobile + cloud + Blender add-on</td>
+                            <td>Cloud (+ on-device crop)</td>
+                            <td>Capture → 3DGS + Mesh; unified PBR lighting</td>
+                            <td>Sphere / Plane / Brush crop on mobile; Blender Edit / Render modes</td>
+                            <td>.splats / .ply / .obj + mesh package</td>
+                            <td>€90 / yr for 3DGS</td>
+                        </tr>
+                        <tr>
+                            <td>PostShot (Jungle)</td>
+                            <td>Windows desktop</td>
+                            <td>Local (NVIDIA)</td>
+                            <td>Align + pose + train in one UI</td>
+                            <td>Live training preview, parameter tuning</td>
+                            <td>Blender / Unreal / After Effects</td>
+                            <td>Paid (needs RTX)</td>
+                        </tr>
+                        <tr>
+                            <td>SuperSplat (PlayCanvas)</td>
+                            <td>Web</td>
+                            <td>Browser</td>
+                            <td>View / clean / compress</td>
+                            <td>Manual select-delete; SplatTransform CLI</td>
+                            <td>HTML viewer / PLY</td>
+                            <td>Free</td>
+                        </tr>
+                        <tr>
+                            <td>Scaniverse (Niantic)</td>
+                            <td>iOS (LiDAR)</td>
+                            <td>Local (on-device)</td>
+                            <td>Scan → GS</td>
+                            <td>Crop / scale / adjust</td>
+                            <td>PLY → Blender / Unity / Unreal</td>
+                            <td>Free</td>
+                        </tr>
+                        <tr>
+                            <td>CloudCompare / MeshLab</td>
+                            <td>Desktop</td>
+                            <td>Local</td>
+                            <td>Point-cloud view / filter / convert</td>
+                            <td>Filter / clean</td>
+                            <td>PLY ↔ mesh</td>
+                            <td>Free</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <ul class="hlList">
+                <li><b>Local vs cloud is the first UX decision.</b> PostShot, SuperSplat and Scaniverse keep data
+                    private and near-instant; Polycam, Luma and KIRI lean cloud for quality.</li>
+                <li><b>"One-UI completeness" varies sharply.</b> PostShot does align → train in a single window
+                    (best for beginners); the others stitch mobile capture + cloud + a desktop editor.</li>
+                <li><b>On-device first-pass cleanup is a smart pattern.</b> KIRI's Sphere / Plane / Brush and
+                    Scaniverse's crop clean <em>before</em> upload and cut cloud cost 30–40% — design that respects
+                    the user's bandwidth and bill.</li>
+                <li><b>The editing metaphor differs.</b> SuperSplat = browser select-delete; KIRI = Blender-native
+                    Edit / Render toggle; PostShot = training-time parameters. None yet offers consumer-level
+                    <em>semantic</em> cleanup (e.g. "remove all people").</li>
+                <li><b>Export fragmentation is a real pain.</b> PLY is not a uniform standard; SuperSplat /
+                    PostShot re-saving fixes compatibility. The format → engine handshake is still manual.</li>
+            </ul>
+
+            <div class="calloutBox">
+                <span class="cbLabel">Implications for 3DGS experience design</span>
+                <div class="csP">
+                    <p>
+                        The unmet need is a <strong>legible end-to-end surface</strong> where a professional moves
+                        capture → trained splat → cleaned asset → engine-ready export without leaving the product or
+                        learning four tools. Design against the six consistent pain points above: capture thresholds
+                        (overlap / lighting), training black-box + OOM, no auto-clean, format sprawl, and no publish
+                        QA checklist. This is precisely the gap the next 3DGS platform can close by turning the
+                        analysis into a single coherent interface.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <h3 class="secTitle"><span class="secNum">03</span>Takeaways</h3>
+            <span class="csKicker">What a 3DGS experience designer should act on</span>
+
+            <ol class="csList">
+                <li><strong>Route clarity.</strong> Decide Mesh-default vs 3DGS-default per use case; do not force
+                    one representation on every workflow.</li>
+                <li><strong>The win is in the messy middle.</strong> Cleanup, export and the engine handshake — not
+                    generation — are where professional users lose time today.</li>
+                <li><strong>One coherent surface beats a toolchain.</strong> On-device pre-clean + cloud train +
+                    in-app edit is the pattern to beat.</li>
+                <li><strong>Design for semantic operations, not just geometric ones.</strong> "Remove all people"
+                    beats "delete these 400 splats" — the next leap is intent, not more sliders.</li>
+            </ol>
+        </div>
+
+        <div class="linkContainer">
+            <div class="linkPrev">
+                <a href="../networkParty/networkParty.html">
+                    <div class="prevIcon">
+                        <img src="../../images/iconPrev.svg" alt="iconPrev" / decoding="async" loading="lazy">
+                    </div>
+                    <div class="prevTextContainer">
+                        <div class="textPrevNext">PREV.</div>
+                        <div class="titlePrevNext">NETWORK PARTY 🎹</div>
+                    </div>
+                </a>
+            </div>
+            <div class="linkNext">
+                <a href="../../blog/index.html">
+                    <div class="nextTextContainer">
+                        <div class="textPrevNext">NEXT.</div>
+                        <div class="titlePrevNext">BLOG INDEX</div>
+                    </div>
+                    <div class="prevIcon">
+                        <img src="../../images/iconNext.svg" alt="iconNext" / decoding="async" loading="lazy">
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <div class="dotsArray">
+                <p></p>
+            </div>
+
+            <div class="rolling-text-container">
+                <div class="rolling-text">
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span> CONTACT&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; CONTACT&nbsp;&nbsp;&nbsp;&nbsp;
+                        *</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+
+            <div class="footerContainer">
+                <div>
+                    <ul class="textLogoBottom">
+                        <li>YIHAN.</li>
+                        <li class="lou">LOU</li>
+                    </ul>
+                </div>
+                <div class="emailBottom">
+                    <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                        yihan.louyh@outlook.com
+                    </a>
+                </div>
+
+                <div class="footerContact">
+                    <a href="https://www.instagram.com/yhannah.l/" target="_blank" hidden>
+                        <img src="../../images/icon_instagram.svg" alt="insta_icon" / decoding="async" loading="lazy">
+                    </a>
+                    <a href="https://www.linkedin.com/in/louyihan" target="_blank" hidden>
+                        <img src="../../images/icon_linkedin.svg" alt="linkin_icon" / decoding="async" loading="lazy">
+                    </a>
+                    <a href="mailto:yihan.louyh@outlook.com" target="_blank">
+                        <img src="../../images/icon_email.svg" alt="email_icon" / decoding="async" loading="lazy">
+                    </a>
+                </div>
+
+                <button id="scrollToTop" class="scrollTopButton">⏫</button>
+
+                <div class="dotsArray">
+                    <p></p>
+                </div>
+                <div class="copyright">
+                    © 2026 Designed &amp; Developed by Yihan Lou with AI, All rights reserved
+                </div>
+        </footer>
+    </div>
+
+    </div>
+    <script defer src="../../foldedTags.js"></script>
+    <script defer src="../../lang.js"></script>
+    <script defer src="../../rollingtext.js"></script>
+    <script defer src="../../scrollTopButton.js"></script>
+</body>
+
+</html>

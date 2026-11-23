@@ -189,29 +189,14 @@
                     Your browser cannot play this video — <a href="./theFourthNatureTour_demo.mp4">download the
                         walkthrough</a>.
                 </video>
-                <div class="csCap"><b>The build, running — 3:17 captured in-headset.</b> It opens on the title card and
-                    drops you to insect scale in the pine forest. The story is carried by placards placed inside the
-                    scene: <em>“They took away the original vegetation of this area”</em> where the railway cuts through,
-                    <em>“When the marks of industry start fading away…”</em> on the broken track, and finally
-                    <em>“They formed a new whole, that is, the Fourth Nature”</em> — over pioneer plants coming back
-                    between the sleepers.</div>
+                <div class="csCap"><b>The running build — 3:17, captured in-headset.</b> It opens on the title card and a
+                    VR control/instruction page, then drops you to insect scale in the pine forest: the forest, the
+                    railway cutting through it, the sleepers scattered apart. The story is carried forward by GUI prompts
+                    inside the scene — the forest is logged, the railway is built, a train passes, then it withdraws. Years
+                    later you return to find pioneer plants reclaiming the track, forming the Fourth Nature.</div>
             </div>
-
-            <h3 class="secTitle">Outcome lead</h3>
-            <div class="csP">
-                <p>
-                    A VR thesis that turns the abstract idea of land rewilding itself after industry into a walkable, insect-scale journey — built on a blended manual and AI asset pipeline and sharpened by user testing.
-                </p>
-            </div>
-            <h3 class="secTitle">Featured Outputs</h3>
-            <ul class="hlList">
-                <li><b>An idea made walkable.</b> The Fourth Nature concept is staged as a journey — open book, portal, two contrasting stages — instead of being explained.</li>
-                <li><b>A hybrid asset pipeline.</b> Manual Blender modelling, AI-assisted experimental modelling and curated store libraries are combined to build the world faster.</li>
-                <li><b>A tested experience.</b> Eight participants (three in follow-up) drove a documented iteration cycle, and the AI-assisted workflow cut modelling time by over half.</li>
-            </ul>
 
             <h3 class="secTitle"><span class="secNum">00</span>Executive Summary</h3>
-            <span class="csKicker">What this project is, and why it works</span>
 
             <div class="csP">
                 <p>
@@ -259,8 +244,7 @@
                         </tr>
                         <tr>
                             <td>Year</td>
-                            <td>2025.09 – 2026.02 (degree conferred in the Dec 2025 batch; final materials
-                                and certificates received Feb 2026)</td>
+                            <td>2025.09 – 2026.02</td>
                         </tr>
                         <tr>
                             <td>Context</td>
@@ -405,8 +389,8 @@
             <div class="csP">
                 <p>
                     The prototype is built on the <strong>Unity Universal Render Pipeline (URP)</strong> for its XR
-                    rendering features and post-processing headroom, deployed to the <strong>Meta Quest 3</strong> (high-resolution
-                    dual LCD, standalone, widely accessible). XR Plug-in Management and the XR Interaction Toolkit form the
+                    rendering features and post-processing headroom, deployed to the <strong>Meta Quest 3</strong>. XR
+                    Plug-in Management and the XR Interaction Toolkit form the
                     development foundation; the headset connects via Meta Quest Link for in-design testing. Interaction
                     logic is implemented in <strong>C#</strong>: custom scripts detect participant position and
                     interaction points in real time, while <strong>Unity Events</strong> expose a visual editor that
@@ -504,39 +488,11 @@
                 </table>
             </div>
 
-            <div class="csP">
-                <p>
-                    The same gate logic decides <em>where</em> an asset comes from. Not everything should be generated:
-                    <strong>narrative-critical</strong> elements stay hand-built, because their shape carries the
-                    argument; <strong>conceptual or exploratory</strong> elements go to AI, because breadth of options
-                    matters more than precision there; <strong>generic fill</strong> comes from curated libraries,
-                    because it should cost almost nothing. That routing rule — not any single tool — is the reusable part
-                    of the method.
-                </p>
-            </div>
+            <p>Summary: AI acts as the drafter and the designer as the decision-maker, closing a draft-and-verify loop at
+                every stage. The reusable prompt structure and reference images make each stage repeatable and portable
+                across models.</p>
 
-            <div class="cardGrid g2">
-                <div class="csCard">
-                    <span class="cRole">Route 01</span>
-                    <h4>Hand-built low-poly</h4>
-                    <p>Narrative-critical pieces are modelled in Blender with bespoke materials — chosen where precise shape, style and detail control decide whether the story reads.</p>
-                </div>
-                <div class="csCard">
-                    <span class="cRole">Route 02</span>
-                    <h4>AI-assisted experimental modelling</h4>
-                    <p>Text-to-image → textured 3D → Blender refinement. Used where breadth beats precision: abstract, conceptual forms explored far faster than by hand (&gt;50% time saved).</p>
-                </div>
-                <div class="csCard">
-                    <span class="cRole">Route 03</span>
-                    <h4>Curated Asset Store libraries</h4>
-                    <p>Generic environment fill (pine, grass, stone) is sourced, not made — enriching spatial hierarchy without spending concept budget or diluting the idea.</p>
-                </div>
-                <div class="csCard">
-                    <span class="cRole">Sound &amp; Code</span>
-                    <h4>AI-generated audio &amp; pair programming</h4>
-                    <p>OptimizerAI produces preliminary SFX, refined in an audio editor; Cursor and GitHub Copilot assist debugging and logic optimisation — compressing the sound and development tracks alike.</p>
-                </div>
-            </div>
+            <span class="csKicker">Taking 3D assets as an example</span>
 
             <div class="csFigure">
                 <img src="./modeling.jpg"
@@ -556,19 +512,6 @@
             </div>
 
             <div class="calloutBox">
-                <span class="cbLabel">Provenance &amp; the human gate</span>
-                <div class="csP">
-                    <p>
-                        Every AI-assisted asset was reviewed and reworked in Blender before entering the build, and the
-                        elements that carry the concept argument were deliberately hand-built so the narrative never rests
-                        on a generation the designer cannot control. AI use is documented stage by stage in the thesis
-                        rather than presented as authorship — the pipeline stays transparent about which parts were
-                        generated and which were made.
-                    </p>
-                </div>
-            </div>
-
-            <div class="calloutBox">
                 <span class="cbLabel">Forward look — read against today's agent tooling</span>
                 <div class="csP">
                     <p>
@@ -578,15 +521,12 @@
                         consume, so the same four stages can now be delegated as multi-step jobs instead of one prompt at
                         a time. That shifts where the designer's leverage sits: from <em>operating</em> each tool to
                         <em>specifying intent and verifying output</em>, which makes the gate — not the generation — the
-                        skill that compounds. It also makes the cheap stages cheaper still: storyboard and asset variants,
-                        automated topology cleanup, shader scaffolding, playtest-transcript synthesis, and keeping
-                        bilingual documentation in sync are all realistic to hand over.
+                        skill that compounds.
                     </p>
                     <p>
-                        What does not move is the finding this thesis actually earned. Compressing production is not the
-                        same as validating a concept: faster assets did not make the guidance clearer — eight participants
-                        in a headset did. Any agent-driven version of this pipeline still has to end in human testing, or
-                        it will simply ship a more polished version of a confusing experience.
+                        What does not move is the design decision. Compressing production is not the same as validating a
+                        concept: any agent-driven workflow still has to end in human testing and human decision-making, or
+                        it will simply paint a more polished version of a confusing problem.
                     </p>
                 </div>
             </div>
@@ -596,8 +536,9 @@
             <span class="csKicker">Ethics-aware testing, and what the evidence actually shows</span>
 
             <div class="csP">
+                <h4>Testing followed human-centric ethical principles across three dimensions:</h4>
                 <p>
-                    Testing followed human-centric ethical principles across three dimensions — participant health
+                    participant health
                     (safe space, cybersickness pre-check, &lt;10 min headset / &lt;30 min total per session), experience
                     authenticity (delayed, non-intrusive feedback; informed disclosure without leaking evaluation points),
                     and privacy (informed consent on data use). <strong>Eight participants</strong> took part in
@@ -605,23 +546,6 @@
                     <strong>three</strong> returning for follow-up; observation records plus semi-structured interviews
                     fed a documented iteration cycle.
                 </p>
-            </div>
-
-            <div class="cardGrid g2">
-                <div class="csCard">
-                    <span class="cRole">Method</span>
-                    <h4>Qualitative, non-intrusive testing</h4>
-                    <p>Participants freely explored without a task list; behaviours and sticking points were recorded
-                        synchronously, then discussed in one-on-one semi-structured interviews — prioritising problem
-                        identification and design improvement.</p>
-                </div>
-                <div class="csCard">
-                    <span class="cRole">Iteration</span>
-                    <h4>Four response directions</h4>
-                    <p>Feedback clustered into guidance clarity, path fluency, animation timing and sound layering.
-                        Iterations added interactive UI + ambient-light state changes, laid main paths with hidden
-                        boundary blocks, enriched transition shaders, and completed per-node sound.</p>
-                </div>
             </div>
 
             <div class="calloutBox">
@@ -725,11 +649,7 @@
                 <p>
                     The MVP verifies that VR can carry an abstract ecological concept, and leaves behind a reusable
                     reference framework: <strong>concept-transformation design strategy + closed-loop workflow +
-                        scene-asset construction + testing-iteration process</strong>. Three contributions stand out — a
-                    visualisation workflow for interdisciplinary ecological concepts; an end-to-end AI-integration
-                    system (storyboard, 3D asset, sound, programming) built on a reusable prompt contract with human
-                    verification gates; and a dual framework of simulating human impact while implying non-human
-                    perspectives.
+                        scene-asset construction + testing-iteration process</strong>.
                 </p>
             </div>
 
@@ -757,10 +677,6 @@
                         <tr>
                             <td>For abstract concepts, clarity of guidance and fluency of interaction beat technical complexity.</td>
                             <td>Audio was only ~10% complete at test time, so the sound layer's contribution is not yet evidenced.</td>
-                        </tr>
-                        <tr>
-                            <td>An ethics-first protocol is practical — 8 participants tested, 3 returned for follow-up.</td>
-                            <td>AI-assisted asset quality was judged by the designer, not independently by participants.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -797,15 +713,10 @@
 
             <div class="cardGrid g2">
                 <div class="csCard">
-                    <span class="cRole">Full thesis — PDF</span>
-                    <h4>Reimagining the fourth nature: Exploring post-human ecologies through VR</h4>
-                    <p>Lou, Yihan. Aalto University, School of Arts, Design and Architecture, Master's thesis, 2025. 67
-                        pp. <a href="https://aaltodoc.aalto.fi/bitstreams/b070cd57-5ea8-4e8d-840f-d0c8238b2afb/download" target="_blank" rel="noopener">Download PDF ↗</a></p>
-                </div>
-                <div class="csCard">
                     <span class="cRole">Aaltodoc record</span>
-                    <h4>Permanent entry</h4>
-                    <p>Supervisor: Markku Reunanen. <a href="https://aaltodoc.aalto.fi/items/4ca546a5-aa06-4460-89c0-5eb3731fd69a" target="_blank" rel="noopener">View on Aaltodoc ↗</a> · URN:NBN:fi:aalto-202601231930</p>
+                    <h4>Reimagining the fourth nature: Exploring post-human ecologies through VR</h4>
+                    <p>Lou, Yihan. Aalto University, School of Arts, Design and Architecture, Master's thesis, 2025.
+                        <a href="https://aaltodoc.aalto.fi/items/4ca546a5-aa06-4460-89c0-5eb3731fd69a" target="_blank" rel="noopener">View on Aaltodoc ↗</a> · URN:NBN:fi:aalto-202601231930</p>
                 </div>
             </div>
 

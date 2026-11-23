@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240" width="360" height="240" role="img" aria-label="Hunyuan3D interface sketch">
+  <rect x="0" y="0" width="360" height="240" rx="10" fill="#0e1316"/>
+  <path d="M0 10 a10 10 0 0 1 10 -10 h340 a10 10 0 0 1 10 10 v18 h-360 z" fill="#19222a"/>
+  <circle cx="16" cy="14" r="4" fill="#ff5f56"/>
+  <circle cx="30" cy="14" r="4" fill="#ffbd2e"/>
+  <circle cx="44" cy="14" r="4" fill="#27c93f"/>
+  <text x="58" y="19" fill="#cfd8dc" font-family="sans-serif" font-size="13" font-weight="600">Hunyuan3D</text>
+  <rect x="0" y="28" width="52" height="212" fill="#141b21"/>
+  <rect x="10" y="42" width="32" height="20" rx="5" fill="#22303a"/>
+  <rect x="10" y="70" width="32" height="20" rx="5" fill="#8FC4D2" fill-opacity="0.45"/>
+  <rect x="10" y="98" width="32" height="20" rx="5" fill="#22303a"/>
+  <rect x="52" y="28" width="308" height="168" fill="#0a0d10"/>
+  <rect x="70" y="80" width="58" height="48" rx="4" fill="#1c2630" stroke="#8FC4D2" stroke-width="1.5"/>
+  <polyline points="78,118 96,98 110,110 122,94 120,128" fill="none" stroke="#8FC4D2" stroke-width="1.5"/>
+  <line x1="140" y1="104" x2="166" y2="104" stroke="#8FC4D2" stroke-width="2"/>
+  <polygon points="166,98 178,104 166,110" fill="#8FC4D2"/>
+  <path d="M208 82 L232 66 L286 66 L262 82 Z" fill="#8FC4D2" fill-opacity="0.18" stroke="#8FC4D2" stroke-width="1.5"/>
+  <path d="M262 82 L286 66 L286 120 L262 136 Z" fill="#8FC4D2" fill-opacity="0.10" stroke="#8FC4D2" stroke-width="1.5"/>
+  <rect x="208" y="82" width="54" height="54" fill="#8FC4D2" fill-opacity="0.14" stroke="#8FC4D2" stroke-width="1.5"/>
+  <rect x="52" y="196" width="308" height="44" fill="#141b21"/>
+  <rect x="64" y="210" width="80" height="16" rx="8" fill="#22303a"/>
+  <rect x="154" y="210" width="80" height="16" rx="8" fill="#22303a"/>
+  <rect x="244" y="210" width="100" height="16" rx="8" fill="#8FC4D2" fill-opacity="0.35"/>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240" width="360" height="240" role="img" aria-label="Tripo interface sketch">
+  <rect x="0" y="0" width="360" height="240" rx="10" fill="#0e1316"/>
+  <path d="M0 10 a10 10 0 0 1 10 -10 h340 a10 10 0 0 1 10 10 v18 h-360 z" fill="#19222a"/>
+  <circle cx="16" cy="14" r="4" fill="#ff5f56"/>
+  <circle cx="30" cy="14" r="4" fill="#ffbd2e"/>
+  <circle cx="44" cy="14" r="4" fill="#27c93f"/>
+  <text x="58" y="19" fill="#cfd8dc" font-family="sans-serif" font-size="13" font-weight="600">Tripo</text>
+  <rect x="0" y="28" width="52" height="212" fill="#141b21"/>
+  <rect x="10" y="42" width="32" height="20" rx="5" fill="#22303a"/>
+  <rect x="10" y="70" width="32" height="20" rx="5" fill="#8FC4D2" fill-opacity="0.45"/>
+  <rect x="10" y="98" width="32" height="20" rx="5" fill="#22303a"/>
+  <rect x="52" y="28" width="308" height="168" fill="#0a0d10"/>
+  <rect x="150" y="120" width="72" height="14" rx="3" fill="#8FC4D2" fill-opacity="0.3" stroke="#8FC4D2" stroke-width="1.5"/>
+  <rect x="150" y="68" width="14" height="66" rx="3" fill="#8FC4D2" fill-opacity="0.3" stroke="#8FC4D2" stroke-width="1.5"/>
+  <line x1="150" y1="134" x2="142" y2="172" stroke="#8FC4D2" stroke-width="1.5"/>
+  <line x1="222" y1="134" x2="230" y2="172" stroke="#8FC4D2" stroke-width="1.5"/>
+  <line x1="164" y1="134" x2="160" y2="172" stroke="#8FC4D2" stroke-width="1.2"/>
+  <line x1="208" y1="134" x2="212" y2="172" stroke="#8FC4D2" stroke-width="1.2"/>
+  <rect x="52" y="196" width="308" height="44" fill="#141b21"/>
+  <rect x="64" y="210" width="80" height="16" rx="8" fill="#22303a"/>
+  <rect x="154" y="210" width="80" height="16" rx="8" fill="#22303a"/>
+  <rect x="244" y="210" width="100" height="16" rx="8" fill="#8FC4D2" fill-opacity="0.35"/>
+</svg>
